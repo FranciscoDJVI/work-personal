@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}search-done{% endblock %}</title>
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  {% block content %}
+  <table class="bg-blue-950 mx-10 rounded-2xl text-white ">
+    <thead>
+      <tr class="grid grid-cols-3 justify-items-center items-center bg-gray-200 text-xm text-blue-950">
+        <th>Nombre</th>
+        <th class="w-50">Precio</th>
+        <th class="w-100">Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if productsearch %}
+      <h3>Detalles del Producto Encontrado:</h3>
+      <p><strong>Nombre:</strong> {{ productsearch.name }}</p>
+      <p><strong>Precio:</strong> {{ productsearch.price }}</p>
+      <p><strong>Descripción:</strong> {{ productsearch.description }}</p>
+      {% endif %}
+
+    </tbody>
+  </table>
+  {% endblock %}
+</body>
+
+</html>

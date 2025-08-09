@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>🔍 Buscar Cliente por Correo Electrónico</h1>
+
+    <div class="search-form">
+        <form action="" method="GET">
+            {{ formsearch.query }}
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <div class="results-section">
+        {% if query %}
+        <h2>Resultados para "{{ query }}"</h2>
+        {% if result %}
+        {% for client in result %}
+        <div class="client-item">
+            <p><strong>Correo:</strong> {{ client.email }}</p>
+            {% if client.name %}
+            <p><strong>Nombre:</strong> {{ client.name }}</p>
+            {% endif %}
+            {% if client.telephone %}
+            <p><strong>Teléfono:</strong> {{ client.telephone }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="no-results">No se encontraron clientes con el correo "{{ query }}". Intenta con otra búsqueda.</p>
+        {% endif %}
+        {% else %}
+        <p class="info-text">Ingresa un correo electrónico (o parte de él) en la barra de búsqueda para encontrar
+            clientes.</p>
+        {% endif %}
+    </div>
+    </div>
+    {% endblock %}

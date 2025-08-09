@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}deletes-products{% endblock%}</title>
+</head>
+
+<body>
+  {% block content %}
+  <section class="mx-50 my-20 grid grid-cols-1 grid-rows-3 justify-items-center items-center">
+    <h1 class="text-green-800 text-xl p-4">
+      Producto eliminado con exito, <h1 class="text-black text-xl p-4">estaras de vuelta en la página anterior en:
+      </h1>
+    </h1>
+    <span class="text-black text-xl p-4" id="temporizador">5 segundos</span>
+
+  </section>
+  <script>
+    var tiempoRestante = {{ wait_time }};
+    var temporizadorElemento = document.getElementById('temporizador');
+
+    var intervalo = setInterval(function () {
+      tiempoRestante--;
+      temporizadorElemento.textContent = tiempoRestante;
+
+      if (tiempoRestante == 0) {
+        clearInterval(intervalo);
+        window.history.back();
+      }
+    }, 1000);
+  </script>
+  {% endblock %}
+</body>
+
+</html>

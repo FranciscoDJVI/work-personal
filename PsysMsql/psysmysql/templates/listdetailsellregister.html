@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Detail-sell{% endblock %}
+{% load currency_filters %}
+{% block content %}
+<h2 class="mx-5 my-10 text-black text-xm bg-white w-[fit-content] p-2">
+  Registro de venta número: {{ register_sell_instance.idsell}}
+</h2>
+<hr class="text-black">
+<table class="bg-white grid text-black text-xm mx-10 my-10">
+  <thead>
+    <tr class="grid grid-cols-5 grid-rows-1 justify-items-center items-center bg-white text-xm text-black">
+      <th class="w-20">ID</th>
+      <th class="w-20">Producto</th>
+      <th class="w-20">Cantidad</th>
+      <th class="w-20">Precio</th>
+      <th class="w-20">Precio/cant</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white text-gray-300 p-4">
+    {% for item in detail %}
+    <tr
+      class="grid grid-cols-5 grid-rows-1 justify-items-center p-2 my-1 text-black font-extralight">
+      <td>{{ item.id_product }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.pricexquantity|format_currency_cop }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot class='bg-white text-black p-4'>
+    {% for item2 in detail %}
+    {% if item2.pay %}
+    <tr class='flex flex-col items-end my-1 text-black font-extralight'>
+      <td>pago: {{ item2.pay.quantity_pay |format_currency_cop}}</td>
+      <td>cambio: {{ item2.money.money_back |format_currency_cop}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tfoot>
+</table>
+<a href="{% url 'list_all_sell_register' %}" class="text-black absolute top-10 right-40 mb-10">volver</a>
+{% endblock %}

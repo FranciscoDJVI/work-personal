@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Asign-user-group{% endblock %}
+{% block content %}
+ <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xl">
+    <a href="{% url 'list-product' %}">Productos/</a>
+    <a href="{% url 'sell_product' %}">Ventas/</a>
+    <a href="{% url 'delete-product' %}">Eliminar productos/</a>
+    <a href="{% url 'update-product' %}">Actualizar productos/</a>
+    <a href="{% url 'stock_products' %}">Stock/</a>
+    <a href="{% url 'main' %}">Home</a>
+  </nav>
+<div class="bg-white mx-100 my-30 p-2 grid justify-items-center items-center">
+  <h1 class="text-black text-xm grid justify-items-center my-5 p-2">{{ title }}</h2>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form class="text-black text-xm grid justify-items-center" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="bg-gray-200 text-cyan-950  w-50 my-5" type="submit"
+        class="btn btn-primary">Asignar</button>
+    </form>
+    <hr/>
+    <section class="grid justify-items-center items-center">
+      <h2 class="text-xm text-black grid justify-items-center items-center">Usuarios y sus Grupos Actuales</h2>
+      <table class="mx-10 my-10 rounded-2xl bg-cyan-950 text-black text-xm font-medium h-[fit-content] w-100">
+        <thead class="bg-gray-200 text-black">
+          <tr class=" grid grid-cols-2  bg-gray-300 text-xm text-cyan-950 font-extralight">
+            <th class="">Usuario</th>
+            <th class="">Grupos</th>
+          </tr>
+        </thead>
+        <tbody class="p-4">
+          {% for user_obj in users_with_groups %}
+          <tr class="grid grid-cols-2 justify-items-center bg-gray-300 text-xm text-cyan-950">
+            <td>{{ user_obj.username }}</td>
+            <td>
+              {% for group in user_obj.groups.all %}
+              <span class="badge bg-info text-dark">{{ group.name }}</span>
+              {% empty %}
+              <small>Sin grupos</small>
+              {% endfor %}
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="2">No hay usuarios para mostrar.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+    <a href="{% url 'main' %}" class="bg-gray-300 text-cyan-950 rounded-3xl w-50 my-5 p-2 text-center">Volver</a>
+</div>
+{% endblock %}

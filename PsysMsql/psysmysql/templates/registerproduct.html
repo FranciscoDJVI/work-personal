@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+<title>{% block title %}Products{% endblock %}</title>
+{% block content %}
+<section class="h-screen grid grid-cols-1 grid-rows-3 justify-items-center items-center">
+  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xl">
+    <a href="{% url 'list-product' %}">Productos/</a>
+    <a href="{% url 'sell_product' %}">Ventas/</a>
+    <a href="{% url 'delete-product' %}">Eliminar productos/</a>
+    <a href="{% url 'update-product' %}">Actualizar productos/</a>
+    <a href="{% url 'stock_products' %}">Stock/</a>
+    <a href="{% url 'main' %}">Home</a>
+  </nav>
+  <span class="text-black text-xm">Registrar productos</span>
+  <form method="post"
+    class=" bg-white grid justify-items-center gap-2 p-10 h-[fit-content] w-[fit-content] text-xm text-black">
+    {% csrf_token %}
+    {{ formregister }}
+    <button class="bg-green-500 text-white  p-2" type="submit"
+      id="registrarBtn">Registrar</button>
+  </form>
+  {% if messages %}
+  <div id="messages" class="bg-blue-950 text-2xl text-gray-200 absolute bottom-10 right-10 rounded-4xl italic p-10">
+    <ul class="messages">
+      {% for message in messages %}
+      <span class="{{ message.tag}}">{{message}}</span>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</section>
+{% include "footer.html" %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const temporalMessage = document.getElementById('messages');
+    if (temporalMessage) {
+      // Show the message "Producto guarado con exito", for 10 seconds.
+      setTimeout(function () {
+        temporalMessage.style.display = 'none'
+      }, 10000);
+    }
+  });
+</script>
+{% endblock %}

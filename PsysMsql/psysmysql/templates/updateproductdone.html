@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}update-product-done{% endblock%}</title>
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  {% block content %}
+  {% from item in product %}
+  <ul>
+    <li>Name: {{ item.name }}</li>
+    <li>Price: {{ item.price }}</li>
+    <li>Description: {{ item.description }}</li>
+  </ul>
+  {% if messages %}
+  <div id="messages" class="bg-black text-gray-400 text-3xl mx-50">
+    <ul class="messages">
+      {% for message in messages %}
+      <span class="{{ message.tag}}">{{message}}</span>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const temporalMessage = document.getElementById('messages');
+        if (temporalMessage) {
+          // Show the message "Producto guarado con exito", for 5 seconds.
+          setTimeout(function () {
+            temporalMessage.style.display = 'none'
+          }, 5000);
+        }
+      });
+    </script>
+    {% endblock %}
+</body>
+
+</html>
