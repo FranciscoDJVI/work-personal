@@ -8,4 +8,3 @@ para realizar los cambios en caliente sin tener que recargar la página manualme
 
 La principal razón de creación de esta web es aprender coomo funciona el fremework de Django y aplicar conocimientos adquiridos
 del lenguaje y simulando el día a día de un desarrollador en la industria.
-# work-personal
