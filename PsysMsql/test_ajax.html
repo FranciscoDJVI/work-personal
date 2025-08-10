@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba AJAX</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .search-container { position: relative; width: 300px; }
+        #search-input { width: 100%; padding: 10px; border: 1px solid #ccc; }
+        #results { border: 1px solid #ccc; max-height: 200px; overflow-y: auto; display: none; }
+        .result-item { padding: 10px; cursor: pointer; }
+        .result-item:hover { background-color: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>Prueba de búsqueda de productos AJAX</h1>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar productos..." />
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const results = document.getElementById('results');
+            let searchTimeout;
+
+            searchInput.addEventListener('input', function() {
+                const query = this.value.trim();
+                clearTimeout(searchTimeout);
+                
+                if (query.length >= 2) {
+                    searchTimeout = setTimeout(() => {
+                        searchProducts(query);
+                    }, 300);
+                } else {
+                    results.style.display = 'none';
+                }
+            });
+
+            function searchProducts(query) {
+                const url = `http://localhost:8000/app/search-products-ajax/?q=${encodeURIComponent(query)}`;
+                
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'same-origin'
+                })
+                .then(response => {
+                    console.log('Status:', response.status);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data:', data);
+                    displayResults(data.results);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    results.innerHTML = `<div class="result-item">Error: ${error.message}</div>`;
+                    results.style.display = 'block';
+                });
+            }
+
+            function displayResults(products) {
+                results.innerHTML = '';
+                if (products.length === 0) {
+                    results.innerHTML = '<div class="result-item">No se encontraron productos</div>';
+                } else {
+                    products.forEach(product => {
+                        const item = document.createElement('div');
+                        item.className = 'result-item';
+                        item.innerHTML = `
+                            <strong>${product.name}</strong><br>
+                            Precio: $${parseFloat(product.price).toLocaleString('es-CO')}<br>
+                            ID: ${product.id}
+                        `;
+                        results.appendChild(item);
+                    });
+                }
+                results.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

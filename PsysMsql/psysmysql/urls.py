@@ -16,6 +16,7 @@ urlpatterns = [
     path("update-product/", views.Update.as_view(), name="update-product"),
     path("update_product-done/", views.update_product_done, name="update_product_done"),
     path("sell-product/", views.SellProductView.as_view(), name="sell_product"),
+    path("search-products-ajax/", views.search_products_ajax, name="search_products_ajax"),
     path("delete-sell-item/<int:pk>/", views.delete_sell_item, name="delete_sell_item"),
     path("stock-products/", views.register_stock, name="stock_products"),
     path("register-clients/", views.register_clients, name="register_client"),
@@ -31,4 +32,5 @@ urlpatterns = [
     ),
     path("error/", views.page_404, name="error"),
     path("assing-user-group/", views.assign_user_to_group, name="assing_user"),
+    path("select2/", include("django_select2.urls")),
 ]

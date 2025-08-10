@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load currency_filters %}
+{% load static %}
 <title>{% block title %}Sell-product{% endblock %}</title>
 {% block content %}
 <nav class="mx-10 my-5 text-black p-3 absolute top-0 right-30 text-xm">
@@ -11,9 +12,23 @@
   <a href="{% url 'main' %}">home<a />
 </nav>
 <section class="flex flex-col items-center">
-  <form class="flex flex-row items-center my-15" method="post">
+  <form id="sell-form" class="flex flex-row items-center my-15" method="post">
     {% csrf_token %}
-    {{ formsell }}
+    
+    <!-- Campo de búsqueda de productos -->
+    <div class="relative">
+      {{ formsell.product_search }}
+      <div id="search-results" class="absolute z-10 w-full bg-white border border-gray-300 rounded-b-md shadow-lg hidden max-h-48 overflow-y-auto">
+        <!-- Los resultados de la búsqueda aparecerán aquí -->
+      </div>
+    </div>
+    
+    <!-- Campo oculto para el ID del producto seleccionado -->
+    {{ formsell.id_product }}
+    
+    <!-- Campo de cantidad -->
+    {{ formsell.totalsell }}
+    
     <button id="sell" name="sell" type="submit" class="text-xm text-white bg-green-500 rounded-3xl w-15 p-2"><i
         class="fa-solid fa-plus"></i></button>
   </form>
@@ -98,51 +113,268 @@
   </ul>
 </div>
 {% endif %}
+<!-- Script de búsqueda de productos inline para compatibilidad máxima -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const temporalMessage = document.getElementById('messages');
+    // Ocultar mensajes después de 10 segundos
+    var temporalMessage = document.getElementById('messages');
     if (temporalMessage) {
-      // Show the message "Producto guarado con exito", for 10 seconds.
       setTimeout(function () {
-        temporalMessage.style.display = 'none'
+        temporalMessage.style.display = 'none';
       }, 10000);
     }
-  });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    console.log("¡DOMContentLoaded se ha disparado!"); // Confirma que el script se está ejecutando
+    // ===== FUNCIONALIDAD PARA BÚSQUEDA DE PRODUCTOS =====
+    var productSearchInput = document.getElementById('product-search-input');
+    var searchResults = document.getElementById('search-results');
+    var selectedProductIdInput = document.getElementById('selected-product-id');
+    var searchTimeout;
+    var currentSelectedIndex = -1;
+    var availableProducts = [];
 
-    const emailSpans = document.querySelectorAll('.client-email-copy');
-    console.log("Elementos .client-email-copy encontrados:", emailSpans.length, emailSpans); // ¿Encuentra los elementos clickeables?
-
-    const selectedEmailInput = document.getElementById('id_client_email_selected');
-    console.log("Campo visible 'id_client_email_selected' encontrado:", selectedEmailInput); // ¿Encuentra el campo visible?
-
-    const hiddenEmailInput = document.getElementById('id_client_email_selected');
-    console.log("Campo oculto 'hidden_client_email_selected' encontrado:", hiddenEmailInput); // ¡ESTE ES EL CLAVE!
-
-    if (hiddenEmailInput === null) {
-      console.error("⛔️ ERROR: hiddenEmailInput es NULL. El elemento con ID 'hidden_client_email_selected' NO fue encontrado en el DOM.");
-    } else {
-      console.log("✅ hiddenEmailInput encontrado. ¡Todo bien para manipularlo!");
-    }
-
-    emailSpans.forEach(span => {
-      span.addEventListener('click', function () {
-        const email = this.dataset.email;
-        console.log("Se hizo clic en el correo:", email); // ¿El evento click se dispara?
-        if (selectedEmailInput) { // Añadimos una comprobación por si selectedEmailInput también fuera null
-          selectedEmailInput.value = email;
-          console.log("Valor del campo visible actualizado a:", selectedEmailInput.value);
-        }
-        if (hiddenEmailInput) { // Añadimos una comprobación para evitar el error si es null
-          hiddenEmailInput.value = email;
-          console.log("Valor del campo OCULTO actualizado a:", hiddenEmailInput.value);
+    if (productSearchInput && searchResults && selectedProductIdInput) {
+      // Evento de input para búsqueda
+      productSearchInput.addEventListener('input', function(event) {
+        var query = event.target.value.trim();
+        
+        clearTimeout(searchTimeout);
+        
+        if (query.length >= 2) {
+          searchTimeout = setTimeout(function() {
+            searchProducts(query);
+          }, 300);
         } else {
-          console.warn("Advertencia: No se pudo actualizar hiddenEmailInput porque es null.");
+          hideResults();
+          resetSelection();
         }
       });
-    });
+
+      // Navegación con teclado
+      productSearchInput.addEventListener('keydown', function(event) {
+        var resultItems = searchResults.querySelectorAll('.result-item');
+        
+        switch(event.key) {
+          case 'ArrowDown':
+            event.preventDefault();
+            if (resultItems.length > 0) {
+              currentSelectedIndex = Math.min(currentSelectedIndex + 1, resultItems.length - 1);
+              updateSelection(resultItems);
+            }
+            break;
+            
+          case 'ArrowUp':
+            event.preventDefault();
+            if (resultItems.length > 0) {
+              currentSelectedIndex = Math.max(currentSelectedIndex - 1, -1);
+              updateSelection(resultItems);
+            }
+            break;
+            
+          case 'Enter':
+            event.preventDefault();
+            if (currentSelectedIndex >= 0 && currentSelectedIndex < availableProducts.length) {
+              selectProduct(availableProducts[currentSelectedIndex]);
+            } else if (availableProducts.length === 1) {
+              selectProduct(availableProducts[0]);
+            }
+            break;
+            
+          case 'Escape':
+            event.preventDefault();
+            hideResults();
+            resetSelection();
+            break;
+        }
+      });
+
+      // Ocultar al hacer clic fuera
+      document.addEventListener('click', function(event) {
+        if (!productSearchInput.contains(event.target) && !searchResults.contains(event.target)) {
+          hideResults();
+          resetSelection();
+        }
+      });
+    }
+
+    function searchProducts(query) {
+      var url = '{% url "search_products_ajax" %}?q=' + encodeURIComponent(query);
+      
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin'
+      })
+      .then(function(response) {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        console.log('Search results:', data);
+        if (data.results) {
+          displayResults(data.results);
+        } else {
+          hideResults();
+        }
+      })
+      .catch(function(error) {
+        console.error('Error:', error);
+        showError(error.message);
+      });
+    }
+
+    function displayResults(results) {
+      searchResults.innerHTML = '';
+      availableProducts = results;
+      resetSelection();
+      
+      if (results.length === 0) {
+        showNoResults();
+        return;
+      }
+
+      for (var i = 0; i < results.length; i++) {
+        var product = results[i];
+        var resultItem = document.createElement('div');
+        resultItem.className = 'result-item p-2 hover:bg-gray-100 cursor-pointer border-b border-gray-200';
+        resultItem.setAttribute('data-index', i);
+        
+        resultItem.innerHTML = 
+          '<div class="font-medium text-black">' + escapeHtml(product.name) + '</div>' +
+          '<div class="text-sm text-gray-600">Precio: $' + parseFloat(product.price).toLocaleString('es-CO') + '</div>';
+        
+        // Click event
+        (function(prod) {
+          resultItem.addEventListener('click', function() {
+            selectProduct(prod);
+          });
+        })(product);
+        
+        // Mouse enter event
+        (function(index) {
+          resultItem.addEventListener('mouseenter', function() {
+            currentSelectedIndex = index;
+            updateSelection(searchResults.querySelectorAll('.result-item'));
+          });
+        })(i);
+        
+        searchResults.appendChild(resultItem);
+      }
+      
+      showResults();
+    }
+
+    function selectProduct(product) {
+      productSearchInput.value = product.name;
+      selectedProductIdInput.value = product.id;
+      hideResults();
+      resetSelection();
+      
+      // Enfocar campo de cantidad
+      var quantityInput = document.querySelector('input[name="totalsell"]');
+      if (quantityInput) {
+        setTimeout(function() {
+          quantityInput.focus();
+        }, 100);
+      }
+      
+      console.log('Producto seleccionado:', product.name, 'ID:', product.id);
+    }
+
+    function showNoResults() {
+      var noResultsDiv = document.createElement('div');
+      noResultsDiv.className = 'p-2 text-gray-500';
+      noResultsDiv.textContent = 'No se encontraron productos';
+      searchResults.appendChild(noResultsDiv);
+      showResults();
+    }
+
+    function showError(message) {
+      searchResults.innerHTML = '';
+      var errorDiv = document.createElement('div');
+      errorDiv.className = 'p-2 text-red-500';
+      errorDiv.textContent = 'Error: ' + message;
+      searchResults.appendChild(errorDiv);
+      showResults();
+      
+      setTimeout(function() {
+        hideResults();
+      }, 3000);
+    }
+
+    function updateSelection(resultItems) {
+      for (var i = 0; i < resultItems.length; i++) {
+        resultItems[i].classList.remove('bg-blue-100');
+      }
+      
+      if (currentSelectedIndex >= 0 && currentSelectedIndex < resultItems.length) {
+        resultItems[currentSelectedIndex].classList.add('bg-blue-100');
+        resultItems[currentSelectedIndex].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest'
+        });
+      }
+    }
+
+    function resetSelection() {
+      currentSelectedIndex = -1;
+    }
+
+    function showResults() {
+      searchResults.classList.remove('hidden');
+    }
+
+    function hideResults() {
+      searchResults.classList.add('hidden');
+    }
+
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // ===== FUNCIONALIDAD PARA EMAILS DE CLIENTES =====
+    var emailSpans = document.querySelectorAll('.client-email-copy');
+    var selectedEmailInput = document.getElementById('id_client_email_selected');
+
+    for (var i = 0; i < emailSpans.length; i++) {
+      emailSpans[i].addEventListener('click', function () {
+        var email = this.dataset.email;
+        if (selectedEmailInput) {
+          selectedEmailInput.value = email;
+          console.log("Correo seleccionado:", email);
+        }
+      });
+    }
+
+    // ===== VALIDACIÓN DEL FORMULARIO DE VENTA =====
+    var sellForm = document.getElementById('sell-form');
+    if (sellForm) {
+      sellForm.addEventListener('submit', function(e) {
+        var productId = selectedProductIdInput.value;
+        var quantity = document.querySelector('input[name="totalsell"]').value;
+        
+        if (!productId) {
+          e.preventDefault();
+          alert('Por favor, selecciona un producto de la lista.');
+          productSearchInput.focus();
+          return false;
+        }
+        
+        if (!quantity || quantity <= 0) {
+          e.preventDefault();
+          alert('Por favor, ingresa una cantidad válida.');
+          document.querySelector('input[name="totalsell"]').focus();
+          return false;
+        }
+      });
+    }
   });
 </script>
 {% endblock %}

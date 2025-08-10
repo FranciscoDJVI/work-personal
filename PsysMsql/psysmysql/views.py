@@ -7,42 +7,49 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.db.models import Q
 from django.views import View
 from django.utils.decorators import method_decorator
-from .tasks import send_sell_confirmation_email
-
-
-from .models import Products
-from .models import Sell
-from .models import SellProducts
-from .models import Stock
-from .models import RegistersellDetail
-from .models import Clients
+from django.core.cache import cache
+from django.http import JsonResponse
 from django.contrib.auth.models import User, Group
 
-
-from .forms import ProductForm
-from .forms import DeleteProductForm
-from .forms import SearchProduct
-from .forms import SearchEmailForm
-from .forms import SellForm
-from .forms import StockForm
-from .forms import SentSellForm
-from .forms import AssginUserToGroupForm
-from .forms import RegisterSellDetailForm
-from .forms import ClientsForm
-
-
-def is_admin(user):
-    if user.is_authenticated:
-        if user.groups.filter(name="Administrador").exists():
-            return True
-    return False
-
-
-def is_seller(user):
-    if user.is_authenticated:
-        if user.groups.filter(name="Vendedor").exists():
-            return True
-    return False
+from .tasks import send_sell_confirmation_email
+from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
+from .forms import (
+    ProductForm,
+    DeleteProductForm,
+    SearchProduct,
+    SearchEmailForm,
+    SellForm,
+    StockForm,
+    SentSellForm,
+    AssginUserToGroupForm,
+    RegisterSellDetailForm,
+    ClientsForm,
+)
+from .constants import (
+    ADMIN_GROUP,
+    SELLER_GROUP,
+    SUCCESS_PRODUCT_SAVED,
+    SUCCESS_PRODUCT_UPDATED,
+    SUCCESS_PRODUCT_DELETED,
+    SUCCESS_STOCK_UPDATED,
+    SUCCESS_STOCK_CREATED,
+    ERROR_PRODUCT_EXISTS,
+    ERROR_PRODUCT_NOT_FOUND,
+    ERROR_DATABASE_ERROR,
+    ERROR_INVALID_FORM,
+    CACHE_KEY_ALL_PRODUCTS,
+    CACHE_TIMEOUT_MEDIUM,
+    PRODUCTS_PER_PAGE,
+    SELLS_PER_PAGE,
+    STOCK_PER_PAGE,
+)
+from .utils import (
+    is_admin,
+    is_seller,
+    get_cached_users_with_groups,
+    paginate_queryset,
+    clear_model_cache,
+)
 
 
 def app(request):
@@ -70,18 +77,20 @@ def register_product(request):
             description = formregister.cleaned_data["description"]
 
             try:
-                product = Products(name=name, price=price, description=description)
-                if Products.objects.filter(name=product.name):
-                    messages.info(request, "el producto ya existe")
+                # Verificar si el producto ya existe
+                if Products.objects.filter(name=name).exists():
+                    messages.info(request, ERROR_PRODUCT_EXISTS)
                 else:
+                    product = Products(name=name, price=price, description=description)
                     product.save()
-                    messages.success(request, "producto guardado con exito")
-            except Product.DoesNotExist:
-                messages.error(request, "El producto no existe")
+                    messages.success(request, SUCCESS_PRODUCT_SAVED)
+                    # Limpiar cache después de crear producto
+                    clear_model_cache(CACHE_KEY_ALL_PRODUCTS)
             except DatabaseError as e:
+                messages.error(request, f"{ERROR_DATABASE_ERROR}: {e}")
+            except Exception as e:
                 messages.error(request, f"Error inesperado: {e}")
 
-            formregister = ProductForm()
             return redirect("register_product")
     else:
         formregister = ProductForm()
@@ -89,13 +98,27 @@ def register_product(request):
 
 
 def view_product(request):
-    all_products = Products.objects.all().order_by("name")
-    total_products = Products.objects.count()
-    return render(
-        request,
-        "allproducts.html",
-        {"allproducts": all_products, "total_products_save": total_products},
-    )
+    """Vista optimizada para mostrar productos con cache y paginación"""
+    # Intentar obtener productos desde cache
+    cache_key = f"{CACHE_KEY_ALL_PRODUCTS}_paginated"
+    all_products = cache.get(cache_key)
+
+    if all_products is None:
+        # Si no está en cache, obtener de la base de datos
+        all_products = Products.objects.all().order_by("name")
+        cache.set(cache_key, all_products, CACHE_TIMEOUT_MEDIUM)
+
+    # Paginar los productos
+    page_obj, paginator = paginate_queryset(all_products, request, PRODUCTS_PER_PAGE)
+
+    context = {
+        "allproducts": page_obj,
+        "total_products_save": paginator.count,
+        "paginator": paginator,
+        "page_obj": page_obj,
+    }
+
+    return render(request, "allproducts.html", context)
 
 
 @login_required
@@ -270,6 +293,36 @@ def update_product_done(request):
     return render(request, "updateproductdone.html")
 
 
+@login_required
+def search_products_ajax(request):
+    """Vista AJAX para búsqueda de productos en tiempo real"""
+    if request.method == "GET":
+        query = request.GET.get("q", "").strip()
+        try:
+            if query and len(query) >= 2:
+                products = Products.objects.filter(Q(name__icontains=query)).values(
+                    "idproducts", "name", "price"
+                )[
+                    :10
+                ]  # Limitar a 10 resultados
+
+                results = [
+                    {
+                        "id": product["idproducts"],
+                        "name": product["name"],
+                        "price": float(product["price"]),
+                    }
+                    for product in products
+                ]
+                return JsonResponse({"results": results})
+            else:
+                return JsonResponse({"results": []})
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
 @method_decorator(
     [
         login_required(login_url="login"),
@@ -360,10 +413,10 @@ class SellProductView(View):
     def post(self, request, *args, **kwargs):
         if "sell" in request.POST:
             return self._handle_sell_form(request)
-        elif "sent" in request.POST:
-            return self._handle_sent_form(request)
         elif "add" in request.POST:
             return self._handle_add_form(request)
+        elif "sent" in request.POST:
+            return self._handle_sent_form(request)
         else:
             messages.error(
                 request,
@@ -393,6 +446,84 @@ class SellProductView(View):
                 for error in errors:
                     messages.error(request, f"Error en '{field}': {error}")
             return redirect("sell_product")
+
+    def _handle_add_form(self, request):
+        """Lógica para el formulario 'add'."""
+        formregsitersell = RegisterSellDetailForm(request.POST)
+        if formregsitersell.is_valid():
+            type_pay = formregsitersell.cleaned_data["type_pay"]
+            state_sell = formregsitersell.cleaned_data["state_sell"]
+            notes = formregsitersell.cleaned_data["notes"]
+            quantity_pay = formregsitersell.cleaned_data["quantity_pay"]
+
+            list_sell_products = SellProducts.objects.all()
+
+            list_items = []
+            total_sale_calculated = 0
+
+            for item in list_sell_products:
+                item_total = item.quantity * item.priceunitaty
+                total_sale_calculated += item_total
+
+                list_items.append(
+                    {
+                        "id_product": item.idproduct.pk,
+                        "name": item.idproduct.name,
+                        "quantity": item.quantity,
+                        "price": float(item.priceunitaty),
+                        "pricexquantity": float(item_total),
+                    }
+                )
+            list_items.append(
+                {
+                    "pay": {"quantity_pay": float(quantity_pay)},
+                    "money": {
+                        "money_back": float(quantity_pay - total_sale_calculated)
+                    },
+                }
+            )
+
+            money_back = quantity_pay - total_sale_calculated
+
+            request.session["money_back"] = float(money_back)
+            request.session["quantity_pay"] = float(quantity_pay)
+
+            id_employed = (
+                request.user.username if request.user.is_authenticated else "anonymous"
+            )
+            register_sell = RegistersellDetail(
+                id_employed=id_employed,
+                total_sell=total_sale_calculated,
+                type_pay=type_pay,
+                state_sell=state_sell,
+                notes=notes,
+                quantity_pay=quantity_pay,
+                detail_sell=json.dumps(list_items),
+            )
+            register_sell.save()
+            print(f"Este es el id de la venta: {register_sell.idsell}")
+            try:
+                if register_sell:
+                    messages.success(request, SUCCESS_STOCK_CREATED)
+            except DatabaseError as e:
+                messages.error(
+                    request,
+                    f"Error en la base de datos al registrar el detalle de venta: {e}",
+                )
+            except Exception as e:
+                messages.error(
+                    request,
+                    f"Ocurrió un error inesperado al registrar el detalle de venta: {e}",
+                )
+
+            return redirect("sell_product")
+        else:
+            for field, errors in formregsitersell.errors.items():
+                for error in errors:
+                    messages.error(
+                        request,
+                        f"Error en el formulario de registro de venta '{field}': {error}",
+                    )
 
     def _handle_sent_form(self, request):
         """Lógica para el formulario 'sent'."""
@@ -446,7 +577,8 @@ class SellProductView(View):
                     else:
                         product_stock.quantitystock -= quantity
                         product_stock.save()
-
+                        SellProducts.objects.all().delete()
+                        Sell.objects.all().delete()
                 except Stock.DoesNotExist:
                     messages.error(
                         request,
@@ -462,9 +594,6 @@ class SellProductView(View):
                         request,
                         f"Ocurrió un error inesperado para el producto ID {product_id}: {e}",
                     )
-
-            SellProducts.objects.all().delete()
-            Sell.objects.all().delete()
             messages.success(request, "Proceso de envío de ventas completado.")
             if client_email_to_send:
                 send_sell_confirmation_email.delay(
@@ -488,84 +617,7 @@ class SellProductView(View):
                         request,
                         f"Error en el formulario de envío '{field}': {error}",
                     )
-            return redirect("sell_product")
-
-    def _handle_add_form(self, request):
-        """Lógica para el formulario 'add'."""
-        formregsitersell = RegisterSellDetailForm(request.POST)
-        if formregsitersell.is_valid():
-            type_pay = formregsitersell.cleaned_data["type_pay"]
-            state_sell = formregsitersell.cleaned_data["state_sell"]
-            notes = formregsitersell.cleaned_data["notes"]
-            quantity_pay = formregsitersell.cleaned_data["quantity_pay"]
-
-            list_sell_products = SellProducts.objects.all()
-
-            list_items = []
-            total_sale_calculated = 0
-
-            for item in list_sell_products:
-                item_total = item.quantity * item.priceunitaty
-                total_sale_calculated += item_total
-
-                list_items.append(
-                    {
-                        "id_product": item.idproduct.pk,
-                        "name": item.idproduct.name,
-                        "quantity": item.quantity,
-                        "price": float(item.priceunitaty),
-                        "pricexquantity": float(item_total),
-                    }
-                )
-            list_items.append(
-                {
-                    "pay": {"quantity_pay": float(quantity_pay)},
-                    "money": {
-                        "money_back": float(quantity_pay - total_sale_calculated)
-                    },
-                }
-            )
-
-            money_back = quantity_pay - total_sale_calculated
-
-            request.session["money_back"] = float(money_back)
-            request.session["quantity_pay"] = float(quantity_pay)
-
-            id_employed = (
-                request.user.username if request.user.is_authenticated else "anonymous"
-            )
-
-            register_sell = RegistersellDetail(
-                id_employed=id_employed,
-                total_sell=total_sale_calculated,
-                type_pay=type_pay,
-                state_sell=state_sell,
-                notes=notes,
-                quantity_pay=quantity_pay,
-                detail_sell=json.dumps(list_items),
-            )
-            try:
-                register_sell.save()
-            except DatabaseError as e:
-                messages.error(
-                    request,
-                    f"Error en la base de datos al registrar el detalle de venta: {e}",
-                )
-            except Exception as e:
-                messages.error(
-                    request,
-                    f"Ocurrió un error inesperado al registrar el detalle de venta: {e}",
-                )
-
-            return redirect("sell_product")
-        else:
-            for field, errors in formregsitersell.errors.items():
-                for error in errors:
-                    messages.error(
-                        request,
-                        f"Error en el formulario de registro de venta '{field}': {error}",
-                    )
-            return redirect("sell_product")
+        return redirect("sell_product")
 
 
 def listallsellregisterview(request):
@@ -608,8 +660,19 @@ def delete_sell_item(request, pk):
 
 
 def list_product_sell(request):
-    list_sell_products = SellProducts.objects.all()
-    context = {"list_sell_products": list_sell_products}
+    """Vista optimizada para listar productos vendidos con select_related"""
+    list_sell_products = SellProducts.objects.select_related(
+        "idproduct", "idsell"
+    ).all()
+
+    # Paginar si hay muchos registros
+    page_obj, paginator = paginate_queryset(list_sell_products, request, SELLS_PER_PAGE)
+
+    context = {
+        "list_sell_products": page_obj,
+        "paginator": paginator,
+        "page_obj": page_obj,
+    }
     return render(request, "listsellproducts.html", context)
 
 

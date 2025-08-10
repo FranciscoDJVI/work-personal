@@ -83,6 +83,19 @@ DATABASES = {
     }
 }
 
+# Cache configuration
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://localhost:6379/1",  # Base 1 para cache (0 para Celery)
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        "KEY_PREFIX": "psys_cache",
+        "TIMEOUT": 300,  # 5 minutos por defecto
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -164,4 +177,3 @@ EMAIL_HOST_PASSWORD = (
 )
 DEFAULT_FROM_EMAIL = "vanegasfrancisco415@gmail.com"
 SERVER_EMAIL = "vanegasfrancisco415@gmail.com"
-

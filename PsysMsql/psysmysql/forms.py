@@ -1,3 +1,4 @@
+from enum import auto
 from django.utils.text import phone2numeric
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
@@ -75,6 +76,27 @@ class SearchProduct(forms.ModelForm):
 
 
 class SellForm(forms.ModelForm):
+    # Campo personalizado para la búsqueda de productos
+    product_search = forms.CharField(
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Buscar producto...",
+                "class": "bg-white p-2 m-5 w-40 text-black font-medium",
+                "id": "product-search-input",
+                "autocomplete": "off"
+            }
+        ),
+        label=""
+    )
+    
+    # Campo oculto para almacenar el ID del producto seleccionado
+    id_product = forms.ModelChoiceField(
+        queryset=models.Products.objects.all(),
+        widget=forms.HiddenInput(attrs={"id": "selected-product-id"}),
+        required=True
+    )
+    
     class Meta:
         model = models.Sell
         fields = ["id_product", "totalsell"]
@@ -86,12 +108,6 @@ class SellForm(forms.ModelForm):
             "totalsell": forms.NumberInput(
                 attrs={
                     "placeholder": "cantidad",
-                    "class": "bg-white p-2 m-5 w-40 text-black font-medium",
-                }
-            ),
-            "id_product": forms.Select(
-                attrs={
-                    "placeholder": "Nombre",
                     "class": "bg-white p-2 m-5 w-40 text-black font-medium",
                 }
             ),
