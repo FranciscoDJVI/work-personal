@@ -41,6 +41,7 @@ CACHE_KEY_STOCK_LIST = "stock_list"
 CACHE_KEY_USER_GROUPS = "user_groups_{}"
 
 # Cache timeout (en segundos)
+CACHE_TIMEOUT_FLASH = 0.60
 CACHE_TIMEOUT_SHORT = 60 * 5     # 5 minutos
 CACHE_TIMEOUT_MEDIUM = 60 * 15   # 15 minutos
 CACHE_TIMEOUT_LONG = 60 * 60     # 1 hora

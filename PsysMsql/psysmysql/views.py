@@ -1,6 +1,7 @@
 import json
 from django.contrib import messages
 from django.db import DatabaseError
+from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required, permission_required
@@ -13,6 +14,8 @@ from django.contrib.auth.models import User, Group
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
+from .services.product_service import ProductService
+from .services.sell_service import SellService
 from .forms import (
     ProductForm,
     DeleteProductForm,
@@ -69,6 +72,7 @@ def dashboard(request):
 @login_required
 @permission_required("psysmysql.add_products", login_url="error")
 def register_product(request):
+    """Vista refactorizada para registro de productos usando ProductService"""
     if request.method == "POST":
         formregister = ProductForm(request.POST)
         if formregister.is_valid():
@@ -77,15 +81,13 @@ def register_product(request):
             description = formregister.cleaned_data["description"]
 
             try:
-                # Verificar si el producto ya existe
-                if Products.objects.filter(name=name).exists():
-                    messages.info(request, ERROR_PRODUCT_EXISTS)
-                else:
-                    product = Products(name=name, price=price, description=description)
-                    product.save()
-                    messages.success(request, SUCCESS_PRODUCT_SAVED)
-                    # Limpiar cache después de crear producto
-                    clear_model_cache(CACHE_KEY_ALL_PRODUCTS)
+                # Usar servicio para crear producto
+                product = ProductService.create_product(name, price, description)
+                messages.success(request, SUCCESS_PRODUCT_SAVED)
+                
+            except ValueError as e:
+                # Error de validación (producto duplicado, etc.)
+                messages.info(request, str(e))
             except DatabaseError as e:
                 messages.error(request, f"{ERROR_DATABASE_ERROR}: {e}")
             except Exception as e:
@@ -112,7 +114,7 @@ def view_product(request):
     page_obj, paginator = paginate_queryset(all_products, request, PRODUCTS_PER_PAGE)
 
     context = {
-        "allproducts": page_obj,
+        "products": all_products,
         "total_products_save": paginator.count,
         "paginator": paginator,
         "page_obj": page_obj,
@@ -128,27 +130,21 @@ def delete_product(request):
         form = DeleteProductForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data["name"]
-            delete_product = Products.objects.get(name=name)
-
-            wait_time = 5  # Duración de los mensajes en pantalla.
+            product_del = Products.objects.get(name=name)
 
             try:
-                if delete_product:
-                    delete_product.delete()
-                    form = DeleteProductForm()
+                if not product_del:
+                    messages.error(request, ERROR_PRODUCT_NOT_FOUND)
+                    return redirect("delete-product")
                 else:
-                    messages.error(request, "El producto no existe")
-            except ValueError as e:
-                messages.error(request, f"El valor a buscar es erroneo {e}")
-            except TypeError as e:
-                messages.error(request, f"Typo de dato erroneo {e}")
-            except DatabaseError as e:
-                messages.error(request, f"Error en la base de datos: {e}")
-            return render(
-                request,
-                "deleteproductdone.html",
-                {"wait_time": wait_time, "product_delete": delete_product},
-            )
+                    item_del = ProductService
+                    item_del.delete_product(name)
+            except  DatabaseError as e:
+                messages.error(request, "Error en la base de datos")
+            except product_del.DoesNotExist as e:
+                messages.error(request, e)
+            return redirect("delete-product")
+        return None
     else:
         form = DeleteProductForm()
         return render(request, "deleteproduct.html", {"form": form})
@@ -295,28 +291,13 @@ def update_product_done(request):
 
 @login_required
 def search_products_ajax(request):
-    """Vista AJAX para búsqueda de productos en tiempo real"""
+    """Vista AJAX refactorizada usando ProductService"""
     if request.method == "GET":
         query = request.GET.get("q", "").strip()
         try:
-            if query and len(query) >= 2:
-                products = Products.objects.filter(Q(name__icontains=query)).values(
-                    "idproducts", "name", "price"
-                )[
-                    :10
-                ]  # Limitar a 10 resultados
-
-                results = [
-                    {
-                        "id": product["idproducts"],
-                        "name": product["name"],
-                        "price": float(product["price"]),
-                    }
-                    for product in products
-                ]
-                return JsonResponse({"results": results})
-            else:
-                return JsonResponse({"results": []})
+            # Usar servicio para búsqueda optimizada
+            results = ProductService.search_products_ajax(query, limit=10)
+            return JsonResponse({"results": results})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
 
@@ -335,74 +316,38 @@ class SellProductView(View):
 
     def get_context_data(self, request):
         """
-        Método auxiliar para preparar el contexto que se enviará a la plantilla.
-        Centraliza la lógica para GET y maneja la búsqueda de clientes.
+        Método refactorizado usando SellService para preparar contexto.
+        Mucho más limpio y mantenible.
         """
+        # Usar servicio para obtener todo el contexto de venta
+        sell_context = SellService.get_sell_summary_for_template(request)
+        
+        # Preparar formularios
         formsell = SellForm()
         sentform = SentSellForm()
         formregsitersell = RegisterSellDetailForm()
-        list_sell_products = SellProducts.objects.all()
-
-        list_items = []
-        total_acumulado_temp = 0
-
-        for item in list_sell_products:
-            item_total = item.quantity * item.priceunitaty
-            total_acumulado_temp += item_total
-
-            list_items.append(
-                {
-                    "id_product": item.idproduct.pk,
-                    "name": item.idproduct.name,
-                    "quantity": item.quantity,
-                    "price": float(item.priceunitaty),
-                    "pricexquantity": float(item_total),
-                }
-            )
-
-        quantity_dict = sum(item["quantity"] for item in list_items)
-        price_dict = sum(item["price"] for item in list_items)
-        price_x_quantity = sum(item["pricexquantity"] for item in list_items)
-
-        # IVA del 19% a cada producto.
-        IVA_RATE = 0.19
-        iva_calculated = price_dict * IVA_RATE
-        price_iva = price_dict - iva_calculated
-
+        
+        # Búsqueda de clientes usando servicio
         formsearch = SearchEmailForm(request.GET or None)
         search_results = []
         search_query = None
-
+        
         if formsearch.is_valid():
             search_query = formsearch.cleaned_data["query"]
             if search_query:
-                search_results = Clients.objects.filter(
-                    Q(email__icontains=search_query)
-                ).distinct()
-
+                search_results = SellService.search_clients_by_email(search_query)
+        
+        # Combinar todo el contexto
         context = {
+            **sell_context,  # Incluye todos los cálculos del servicio
             "formsell": formsell,
             "sentform": sentform,
             "formregsitersell": formregsitersell,
-            "list_sell_products": list_sell_products,
-            "list_items_json": json.dumps(list_items),
-            "quantity": quantity_dict,
-            "price": price_dict,
-            "iva_calculated": iva_calculated,
-            "price_iva": price_iva,
-            "price_x_quantity": price_x_quantity,
-            "price_with_iva": price_iva,
             "formsearch": formsearch,
             "search_query": search_query,
             "search_results": search_results,
         }
-        money_back_from_session = request.session.pop("money_back", None)
-        quantity_pay_from_session = request.session.pop("quantity_pay", None)
-
-        if money_back_from_session is not None:
-            context["money_back"] = money_back_from_session
-        if quantity_pay_from_session is not None:
-            context["quantity_pay"] = quantity_pay_from_session
+        
         return context
 
     def get(self, request, *args, **kwargs):
@@ -679,41 +624,55 @@ def list_product_sell(request):
 @login_required
 @permission_required("psysmysql.add_stock", login_url="error")
 def register_stock(request):
+    """Vista refactorizada para gestión de stock usando StockService"""
+    from .services.stock_service import StockService
+    
     if request.method == "POST":
         stockform = StockForm(request.POST)
-        list_stock = None
         if stockform.is_valid():
             id_product_instance = stockform.cleaned_data["id_products"]
             quantitystock = stockform.cleaned_data["quantitystock"]
+            
             try:
-                # get_or_create se utiliza para verificar si un objeto existe y si no existe lo crea.
-                stock_item, created = Stock.objects.get_or_create(
-                    id_products=id_product_instance,
-                    defaults={"quantitystock": quantitystock},
+                # Usar servicio para actualización de stock
+                stock_item = StockService.update_stock(
+                    id_product_instance.pk, 
+                    quantitystock, 
+                    'add'  # Agregar al stock existente
                 )
-                if not created:
-                    stock_item.quantitystock += quantitystock
-                    stock_item.save()
-                    messages.success(request, "stock actualizado")
-                else:
-                    messages.success(request, "nuevo stock")
-
+                messages.success(request, SUCCESS_STOCK_UPDATED)
                 return redirect("stock_products")
+                
+            except ValidationError as e:
+                messages.error(request, str(e))
             except DatabaseError as e:
-                messages.error(request, f"{e}")
+                messages.error(request, f"{ERROR_DATABASE_ERROR}: {e}")
             except Exception as e:
-                messages.error(request, f"{e}")
+                messages.error(request, f"Error inesperado: {e}")
         else:
-            messages.error(request, "Error al guardar el producto")
-            return redirect("stock_products")
+            messages.error(request, ERROR_INVALID_FORM)
+            
+        return redirect("stock_products")
     else:
         stockform = StockForm()
-        list_stock = Stock.objects.all().order_by("quantitystock")
-    return render(
-        request,
-        "stock.html",
-        {"form": stockform, "list_stock": list_stock},
-    )
+        
+        # Usar servicio para obtener resumen de stock
+        try:
+            stock_summary = StockService.get_stock_summary()
+            stock_alerts = StockService.get_stock_alerts()
+            list_stock = Stock.objects.select_related('id_products').all().order_by("quantitystock")
+            
+            context = {
+                "form": stockform, 
+                "list_stock": list_stock,
+                "stock_summary": stock_summary,
+                "stock_alerts": stock_alerts
+            }
+        except Exception as e:
+            messages.error(request, f"Error cargando datos de stock: {e}")
+            context = {"form": stockform, "list_stock": []}
+            
+    return render(request, "stock.html", context)
 
 
 def list_stock(request):

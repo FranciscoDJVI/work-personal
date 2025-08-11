@@ -1,0 +1,462 @@
+2025-08-10 13:16:24,278 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-10 13:17:27,411 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-10 13:17:46,131 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-10 13:20:10,565 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:20:27,914 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:20:41,200 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:20:50,464 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:21:01,732 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:21:12,984 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:21:26,295 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:21:59,877 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-10 13:23:00,115 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.validate_cart_before_checkout
+2025-08-10 13:23:00,116 - psysmysql.sells - INFO - Iniciando: Validando carrito antes del checkout
+2025-08-10 13:23:00,117 - psysmysql.sells - INFO - Completado: Validando carrito antes del checkout (0.001s)
+2025-08-10 13:23:00,117 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.validate_cart_before_checkout
+2025-08-10 13:23:00,118 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.calculate_change
+2025-08-10 13:23:00,118 - psysmysql.sells - INFO - Cambio calculado: total=$50.0, pago=$60.0, cambio=$10.0
+2025-08-10 13:23:00,118 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.calculate_change
+2025-08-10 13:23:00,119 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.clear_sell_cache
+2025-08-10 13:23:00,120 - psysmysql.sells - ERROR - Error limpiando cache de ventas: No module named 'redis'
+2025-08-10 13:23:00,121 - psysmysql.sells - ERROR - Error en psysmysql.services.sell_service.clear_sell_cache: No module named 'redis'
+2025-08-10 13:26:20,543 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 13:26:20,546 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 13:26:20,548 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 13:26:20,549 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-10 13:26:20,549 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 13:26:20,549 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 13:26:20,549 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-10 13:26:20,549 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-10 13:26:25,104 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 13:26:25,106 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-10 13:26:25,108 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 500000.00, IVA: 95000.0000
+2025-08-10 13:26:25,108 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-10 13:26:25,109 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 13:26:25,109 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=500000.0
+2025-08-10 13:26:25,109 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-10 13:26:25,109 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-10 13:26:30,598 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 13:26:30,602 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-10 13:26:30,604 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 500000.00, IVA: 95000.0000
+2025-08-10 13:26:30,605 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-10 13:26:30,605 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 13:26:30,605 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=500000.0
+2025-08-10 13:26:30,605 - psysmysql.sells - INFO - Cambio devuelto: $-450000.0
+2025-08-10 13:26:30,605 - psysmysql.sells - INFO - Cantidad pagada: $50000.0
+2025-08-10 13:26:30,606 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-10 13:26:30,606 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-10 13:26:32,889 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 13:26:32,891 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 13:26:32,893 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 13:26:32,893 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-10 13:26:32,894 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 13:26:32,894 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 13:26:32,894 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-10 13:26:32,894 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-10 13:26:44,442 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-10 13:26:44,451 - psysmysql.stock - INFO - Resumen de stock generado: 5017 productos
+2025-08-10 13:26:44,451 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.010s)
+2025-08-10 13:26:44,451 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.010s
+2025-08-10 13:26:44,451 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-10 13:26:44,454 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-10 13:26:44,455 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-10 13:26:50,864 - psysmysql.stock - INFO - Iniciando: Actualizando stock producto 6: add 50
+2025-08-10 13:26:50,877 - psysmysql.stock - INFO - Stock actualizado para producto Diademas: 150
+2025-08-10 13:26:50,878 - psysmysql.stock - INFO - Completado: Actualizando stock producto 6: add 50 (0.014s)
+2025-08-10 13:26:50,878 - psysmysql.performance - INFO - psysmysql.services.stock_service.update_stock ejecutado en 0.014s
+2025-08-10 13:26:50,890 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-10 13:26:50,898 - psysmysql.stock - INFO - Resumen de stock generado: 5067 productos
+2025-08-10 13:26:50,898 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-08-10 13:26:50,899 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-08-10 13:26:50,899 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-10 13:26:50,902 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-10 13:26:50,902 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-08-10 13:34:31,616 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-10 13:34:41,647 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-10 13:35:49,234 - psysmysql.sells - INFO - Iniciando: Calculando KPIs principales para 30 días
+2025-08-10 13:35:49,237 - psysmysql.sells - ERROR - Error en: Calculando KPIs principales para 30 días (0.003s): Expression contains mixed types: DecimalField, IntegerField. You must set output_field.
+2025-08-10 13:35:49,237 - psysmysql.sells - ERROR - psysmysql.services.dashboard_service.get_main_kpis falló después de 0.003s: Expression contains mixed types: DecimalField, IntegerField. You must set output_field.
+2025-08-10 13:37:09,736 - psysmysql.sells - INFO - Iniciando: Calculando KPIs principales para 30 días
+2025-08-10 13:37:09,748 - psysmysql.sells - INFO - KPIs calculados: 180 ventas, $5533506.68 ingresos
+2025-08-10 13:37:09,748 - psysmysql.sells - INFO - Completado: Calculando KPIs principales para 30 días (0.012s)
+2025-08-10 13:37:09,748 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_main_kpis ejecutado en 0.012s
+2025-08-10 13:37:09,748 - psysmysql.sells - INFO - Iniciando: Generando datos de gráfico de ventas: day por 30 días
+2025-08-10 13:37:09,754 - psysmysql.sells - ERROR - Error en: Generando datos de gráfico de ventas: day por 30 días (0.005s): Database returned an invalid datetime value. Are time zone definitions for your database installed?
+2025-08-10 13:37:09,754 - psysmysql.sells - ERROR - psysmysql.services.dashboard_service.get_sales_chart_data falló después de 0.006s: Database returned an invalid datetime value. Are time zone definitions for your database installed?
+2025-08-10 13:37:53,630 - psysmysql.sells - INFO - Iniciando: Calculando KPIs principales para 30 días
+2025-08-10 13:37:53,640 - psysmysql.sells - INFO - KPIs calculados: 257 ventas, $5597145.15 ingresos
+2025-08-10 13:37:53,640 - psysmysql.sells - INFO - Completado: Calculando KPIs principales para 30 días (0.011s)
+2025-08-10 13:37:53,641 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_main_kpis ejecutado en 0.011s
+2025-08-10 13:37:53,641 - psysmysql.sells - INFO - Iniciando: Generando datos de gráfico de ventas: day por 30 días
+2025-08-10 13:37:53,646 - psysmysql.sells - INFO - Datos de gráfico generados: 1 puntos de datos
+2025-08-10 13:37:53,646 - psysmysql.sells - INFO - Completado: Generando datos de gráfico de ventas: day por 30 días (0.005s)
+2025-08-10 13:37:53,647 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_sales_chart_data ejecutado en 0.005s
+2025-08-10 13:37:53,647 - psysmysql.sells - INFO - Iniciando: Analizando rendimiento de productos (top 5)
+2025-08-10 13:37:53,651 - psysmysql.sells - INFO - Rendimiento calculado: 0 top productos, 1 productos con bajo stock
+2025-08-10 13:37:53,652 - psysmysql.sells - INFO - Completado: Analizando rendimiento de productos (top 5) (0.005s)
+2025-08-10 13:37:53,652 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_products_performance ejecutado en 0.005s
+2025-08-10 13:37:53,652 - psysmysql.sells - INFO - Iniciando psysmysql.services.dashboard_service.get_payment_methods_chart
+2025-08-10 13:37:53,655 - psysmysql.sells - INFO - Métodos de pago analizados: 4 tipos diferentes
+2025-08-10 13:37:53,656 - psysmysql.sells - INFO - Completado psysmysql.services.dashboard_service.get_payment_methods_chart
+2025-08-10 13:37:53,656 - psysmysql.sells - INFO - Iniciando psysmysql.services.dashboard_service.get_recent_activities
+2025-08-10 13:37:53,656 - psysmysql.sells - INFO - Iniciando: Obteniendo 5 actividades recientes
+2025-08-10 13:37:53,659 - psysmysql.sells - INFO - Actividades recientes obtenidas: 5 registros
+2025-08-10 13:37:53,659 - psysmysql.sells - INFO - Completado: Obteniendo 5 actividades recientes (0.003s)
+2025-08-10 13:37:53,660 - psysmysql.sells - INFO - Completado psysmysql.services.dashboard_service.get_recent_activities
+2025-08-10 13:37:53,660 - psysmysql.sells - INFO - Iniciando psysmysql.services.dashboard_service.get_alerts_and_notifications
+2025-08-10 13:37:53,665 - psysmysql.sells - INFO - Alertas generadas: 2 alertas activas
+2025-08-10 13:37:53,665 - psysmysql.sells - INFO - Completado psysmysql.services.dashboard_service.get_alerts_and_notifications
+2025-08-10 13:37:53,666 - psysmysql.sells - INFO - Iniciando: Generando resumen completo del dashboard
+2025-08-10 13:37:53,666 - psysmysql.sells - INFO - Iniciando: Calculando KPIs principales para 30 días
+2025-08-10 13:37:53,677 - psysmysql.sells - INFO - KPIs calculados: 257 ventas, $5597145.15 ingresos
+2025-08-10 13:37:53,677 - psysmysql.sells - INFO - Completado: Calculando KPIs principales para 30 días (0.011s)
+2025-08-10 13:37:53,677 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_main_kpis ejecutado en 0.012s
+2025-08-10 13:37:53,677 - psysmysql.sells - INFO - Iniciando: Generando datos de gráfico de ventas: day por 30 días
+2025-08-10 13:37:53,681 - psysmysql.sells - INFO - Datos de gráfico generados: 1 puntos de datos
+2025-08-10 13:37:53,681 - psysmysql.sells - INFO - Completado: Generando datos de gráfico de ventas: day por 30 días (0.004s)
+2025-08-10 13:37:53,681 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_sales_chart_data ejecutado en 0.004s
+2025-08-10 13:37:53,682 - psysmysql.sells - INFO - Iniciando: Analizando rendimiento de productos (top 10)
+2025-08-10 13:37:53,686 - psysmysql.sells - INFO - Rendimiento calculado: 0 top productos, 1 productos con bajo stock
+2025-08-10 13:37:53,686 - psysmysql.sells - INFO - Completado: Analizando rendimiento de productos (top 10) (0.004s)
+2025-08-10 13:37:53,686 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_products_performance ejecutado en 0.005s
+2025-08-10 13:37:53,686 - psysmysql.sells - INFO - Iniciando psysmysql.services.dashboard_service.get_payment_methods_chart
+2025-08-10 13:37:53,689 - psysmysql.sells - INFO - Métodos de pago analizados: 4 tipos diferentes
+2025-08-10 13:37:53,690 - psysmysql.sells - INFO - Completado psysmysql.services.dashboard_service.get_payment_methods_chart
+2025-08-10 13:37:53,691 - psysmysql.sells - INFO - Iniciando psysmysql.services.dashboard_service.get_recent_activities
+2025-08-10 13:37:53,691 - psysmysql.sells - INFO - Iniciando: Obteniendo 10 actividades recientes
+2025-08-10 13:37:53,696 - psysmysql.sells - INFO - Actividades recientes obtenidas: 10 registros
+2025-08-10 13:37:53,697 - psysmysql.sells - INFO - Completado: Obteniendo 10 actividades recientes (0.006s)
+2025-08-10 13:37:53,698 - psysmysql.sells - INFO - Completado psysmysql.services.dashboard_service.get_recent_activities
+2025-08-10 13:37:53,698 - psysmysql.sells - INFO - Resumen completo del dashboard generado exitosamente
+2025-08-10 13:37:53,699 - psysmysql.sells - INFO - Completado: Generando resumen completo del dashboard (0.033s)
+2025-08-10 13:37:53,699 - psysmysql.sells - INFO - psysmysql.services.dashboard_service.get_dashboard_summary ejecutado en 0.033s
+2025-08-10 13:42:11,296 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-10 13:43:46,708 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/dashboard_views.py changed, reloading.
+2025-08-10 13:43:55,895 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/dashboard_views.py changed, reloading.
+2025-08-10 13:44:03,076 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/dashboard_views.py changed, reloading.
+2025-08-10 22:42:41,613 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-10 22:42:57,270 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 22:42:57,273 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 22:42:57,275 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 22:42:57,276 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.003s)
+2025-08-10 22:42:57,276 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 22:42:57,276 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 22:42:57,276 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-10 22:42:57,276 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-10 22:43:03,367 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-10 22:43:03,375 - psysmysql.stock - INFO - Resumen de stock generado: 5165 productos
+2025-08-10 22:43:03,376 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.009s)
+2025-08-10 22:43:03,376 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-08-10 22:43:03,376 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-10 22:43:03,379 - psysmysql.stock - INFO - Alertas generadas: 1
+2025-08-10 22:43:03,379 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-10 22:43:12,431 - django.request - ERROR - Internal Server Error: /app/list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1532, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 106, in view_product
+    all_products = cache.get(cache_key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1534, in get_connection
+    connection = self.make_connection()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1580, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 753, in __init__
+    super().__init__(**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+2025-08-10 22:43:26,187 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-10 22:43:26,195 - psysmysql.stock - INFO - Resumen de stock generado: 5165 productos
+2025-08-10 22:43:26,196 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-08-10 22:43:26,196 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-08-10 22:43:26,196 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-10 22:43:26,199 - psysmysql.stock - INFO - Alertas generadas: 1
+2025-08-10 22:43:26,199 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-10 22:43:40,886 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 22:43:40,889 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 22:43:40,890 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 22:43:40,891 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-10 22:43:40,891 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-10 22:43:40,891 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 22:43:40,891 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-10 22:43:40,892 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-10 22:44:35,540 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 22:44:35,543 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 22:44:35,545 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 22:44:35,545 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-10 22:44:35,545 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 22:44:35,545 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 22:44:35,546 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-10 22:44:35,546 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-10 22:46:05,993 - django.request - ERROR - Internal Server Error: /app/list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1532, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 106, in view_product
+    all_products = cache.get(cache_key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1534, in get_connection
+    connection = self.make_connection()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1580, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 753, in __init__
+    super().__init__(**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+2025-08-10 22:56:48,882 - django.request - ERROR - Internal Server Error: /app/list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1532, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 106, in view_product
+    all_products = cache.get(cache_key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1534, in get_connection
+    connection = self.make_connection()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1580, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 753, in __init__
+    super().__init__(**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+2025-08-10 22:56:51,066 - django.request - ERROR - Internal Server Error: /app/list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1532, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 106, in view_product
+    all_products = cache.get(cache_key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1534, in get_connection
+    connection = self.make_connection()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1580, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 753, in __init__
+    super().__init__(**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+2025-08-10 22:56:52,011 - django.request - ERROR - Internal Server Error: /app/list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1532, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 106, in view_product
+    all_products = cache.get(cache_key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1534, in get_connection
+    connection = self.make_connection()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1580, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 753, in __init__
+    super().__init__(**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+2025-08-10 22:56:52,969 - django.request - ERROR - Internal Server Error: /app/list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1532, in get_connection
+    connection = self._available_connections.pop()
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 106, in view_product
+    all_products = cache.get(cache_key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 188, in get
+    return self._cache.get(key, default)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/cache/backends/redis.py", line 100, in get
+    value = client.get(key)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/commands/core.py", line 1829, in get
+    return self.execute_command("GET", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/utils.py", line 195, in wrapper
+    return func(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1534, in get_connection
+    connection = self.make_connection()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 1580, in make_connection
+    return self.connection_class(**self.connection_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/redis/connection.py", line 753, in __init__
+    super().__init__(**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+TypeError: AbstractConnection.__init__() got an unexpected keyword argument 'CLIENT_CLASS'
+2025-08-10 22:58:40,483 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/PsysMsql/settings.py changed, reloading.
+2025-08-10 22:59:01,977 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/PsysMsql/settings.py changed, reloading.
+2025-08-10 23:10:12,417 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 23:10:12,420 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 23:10:12,422 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 23:10:12,423 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.003s)
+2025-08-10 23:10:12,423 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 23:10:12,423 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 23:10:12,423 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-10 23:10:12,423 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-10 23:10:18,709 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 23:10:18,713 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-10 23:10:18,719 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 500000.00, IVA: 95000.0000
+2025-08-10 23:10:18,719 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.007s)
+2025-08-10 23:10:18,719 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.008s
+2025-08-10 23:10:18,720 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=500000.0
+2025-08-10 23:10:18,720 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.011s)
+2025-08-10 23:10:18,720 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.011s
+2025-08-10 23:10:21,838 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-10 23:10:21,840 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-10 23:10:21,842 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-10 23:10:21,843 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-10 23:10:21,843 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-10 23:10:21,843 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-10 23:10:21,843 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-10 23:10:21,844 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-10 23:10:25,017 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-10 23:10:25,026 - psysmysql.stock - INFO - Resumen de stock generado: 5165 productos
+2025-08-10 23:10:25,026 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.009s)
+2025-08-10 23:10:25,027 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-08-10 23:10:25,027 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-10 23:10:25,030 - psysmysql.stock - INFO - Alertas generadas: 1
+2025-08-10 23:10:25,030 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-10 23:10:33,219 - psysmysql.stock - INFO - Iniciando: Actualizando stock producto 7: add 11
+2025-08-10 23:10:33,235 - psysmysql.stock - INFO - Stock actualizado para producto Laptop Dell XPS: 20
+2025-08-10 23:10:33,236 - psysmysql.stock - INFO - Completado: Actualizando stock producto 7: add 11 (0.016s)
+2025-08-10 23:10:33,236 - psysmysql.performance - INFO - psysmysql.services.stock_service.update_stock ejecutado en 0.016s
+2025-08-10 23:10:33,249 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-10 23:10:33,257 - psysmysql.stock - INFO - Resumen de stock generado: 5176 productos
+2025-08-10 23:10:33,257 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-08-10 23:10:33,257 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-08-10 23:10:33,258 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-10 23:10:33,261 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-10 23:10:33,262 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-08-10 23:11:17,041 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/PsysMsql/settings.py changed, reloading.
+2025-08-10 23:49:54,213 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/serializers.py changed, reloading.
+2025-08-10 23:50:07,552 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/serializers.py changed, reloading.

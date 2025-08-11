@@ -50,7 +50,7 @@ class DeleteProductForm(forms.ModelForm):
             "name": forms.TextInput(
                 attrs={
                     "placeholder": "Buscar producto",
-                    "class": "bg-gray-400 text-cyan-950 p-2 rounded-2xl",
+                    "class": "bg-gray-200 text-black p-2",
                 }
             )
         }
@@ -67,7 +67,7 @@ class SearchProduct(forms.ModelForm):
             "name": forms.TextInput(
                 attrs={
                     "placeholder": "buscar",
-                    "class": "bg-gray-400 text-cyan-950 border p-2 rounded-2xl",
+                    "class": "bg-gray-200 text-black p-2",
                 }
             )
         }

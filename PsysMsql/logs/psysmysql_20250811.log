@@ -1,0 +1,861 @@
+2025-08-11 00:20:26,997 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/PsysMsql/settings.py changed, reloading.
+2025-08-11 00:24:12,537 - django.request - WARNING - Not Found: /app/stock-products/
+2025-08-11 00:24:19,320 - django.request - WARNING - Not Found: /app/
+2025-08-11 00:25:20,386 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:25:20,392 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:25:20,400 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:25:20,401 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.008s)
+2025-08-11 00:25:20,401 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.010s
+2025-08-11 00:25:20,401 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:25:20,401 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.015s)
+2025-08-11 00:25:20,402 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.015s
+2025-08-11 00:25:26,667 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:25:26,670 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:25:26,672 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:25:26,672 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 00:25:26,672 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-11 00:25:26,672 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:25:26,673 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-11 00:25:26,673 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-11 00:25:39,804 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:25:39,807 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:25:39,808 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:25:39,809 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 00:25:39,809 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-11 00:25:39,809 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:25:39,809 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-11 00:25:39,809 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-11 00:25:48,226 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:25:48,229 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:25:48,231 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:25:48,231 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 00:25:48,231 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-11 00:25:48,232 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:25:48,232 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-11 00:25:48,232 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-11 00:25:54,190 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:25:54,194 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-11 00:25:54,196 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 29.99, IVA: 5.6981
+2025-08-11 00:25:54,197 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-11 00:25:54,197 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-11 00:25:54,197 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=29.99
+2025-08-11 00:25:54,198 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-11 00:25:54,198 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-11 00:26:08,405 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:26:08,408 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-11 00:26:08,410 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 29.99, IVA: 5.6981
+2025-08-11 00:26:08,410 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-11 00:26:08,414 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.007s
+2025-08-11 00:26:08,414 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=29.99
+2025-08-11 00:26:08,415 - psysmysql.sells - INFO - Cambio devuelto: $0.01
+2025-08-11 00:26:08,415 - psysmysql.sells - INFO - Cantidad pagada: $30.0
+2025-08-11 00:26:08,415 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.010s)
+2025-08-11 00:26:08,415 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.010s
+2025-08-11 00:27:10,788 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:27:10,791 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-11 00:27:10,793 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 29.99, IVA: 5.6981
+2025-08-11 00:27:10,793 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-11 00:27:10,793 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-11 00:27:10,793 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=29.99
+2025-08-11 00:27:10,793 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-11 00:27:10,793 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-11 00:27:14,492 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:27:14,495 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:27:14,497 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:27:14,497 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 00:27:14,498 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-11 00:27:14,498 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:27:14,498 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-11 00:27:14,498 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-11 00:31:15,817 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:31:15,819 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:31:15,821 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:31:15,821 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 00:31:15,821 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-11 00:31:15,821 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:31:15,822 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-11 00:31:15,822 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-11 00:31:26,273 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:31:26,277 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-11 00:31:26,280 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 399.99, IVA: 75.9981
+2025-08-11 00:31:26,280 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-11 00:31:26,281 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-11 00:31:26,281 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=399.99
+2025-08-11 00:31:26,282 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.009s)
+2025-08-11 00:31:26,282 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.009s
+2025-08-11 00:31:30,892 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:31:30,897 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-11 00:31:30,899 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 399.99, IVA: 75.9981
+2025-08-11 00:31:30,899 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-11 00:31:30,899 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.006s
+2025-08-11 00:31:30,900 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=399.99
+2025-08-11 00:31:30,900 - psysmysql.sells - INFO - Cambio devuelto: $-199.99
+2025-08-11 00:31:30,900 - psysmysql.sells - INFO - Cantidad pagada: $200.0
+2025-08-11 00:31:30,900 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.008s)
+2025-08-11 00:31:30,900 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-11 00:31:34,681 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 00:31:34,684 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 00:31:34,686 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 00:31:34,686 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 00:31:34,687 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-11 00:31:34,687 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 00:31:34,687 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-11 00:31:34,687 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-11 00:34:09,031 - psysmysql.products - INFO - Iniciando: Creando producto: camara
+2025-08-11 00:34:09,044 - psysmysql.products - INFO - Producto creado exitosamente: camara (ID: 12)
+2025-08-11 00:34:09,046 - psysmysql.products - DEBUG - Cache de productos limpiado
+2025-08-11 00:34:09,046 - psysmysql.products - INFO - Completado: Creando producto: camara (0.015s)
+2025-08-11 00:34:09,047 - psysmysql.products - INFO - psysmysql.services.product_service.create_product ejecutado en 0.015s
+2025-08-11 00:46:13,864 - django.request - ERROR - Internal Server Error: /list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 123, in view_product
+    return render(request, "allproducts.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 37: 'endblock', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-08-11 00:50:15,027 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-11 00:50:15,035 - psysmysql.stock - INFO - Resumen de stock generado: 5173 productos
+2025-08-11 00:50:15,035 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-08-11 00:50:15,036 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-08-11 00:50:15,036 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-11 00:50:15,039 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-11 00:50:15,039 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-08-11 00:53:01,592 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/forms.py changed, reloading.
+2025-08-11 01:00:03,062 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/forms.py changed, reloading.
+2025-08-11 01:02:28,488 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:04:22,517 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:04:34,615 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:05:43,953 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:05:48,598 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:06:40,578 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:06:45,095 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:08:09,389 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:08:28,388 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:08:33,861 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:09:20,274 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:09:24,282 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:10:21,608 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:10:26,464 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:10:30,128 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:12:54,428 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:14:07,529 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:14:47,309 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:14:51,683 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = ProductService.delete_product(name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 129, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:14:56,068 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = ProductService.delete_product(name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 129, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:15:06,906 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The view psysmysql.views.delete_product didn't return an HttpResponse object. It returned None instead.
+2025-08-11 01:17:16,915 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:17:22,922 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = ProductService.delete_product(name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 129, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:17:41,451 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    delete_product = ProductService.delete_product(name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 129, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:18:03,596 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:19:24,526 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:20:58,816 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:21:04,751 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    ProductService.delete_product(name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 128, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:21:18,791 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 136, in delete_product
+    return redirect("delete-product", SUCCESS_PRODUCT_DELETED)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'delete-product' with arguments '('Producto eliminado con éxito',)' not found. 1 pattern(s) tried: ['delete\\-product/\\Z']
+2025-08-11 01:21:47,182 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:22:10,460 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    ProductService.delete_product(name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 128, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:22:45,653 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 01:22:45,656 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 01:22:45,658 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 01:22:45,658 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 01:22:45,659 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-11 01:22:45,660 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 01:22:45,660 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-11 01:22:45,660 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-11 01:23:08,036 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-11 01:23:08,039 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-11 01:23:08,041 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0.0000
+2025-08-11 01:23:08,041 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-11 01:23:08,041 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-11 01:23:08,041 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-11 01:23:08,042 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-11 01:23:08,042 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-11 01:23:43,647 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:24:18,922 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:24:25,907 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:27:18,807 - psysmysql.products - INFO - Iniciando: Creando producto: Moto edge 50 fusion
+2025-08-11 01:27:18,818 - psysmysql.products - INFO - Producto creado exitosamente: Moto edge 50 fusion (ID: 13)
+2025-08-11 01:27:18,819 - psysmysql.products - DEBUG - Cache de productos limpiado
+2025-08-11 01:27:18,819 - psysmysql.products - INFO - Completado: Creando producto: Moto edge 50 fusion (0.013s)
+2025-08-11 01:27:18,820 - psysmysql.products - INFO - psysmysql.services.product_service.create_product ejecutado en 0.013s
+2025-08-11 01:29:38,086 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:30:02,429 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:30:11,592 - django.request - ERROR - Internal Server Error: /list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 123, in view_product
+    return render(request, "allproducts.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-products' from 'all-products'
+2025-08-11 01:30:15,694 - django.request - ERROR - Internal Server Error: /list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 123, in view_product
+    return render(request, "allproducts.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 861, in do_for
+    sequence = parser.compile_filter(bits[in_index + 1])
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-products' from 'all-products'
+2025-08-11 01:30:28,763 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:30:39,997 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 120, in delete_product
+    product = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    ProductService.delete_product(name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py", line 128, in delete_product
+    raise ValueError("Producto no encontrado")
+ValueError: Producto no encontrado
+2025-08-11 01:38:07,764 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:40:13,615 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/constants.py changed, reloading.
+2025-08-11 01:42:16,076 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:42:29,368 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:42:37,389 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    product_del = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:42:49,263 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-11 01:43:40,055 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-11 01:43:44,245 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    product_del = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:43:46,515 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    product_del = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:43:51,253 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    product_del = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-08-11 01:44:27,963 - django.request - ERROR - Internal Server Error: /delete-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 133, in delete_product
+    product_del = Products.objects.get(name=name)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.

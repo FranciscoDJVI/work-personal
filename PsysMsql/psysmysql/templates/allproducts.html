@@ -1,29 +1,29 @@
    |{% extends "base.html" %}
 <title>{% block title %}List-products{% endblock %}</title>
 {% block content %}
-<nav class="mx-10 my-10 text-gray-400 p-3 absolute top-0 right-30 text-xl">
+<nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xl">
   <a href="{% url 'register_product' %}">Registrar productos/</a>
   <a href="{% url 'delete-product' %}">Eliminar productos/</a>
   <a href="{% url 'update-product' %}">Actualizar prodcutos/</a>
   <a href="{% url 'stock_products' %}">stock/</a>
   <a href="{% url 'main' %}">home</a>
 </nav>
-<nav class="mb-10 mx-15 my-15 text-blue-950 p-3 absolute top-5 right-30 text-xl">
-  <span class="text-gray-400">Productos totales: {{ total_products_save }}</span>
+<nav class="mb-10 mx-15 my-15 text-black p-3 absolute top-0 left-30 text-xm">
+  <span class="text-black">Productos totales: {{ total_products_save }}</span>
 </nav>
 <section
-  class="mx-20 my-20 flex justify-items-center items-center bg-cyan-950 rounded-2xl w-[fit-content] h-[fit-content]">
-  <table class="flex flex-col mx-20 my-30 bg-cyan-950 rounded-2xl text-gray-200 w-[fit-content] h-[fit-content]">
+  class="mx-20 my-20 flex justify-items-center items-center bg-white w-[fit-content] h-[fit-content]">
+  <table class="flex flex-col mx-20 my-30 bg-gray-100 text-black w-[fit-content] h-[fit-content]">
     <thead>
-      <tr class="grid grid-cols-3 justify-items-center  bg-cyan-950 text-xm text-gray-400">
+      <tr class="grid grid-cols-3 justify-items-center  bg-white text-xm text-black">
         <th>Nombre</th>
         <th class="w-50">Precio</th>
         <th class="w-100">Descripción</th>
       </tr>
     </thead>
     <tbody>
-      {% for product in allproducts %}
-      <tr class="grid grid-cols-3 justify-items-center p-2 border border-gray-400 my-1 bg-gray-400 text-cyan-950">
+      {% for product in products %}
+      <tr class="grid grid-cols-3 justify-items-center p-2 my-1 bg-gray-200 text-black">
         <td>{{ product.name }}</td>
         <td>{{ product.price }}</td>
         <td>{{ product.description }}</td>
@@ -32,5 +32,4 @@
     </tbody>
   </table>
 </section>
-{% include "footer.html" %}
 {% endblock %}

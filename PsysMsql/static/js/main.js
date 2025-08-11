@@ -1,5 +1,4 @@
 import "@/css/main.css";
-import { sayHello } from "./important.js";
+import "./product-search.js";
 
-console.log("hello from vite");
-sayHello("Bugbytes");
+console.log("Sistema conectado correctamente");

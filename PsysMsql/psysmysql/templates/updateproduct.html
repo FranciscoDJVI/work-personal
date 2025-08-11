@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 <title>{% block title %}update{% endblock %}</title>
 {% block content %}
-<section class="h-screen flex flex-col items-center p-2  my-30 rounded-2xl">
-  <nav class="mx-10 my-10 text-gray-400 p-3 absolute top-0 right-30 text-xl">
+<section class="h-screen flex flex-col items-center p-2  my-30">
+  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
     <a href="{% url 'list-product' %}">Productos/</a>
     <a href="{% url 'register_product' %}">Registrar productos/</a>
     <a href="{% url 'delete-product' %}">Eliminar productos/</a>
     <a href="{% url 'stock_products' %}">Stock/</a>
     <a href="{% url 'main' %}">Home</a>
   </nav>
-  <span class="text-gray-400 text-xl p-2 mb-10">Actualizar productos</span>
-  <section class="bg-cyan-950 flex flex-col items-center rounded-2xl">
+  <span class="text-black text-xm p-2 mb-10">Actualizar productos</span>
+  <section class="bg-white flex flex-col items-center">
     <form method="post"
-      class="bg-cyan-950 flex flex-row items-center gap-2 rounded-2xl p-2 text-xm">
+      class="flex flex-row items-center gap-2 p-2 text-xm">
       {% csrf_token %}
       {{ form }}
       <button type="submit" name="search"
-        class="bg-gray-400 text-cyan-950 rounded-2xl  p-2">Buscar</button>
+        class="bg-green-500 text-white p-2">Buscar</button>
     </form>
     <form method="post"
-      class="bg-cyan-950 flex flex-row space-x-2 items-center my-30  p-4 rounded-2xl text-xm border border-gray-400">
+      class="flex flex-row space-x-2 items-center my-30  p-4 text-xm mx-4">
       {% csrf_token %}
       {{ formupdate }}
-      <button type="submit" name="update" class="bg-gray-400 text-cyan-950 rounded-2xl p-2">Actualizar</button>
+      <button type="submit" name="update" class="bg-green-500 text-white p-2">Actualizar</button>
     </form>
   </section>
   {% if messages %}
@@ -46,5 +46,4 @@
     }
   });
 </script>
-{% include "footer.html" %}
 {% endblock %}
