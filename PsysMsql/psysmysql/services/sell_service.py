@@ -6,8 +6,7 @@ import json
 from decimal import Decimal
 from django.db.models import Q
 from django.core.exceptions import ValidationError
-from ..models import SellProducts, Sell, Products, Clients, RegistersellDetail
-from ..constants import CACHE_TIMEOUT_SHORT
+from ..models import SellProducts, Products, Clients, RegistersellDetail
 from django.core.cache import cache
 from ..logging_config import (
     get_sell_logger,
@@ -256,6 +255,7 @@ class SellService:
         if product_id:
             try:
                 product = Products.objects.get(pk=product_id)
+                return product
                 # Aquí podrías validar stock disponible
             except Products.DoesNotExist:
                 errors.append("El producto seleccionado no existe")

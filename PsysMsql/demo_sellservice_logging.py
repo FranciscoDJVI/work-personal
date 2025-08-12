@@ -7,7 +7,7 @@ Muestra cómo funciona el logging con operaciones de venta
 import os
 import sys
 import django
-from decimal import Decimal
+
 
 # Configurar Django
 sys.path.append('/home/Francisco-dev/work/Python/Django/WORK/PsysMsql')
@@ -16,7 +16,7 @@ django.setup()
 
 from psysmysql.services.sell_service import SellService
 from psysmysql.logging_config import get_sell_logger
-from psysmysql.models import Products, SellProducts
+from psysmysql.models import SellProducts
 
 def demo_logging_sellservice():
     """

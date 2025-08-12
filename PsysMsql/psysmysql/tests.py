@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 from django.contrib.auth.models import User, Group
 from django.urls import reverse
 from decimal import Decimal
-from .models import Products, Stock, SellProducts, Clients
+from .models import Products,SellProducts, Clients
 from .services.product_service import ProductService
 from .services.sell_service import SellService
 

@@ -10,7 +10,7 @@
     <a href="{% url 'main' %}">Home</a>
   </nav>
 <div class="bg-white mx-100 my-30 p-2 grid justify-items-center items-center">
-  <h1 class="text-black text-xm grid justify-items-center my-5 p-2">{{ title }}</h2>
+  <h2 class="text-black text-xm grid justify-items-center my-5 p-2">{{ title }}</h2>
     {% if messages %}
     <ul class="messages">
       {% for message in messages %}
@@ -39,14 +39,22 @@
         <tbody class="p-4">
           {% for user_obj in users_with_groups %}
           <tr class="grid grid-cols-2 justify-items-center bg-gray-300 text-xm text-cyan-950">
-            <td>{{ user_obj.username }}</td>
-            <td>
-              {% for group in user_obj.groups.all %}
-              <span class="badge bg-info text-dark">{{ group.name }}</span>
-              {% empty %}
-              <small>Sin grupos</small>
-              {% endfor %}
-            </td>
+              {% if user_obj.username == "francisco" %}
+              <td></td>
+              {% else %}
+              <td>{{ user_obj.username }}</td>
+              {% endif%}
+              <td>
+                  {% for group in user_obj.groups.all %}
+                  {% if group.name == "Administrador" %}
+                    <td></td>
+                    {% else %}
+                    <span class="badge bg-info text-dark">{{ group.name }}</span>
+                    {% endif%}
+                  {% empty %}
+                  <small>Sin grupos</small>
+                 {% endfor %}
+                </td>
           </tr>
           {% empty %}
           <tr>

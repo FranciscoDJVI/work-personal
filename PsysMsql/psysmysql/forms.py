@@ -1,9 +1,5 @@
-from enum import auto
-from django.utils.text import phone2numeric
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User, Group
-
 # MODELS
 from . import models
 

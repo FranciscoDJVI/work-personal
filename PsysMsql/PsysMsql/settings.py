@@ -126,13 +126,12 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "en-us"
 
 
-USE_TZ = True
+USE_TZ: bool = True
 
 TIME_ZONE = "America/Bogota"
 
 USE_I18N = True
 
-USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)

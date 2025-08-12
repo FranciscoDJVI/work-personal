@@ -6,8 +6,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.models import User
 from .constants import (
     ADMIN_GROUP, SELLER_GROUP, 
-    CACHE_TIMEOUT_SHORT, CACHE_TIMEOUT_MEDIUM,
-    PRODUCTS_PER_PAGE, SELLS_PER_PAGE, STOCK_PER_PAGE
+     CACHE_TIMEOUT_MEDIUM,
+    PRODUCTS_PER_PAGE
 )
 
 def is_admin(user):

@@ -29,16 +29,16 @@ class ProductFilter(django_filters.FilterSet):
     class Meta:
         model = Products
         fields = ['name', 'description', 'price_min', 'price_max', 'in_stock', 'low_stock', 'out_of_stock']
-    
-    def filter_in_stock(self, queryset, name, value):
+    @staticmethod
+    def filter_in_stock(queryset,value):
         """Filter products that are in stock"""
         if value:
             # Get products with stock > 0
             stock_ids = Stock.objects.filter(quantity__gt=0).values_list('name_id', flat=True)
             return queryset.filter(id__in=stock_ids)
         return queryset
-    
-    def filter_low_stock(self, queryset, name, value):
+    @staticmethod
+    def filter_low_stock( queryset, value):
         """Filter products with low stock (<=10)"""
         if value:
             stock_ids = Stock.objects.filter(
@@ -47,8 +47,8 @@ class ProductFilter(django_filters.FilterSet):
             ).values_list('name_id', flat=True)
             return queryset.filter(id__in=stock_ids)
         return queryset
-    
-    def filter_out_of_stock(self, queryset, name, value):
+    @staticmethod
+    def filter_out_of_stock(queryset,value):
         """Filter products that are out of stock"""
         if value:
             # Products with no stock record or quantity = 0
@@ -78,20 +78,20 @@ class StockFilter(django_filters.FilterSet):
     class Meta:
         model = Stock
         fields = ['product_name', 'quantity_min', 'quantity_max', 'low_stock', 'out_of_stock']
-    
-    def filter_low_stock(self, queryset, name, value):
+    @staticmethod
+    def filter_low_stock(queryset,value):
         """Filter stock items below minimum threshold"""
         if value:
             return queryset.filter(quantity__lte=django_filters.filters.F('min_stock'))
         return queryset
-    
-    def filter_out_of_stock(self, queryset, name, value):
+    @staticmethod
+    def filter_out_of_stock(queryset,value):
         """Filter out of stock items"""
         if value:
             return queryset.filter(quantity=0)
         return queryset
-    
-    def filter_overstocked(self, queryset, name, value):
+    @staticmethod
+    def filter_overstocked(queryset,value):
         """Filter overstocked items (above maximum)"""
         if value:
             return queryset.filter(quantity__gte=django_filters.filters.F('max_stock'))
@@ -136,31 +136,31 @@ class SellFilter(django_filters.FilterSet):
             'total_price_min', 'total_price_max',
             'created_after', 'created_before', 'created_date'
         ]
-    
-    def filter_today(self, queryset, name, value):
+    @staticmethod
+    def filter_today( queryset, value):
         """Filter sales from today"""
         if value:
             today = datetime.now().date()
             return queryset.filter(created_at__date=today)
         return queryset
-    
-    def filter_this_week(self, queryset, name, value):
+    @staticmethod
+    def filter_this_week(queryset, value):
         """Filter sales from this week"""
         if value:
             today = datetime.now().date()
             week_start = today - timedelta(days=today.weekday())
             return queryset.filter(created_at__date__gte=week_start)
         return queryset
-    
-    def filter_this_month(self, queryset, name, value):
+    @staticmethod
+    def filter_this_month( queryset,  value):
         """Filter sales from this month"""
         if value:
             today = datetime.now().date()
             month_start = today.replace(day=1)
             return queryset.filter(created_at__date__gte=month_start)
         return queryset
-    
-    def filter_last_30_days(self, queryset, name, value):
+    @staticmethod
+    def filter_last_30_days( queryset,  value):
         """Filter sales from last 30 days"""
         if value:
             thirty_days_ago = datetime.now().date() - timedelta(days=30)
@@ -187,8 +187,8 @@ class ClientFilter(django_filters.FilterSet):
     class Meta:
         model = Clients
         fields = ['name', 'lastname', 'email', 'telephone', 'address']
-    
-    def filter_search(self, queryset, name, value):
+    @staticmethod
+    def filter_search( queryset, value):
         """Search across name, lastname, email"""
         if value:
             return queryset.filter(
@@ -198,8 +198,8 @@ class ClientFilter(django_filters.FilterSet):
                 Q(telephone__icontains=value)
             )
         return queryset
-    
-    def filter_has_purchases(self, queryset, name, value):
+    @staticmethod
+    def filter_has_purchases( queryset, value):
         """Filter clients who have made purchases"""
         if value:
             client_ids = Sell.objects.values_list('client_id', flat=True).distinct()
@@ -207,8 +207,8 @@ class ClientFilter(django_filters.FilterSet):
         else:
             client_ids = Sell.objects.values_list('client_id', flat=True).distinct()
             return queryset.exclude(id__in=client_ids)
-    
-    def filter_active_last_days(self, queryset, name, value):
+    @staticmethod
+    def filter_active_last_days(queryset, value):
         """Filter clients active in the last N days"""
         if value:
             cutoff_date = datetime.now().date() - timedelta(days=value)

@@ -3,21 +3,16 @@ Vistas del Dashboard con métricas avanzadas
 Incluye vistas para el dashboard principal y endpoints AJAX
 """
 
-import json
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.core.cache import cache
 from django.db import models
 from .services.dashboard_service import DashboardService
-from .services.sell_service import SellService
-from .services.stock_service import StockService
 from .logging_config import (
     get_sell_logger,
-    log_execution_time,
     log_function_call,
     LogOperation
 )
@@ -116,7 +111,7 @@ class RealtimeStatsView(View):
     """Vista para estadísticas en tiempo real"""
     
     @method_decorator(login_required)
-    def get(self, request):
+    def get(self):
         """Endpoint para estadísticas en tiempo real (WebSocket alternative)"""
         logger = get_sell_logger()
         
@@ -158,7 +153,7 @@ class RealtimeStatsView(View):
 
 @login_required
 @log_function_call(get_sell_logger())
-def quick_stats(request):
+def quick_stats():
     """Vista rápida para estadísticas básicas (para includes)"""
     from django.utils import timezone
     from .models import RegistersellDetail
@@ -179,7 +174,7 @@ def quick_stats(request):
 
 @login_required  
 @log_function_call(get_sell_logger())
-def refresh_dashboard_cache(request):
+def refresh_dashboard_cache():
     """Endpoint para forzar actualización del cache del dashboard"""
     logger = get_sell_logger()
     

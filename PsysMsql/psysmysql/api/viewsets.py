@@ -8,20 +8,18 @@ Each ViewSet provides CRUD operations and custom actions for specific models.
 from rest_framework import viewsets, status, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from django.contrib.auth.models import User
-from django.db.models import Sum, Count, Avg, Q
+from django.db.models import Sum, Count, Avg
 from django.db import transaction
 from datetime import datetime, timedelta
-from decimal import Decimal
 
 from ..models import (
     Products, 
     Sell, 
     SellProducts, 
     Stock, 
-    RegistersellDetail, 
     Clients
 )
 from ..services.product_service import ProductService
@@ -33,12 +31,10 @@ from .serializers import (
     ClientSerializer,
     SellSerializer,
     SellCreateSerializer,
-    RegisterSellDetailSerializer,
     UserSerializer,
     UserCreateSerializer,
-    AnalyticsSerializer
 )
-from .permissions import IsAdminOrReadOnly, IsOwnerOrAdmin
+from .permissions import IsOwnerOrAdmin
 from .filters import ProductFilter, SellFilter, StockFilter
 
 
@@ -160,7 +156,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
     
     @action(detail=False, methods=['get'])
-    def out_of_stock(self, request):
+    def out_of_stock(self):
         """Get products that are out of stock"""
         out_of_stock_products = []
         for product in self.get_queryset():
@@ -175,7 +171,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
     
     @action(detail=True, methods=['get'])
-    def stock_history(self, request, pk=None):
+    def stock_history(self):
         """Get stock movement history for a product"""
         product = self.get_object()
         # This would require a StockMovement model to track history
@@ -215,7 +211,7 @@ class StockViewSet(viewsets.ModelViewSet):
     ordering = ['name__name']
     
     @action(detail=False, methods=['get'])
-    def summary(self, request):
+    def summary(self):
         """Get stock summary statistics"""
         queryset = self.get_queryset()
         
@@ -245,11 +241,10 @@ class StockViewSet(viewsets.ModelViewSet):
         return Response(data)
     
     @action(detail=True, methods=['post'])
-    def adjust(self, request, pk=None):
+    def adjust(self, request):
         """Adjust stock quantity with reason"""
         stock = self.get_object()
         adjustment = request.data.get('adjustment', 0)
-        reason = request.data.get('reason', '')
         
         try:
             adjustment = int(adjustment)
@@ -290,7 +285,7 @@ class ClientViewSet(viewsets.ModelViewSet):
     ordering = ['name']
     
     @action(detail=True, methods=['get'])
-    def purchase_history(self, request, pk=None):
+    def purchase_history(self):
         """Get purchase history for a client"""
         client = self.get_object()
         sells = Sell.objects.filter(client=client).order_by('-created_at')
@@ -299,7 +294,7 @@ class ClientViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
     
     @action(detail=True, methods=['get'])
-    def stats(self, request, pk=None):
+    def stats(self):
         """Get statistics for a client"""
         client = self.get_object()
         sells = Sell.objects.filter(client=client)
@@ -382,7 +377,7 @@ class SellViewSet(viewsets.ModelViewSet):
             )
     
     @action(detail=True, methods=['post'])
-    def cancel(self, request, pk=None):
+    def cancel(self, request):
         """Cancel a sale and restore stock"""
         sell = self.get_object()
         reason = request.data.get('reason', 'Cancelación solicitada')
@@ -492,7 +487,7 @@ class SellViewSet(viewsets.ModelViewSet):
         return Response(data)
     
     @action(detail=False, methods=['get'])
-    def daily_summary(self, request):
+    def daily_summary(self):
         """Get daily sales summary"""
         today = datetime.now().date()
         

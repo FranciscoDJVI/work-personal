@@ -2,16 +2,15 @@
 Servicio para manejar la lógica de negocio de productos
 Separa la lógica de las vistas para mejor mantenibilidad
 """
-from django.contrib.messages.context_processors import messages
+
 from django.core.cache import cache
 from django.db.models import Q
 from django.core.paginator import Paginator
 from ..models import Products, Stock
 from ..constants import (
-    CACHE_KEY_ALL_PRODUCTS, 
-    CACHE_TIMEOUT_MEDIUM,
+    CACHE_KEY_ALL_PRODUCTS,
     CACHE_TIMEOUT_FLASH,
-    PRODUCTS_PER_PAGE
+    PRODUCTS_PER_PAGE,
 )
 from ..utils import clear_model_cache
 from ..logging_config import get_product_logger, log_execution_time, LogOperation
@@ -19,7 +18,7 @@ from ..logging_config import get_product_logger, log_execution_time, LogOperatio
 
 class ProductService:
     """Servicio para operaciones relacionadas con productos"""
-    
+
     @staticmethod
     def get_products_paginated(request, per_page=PRODUCTS_PER_PAGE):
         """
@@ -30,15 +29,13 @@ class ProductService:
 
         if all_products is None:
             all_products = Products.objects.all().select_related().order_by("name")
-            cache.set(cache_key, all_products, CACHE_TIMEOUT_MEDIUM)
+            cache.set(cache_key, all_products, CACHE_TIMEOUT_FLASH)
 
         paginator = Paginator(all_products, per_page)
-        page = request.GET.get('page', 1)
-        
-        try:
-            page_obj = paginator.page(page)
-        except:
-            page_obj = paginator.page(1)
+        page = request.GET.get("page", 1)
+
+        page_obj = paginator.page(page)
+        page_obj = paginator.page(1)
 
         return page_obj, paginator
 
@@ -49,11 +46,11 @@ class ProductService:
         """
         if not query or len(query) < 2:
             return []
-        
+
         # Optimización: usar only() para traer solo campos necesarios
-        products = Products.objects.filter(
-            Q(name__icontains=query)
-        ).only('idproducts', 'name', 'price')[:limit]
+        products = Products.objects.filter(Q(name__icontains=query)).only(
+            "idproducts", "name", "price"
+        )[:limit]
 
         return [
             {
@@ -71,26 +68,26 @@ class ProductService:
         Crea un nuevo producto con validaciones
         """
         logger = get_product_logger()
-        
-        with LogOperation(f'Creando producto: {name}', logger):
+
+        with LogOperation(f"Creando producto: {name}", logger):
             # Verificar si existe
             if Products.objects.filter(name=name).exists():
                 logger.warning(f"Intento de crear producto duplicado: {name}")
                 raise ValueError("El producto ya existe")
-            
+
             # Crear producto
             product = Products.objects.create(
-                name=name,
-                price=price,
-                description=description
+                name=name, price=price, description=description
             )
-            
-            logger.info(f"Producto creado exitosamente: {name} (ID: {product.idproducts})")
-            
+
+            logger.info(
+                f"Producto creado exitosamente: {name} (ID: {product.idproducts})"
+            )
+
             # Limpiar cache
             clear_model_cache(CACHE_KEY_ALL_PRODUCTS)
             logger.debug("Cache de productos limpiado")
-            
+
             return product
 
     @staticmethod
@@ -99,31 +96,32 @@ class ProductService:
         Actualiza un producto existente
         """
         try:
-            product = Products.objects.get(name=original_name)
+            product = ProductService.get_product_by_name(original_name)
             product.name = new_name
             product.price = new_price
             product.description = new_description
             product.save()
-            
+
             # Limpiar cache
             clear_model_cache(CACHE_KEY_ALL_PRODUCTS)
-            
+
             return product
         except Products.DoesNotExist:
             raise ValueError("Producto no encontrado")
 
     @staticmethod
-    def delete_product(name: str):
+    def delete_product(name: str) -> bool:
         """
         Elimina un producto por nombre
         """
         try:
-            product = Products.objects.get(name=name)
-            product.delete()
-            
+            # Reutilizacion del metodo de buscar productos por el nombre.
+            delete_product = ProductService.get_product_by_name(name)
+            delete_product.delete()
+
             # Limpiar cache
             clear_model_cache(CACHE_KEY_ALL_PRODUCTS)
-            
+
             return True
         except Products.DoesNotExist:
             raise ValueError("Producto no encontrado")
@@ -144,13 +142,13 @@ class ProductService:
         Obtiene información de stock de un producto
         """
         try:
-            stock = Stock.objects.select_related('id_products').get(
+            stock = Stock.objects.select_related("id_products").get(
                 id_products_id=product_id
             )
             return {
-                'product': stock.id_products,
-                'quantity': stock.quantitystock,
-                'available': stock.quantitystock > 0
+                "product": stock.id_products,
+                "quantity": stock.quantitystock,
+                "available": stock.quantitystock > 0,
             }
         except Stock.DoesNotExist:
             return None
@@ -161,7 +159,6 @@ class ProductService:
         Actualiza o crea el stock de un producto
         """
         stock, created = Stock.objects.update_or_create(
-            id_products_id=product_id,
-            defaults={'quantitystock': quantity}
+            id_products_id=product_id, defaults={"quantitystock": quantity}
         )
         return stock, created

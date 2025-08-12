@@ -17,7 +17,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'PsysMsql.settings')
 django.setup()
 
 from psysmysql.services.dashboard_service import DashboardService
-from psysmysql.models import Products, RegistersellDetail, Stock, Clients, SellProducts
+from psysmysql.models import Products, RegistersellDetail, Stock, Clients
 
 
 def generate_sample_data():

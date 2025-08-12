@@ -5,12 +5,11 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required, permission_required
-from django.db.models import Q
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.core.cache import cache
 from django.http import JsonResponse
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
@@ -29,29 +28,21 @@ from .forms import (
     ClientsForm,
 )
 from .constants import (
-    ADMIN_GROUP,
-    SELLER_GROUP,
     SUCCESS_PRODUCT_SAVED,
-    SUCCESS_PRODUCT_UPDATED,
     SUCCESS_PRODUCT_DELETED,
     SUCCESS_STOCK_UPDATED,
     SUCCESS_STOCK_CREATED,
-    ERROR_PRODUCT_EXISTS,
-    ERROR_PRODUCT_NOT_FOUND,
     ERROR_DATABASE_ERROR,
     ERROR_INVALID_FORM,
     CACHE_KEY_ALL_PRODUCTS,
-    CACHE_TIMEOUT_MEDIUM,
     PRODUCTS_PER_PAGE,
     SELLS_PER_PAGE,
-    STOCK_PER_PAGE,
+    CACHE_TIMEOUT_FLASH,
 )
 from .utils import (
     is_admin,
     is_seller,
-    get_cached_users_with_groups,
     paginate_queryset,
-    clear_model_cache,
 )
 
 
@@ -82,9 +73,9 @@ def register_product(request):
 
             try:
                 # Usar servicio para crear producto
-                product = ProductService.create_product(name, price, description)
+                ProductService.create_product(name, price, description)
                 messages.success(request, SUCCESS_PRODUCT_SAVED)
-                
+
             except ValueError as e:
                 # Error de validación (producto duplicado, etc.)
                 messages.info(request, str(e))
@@ -108,7 +99,7 @@ def view_product(request):
     if all_products is None:
         # Si no está en cache, obtener de la base de datos
         all_products = Products.objects.all().order_by("name")
-        cache.set(cache_key, all_products, CACHE_TIMEOUT_MEDIUM)
+        cache.set(cache_key, all_products, CACHE_TIMEOUT_FLASH)
 
     # Paginar los productos
     page_obj, paginator = paginate_queryset(all_products, request, PRODUCTS_PER_PAGE)
@@ -130,28 +121,20 @@ def delete_product(request):
         form = DeleteProductForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data["name"]
-            product_del = Products.objects.get(name=name)
-
-            try:
-                if not product_del:
-                    messages.error(request, ERROR_PRODUCT_NOT_FOUND)
-                    return redirect("delete-product")
-                else:
-                    item_del = ProductService
-                    item_del.delete_product(name)
-            except  DatabaseError as e:
-                messages.error(request, "Error en la base de datos")
-            except product_del.DoesNotExist as e:
-                messages.error(request, e)
+            ProductService.delete_product(name)
+            messages.success(request, SUCCESS_PRODUCT_DELETED)
             return redirect("delete-product")
-        return None
+        else:
+            for field, errors in sentform.errors.items():
+                for error in errors:
+                    messages.error(
+                        request,
+                        f"Error en el formulario de envío '{field}': {error}",
+                    )
+            return None
     else:
         form = DeleteProductForm()
         return render(request, "deleteproduct.html", {"form": form})
-
-
-def delete_product_done(request):
-    return render(request, "deleteproductdone.html")
 
 
 @method_decorator(
@@ -163,9 +146,9 @@ def delete_product_done(request):
 )
 class Update(View):
     template_name = "updateproduct.html"
-
+    @staticmethod
     def get_context_data(
-        self, request, formsearch=None, formupdate=None, productsearch=None
+        request, formsearch=None, formupdate=None, productsearch=None
     ):
         if formsearch is None:
             formsearch = SearchProduct()
@@ -313,30 +296,30 @@ def search_products_ajax(request):
 )
 class SellProductView(View):
     template_name = "sellproduct.html"
-
-    def get_context_data(self, request):
+    @staticmethod
+    def get_context_data(request):
         """
         Método refactorizado usando SellService para preparar contexto.
         Mucho más limpio y mantenible.
         """
         # Usar servicio para obtener todo el contexto de venta
         sell_context = SellService.get_sell_summary_for_template(request)
-        
+
         # Preparar formularios
         formsell = SellForm()
         sentform = SentSellForm()
         formregsitersell = RegisterSellDetailForm()
-        
+
         # Búsqueda de clientes usando servicio
         formsearch = SearchEmailForm(request.GET or None)
         search_results = []
         search_query = None
-        
+
         if formsearch.is_valid():
             search_query = formsearch.cleaned_data["query"]
             if search_query:
                 search_results = SellService.search_clients_by_email(search_query)
-        
+
         # Combinar todo el contexto
         context = {
             **sell_context,  # Incluye todos los cálculos del servicio
@@ -347,7 +330,7 @@ class SellProductView(View):
             "search_query": search_query,
             "search_results": search_results,
         }
-        
+
         return context
 
     def get(self, request, *args, **kwargs):
@@ -369,8 +352,8 @@ class SellProductView(View):
             )
             context = self.get_context_data(request)
             return render(request, self.template_name, context)
-
-    def _handle_sell_form(self, request):
+    @staticmethod
+    def _handle_sell_form(request):
         """Lógica para el formulario 'sell'."""
         formsell = SellForm(request.POST)
         if formsell.is_valid():
@@ -391,8 +374,8 @@ class SellProductView(View):
                 for error in errors:
                     messages.error(request, f"Error en '{field}': {error}")
             return redirect("sell_product")
-
-    def _handle_add_form(self, request):
+    @staticmethod
+    def _handle_add_form(request):
         """Lógica para el formulario 'add'."""
         formregsitersell = RegisterSellDetailForm(request.POST)
         if formregsitersell.is_valid():
@@ -469,8 +452,9 @@ class SellProductView(View):
                         request,
                         f"Error en el formulario de registro de venta '{field}': {error}",
                     )
-
-    def _handle_sent_form(self, request):
+            return None
+    @staticmethod
+    def _handle_sent_form(request):
         """Lógica para el formulario 'sent'."""
         sentform = SentSellForm(request.POST)
 
@@ -564,12 +548,12 @@ class SellProductView(View):
                     )
         return redirect("sell_product")
 
-
+@login_required()
 def listallsellregisterview(request):
     listallregister = RegistersellDetail.objects.all()
     return render(request, "listallsellregister.html", {"list": listallregister})
 
-
+@login_required()
 # función para mostrar los datos de los registros de ventas.
 def detailregisterview(request, pk):
     register_sell_instance = get_object_or_404(RegistersellDetail, idsell=pk)
@@ -626,23 +610,23 @@ def list_product_sell(request):
 def register_stock(request):
     """Vista refactorizada para gestión de stock usando StockService"""
     from .services.stock_service import StockService
-    
+
     if request.method == "POST":
         stockform = StockForm(request.POST)
         if stockform.is_valid():
             id_product_instance = stockform.cleaned_data["id_products"]
             quantitystock = stockform.cleaned_data["quantitystock"]
-            
+
             try:
                 # Usar servicio para actualización de stock
                 stock_item = StockService.update_stock(
-                    id_product_instance.pk, 
-                    quantitystock, 
-                    'add'  # Agregar al stock existente
+                    id_product_instance.pk,
+                    quantitystock,
+                    "add",  # Agregar al stock existente
                 )
                 messages.success(request, SUCCESS_STOCK_UPDATED)
                 return redirect("stock_products")
-                
+
             except ValidationError as e:
                 messages.error(request, str(e))
             except DatabaseError as e:
@@ -651,33 +635,37 @@ def register_stock(request):
                 messages.error(request, f"Error inesperado: {e}")
         else:
             messages.error(request, ERROR_INVALID_FORM)
-            
+
         return redirect("stock_products")
     else:
         stockform = StockForm()
-        
+
         # Usar servicio para obtener resumen de stock
         try:
             stock_summary = StockService.get_stock_summary()
             stock_alerts = StockService.get_stock_alerts()
-            list_stock = Stock.objects.select_related('id_products').all().order_by("quantitystock")
-            
+            register_list_stock = (
+                Stock.objects.select_related("id_products")
+                .all()
+                .order_by("quantitystock")
+            )
+
             context = {
-                "form": stockform, 
-                "list_stock": list_stock,
+                "form": stockform,
+                "list_stock": register_list_stock,
                 "stock_summary": stock_summary,
-                "stock_alerts": stock_alerts
+                "stock_alerts": stock_alerts,
             }
         except Exception as e:
             messages.error(request, f"Error cargando datos de stock: {e}")
             context = {"form": stockform, "list_stock": []}
-            
+
     return render(request, "stock.html", context)
 
 
 def list_stock(request):
-    list_stock = Stock.objects.filter("name")
-    return render(request, "liststock.html", {"list_stock": list_stock})
+    obj_list_stock = Stock.objects.filter("name")
+    return render(request, "liststock.html", {"list_stock": obj_list_stock})
 
 
 def page_404(request):

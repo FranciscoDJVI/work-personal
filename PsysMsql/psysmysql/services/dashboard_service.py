@@ -3,11 +3,10 @@ Servicio para Dashboard con métricas avanzadas
 Proporciona datos para gráficos, KPIs y análisis de negocio
 """
 
-import json
-from datetime import datetime, timedelta
-from decimal import Decimal
+
+from datetime import  timedelta
 from django.db.models import Sum, Count, Avg, Q, F, Value, DecimalField, IntegerField
-from django.db.models.functions import TruncDay, TruncWeek, TruncMonth, Coalesce
+from django.db.models.functions import Coalesce
 from django.utils import timezone
 from ..models import (
     RegistersellDetail, 

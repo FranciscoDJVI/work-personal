@@ -2,11 +2,9 @@
 Servicio para manejar la lógica de negocio de stock/inventario
 Optimiza consultas y centraliza validaciones
 """
-from django.core.cache import cache
 from django.db.models import Q, F, Sum
 from django.core.exceptions import ValidationError
 from ..models import Stock, Products
-from ..constants import CACHE_TIMEOUT_MEDIUM
 from ..logging_config import get_logger, log_execution_time, LogOperation
 
 

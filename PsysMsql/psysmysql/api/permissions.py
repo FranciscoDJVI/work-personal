@@ -26,7 +26,7 @@ class IsAdminOrReadOnly(permissions.BasePermission):
             request.user.is_authenticated and 
             (request.user.is_staff or self.is_admin_user(request.user))
         )
-    
+    @staticmethod
     def is_admin_user(self, user):
         """Check if user is in admin group"""
         try:
@@ -67,7 +67,7 @@ class IsOwnerOrAdmin(permissions.BasePermission):
         
         # Default: deny access
         return False
-    
+    @staticmethod
     def is_admin_user(self, user):
         """Check if user is in admin group"""
         try:
@@ -107,7 +107,7 @@ class IsSellerOrAdmin(permissions.BasePermission):
                 return True
         
         return False
-    
+    @staticmethod
     def is_admin_user(self, user):
         """Check if user is in admin group"""
         try:
@@ -115,7 +115,7 @@ class IsSellerOrAdmin(permissions.BasePermission):
             return admin_group in user.groups.all()
         except Group.DoesNotExist:
             return False
-    
+    @staticmethod
     def is_seller_user(self, user):
         """Check if user is in seller group"""
         try:
@@ -136,7 +136,7 @@ class IsAdminUser(permissions.BasePermission):
             request.user.is_authenticated and 
             (request.user.is_staff or self.is_admin_user(request.user))
         )
-    
+    @staticmethod
     def is_admin_user(self, user):
         """Check if user is in admin group"""
         try:

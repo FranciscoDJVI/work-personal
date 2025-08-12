@@ -45,7 +45,6 @@ def custom_exception_handler(exc, context):
     
     # Handle specific Django exceptions that DRF doesn't handle by default
     if response is None:
-        custom_response_data = None
         
         if isinstance(exc, ValidationError):
             custom_response_data = {

@@ -7,7 +7,6 @@ All serializers include proper validation, nested relationships, and field custo
 
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from decimal import Decimal
 from ..models import (
     Products, 
     Sell, 
@@ -70,7 +69,7 @@ class ProductSerializer(serializers.ModelSerializer):
             'stock_quantity', 'stock_status', 'formatted_price'
         ]
         read_only_fields = ['id']
-    
+    @staticmethod
     def get_stock_quantity(self, obj):
         """Get total stock quantity for this product"""
         try:
@@ -88,11 +87,11 @@ class ProductSerializer(serializers.ModelSerializer):
             return "low_stock"
         else:
             return "in_stock"
-    
+    @staticmethod
     def get_formatted_price(self, obj):
         """Format price as currency string"""
         return f"${obj.price:,.2f}"
-    
+    @staticmethod
     def validate_price(self, value):
         """Validate price is positive"""
         if value <= 0:
@@ -121,7 +120,7 @@ class ProductListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Products
         fields = ['id', 'name', 'price', 'stock_quantity', 'stock_status']
-    
+    @staticmethod
     def get_stock_quantity(self, obj):
         try:
             stock = Stock.objects.get(id_products=obj)
@@ -153,7 +152,7 @@ class StockSerializer(serializers.ModelSerializer):
             'quantity', 'min_stock', 'max_stock'
         ]
         read_only_fields = ['id', 'product_id', 'product_name', 'product_price']
-    
+    @staticmethod
     def validate_quantity(self, value):
         """Validate quantity is not negative"""
         if value < 0:
@@ -174,12 +173,12 @@ class ClientSerializer(serializers.ModelSerializer):
             'total_purchases', 'last_purchase_date'
         ]
         read_only_fields = ['id', 'total_purchases', 'last_purchase_date']
-    
+    @staticmethod
     def get_total_purchases(self, obj):
         """Get total amount of purchases for this client"""
         sells = Sell.objects.filter(client=obj)
         return sum(sell.total_price for sell in sells)
-    
+    @staticmethod
     def get_last_purchase_date(self, obj):
         """Get date of last purchase"""
         last_sell = Sell.objects.filter(client=obj).order_by('-created_at').first()
@@ -210,7 +209,7 @@ class SellProductSerializer(serializers.ModelSerializer):
             'quantity', 'subtotal'
         ]
         read_only_fields = ['id', 'product_name', 'product_price', 'subtotal']
-    
+    @staticmethod
     def get_subtotal(self, obj):
         """Calculate subtotal for this product in the sale"""
         return obj.quantity * obj.name.price
@@ -236,11 +235,11 @@ class SellSerializer(serializers.ModelSerializer):
             'created_at', 'updated_at', 'products', 'products_count', 'total_items'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'client_name', 'client_email', 'user_name']
-    
+    @staticmethod
     def get_products_count(self, obj):
         """Get count of different products in this sale"""
         return obj.sellproducts_set.count()
-    
+    @staticmethod
     def get_total_items(self, obj):
         """Get total quantity of items in this sale"""
         return sum(sp.quantity for sp in obj.sellproducts_set.all())
@@ -258,13 +257,13 @@ class SellCreateSerializer(serializers.Serializer):
             child=serializers.CharField()
         )
     )
-    
+    @staticmethod
     def validate_client_id(self, value):
         """Validate client exists"""
         if not Clients.objects.filter(id=value).exists():
             raise serializers.ValidationError("Cliente no encontrado")
         return value
-    
+    @staticmethod
     def validate_products(self, value):
         """Validate products list and availability"""
         if not value:
