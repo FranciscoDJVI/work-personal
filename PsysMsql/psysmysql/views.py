@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template import context
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required, permission_required
 from django.views import View
@@ -30,6 +31,7 @@ from .forms import (
 from .constants import (
     SUCCESS_PRODUCT_SAVED,
     SUCCESS_PRODUCT_DELETED,
+    SUCCESS_SELL_CREATED,
     SUCCESS_STOCK_UPDATED,
     SUCCESS_STOCK_CREATED,
     ERROR_DATABASE_ERROR,
@@ -146,10 +148,9 @@ def delete_product(request):
 )
 class Update(View):
     template_name = "updateproduct.html"
+
     @staticmethod
-    def get_context_data(
-        request, formsearch=None, formupdate=None, productsearch=None
-    ):
+    def get_context_data(request, formsearch=None, formupdate=None, productsearch=None):
         if formsearch is None:
             formsearch = SearchProduct()
         if formupdate is None:
@@ -192,7 +193,6 @@ class Update(View):
 
                 # ¡LA CLAVE ESTÁ AQUÍ! Inicializa formupdate con la instancia del producto encontrado
                 formupdate = ProductForm(instance=productsearch)
-                print(productfound)
             else:
                 messages.error(request, "No se encontraron productos con ese nombre.")
                 productsearch = None
@@ -296,6 +296,7 @@ def search_products_ajax(request):
 )
 class SellProductView(View):
     template_name = "sellproduct.html"
+
     @staticmethod
     def get_context_data(request):
         """
@@ -330,7 +331,6 @@ class SellProductView(View):
             "search_query": search_query,
             "search_results": search_results,
         }
-
         return context
 
     def get(self, request, *args, **kwargs):
@@ -352,6 +352,7 @@ class SellProductView(View):
             )
             context = self.get_context_data(request)
             return render(request, self.template_name, context)
+
     @staticmethod
     def _handle_sell_form(request):
         """Lógica para el formulario 'sell'."""
@@ -361,11 +362,7 @@ class SellProductView(View):
             idproduct = formsell.cleaned_data["id_product"]
 
             try:
-                productsell = Sell(
-                    totalsell=totalsell,
-                    id_product=idproduct,
-                )
-                productsell.save()
+                SellService.add_product_to_sell(idproduct.idproducts, totalsell)
             except Exception as e:
                 messages.error(request, f"Error al registrar la venta: {e}")
             return redirect("sell_product")
@@ -373,7 +370,8 @@ class SellProductView(View):
             for field, errors in formsell.errors.items():
                 for error in errors:
                     messages.error(request, f"Error en '{field}': {error}")
-            return redirect("sell_product")
+            return None
+
     @staticmethod
     def _handle_add_form(request):
         """Lógica para el formulario 'add'."""
@@ -402,14 +400,14 @@ class SellProductView(View):
                         "pricexquantity": float(item_total),
                     }
                 )
-            list_items.append(
-                {
-                    "pay": {"quantity_pay": float(quantity_pay)},
-                    "money": {
-                        "money_back": float(quantity_pay - total_sale_calculated)
-                    },
-                }
-            )
+                list_items.append(
+                    {
+                        "pay": {"quantity_pay": float(quantity_pay)},
+                        "money": {
+                            "money_back": float(quantity_pay - total_sale_calculated)
+                        },
+                    }
+                )
 
             money_back = quantity_pay - total_sale_calculated
 
@@ -429,10 +427,9 @@ class SellProductView(View):
                 detail_sell=json.dumps(list_items),
             )
             register_sell.save()
-            print(f"Este es el id de la venta: {register_sell.idsell}")
             try:
                 if register_sell:
-                    messages.success(request, SUCCESS_STOCK_CREATED)
+                    messages.success(request, SUCCESS_SELL_CREATED)
             except DatabaseError as e:
                 messages.error(
                     request,
@@ -444,7 +441,6 @@ class SellProductView(View):
                     f"Ocurrió un error inesperado al registrar el detalle de venta: {e}",
                 )
 
-            return redirect("sell_product")
         else:
             for field, errors in formregsitersell.errors.items():
                 for error in errors:
@@ -452,7 +448,8 @@ class SellProductView(View):
                         request,
                         f"Error en el formulario de registro de venta '{field}': {error}",
                     )
-            return None
+        return redirect("sell_product")
+
     @staticmethod
     def _handle_sent_form(request):
         """Lógica para el formulario 'sent'."""
@@ -548,10 +545,12 @@ class SellProductView(View):
                     )
         return redirect("sell_product")
 
+
 @login_required()
 def listallsellregisterview(request):
     listallregister = RegistersellDetail.objects.all()
     return render(request, "listallsellregister.html", {"list": listallregister})
+
 
 @login_required()
 # función para mostrar los datos de los registros de ventas.

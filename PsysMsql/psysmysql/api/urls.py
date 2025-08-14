@@ -10,12 +10,12 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
-    TokenVerifyView
+    TokenVerifyView,
 )
 from drf_spectacular.views import (
     SpectacularAPIView,
-    SpectacularRedocView, 
-    SpectacularSwaggerView
+    SpectacularRedocView,
+    SpectacularSwaggerView,
 )
 
 from .viewsets import (
@@ -23,32 +23,42 @@ from .viewsets import (
     ProductViewSet,
     StockViewSet,
     ClientViewSet,
-    SellViewSet
+    SellViewSet,
+    RegisterSellDetailViewset,
 )
 
 # Create router and register viewsets
 router = DefaultRouter()
-router.register(r'users', UserViewSet, basename='user')
-router.register(r'products', ProductViewSet, basename='product')
-router.register(r'stock', StockViewSet, basename='stock')
-router.register(r'clients', ClientViewSet, basename='client')
-router.register(r'sales', SellViewSet, basename='sell')
+router.register(r"users", UserViewSet, basename="user")
+router.register(r"products", ProductViewSet, basename="product")
+router.register(r"stock", StockViewSet, basename="stock")
+router.register(r"clients", ClientViewSet, basename="client")
+router.register(r"sales", SellViewSet, basename="sell")
+router.register(r"selldetails", RegisterSellDetailViewset, basename="selldetails")
 
+app_name = "api"
 urlpatterns = [
     # API Root - includes all viewset routes
-    path('', include(router.urls)),
-    
+    path("", include(router.urls)),
     # Authentication endpoints
-    path('auth/', include([
-        path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-        path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-        path('verify/', TokenVerifyView.as_view(), name='token_verify'),
-    ])),
-    
+    path(
+        "auth/",
+        include(
+            [
+                path("login/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+                path("refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+                path("verify/", TokenVerifyView.as_view(), name="token_verify"),
+            ]
+        ),
+    ),
     # API Documentation with Swagger
-    path('schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('docs/', SpectacularSwaggerView.as_view(url_name='api:schema'), name='swagger-ui'),
-    path('redoc/', SpectacularRedocView.as_view(url_name='api:schema'), name='redoc'),
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "docs/",
+        SpectacularSwaggerView.as_view(url_name="api:schema"),
+        name="swagger-ui",
+    ),
+    path("redoc/", SpectacularRedocView.as_view(url_name="api:schema"), name="redoc"),
 ]
 
 # Additional URL patterns for specific endpoints that don't fit the ViewSet pattern
@@ -113,6 +123,9 @@ SALES:
 - POST   /api/v1/sales/{id}/cancel/ - Cancel sale
 - GET    /api/v1/sales/analytics/  - Get sales analytics
 - GET    /api/v1/sales/daily_summary/ - Get daily sales summary
+
+SALES DETAILS:
+- GET    /api/v1/selldetails/            - Details of sales (with filters)
 
 DOCUMENTATION:
 - GET    /api/v1/docs/             - API documentation

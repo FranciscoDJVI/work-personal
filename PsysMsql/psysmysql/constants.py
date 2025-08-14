@@ -9,6 +9,9 @@ SELL_STATE_PENDING = "Pendiente"
 SELL_STATE_COMPLETED = "Completado"
 SELL_STATE_CANCELLED = "Cancelado"
 
+# Impuestos
+IVA_RATE = 0.19  # IVA de; 19%
+
 # Tipos de pago
 PAYMENT_TYPE_CASH = "Efectivo"
 PAYMENT_TYPE_CARD = "Tarjeta"
@@ -42,9 +45,9 @@ CACHE_KEY_USER_GROUPS = "user_groups_{}"
 
 # Cache timeout (en segundos)
 CACHE_TIMEOUT_FLASH = 0.60
-CACHE_TIMEOUT_SHORT = 60 * 5     # 5 minutos
-CACHE_TIMEOUT_MEDIUM = 60 * 15   # 15 minutos
-CACHE_TIMEOUT_LONG = 60 * 60     # 1 hora
+CACHE_TIMEOUT_SHORT = 60 * 5  # 5 minutos
+CACHE_TIMEOUT_MEDIUM = 60 * 15  # 15 minutos
+CACHE_TIMEOUT_LONG = 60 * 60  # 1 hora
 
 # Paginación
 PRODUCTS_PER_PAGE = 25

@@ -1,6 +1,7 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
+
 class Products(models.Model):
     idproducts = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, blank=True, null=True)
@@ -26,7 +27,9 @@ class Sell(models.Model):
     totalsell = models.IntegerField(
         db_column="totalSell", blank=True, null=True
     )  # Field name made lowercase.
-    id_product = models.ForeignKey(Products, on_delete=models.CASCADE, db_column="id_product")
+    id_product = models.ForeignKey(
+        Products, on_delete=models.CASCADE, db_column="id_product"
+    )
 
     class Meta:
         managed = True
@@ -55,6 +58,7 @@ class SellProducts(models.Model):
 
     def __str__(self):
         return self.idproduct.name
+
 
 class Stock(models.Model):
     idstock = models.AutoField(primary_key=True)
@@ -195,9 +199,11 @@ class RegistersellDetail(models.Model):
     type_pay = models.CharField(max_length=150)
     state_sell = models.CharField(max_length=150)
     notes = models.TextField(max_length=200, blank=True, null=True)
-    quantity_pay = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    quantity_pay = models.DecimalField(
+        max_digits=10, decimal_places=2, blank=True, null=True
+    )
     detail_sell = models.TextField()
-    
+
     class Meta:
         verbose_name = "Register_sell"
         verbose_name_plural = "Register_sells"
@@ -210,13 +216,15 @@ class RegistersellDetail(models.Model):
 
 class Clients(models.Model):
     name = models.CharField(max_length=200)
-    email= models.EmailField(max_length=150, null=False, unique=True, default="no-email@example.com")
+    email = models.EmailField(
+        max_length=150, null=False, unique=True, default="no-email@example.com"
+    )
     direction = models.CharField(max_length=100)
     telephone = PhoneNumberField(blank=True, null=True, unique=True)
-    nit = models.CharField(max_length=100)  
-    country = models.CharField(max_length=100)  
-    departament = models.CharField(max_length=100)  
-    city = models.CharField(max_length=100)  
+    nit = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    departament = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
 
     class Meta:
         verbose_name = "Client"

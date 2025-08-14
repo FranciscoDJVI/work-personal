@@ -133,7 +133,6 @@ TIME_ZONE = "America/Bogota"
 USE_I18N = True
 
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -188,66 +187,58 @@ SERVER_EMAIL = "vanegasfrancisco415@gmail.com"
 from datetime import timedelta
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
     ],
-    'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer',
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 20,
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend',
-        'rest_framework.filters.SearchFilter',
-        'rest_framework.filters.OrderingFilter',
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 20,
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
     ],
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle',
-        'rest_framework.throttling.UserRateThrottle'
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.AnonRateThrottle",
+        "rest_framework.throttling.UserRateThrottle",
     ],
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '100/hour',
-        'user': '1000/hour'
-    },
-    'EXCEPTION_HANDLER': 'psysmysql.api.exceptions.custom_exception_handler',
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    "DEFAULT_THROTTLE_RATES": {"anon": "100/hour", "user": "1000/hour"},
+    "EXCEPTION_HANDLER": "psysmysql.api.exceptions.custom_exception_handler",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 # JWT Configuration
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'UPDATE_LAST_LOGIN': True,
-
-    'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY,
-    'VERIFYING_KEY': None,
-    'AUDIENCE': None,
-    'ISSUER': None,
-    'JWK_URL': None,
-    'LEEWAY': 0,
-
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
-    'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
-
-    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
-    'TOKEN_TYPE_CLAIM': 'token_type',
-    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
-
-    'JTI_CLAIM': 'jti',
-
-    'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=60),
-    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "UPDATE_LAST_LOGIN": True,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+    "JWK_URL": None,
+    "LEEWAY": 0,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+    "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+    "TOKEN_TYPE_CLAIM": "token_type",
+    "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
+    "JTI_CLAIM": "jti",
+    "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
+    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=60),
+    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
 
 # CORS Configuration
@@ -263,65 +254,68 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
 ]
 
 # API Versioning
-API_VERSION = 'v1'
-API_BASE_URL = f'/api/{API_VERSION}/'
+API_VERSION = "v1"
+API_BASE_URL = f"/api/{API_VERSION}/"
 
 # ================================================================================
 #                       DRF-SPECTACULAR CONFIGURATION
 # ================================================================================
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'PsysMsql API',
-    'DESCRIPTION': 'API completa para el sistema de gestión de productos y ventas PsysMsql',
-    'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
-    'COMPONENT_SPLIT_REQUEST': True,
-    'SORT_OPERATIONS': False,
-    'ENUM_NAME_OVERRIDES': {
-        'ValidationErrorEnum': 'psysmysql.api.serializers.ValidationErrorEnum',
+    "TITLE": "PSYSMSQL API",
+    "DESCRIPTION": "API completa para el sistema de gestión de productos y ventas",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "COMPONENT_SPLIT_REQUEST": True,
+    "SORT_OPERATIONS": False,
+    "ENUM_NAME_OVERRIDES": {
+        "ValidationErrorEnum": "psysmysql.api.serializers.ValidationErrorEnum",
     },
-    'POSTPROCESSING_HOOKS': [],
-    'PREPROCESSING_HOOKS': [],
-    'AUTHENTICATION_WHITELIST': [
-        'psysmysql.api.authentication.CustomJWTAuthentication',
+    "POSTPROCESSING_HOOKS": [],
+    "PREPROCESSING_HOOKS": [],
+    "AUTHENTICATION_WHITELIST": [
+        "psysmysql.api.authentication.CustomJWTAuthentication",
     ],
-    'TAGS': [
-        {'name': 'Authentication', 'description': 'Endpoints para autenticación y manejo de tokens'},
-        {'name': 'Users', 'description': 'Gestión de usuarios del sistema'},
-        {'name': 'Products', 'description': 'Gestión de productos del inventario'},
-        {'name': 'Stock', 'description': 'Gestión de inventario y stock'},
-        {'name': 'Clients', 'description': 'Gestión de clientes'},
-        {'name': 'Sales', 'description': 'Gestión de ventas y transacciones'},
+    "TAGS": [
+        {
+            "name": "Authentication",
+            "description": "Endpoints para autenticación y manejo de tokens",
+        },
+        {"name": "Users", "description": "Gestión de usuarios del sistema"},
+        {"name": "Products", "description": "Gestión de productos del inventario"},
+        {"name": "Stock", "description": "Gestión de inventario y stock"},
+        {"name": "Clients", "description": "Gestión de clientes"},
+        {"name": "Sales", "description": "Gestión de ventas y transacciones"},
     ],
-    'SWAGGER_UI_SETTINGS': {
-        'deepLinking': True,
-        'persistAuthorization': True,
-        'displayOperationId': True,
-        'defaultModelsExpandDepth': 2,
-        'defaultModelExpandDepth': 2,
-        'displayRequestDuration': True,
-        'docExpansion': 'none',
-        'filter': True,
-        'showExtensions': True,
-        'showCommonExtensions': True,
+    "SWAGGER_UI_SETTINGS": {
+        "deepLinking": True,
+        "persistAuthorization": True,
+        "displayOperationId": True,
+        "defaultModelsExpandDepth": 2,
+        "defaultModelExpandDepth": 2,
+        "displayRequestDuration": True,
+        "docExpansion": "none",
+        "filter": True,
+        "showExtensions": True,
+        "showCommonExtensions": True,
     },
-    'REDOC_UI_SETTINGS': {
-        'hideDownloadButton': True,
-        'expandResponses': '200',
-        'pathInMiddlePanel': True,
-        'nativeScrollbars': True,
+    "REDOC_UI_SETTINGS": {
+        "hideDownloadButton": True,
+        "expandResponses": "200",
+        "pathInMiddlePanel": True,
+        "nativeScrollbars": True,
     },
 }
 
@@ -331,7 +325,7 @@ if not DEBUG:
     CORS_ALLOWED_ORIGINS = [
         # Add your production domains here
     ]
-    
+
     # JWT settings for production
-    SIMPLE_JWT['ACCESS_TOKEN_LIFETIME'] = timedelta(minutes=15)
-    SIMPLE_JWT['REFRESH_TOKEN_LIFETIME'] = timedelta(days=1)
+    SIMPLE_JWT["ACCESS_TOKEN_LIFETIME"] = timedelta(minutes=15)
+    SIMPLE_JWT["REFRESH_TOKEN_LIFETIME"] = timedelta(days=1)

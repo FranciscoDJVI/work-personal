@@ -29,7 +29,7 @@
     <!-- Campo de cantidad -->
     {{ formsell.totalsell }}
     
-    <button id="sell" name="sell" type="submit" class="text-xm text-white bg-green-500 rounded-3xl w-15 p-2"><i
+    <button id="sell" name="sell" type="submit" class="text-xm text-white bg-green-500 w-15 p-2"><i
         class="fa-solid fa-plus"></i></button>
   </form>
 </section>
@@ -39,20 +39,23 @@
     {% include "listsellproducts.html" %}
   </aside>
   <ul class="flex flex-col bg-white text-black text-xm font-extalight w-[fit-content] mx-10">
+    {% if quantity %}
       <li class="bg-gray-100 my-1 p-1">Cantidad total: {{ quantity }}</li>
       <li class="bg-gray-100 my-1 p-1">Iva 19%: {{ iva_calculated|format_currency_cop}}</li>
       <li class="bg-gray-100 my-1 p-1">Subtotal: {{ price_iva|format_currency_cop}}</li>
       <li class="bg-gray-100 my-1 p-1">Precio total: {{ price_x_quantity|format_currency_cop}}</li>
       <li class="bg-gray-100 my-1 p-1">Pago: {{ quantity_pay|format_currency_cop}}</li>
       <li class="bg-gray-100 my-1 p-1">Cambio: {{ money_back|format_currency_cop}}</li>
+    {% endif %}
   </ul>
 </section>
 </div>
 <section class="bg-white grid grid-cols-2 items-center justify-items-center gap-4 p-1 mx-5 mb-10">
   <form method="post" class="my-20 flex flex-row space-x-1 justify-items-center items-center rounded-2xl">
-    {% csrf_token %} {{ formregsitersell }}
+    {% csrf_token %}
+    {{ formregsitersell }}
     <button id="add" name="add" type="submit"
-      class="bg-green-500  text-xm text-white rounded-3xl p-2">agregar</button>
+      class="bg-green-500  text-xm text-white p-2">agregar</button>
   </form>
   <div class="flex flex-col my-5 text-xm text-black font-extralight p-1">
     <form method="post" class="grid grid-cols-2 grid-rows-1 gap-2 item justify-items-center">
@@ -64,7 +67,7 @@
           placeholder="ejemplo@dominio.com" readonly class="italic font-extrabold">
       </div>
       <button id="sent" name="sent" type="submit"
-        class="bg-green-500 p-2 text-xm text-white rounded-2xl mb-10">enviar</button>
+        class="bg-green-500 p-2 text-xm text-white mb-10 font-extrabold">enviar</button>
     </form>
     <div class="section">
       <h2>Búsqueda de Clientes(Correo)</h2>
@@ -75,7 +78,7 @@
           {% if formsearch.query.help_text %}<small>{{ formsearch.query.help_text }}</small>{% endif %}
           {% for error in formsearch.query.errors %}<span style="color: red;">{{ error }}</span>{% endfor %}
         </div>
-        <button type="submit" class="bg-green-500 text-white font-medium p-2 rounded-2xl my-5">Buscar</button>
+        <button type="submit" class="bg-green-500 text-white font-medium p-2 my-5" id="search_gmail" name="search_gmail">Buscar</button>
       </form>
       <div class="search-results">
         {% if search_query %}
