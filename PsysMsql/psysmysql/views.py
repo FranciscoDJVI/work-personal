@@ -11,6 +11,7 @@ from django.utils.decorators import method_decorator
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
@@ -285,6 +286,30 @@ def search_products_ajax(request):
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
+
+
+@csrf_exempt
+def update_quantity_view(request):
+    if request.method == "POST":
+        try:
+            # Decodificar el cuerpo de la solicitud JSON
+            data = json.loads(request.body)
+            new_quantity = data.get("new_quantity")
+
+            obj_view = SellProductView()
+            obj_service = SellService
+            obj_service.add_product_to_sell(
+                obj_view._handle_sell_form(request), new_quantity
+            )
+
+            return JsonResponse({"status": "success", "new_quantity": new_quantity})
+        except json.JSONDecodeError:
+            return JsonResponse(
+                {"status": "error", "message": "Invalid JSON"}, status=400
+            )
+    return JsonResponse(
+        {"status": "error", "message": "Invalid request method"}, status=405
+    )
 
 
 @method_decorator(

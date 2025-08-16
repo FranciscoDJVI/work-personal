@@ -15,6 +15,11 @@ urlpatterns = [
     path("update_product-done/", views.update_product_done, name="update_product_done"),
     path("sell-product/", views.SellProductView.as_view(), name="sell_product"),
     path(
+        "update_quantity/",
+        views.update_quantity_view,
+        name="update_quantity",
+    ),
+    path(
         "search-products-ajax/", views.search_products_ajax, name="search_products_ajax"
     ),
     path("delete-sell-item/<int:pk>/", views.delete_sell_item, name="delete_sell_item"),

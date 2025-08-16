@@ -97,12 +97,13 @@ class SellService:
                     totalsell=quantity,
                 )
 
-                if created:
+                if not created:
                     # Si ya existe, actualizar cantidad
-                    sell_product.totalsell += quantity
+                    old_quantity = sell_product.totalsell
+                    sell_product.totalsell += old_quantity
                     sell_product.save()
                     logger.info(
-                        f"Producto {product.name} actualizado:  -> {sell_product.totalsell}"
+                        f"Producto {product.name} actualizado: cantidad nueva -> {sell_product.totalsell}"
                     )
                 else:
                     logger.info(
