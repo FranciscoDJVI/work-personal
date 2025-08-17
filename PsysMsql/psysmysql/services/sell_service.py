@@ -1,8 +1,3 @@
-"""
-Servicio para manejar la lógica de negocio de ventas
-Calcula precios, IVA, maneja el carrito de compras, etc.
-"""
-
 import json
 from decimal import Decimal
 from django.db.models import Q
@@ -19,10 +14,8 @@ from ..logging_config import (
 import psysmysql.constants as const
 
 
+# Servicio para operaciones relacionadas con ventas"
 class SellService:
-    """Servicio para operaciones relacionadas con ventas"""
-
-    # Constantes de negocio centralizadas
     iva = Decimal(const.IVA_RATE)  # 19% IVA
 
     @staticmethod

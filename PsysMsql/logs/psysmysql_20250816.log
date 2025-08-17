@@ -911,3 +911,4 @@ TypeError: tuple indices must be integers or slices, not str
 2025-08-16 23:53:10,092 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
 2025-08-16 23:53:18,796 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
 2025-08-16 23:54:15,719 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-17 00:00:41,632 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
