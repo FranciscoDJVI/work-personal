@@ -33,45 +33,4 @@
       {% endfor %}
   </tbody>
 </table>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const sendQuantityBtn = document.getElementById('send-quantity');
-
-  if (sendQuantityBtn) {
-    sendQuantityBtn.addEventListener('click', () => {
-      const quantityInput = document.querySelector('.quantity-input');
-      const quantity = quantityInput.value;
-
-      // Envío de la cantidad usando fetch a Django
-      fetch("update_quantity/", {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'X-CSRFToken': '{{ csrf_token }}'
-          },
-          body: JSON.stringify({
-              'new_quantity': quantity
-          })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Respuesta del servidor:', data);
-            if (data.status === 'success') {
-                alert('Cantidad actualizada correctamente');
-            }
-        })
-        .catch((error) => {
-            console.error('Error', error);
-        });
-    });
-    } else {
-        console.error("Error: Elemento con id 'send-quantity' no encontrado.");
-    }
-});
-</script>
 {% endblock %}

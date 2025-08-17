@@ -1,0 +1,913 @@
+2025-08-16 21:00:19,307 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:00:19,312 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:00:19,315 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 500000.00, IVA: 95000.00000000000111022302463
+2025-08-16 21:00:19,316 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.004s)
+2025-08-16 21:00:19,316 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-16 21:00:19,316 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=500000.0
+2025-08-16 21:00:19,316 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.009s)
+2025-08-16 21:00:19,316 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.009s
+2025-08-16 21:00:21,960 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:00:21,962 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:00:21,964 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:00:21,964 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:00:21,964 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:00:21,965 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:00:21,965 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:00:21,965 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:00:51,651 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:00:51,651 - psysmysql.sells - INFO - Iniciando: Agregando producto 16 con cantidad 1
+2025-08-16 21:00:51,666 - psysmysql.sells - INFO - Producto Teclado actualizado: cantidad nueva -> 2
+2025-08-16 21:00:51,666 - psysmysql.sells - INFO - Completado: Agregando producto 16 con cantidad 1 (0.014s)
+2025-08-16 21:00:51,666 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:00:51,680 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:00:51,682 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:00:51,684 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:00:51,684 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:00:51,684 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:00:51,684 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:00:51,684 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:00:51,684 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:00:57,910 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:00:57,911 - psysmysql.sells - INFO - Iniciando: Agregando producto 16 con cantidad 1
+2025-08-16 21:00:57,928 - psysmysql.sells - INFO - Nuevo producto Teclado agregado al carrito: 1 unidades
+2025-08-16 21:00:57,928 - psysmysql.sells - INFO - Completado: Agregando producto 16 con cantidad 1 (0.017s)
+2025-08-16 21:00:57,928 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:00:57,941 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:00:57,943 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:00:57,944 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:00:57,945 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:00:57,945 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:00:57,945 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:00:57,945 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:00:57,945 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:01:08,837 - django.request - WARNING - Not Found: /sell-product/update_quantity/
+2025-08-16 21:03:32,160 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-16 21:03:35,088 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:03:35,091 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:03:35,093 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:03:35,093 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:03:35,093 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:03:35,093 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:03:35,094 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:03:35,094 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:03:44,368 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:03:44,368 - psysmysql.sells - INFO - Iniciando: Agregando producto None con cantidad 1
+2025-08-16 21:03:44,371 - psysmysql.sells - ERROR - Error en: Agregando producto None con cantidad 1 (0.002s): No Products matches the given query.
+2025-08-16 21:03:44,371 - psysmysql.sells - ERROR - Error agregando producto None: No Products matches the given query.
+2025-08-16 21:03:44,371 - psysmysql.sells - ERROR - Error en psysmysql.services.sell_service.add_product_to_sell: No Products matches the given query.
+2025-08-16 21:03:44,380 - django.request - WARNING - Not Found: /sell-product/update_quantity/
+2025-08-16 21:04:26,675 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:04:26,678 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:04:26,680 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:04:26,681 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:04:26,681 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:04:26,681 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:04:26,681 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:04:26,682 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 21:04:29,137 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:04:29,139 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:04:29,141 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:04:29,142 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:04:29,142 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:04:29,142 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:04:29,142 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:04:29,142 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:04:31,826 - django.request - WARNING - Not Found: /sell-product/sell-product/update_quantity/
+2025-08-16 21:04:33,157 - django.request - WARNING - Not Found: /sell-product/sell-product/update_quantity/
+2025-08-16 21:05:07,742 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:05:07,745 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:05:07,747 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:05:07,747 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:05:07,747 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:05:07,747 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:05:07,748 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:05:07,748 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:05:25,336 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-16 21:05:28,478 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:05:28,481 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:05:28,483 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:05:28,483 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:05:28,484 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:05:28,484 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:05:28,484 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:05:28,484 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:05:32,179 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:05:32,182 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:05:32,183 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:05:32,184 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:05:32,184 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:05:32,184 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:05:32,184 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:05:32,184 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:10:00,410 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 21:10:16,240 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:10:16,243 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:10:16,245 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:10:16,245 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:10:16,245 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:10:16,246 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:10:16,246 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:10:16,246 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:10:20,394 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:10:20,397 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:10:20,399 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:10:20,400 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:10:20,400 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:10:20,400 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:10:20,401 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:10:20,401 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:10:24,401 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:10:24,404 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:10:24,405 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:10:24,406 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:10:24,406 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:10:24,406 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:10:24,406 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:10:24,406 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:11:23,328 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:23,333 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:23,335 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:23,336 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:11:23,336 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:11:23,336 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:23,336 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.008s)
+2025-08-16 21:11:23,336 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:11:27,828 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:27,830 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:27,832 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:27,832 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:27,833 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:11:27,833 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:27,833 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:11:27,833 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:11:45,647 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:45,650 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:45,651 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:45,651 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:45,652 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:45,652 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:45,652 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:11:45,652 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:11:48,793 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:48,796 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:48,798 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:48,799 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:11:48,799 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:11:48,799 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:48,799 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:11:48,799 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:11:51,066 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:51,068 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:51,070 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:51,070 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:51,071 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:11:51,071 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:51,071 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:11:51,071 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:11:54,841 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:54,844 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:54,845 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:54,846 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:54,846 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:54,846 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:54,846 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:11:54,846 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:11:55,512 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:55,514 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:55,516 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:55,517 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:55,517 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:11:55,517 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:55,517 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:11:55,518 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:11:55,889 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:55,891 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:55,893 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:55,893 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:55,894 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:55,894 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:55,894 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:11:55,894 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:11:56,369 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:56,371 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:56,372 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:56,373 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:56,373 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:56,373 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:56,373 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:11:56,373 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-16 21:11:56,592 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:56,594 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:56,597 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:56,597 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:11:56,597 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:11:56,598 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:56,598 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:11:56,598 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:11:56,802 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:56,804 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:56,806 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:56,806 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:56,807 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:56,807 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:56,807 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:11:56,807 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:11:57,001 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:57,004 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:57,005 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:57,006 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:57,006 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:57,006 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:57,006 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:11:57,006 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:11:57,200 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:11:57,202 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:11:57,204 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 340000.00, IVA: 64600.00000000000075495165675
+2025-08-16 21:11:57,204 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:11:57,204 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:11:57,204 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=340000.0
+2025-08-16 21:11:57,204 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:11:57,205 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-16 21:13:39,921 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:13:39,925 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:13:39,927 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:13:39,927 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:13:39,927 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:13:39,927 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:13:39,927 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:13:39,928 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:13:52,509 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:13:52,509 - psysmysql.sells - INFO - Iniciando: Agregando producto 16 con cantidad 2
+2025-08-16 21:13:52,514 - psysmysql.sells - ERROR - Error en: Agregando producto 16 con cantidad 2 (0.005s): get() returned more than one Sell -- it returned 7!
+2025-08-16 21:13:52,515 - psysmysql.sells - ERROR - Error agregando producto 16: get() returned more than one Sell -- it returned 7!
+2025-08-16 21:13:52,515 - psysmysql.sells - ERROR - Error en psysmysql.services.sell_service.add_product_to_sell: get() returned more than one Sell -- it returned 7!
+2025-08-16 21:13:52,530 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:13:52,532 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:13:52,533 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:13:52,534 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:13:52,534 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.002s
+2025-08-16 21:13:52,534 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:13:52,534 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:13:52,534 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-16 21:14:03,648 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:14:03,648 - psysmysql.sells - INFO - Iniciando: Agregando producto 16 con cantidad 2
+2025-08-16 21:14:03,652 - psysmysql.sells - ERROR - Error en: Agregando producto 16 con cantidad 2 (0.004s): get() returned more than one Sell -- it returned 7!
+2025-08-16 21:14:03,652 - psysmysql.sells - ERROR - Error agregando producto 16: get() returned more than one Sell -- it returned 7!
+2025-08-16 21:14:03,652 - psysmysql.sells - ERROR - Error en psysmysql.services.sell_service.add_product_to_sell: get() returned more than one Sell -- it returned 7!
+2025-08-16 21:14:03,666 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:14:03,670 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:14:03,673 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:14:03,673 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.004s)
+2025-08-16 21:14:03,674 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-16 21:14:03,674 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:14:03,674 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.008s)
+2025-08-16 21:14:03,675 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:14:10,072 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:14:10,072 - psysmysql.sells - INFO - Iniciando: Agregando producto 14 con cantidad 2
+2025-08-16 21:14:10,076 - psysmysql.sells - ERROR - Error en: Agregando producto 14 con cantidad 2 (0.004s): get() returned more than one Sell -- it returned 2!
+2025-08-16 21:14:10,077 - psysmysql.sells - ERROR - Error agregando producto 14: get() returned more than one Sell -- it returned 2!
+2025-08-16 21:14:10,077 - psysmysql.sells - ERROR - Error en psysmysql.services.sell_service.add_product_to_sell: get() returned more than one Sell -- it returned 2!
+2025-08-16 21:14:10,092 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:14:10,095 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:14:10,096 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:14:10,096 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:14:10,096 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:14:10,097 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:14:10,097 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:14:10,097 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-16 21:14:17,437 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:14:17,437 - psysmysql.sells - INFO - Iniciando: Agregando producto 14 con cantidad 22
+2025-08-16 21:14:17,459 - psysmysql.sells - INFO - Nuevo producto Monitor agregado al carrito: 22 unidades
+2025-08-16 21:14:17,459 - psysmysql.sells - INFO - Completado: Agregando producto 14 con cantidad 22 (0.021s)
+2025-08-16 21:14:17,459 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:14:17,470 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:14:17,472 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:14:17,474 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:14:17,474 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:14:17,475 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:14:17,475 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:14:17,475 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:14:17,475 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:14:38,706 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:14:38,709 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:14:38,710 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:14:38,711 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:14:38,711 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:14:38,711 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:14:38,711 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:14:38,711 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:14:53,091 - django.security.csrf - WARNING - Forbidden (Origin checking failed - null does not match any trusted origins.): /sell-product/
+2025-08-16 21:15:03,630 - django.security.csrf - WARNING - Forbidden (Origin checking failed - null does not match any trusted origins.): /sell-product/
+2025-08-16 21:15:36,884 - django.security.csrf - WARNING - Forbidden (Origin checking failed - null does not match any trusted origins.): /sell-product/
+2025-08-16 21:16:05,887 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:16:05,890 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:16:05,892 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:16:05,892 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:16:05,892 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:16:05,892 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:16:05,893 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:16:05,893 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:16:15,860 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:16:15,860 - psysmysql.sells - INFO - Iniciando: Agregando producto 15 con cantidad 2
+2025-08-16 21:16:15,877 - psysmysql.sells - INFO - Nuevo producto Monitor 4k agregado al carrito: 2 unidades
+2025-08-16 21:16:15,877 - psysmysql.sells - INFO - Completado: Agregando producto 15 con cantidad 2 (0.017s)
+2025-08-16 21:16:15,877 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:16:15,890 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:16:15,892 - psysmysql.sells - INFO - Iniciando: Calculando totales para 2 productos
+2025-08-16 21:16:15,894 - psysmysql.sells - INFO - Totales calculados: 2 productos, subtotal: 13000000.00, IVA: 2470000.000000000028865798640
+2025-08-16 21:16:15,894 - psysmysql.sells - INFO - Completado: Calculando totales para 2 productos (0.002s)
+2025-08-16 21:16:15,894 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:16:15,894 - psysmysql.sells - INFO - Resumen de venta preparado: 2 productos, subtotal=13000000.0
+2025-08-16 21:16:15,894 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:16:15,895 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-16 21:16:37,267 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:16:37,270 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:16:37,272 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:16:37,272 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:16:37,272 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:16:37,272 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:16:37,272 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:16:37,273 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:16:44,607 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:16:44,609 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:16:44,611 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:16:44,611 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:16:44,612 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:16:44,612 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:16:44,612 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:16:44,612 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:16:53,673 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:16:53,675 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:16:53,678 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:16:53,678 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:16:53,678 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:16:53,678 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:16:53,678 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:16:53,679 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:17:49,647 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:17:49,649 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:17:49,651 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:17:49,651 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:17:49,651 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:17:49,651 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:17:49,652 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:17:49,652 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:17:52,991 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:17:52,994 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:17:52,995 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:17:52,996 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:17:52,996 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:17:52,996 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:17:52,997 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:17:52,997 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:17:56,080 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:17:56,083 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:17:56,084 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:17:56,085 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:17:56,085 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:17:56,085 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:17:56,085 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:17:56,085 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:18:21,661 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:18:21,667 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:18:21,671 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:18:21,671 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.004s)
+2025-08-16 21:18:21,672 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-16 21:18:21,672 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:18:21,672 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.011s)
+2025-08-16 21:18:21,673 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.011s
+2025-08-16 21:18:23,648 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:18:23,651 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:18:23,652 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:18:23,653 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:18:23,653 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:18:23,653 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:18:23,653 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:18:23,653 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:18:36,864 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:18:36,867 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:18:36,869 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:18:36,869 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:18:36,869 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:18:36,869 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:18:36,870 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:18:36,870 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:18:38,648 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:18:38,651 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:18:38,652 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:18:38,653 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:18:38,653 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:18:38,653 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:18:38,653 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:18:38,653 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:20:35,732 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 21:20:38,453 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:20:38,459 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:20:38,461 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:20:38,461 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:20:38,462 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:20:38,464 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:20:38,465 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.012s)
+2025-08-16 21:20:38,467 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.014s
+2025-08-16 21:20:40,898 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:20:40,901 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:20:40,903 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:20:40,903 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:20:40,903 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:20:40,904 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:20:40,904 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:20:40,904 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:22:41,067 - django.security.csrf - WARNING - Forbidden (Origin checking failed - null does not match any trusted origins.): /sell-product/
+2025-08-16 21:23:45,008 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 21:23:48,053 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:23:48,056 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:23:48,058 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:23:48,059 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:23:48,059 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:23:48,059 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:23:48,059 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:23:48,060 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 21:23:50,231 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:23:50,233 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:23:50,235 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:23:50,235 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:23:50,236 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:23:50,236 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:23:50,236 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:23:50,236 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:24:20,111 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 21:25:32,065 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:25:32,068 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:25:32,070 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:25:32,071 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:25:32,071 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:25:32,071 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:25:32,071 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:25:32,071 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:26:26,553 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:26:26,556 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:26:26,558 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 11000000.00, IVA: 2090000.000000000024424906542
+2025-08-16 21:26:26,558 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:26:26,558 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:26:26,558 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=11000000.0
+2025-08-16 21:26:26,558 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:26:26,559 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:26:29,018 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:26:29,021 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:26:29,022 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:26:29,023 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:26:29,023 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:26:29,023 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:26:29,023 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:26:29,023 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:26:40,629 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:26:40,629 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 2
+2025-08-16 21:26:40,664 - psysmysql.sells - INFO - Producto Mouse Logitech actualizado: cantidad nueva -> 4
+2025-08-16 21:26:40,664 - psysmysql.sells - INFO - Completado: Agregando producto 19 con cantidad 2 (0.034s)
+2025-08-16 21:26:40,664 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:26:40,676 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:26:40,679 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:26:40,680 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:26:40,680 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:26:40,681 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:26:40,681 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:26:40,681 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:26:40,681 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:26:53,126 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:26:53,129 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:26:53,131 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:26:53,131 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:26:53,131 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:26:53,132 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:26:53,132 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:26:53,133 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:27:15,173 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:27:15,175 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:27:15,177 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:27:15,177 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:27:15,178 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:27:15,178 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:27:15,178 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:27:15,178 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:27:30,825 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:27:30,825 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 1
+2025-08-16 21:27:30,828 - psysmysql.sells - INFO - Nuevo producto Mouse Logitech agregado al carrito: 1 unidades
+2025-08-16 21:27:30,829 - psysmysql.sells - INFO - Completado: Agregando producto 19 con cantidad 1 (0.004s)
+2025-08-16 21:27:30,829 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:27:30,849 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:27:30,852 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:27:30,854 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:27:30,854 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:27:30,855 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:27:30,855 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:27:30,855 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:27:30,856 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 21:27:47,516 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:27:47,516 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 1
+2025-08-16 21:27:47,519 - psysmysql.sells - INFO - Nuevo producto Mouse Logitech agregado al carrito: 1 unidades
+2025-08-16 21:27:47,519 - psysmysql.sells - INFO - Completado: Agregando producto 19 con cantidad 1 (0.003s)
+2025-08-16 21:27:47,520 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:27:47,531 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:27:47,535 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:27:47,536 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:27:47,537 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:27:47,537 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:27:47,537 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:27:47,538 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:27:47,538 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 21:27:58,791 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:27:58,791 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 4
+2025-08-16 21:27:58,795 - psysmysql.sells - INFO - Nuevo producto Mouse Logitech agregado al carrito: 4 unidades
+2025-08-16 21:27:58,795 - psysmysql.sells - INFO - Completado: Agregando producto 19 con cantidad 4 (0.004s)
+2025-08-16 21:27:58,796 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:27:58,811 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:27:58,814 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:27:58,815 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:27:58,816 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:27:58,816 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:27:58,816 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:27:58,816 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:27:58,817 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:28:11,700 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:28:11,703 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:28:11,704 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:28:11,705 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:28:11,705 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:28:11,705 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:28:11,705 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:28:11,705 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:28:19,705 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:28:19,709 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:28:19,710 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:28:19,711 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:28:19,711 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:28:19,711 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:28:19,712 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:28:19,712 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 21:28:27,533 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:28:27,534 - psysmysql.sells - INFO - Iniciando: Agregando producto 17 con cantidad 3
+2025-08-16 21:28:27,558 - psysmysql.sells - INFO - Producto Teclado mecánico actualizado: cantidad nueva -> 6
+2025-08-16 21:28:27,559 - psysmysql.sells - INFO - Completado: Agregando producto 17 con cantidad 3 (0.025s)
+2025-08-16 21:28:27,559 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:28:27,574 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:28:27,577 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:28:27,579 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 1680000.00, IVA: 319200.0000000000037303493627
+2025-08-16 21:28:27,580 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:28:27,581 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-16 21:28:27,581 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=1680000.0
+2025-08-16 21:28:27,581 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:28:27,582 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:28:39,529 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:28:39,532 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:28:39,534 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 1680000.00, IVA: 319200.0000000000037303493627
+2025-08-16 21:28:39,534 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:28:39,535 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:28:39,535 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=1680000.0
+2025-08-16 21:28:39,535 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:28:39,535 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:28:44,170 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:28:44,174 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:28:44,176 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:28:44,177 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:28:44,177 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:28:44,177 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:28:44,178 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:28:44,178 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:29:47,800 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:29:47,800 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 4
+2025-08-16 21:29:47,803 - psysmysql.sells - INFO - Nuevo producto Mouse Logitech agregado al carrito: 4 unidades
+2025-08-16 21:29:47,804 - psysmysql.sells - INFO - Completado: Agregando producto 19 con cantidad 4 (0.003s)
+2025-08-16 21:29:47,804 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:29:47,816 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:29:47,819 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:29:47,821 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:29:47,821 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.003s)
+2025-08-16 21:29:47,821 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:29:47,822 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:29:47,822 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:29:47,822 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:29:57,686 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:29:57,686 - psysmysql.sells - INFO - Iniciando: Agregando producto 4 con cantidad 2
+2025-08-16 21:29:57,715 - psysmysql.sells - INFO - Producto Adaptador usb a/usb c actualizado: cantidad nueva -> 4
+2025-08-16 21:29:57,715 - psysmysql.sells - INFO - Completado: Agregando producto 4 con cantidad 2 (0.029s)
+2025-08-16 21:29:57,715 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:29:57,726 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:29:57,729 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:29:57,730 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 180000.00, IVA: 34200.00000000000039968028887
+2025-08-16 21:29:57,730 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:29:57,731 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:29:57,731 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=180000.0
+2025-08-16 21:29:57,731 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:29:57,731 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:36:18,378 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 21:36:46,257 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:36:46,260 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:36:46,262 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 180000.00, IVA: 34200.00000000000039968028887
+2025-08-16 21:36:46,263 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:36:46,263 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:36:46,263 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=180000.0
+2025-08-16 21:36:46,263 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:36:46,263 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:36:56,204 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:36:56,206 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:36:56,208 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 180000.00, IVA: 34200.00000000000039968028887
+2025-08-16 21:36:56,208 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:36:56,208 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:36:56,209 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=180000.0
+2025-08-16 21:36:56,209 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:36:56,209 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:37:09,156 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:37:09,158 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:37:09,160 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 180000.00, IVA: 34200.00000000000039968028887
+2025-08-16 21:37:09,160 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:37:09,160 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:37:09,160 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=180000.0
+2025-08-16 21:37:09,161 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:37:09,161 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:39:33,930 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:39:33,933 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:39:33,935 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 180000.00, IVA: 34200.00000000000039968028887
+2025-08-16 21:39:33,936 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:39:33,936 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:39:33,936 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=180000.0
+2025-08-16 21:39:33,936 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:39:33,937 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:39:34,144 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 21:39:37,215 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:39:37,218 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:39:37,220 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 180000.00, IVA: 34200.00000000000039968028887
+2025-08-16 21:39:37,221 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:39:37,221 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:39:37,221 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=180000.0
+2025-08-16 21:39:37,221 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:39:37,221 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:39:49,174 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:39:49,177 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:39:49,179 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:39:49,179 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:39:49,179 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:39:49,179 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:39:49,179 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:39:49,179 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:39:54,540 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 21:39:54,540 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 2
+2025-08-16 21:39:54,605 - psysmysql.sells - ERROR - Error en: Agregando producto 19 con cantidad 2 (0.065s): get() returned more than one Sell -- it returned 3!
+2025-08-16 21:39:54,605 - psysmysql.sells - ERROR - Error agregando producto 19: get() returned more than one Sell -- it returned 3!
+2025-08-16 21:39:54,605 - psysmysql.sells - ERROR - Error en psysmysql.services.sell_service.add_product_to_sell: get() returned more than one Sell -- it returned 3!
+2025-08-16 21:39:54,618 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:39:54,620 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:39:54,622 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:39:54,622 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:39:54,622 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:39:54,623 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:39:54,623 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 21:39:54,623 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:40:06,177 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:40:06,179 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:40:06,181 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:40:06,182 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:40:06,182 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:40:06,182 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:40:06,182 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:40:06,182 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:42:25,879 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 21:51:47,009 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 21:53:16,652 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 21:53:20,267 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:53:20,271 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:53:20,273 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:53:20,274 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:53:20,274 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-16 21:53:20,274 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:53:20,274 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.008s)
+2025-08-16 21:53:20,275 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:53:24,058 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:53:24,060 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:53:24,062 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:53:24,062 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:53:24,063 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:53:24,063 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:53:24,063 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:53:24,063 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:54:20,947 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 21:54:24,963 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:54:24,966 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:54:24,968 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:54:24,968 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:54:24,969 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 21:54:24,969 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:54:24,969 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:54:24,969 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:54:28,802 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:54:28,805 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:54:28,807 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:54:28,807 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:54:28,807 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:54:28,808 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:54:28,808 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:54:28,808 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:57:02,555 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 21:57:05,561 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:57:05,564 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:57:05,567 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:57:05,567 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:57:05,567 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:57:05,567 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:57:05,567 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:57:05,568 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:57:22,280 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:57:22,283 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:57:22,285 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:57:22,285 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:57:22,285 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:57:22,285 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:57:22,286 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:57:22,286 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 21:57:50,936 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:57:50,939 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:57:50,940 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:57:50,941 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:57:50,941 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:57:50,941 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:57:50,942 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 21:57:50,942 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:59:05,646 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 21:59:08,353 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:59:08,357 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:59:08,359 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:59:08,360 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.003s)
+2025-08-16 21:59:08,360 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:59:08,361 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:59:08,361 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:59:08,361 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-16 21:59:09,921 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:59:09,923 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 21:59:09,926 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 400000.00, IVA: 76000.00000000000088817841970
+2025-08-16 21:59:09,926 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 21:59:09,927 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:59:09,927 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=400000.0
+2025-08-16 21:59:09,927 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 21:59:09,927 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 21:59:31,722 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 21:59:31,725 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 21:59:31,727 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 21:59:31,727 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 21:59:31,728 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 21:59:31,728 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 21:59:31,729 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 21:59:31,729 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 22:01:38,888 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 22:02:28,020 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-16 22:02:33,670 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-16 22:02:41,334 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-16 22:02:44,938 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:02:44,941 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:02:44,943 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:02:44,943 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 22:02:44,943 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 22:02:44,943 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:02:44,944 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 22:02:44,944 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 22:03:50,345 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/forms.py changed, reloading.
+2025-08-16 22:05:10,378 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:05:10,381 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:05:10,383 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:05:10,384 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 22:05:10,384 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 22:05:10,384 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:05:10,384 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 22:05:10,385 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 22:10:30,909 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-16 22:10:39,024 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-16 22:10:56,989 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:10:56,993 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:10:56,995 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:10:56,995 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 22:10:56,995 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 22:10:56,995 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:10:56,995 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 22:10:56,996 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 22:11:00,704 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:11:00,708 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:11:00,710 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:11:00,710 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 22:11:00,710 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 22:11:00,710 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:11:00,710 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 22:11:00,711 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 22:11:14,011 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-16 22:11:16,507 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:11:16,510 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:11:16,512 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:11:16,512 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 22:11:16,513 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 22:11:16,513 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:11:16,513 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 22:11:16,513 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 22:11:29,283 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-16 22:11:31,383 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:11:31,387 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:11:31,390 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:11:31,390 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.003s)
+2025-08-16 22:11:31,390 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 22:11:31,390 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:11:31,391 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-16 22:11:31,391 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-16 22:11:42,610 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-16 22:12:43,281 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-08-16 22:12:45,104 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 22:12:45,107 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 22:12:45,109 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 22:12:45,109 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 22:12:45,109 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 22:12:45,109 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 22:12:45,109 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 22:12:45,110 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 23:20:02,401 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-16 23:20:08,986 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-16 23:20:20,662 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 23:20:20,662 - psysmysql.sells - INFO - Iniciando: Agregando producto 17 con cantidad 2
+2025-08-16 23:20:20,683 - psysmysql.sells - INFO - Nuevo producto Teclado mecánico agregado al carrito: 2 unidades
+2025-08-16 23:20:20,683 - psysmysql.sells - INFO - Completado: Agregando producto 17 con cantidad 2 (0.021s)
+2025-08-16 23:20:20,683 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-16 23:20:20,695 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 23:20:20,698 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 23:20:20,699 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 1120000.00, IVA: 212800.0000000000024868995752
+2025-08-16 23:20:20,699 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 23:20:20,699 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 23:20:20,700 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=1120000.0
+2025-08-16 23:20:20,700 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
+2025-08-16 23:20:20,700 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-16 23:21:25,649 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:21:48,109 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:22:28,928 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 23:22:28,931 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 23:22:28,934 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 1120000.00, IVA: 212800.0000000000024868995752
+2025-08-16 23:22:28,934 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 23:22:28,934 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 23:22:28,934 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=1120000.0
+2025-08-16 23:22:28,934 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 23:22:28,934 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 23:22:50,472 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 23:22:50,474 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 23:22:50,476 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 1120000.00, IVA: 212800.0000000000024868995752
+2025-08-16 23:22:50,476 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 23:22:50,476 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 23:22:50,476 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=1120000.0
+2025-08-16 23:22:50,476 - psysmysql.sells - INFO - Cambio devuelto: $880000.0
+2025-08-16 23:22:50,477 - psysmysql.sells - INFO - Cantidad pagada: $2000000.0
+2025-08-16 23:22:50,477 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 23:22:50,477 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 23:24:48,006 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:28:14,290 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 23:28:14,292 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-16 23:28:14,294 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 1120000.00, IVA: 212800.0000000000024868995752
+2025-08-16 23:28:14,294 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-16 23:28:14,294 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-16 23:28:14,295 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=1120000.0
+2025-08-16 23:28:14,295 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-16 23:28:14,295 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-16 23:28:16,861 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-16 23:28:16,864 - psysmysql.sells - INFO - Iniciando: Calculando totales para 0 productos
+2025-08-16 23:28:16,866 - psysmysql.sells - INFO - Totales calculados: 0 productos, subtotal: 0.00, IVA: 0E-56
+2025-08-16 23:28:16,866 - psysmysql.sells - INFO - Completado: Calculando totales para 0 productos (0.002s)
+2025-08-16 23:28:16,867 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-16 23:28:16,867 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-16 23:28:16,867 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-16 23:28:16,867 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-16 23:28:18,087 - django.request - ERROR - Internal Server Error: /list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 101, in view_product
+    "paginator": list_products.paginator,
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'paginator'
+2025-08-16 23:28:42,672 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:28:45,297 - django.request - ERROR - Internal Server Error: /list-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 101, in view_product
+    "paginator": list_products["paginator"],
+                 ~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str
+2025-08-16 23:29:21,024 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:30:12,854 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:30:41,974 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:33:26,295 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:34:29,843 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:38:55,595 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:39:17,065 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:41:17,471 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:42:45,459 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:43:03,957 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/urls.py changed, reloading.
+2025-08-16 23:46:07,472 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:51:09,585 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 23:53:10,092 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-16 23:53:18,796 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-16 23:54:15,719 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.

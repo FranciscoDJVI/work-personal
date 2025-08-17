@@ -12,13 +12,7 @@ urlpatterns = [
     path("list-product/", views.view_product, name="list-product"),
     path("delete-product/", views.delete_product, name="delete-product"),
     path("update-product/", views.Update.as_view(), name="update-product"),
-    path("update_product-done/", views.update_product_done, name="update_product_done"),
     path("sell-product/", views.SellProductView.as_view(), name="sell_product"),
-    path(
-        "update_quantity/",
-        views.update_quantity_view,
-        name="update_quantity",
-    ),
     path(
         "search-products-ajax/", views.search_products_ajax, name="search_products_ajax"
     ),

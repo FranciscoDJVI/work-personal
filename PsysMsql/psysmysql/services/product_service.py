@@ -49,7 +49,7 @@ class ProductService:
 
         # Optimización: usar only() para traer solo campos necesarios
         products = Products.objects.filter(Q(name__icontains=query)).only(
-            "idproducts", "name", "price"
+            "idproducts", "name", "price", "description"
         )[:limit]
 
         return [
@@ -57,6 +57,7 @@ class ProductService:
                 "id": product.idproducts,
                 "name": product.name,
                 "price": float(product.price),
+                "description": product.description,
             }
             for product in products
         ]

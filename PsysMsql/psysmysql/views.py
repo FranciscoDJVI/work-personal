@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, get_object_or_404
-from django.template import context
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required, permission_required
 from django.views import View
@@ -11,7 +10,6 @@ from django.utils.decorators import method_decorator
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
@@ -41,6 +39,7 @@ from .constants import (
     PRODUCTS_PER_PAGE,
     SELLS_PER_PAGE,
     CACHE_TIMEOUT_FLASH,
+    PRODUCTS_PER_PAGE,
 )
 from .utils import (
     is_admin,
@@ -75,12 +74,10 @@ def register_product(request):
             description = formregister.cleaned_data["description"]
 
             try:
-                # Usar servicio para crear producto
                 ProductService.create_product(name, price, description)
                 messages.success(request, SUCCESS_PRODUCT_SAVED)
 
             except ValueError as e:
-                # Error de validación (producto duplicado, etc.)
                 messages.info(request, str(e))
             except DatabaseError as e:
                 messages.error(request, f"{ERROR_DATABASE_ERROR}: {e}")
@@ -94,27 +91,11 @@ def register_product(request):
 
 
 def view_product(request):
-    """Vista optimizada para mostrar productos con cache y paginación"""
-    # Intentar obtener productos desde cache
-    cache_key = f"{CACHE_KEY_ALL_PRODUCTS}_paginated"
-    all_products = cache.get(cache_key)
+    for products in ProductService.get_products_paginated(request, PRODUCTS_PER_PAGE):
 
-    if all_products is None:
-        # Si no está en cache, obtener de la base de datos
-        all_products = Products.objects.all().order_by("name")
-        cache.set(cache_key, all_products, CACHE_TIMEOUT_FLASH)
+        context = {"product": products}
 
-    # Paginar los productos
-    page_obj, paginator = paginate_queryset(all_products, request, PRODUCTS_PER_PAGE)
-
-    context = {
-        "products": all_products,
-        "total_products_save": paginator.count,
-        "paginator": paginator,
-        "page_obj": page_obj,
-    }
-
-    return render(request, "allproducts.html", context)
+        return render(request, "allproducts.html", context)
 
 
 @login_required
@@ -124,8 +105,10 @@ def delete_product(request):
         form = DeleteProductForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data["name"]
+
             ProductService.delete_product(name)
             messages.success(request, SUCCESS_PRODUCT_DELETED)
+
             return redirect("delete-product")
         else:
             for field, errors in sentform.errors.items():
@@ -186,10 +169,10 @@ class Update(View):
 
         if formsearch.is_valid():
             namesearch = formsearch.cleaned_data["name"]
-            productfound = Products.objects.get(name=namesearch)
+            product_found = ProductService.get_product_by_name(namesearch)
 
-            if productfound:
-                productsearch = productfound  # Obtén el objeto real
+            if product_found:
+                productsearch = product_found
                 request.session["original_name"] = namesearch
 
                 # ¡LA CLAVE ESTÁ AQUÍ! Inicializa formupdate con la instancia del producto encontrado
@@ -229,26 +212,10 @@ class Update(View):
             new_description = formupdate.cleaned_data["description"]
 
             original_name = request.session.get("original_name")
-            try:
-                productupdate = Products.objects.get(name=original_name)
 
-                if productupdate:
-                    productupdate.name = new_name
-                    productupdate.price = new_price
-                    productupdate.description = new_description
-                    productupdate.save()
-                    messages.info(request, "Actualización exitosa")
-
-                    request.session["original_name"] = None
-                    productsearch = None
-                else:
-                    messages.error(
-                        request,
-                        "Fallo en la Actualización: Producto no encontrado.",
-                    )
-
-            except Exception as e:
-                messages.error(request, f"Error durante la actualización: {e}")
+            ProductService.update_product(
+                original_name, new_name, new_price, new_description
+            )
         else:
             messages.error(
                 request,
@@ -269,10 +236,6 @@ class Update(View):
         return render(request, "updateproduct.html", context)
 
 
-def update_product_done(request):
-    return render(request, "updateproductdone.html")
-
-
 @login_required
 def search_products_ajax(request):
     """Vista AJAX refactorizada usando ProductService"""
@@ -286,30 +249,6 @@ def search_products_ajax(request):
             return JsonResponse({"error": str(e)}, status=500)
 
     return JsonResponse({"error": "Invalid request method"}, status=405)
-
-
-@csrf_exempt
-def update_quantity_view(request):
-    if request.method == "POST":
-        try:
-            # Decodificar el cuerpo de la solicitud JSON
-            data = json.loads(request.body)
-            new_quantity = data.get("new_quantity")
-
-            obj_view = SellProductView()
-            obj_service = SellService
-            obj_service.add_product_to_sell(
-                obj_view._handle_sell_form(request), new_quantity
-            )
-
-            return JsonResponse({"status": "success", "new_quantity": new_quantity})
-        except json.JSONDecodeError:
-            return JsonResponse(
-                {"status": "error", "message": "Invalid JSON"}, status=400
-            )
-    return JsonResponse(
-        {"status": "error", "message": "Invalid request method"}, status=405
-    )
 
 
 @method_decorator(
@@ -601,19 +540,15 @@ def detailregisterview(request, pk):
 
 
 def delete_sell_item(request, pk):
-    sell_detail_item = get_object_or_404(SellProducts, pk=pk)
-
     if request.method == "POST":
         pass
     else:
-        sell_detail_item.delete()
-
+        SellService.remove_sell_item(pk)
         return redirect("sell_product")
     return render(request, "deletesellitem.html", {"item", sell_detail_item})
 
 
 def list_product_sell(request):
-    """Vista optimizada para listar productos vendidos con select_related"""
     list_sell_products = SellProducts.objects.select_related(
         "idproduct", "idsell"
     ).all()

@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User, Group
+
 # MODELS
 from . import models
 
@@ -80,19 +81,19 @@ class SellForm(forms.ModelForm):
                 "placeholder": "Buscar producto...",
                 "class": "bg-white p-2 m-5 w-40 text-black font-medium",
                 "id": "product-search-input",
-                "autocomplete": "off"
+                "autocomplete": "off",
             }
         ),
-        label=""
+        label="",
     )
-    
+
     # Campo oculto para almacenar el ID del producto seleccionado
     id_product = forms.ModelChoiceField(
         queryset=models.Products.objects.all(),
         widget=forms.HiddenInput(attrs={"id": "selected-product-id"}),
-        required=True
+        required=True,
     )
-    
+
     class Meta:
         model = models.Sell
         fields = ["id_product", "totalsell"]

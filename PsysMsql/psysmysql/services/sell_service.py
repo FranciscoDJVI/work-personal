@@ -96,15 +96,8 @@ class SellService:
                     id_product=product,
                     totalsell=quantity,
                 )
-
                 if not created:
-                    # Si ya existe, actualizar cantidad
-                    old_quantity = sell_product.totalsell
-                    sell_product.totalsell += old_quantity
-                    sell_product.save()
-                    logger.info(
-                        f"Producto {product.name} actualizado: cantidad nueva -> {sell_product.totalsell}"
-                    )
+                    logger.info(f"Fallo en la creacion del producto {product.name}")
                 else:
                     logger.info(
                         f"Nuevo producto {product.name} agregado al carrito: {quantity} unidades"
@@ -117,7 +110,32 @@ class SellService:
             raise ValidationError("Producto no encontrado")
         except Exception as e:
             logger.error(f"Error agregando producto {product_id}: {str(e)}")
-            raise
+
+    @staticmethod
+    @log_function_call(get_sell_logger())
+    def update_quantity_sell_item(product_id, quantity):
+
+        logger = get_sell_logger()
+
+        try:
+            product_sell = get_object_or_404(SellProducts, id_product=product_id)
+
+            new_product_sell = Sell(
+                id_product=product_sell.id_product,
+                totalsell=product_sell.totalsell + quantity,
+            )
+            new_product_sell.save()
+            logger.info(
+                f"Cantidad actualizada para producto {product_id}: {quantity} unidades"
+            )
+
+        except SellProducts.DoesNotExist:
+            logger.error(f"Producto no encontrado en el carrito: ID {product_id}")
+            raise ValidationError("Producto no encontrado en el carrito")
+        except Exception as e:
+            logger.error(
+                f"Error actualizando cantidad del producto {product_id}: {str(e)}"
+            )
 
     @staticmethod
     @log_function_call(get_sell_logger())
@@ -129,7 +147,7 @@ class SellService:
 
         try:
             with LogOperation(f"Eliminando item {item_id} del carrito", logger):
-                item = SellProducts.objects.get(pk=item_id)
+                item = get_object_or_404(SellProducts, pkp=item_id)
                 product_name = item.idproduct.name
                 quantity = item.quantity
                 item.delete()
