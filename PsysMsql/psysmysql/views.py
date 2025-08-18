@@ -515,6 +515,7 @@ def listallsellregisterview(request):
     listallregister = RegistersellDetail.objects.all()
     statistics = SellService.get_sales_statistics()
 
+    # List of the register sell and statistics about all sells.
     context = {
         "list": listallregister,
         "statistics": statistics,
@@ -585,13 +586,21 @@ def register_stock(request):
             quantitystock = stockform.cleaned_data["quantitystock"]
 
             try:
+                stock_item = StockService.search_item_in_stock(id_product_instance.pk)
                 # Usar servicio para actualización de stock
-                stock_item = StockService.update_stock(
-                    id_product_instance.pk,
-                    quantitystock,
-                    "add",  # Agregar al stock existente
-                )
-                messages.success(request, SUCCESS_STOCK_UPDATED)
+                if stock_item:
+                    stock_item = StockService.update_stock(
+                        id_product_instance.pk,
+                        quantitystock,
+                        "add",  # Agregar al stock existente
+                    )
+                    messages.success(request, SUCCESS_STOCK_UPDATED)
+                else:
+                    stock_item = StockService.update_stock(
+                        id_product_instance.pk,
+                        quantitystock,
+                    )
+                    messages.success(request, SUCCESS_STOCK_CREATED)
                 return redirect("stock_products")
 
             except ValidationError as e:
