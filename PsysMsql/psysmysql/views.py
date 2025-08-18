@@ -513,7 +513,15 @@ class SellProductView(View):
 @login_required()
 def listallsellregisterview(request):
     listallregister = RegistersellDetail.objects.all()
-    return render(request, "listallsellregister.html", {"list": listallregister})
+    statistics = SellService.get_sales_statistics()
+
+    context = {
+        "list": listallregister,
+        "statistics": statistics,
+    }
+
+    print(statistics)
+    return render(request, "listallsellregister.html", context)
 
 
 @login_required()

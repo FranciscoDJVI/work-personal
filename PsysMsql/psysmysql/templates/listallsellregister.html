@@ -2,7 +2,8 @@
 {% block title %}List-register-sell{% endblock%}
 {% load currency_filters %}
 {% block content %}
-<nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
+<div class="flex flex-wrap justify-center">
+  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
   <a href="{% url 'list-product' %}">Productos/</a>
   <a href="{% url 'register_product' %}">Registrar productos/</a>
   <a href="{% url 'sell_product' %}">Vender productos/</a>
@@ -11,30 +12,51 @@
   <a href="{% url 'stock_products' %}">Stock/</a>
   <a href="{% url 'main' %}">Home</a>
 </nav>
-<div class="grid juistify-items-center items-center mx-10 p-4">
-  <table class="bg-white mx-40 my-30  text-black text-xm justify-items-center">
+<table class="bg-white mx-10 my-30  text-black text-xm">
   <thead>
-  <tr class="grid grid-cols-6 justify-items-center items-center bg-gray-300 text-xm text-black mx-5">
-    <th class="w-20">Fecha</th>
-    <th class="w-20">Empleado</th>
-    <th class="w-20">Total</th>
-    <th class="w-20">Tipo/pago</th>
-    <th class="w-20">Estado/Venta</th>
-    <th class="w-20">Detalles</th>
+  <tr class="grid grid-cols-6 bg-gray-300 text-xm text-black p-2">
+    <th >Fecha de venta</th>
+    <th >Empleado</th>
+    <th >Total</th>
+    <th >Tipo/pago</th>
+    <th >Estado/Venta</th>
+    <th >Detalles</th>
     </thead>
     <tbody>
       {% for item2 in list %}
-      <tr class="grid grid-cols-6 grid-rows-1 justify-items-center mx-5 p-2 my-1 bg-gray-100 text-black font-extralight">
-        <td class="w-50">{{ item2.date }}</td>
+      <tr class="grid grid-cols-6 justify-items-center items-center bg-gray-100 text-xm text-black text-extalight my-2 mx-2">
+        <td >{{ item2.date }}</td>
         <td>{{ item2.id_employed }}</td>
         <td>{{ item2.total_sell|format_currency_cop }}</td>
         <td>{{ item2.type_pay}}</td>
         <td>{{ item2.state_sell}}</td>
-        <td><a href="{% url 'list_detail_sell_register' item2.idsell %}" class="text-cyan-950 hover:text-cyan-800">
-            <i class="fa-solid fa-eye mx-5"></i></a>
+        <td><a href="{% url 'list_detail_sell_register' item2.idsell %}" class="text-black hover:text-gray-500 p-2">
+            <i class="fa-solid fa-eye"></i></a>
         </td>
       </tr>
       {% endfor %}
+    </tbody>
+</table>
+<table class="bg-white mx-40 my-30  text-black text-xm justify-items-center">
+  <thead>
+  <tr class="grid grid-cols-5 justify-items-center items-center bg-gray-300 text-xm text-black">
+    <th>Ventas totales</th>
+    <th>Total ingresos</th>
+    <th>Promedio de ventas</th>
+    <th>Tipos de pago</th>
+    <th>Cant/Tipos de pago</th>
+    <th>Periodo</th>
+    </thead>
+    <tbody>
+      <tr class="grid grid-cols-5 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-black font-extralight">
+        <td >{{ statistics.total_sales}}</td>
+        <td >{{ statistics.total_revenue }}</td>
+        <td >{{ statistics.average_sale}}</td>
+        {% for item in statistics.payment_types%}
+          <td>{{ item.type_pay }}</td>
+          <td>{{ item.count }}</td>
+        {% endfor %}
+      </tr>
     </tbody>
 </table>
 </div>

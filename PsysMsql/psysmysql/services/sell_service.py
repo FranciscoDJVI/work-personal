@@ -1,6 +1,6 @@
 import json
 from decimal import Decimal
-from django.db.models import Q
+from django.db.models import Q, FloatField
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
 from ..models import SellProducts, Products, Clients, RegistersellDetail, Sell
@@ -401,11 +401,10 @@ class SellService:
                 from django.db.models import Sum, Count, Avg
 
                 stats = queryset.aggregate(
-                    total_sales=Count("id"),
-                    total_revenue=Sum("total_sell"),
-                    average_sale=Avg("total_sell"),
+                    total_sales=Count("idsell"),
+                    total_revenue=Sum("total_sell", output_field=FloatField()),
+                    average_sale=Avg("total_sell", output_field=FloatField()),
                 )
-
                 # Obtener tipos de pago más comunes
                 payment_types = (
                     queryset.values("type_pay")
