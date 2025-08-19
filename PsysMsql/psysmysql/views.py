@@ -422,7 +422,6 @@ class SellProductView(View):
         if sentform.is_valid():
 
             productsell = Sell.objects.all()
-            print(f"este es el id {productsell}")
 
             data = []
             for item in productsell:
@@ -441,8 +440,24 @@ class SellProductView(View):
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
 
+            sell_product = SellProducts.objects.all()
+            data_sell_products = []
+            for item in sell_product:
+                data_sell_products.append(
+                    {
+                        "id": item.idsell_product,
+                        "name": str(item.idproduct),
+                        "cantidad": item.quantity,
+                        "precio/unitario": float(item.priceunitaty),
+                        "idsell": item.idsell_id,
+                    }
+                )
+            request.session["data_json_sell_product"] = data_sell_products
+
+            data_sell_products = request.session.get("data_json_sell_product", [])
+
             email_subject = "Confirmación de Venta - Su Compra"
-            email_message = str(all_data)
+            email_message = str(data_sell_products)
 
             for item in all_data:
                 product_id = item["id_product"]

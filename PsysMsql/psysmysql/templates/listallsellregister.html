@@ -24,7 +24,7 @@
     </thead>
     <tbody>
       {% for item2 in list %}
-      <tr class="grid grid-cols-6 justify-items-center items-center bg-gray-100 text-xm text-black text-extalight my-2 mx-2">
+      <tr class="grid grid-cols-6 justify-items-center items-center bg-gray-100 text-xm text-gray-600 text-extalight my-2 mx-2">
         <td >{{ item2.date }}</td>
         <td>{{ item2.id_employed }}</td>
         <td>{{ item2.total_sell|format_currency_cop }}</td>
@@ -45,7 +45,7 @@
     <th>Promedio de ventas</th>
     </thead>
     <tbody>
-      <tr class="grid grid-cols-3 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-black font-extralight">
+      <tr class="grid grid-cols-3 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-gray-600 font-medium">
         <td >{{ statistics.total_sales}}</td>
         <td >{{ statistics.total_revenue|format_currency_cop}}</td>
         <td >{{ statistics.average_sale|format_currency_cop}}</td>
@@ -53,7 +53,7 @@
     </tbody>
     <tfoot class="flex flex-col gap-2">
       {% for item in statistics.payment_types%}
-        <tr class="flex flex-col justify-between bg-gray-100 text-xm text-black text-extalight my-2 mx-2">
+        <tr class="flex flex-col justify-between bg-gray-100 text-xm text-gray-600 text-medium my-2 mx-2">
           <td>Metodo de pago: {{ item.type_pay }}</td>
           <td>Cant: {{ item.count }}</td>
         </tr>

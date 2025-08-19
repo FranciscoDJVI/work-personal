@@ -1,9 +1,23 @@
 {% extends "base.html" %} {% block content %}
-<div class="flex flex-col items-center my-80">
-  <nav class="flex gap-2">
-    <a href="{% url 'login' %}" class="bg-white rounded-2xl p-4 m-2 text-black text-xm font-mediun">Iniciar Sesión</a>
-    <a href="{% url 'signup' %}" class="bg-white rounded-2xl p-4 m-2 text-balck text-xm grid justify-items-center font-mediun">Registrarse</a>
-  </nav>
-</div>
-{% include "footer.html" %}
+<body class="flex flex-col min-h-screen">
+<header>
+  <div class="flex flex-col items-center my-80">
+    <nav class="flex gap-2">
+      <a href="{% url 'login' %}" class="bg-white rounded-2xl p-4 m-2 text-black text-xm font-mediun">Iniciar Sesión</a>
+      <a href="{% url 'signup' %}" class="bg-white rounded-2xl p-4 m-2 text-balck text-xm grid justify-items-center font-mediun">Registrarse</a>
+    </nav>
+  </div>
+</header>
+<main class="flex-grow">
+  <div class="flex flex-col items-center justify-center h-full">
+    <h1 class="text-4xl font-bold text-black mb-4">Bienvenido a Psys</h1>
+    <p class="text-lg text-balck">Tu plataforma para la gestión de inventario.</p>
+  </div>
+</main>
+<footer class="text-center text-gray-300 bg-black   p-4 italic" >
+  <span>©Francisco Vanegas python developer Jr, Todos los derechos
+    reservados.
+  </span
+</footer>
+</body>
 {% endblock%}
