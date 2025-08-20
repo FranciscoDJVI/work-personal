@@ -1,17 +1,22 @@
 {% extends "base.html" %} 
 {% block title%}Login{% endblock %}
+{% load static%}
 {% block content %}
-<div class="flex flex-col items-end gap-2 flex-wrap">
-  <section class="flex flex-col bg-white p-2 h-screen overflow-auto w-100">
-      <form method="post" class="flex flex-col my-30 mx-5 flex-wrap">
-        {% csrf_token %} {{ form.as_p }}
-        <button type="submit" class="my-5 text-balck p-2 hover:bg-gray-200">Iniciar Sesión</button>
-      </form>
-      <p class="mx-5">
-        Al acceder al PSYS aceptas los terminos de tratamiento de datos establecidos.
-      </p>
-      <a href="{% url  "app" %}" class=" mx-5  text-balck p-2 hover:bg-gray-200 grid justify-items-center">volver</a>
-  </section>
+<div class="flex justify-between">
+  <img src="{% static '/dist/img/logo.webp' %}" alt="logo" class="w-200 h-200 my-5 mx-5 z-o">
+  <div class="flex flex-col items-end gap-2 flex-wrap">
+    <section class="flex flex-col bg-white justify-start p-2 h-screen overflow-auto w-100">
+      <span class="my-20 mx-5 border border-gray-300 p-2">Por favor inicie sesion con la credenciales brindadas por el soporte.</span>
+        <form method="post" class="flex flex-col  mx-5 flex-wrap">
+          {% csrf_token %} {{ form.as_p }}
+          <button type="submit" class="my-10 text-balck p-2 mb-10 bg-gray-200">Iniciar Sesión</button>
+        </form>
+        <p class="my-10 mx-5">
+          Al acceder al PSYS aceptas los terminos de tratamiento de datos establecidos.
+        </p>
+        <a href="{% url  "app" %}" class=" mx-5  text-balck p-2 bg-gray-200 grid justify-items-center">volver</a>
+    </section>
+  </div>
 </div>
 {% include "footer.html" %}
 {% endblock %}
