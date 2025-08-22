@@ -38,25 +38,27 @@
   <aside class="h-[fit-content] w-[fit-content] bg-white p-2 mb-10  max-h-40 overflow-y-auto">
     {% include "listsellproducts.html" %}
   </aside>
-  <ul class="flex flex-col bg-white text-black text-xm font-extalight w-[fit-content] mx-10">
+  <ul class="flex flex-col text-black text-xl font-extalight w-[fit-content] mx-10 border border-gray-300">
     {% if quantity %}
-      <li class="bg-gray-100 my-1 p-1">Cantidad total: {{ quantity }}</li>
-      <li class="bg-gray-100 my-1 p-1">Iva 19%: {{ iva_calculated|format_currency_cop}}</li>
-      <li class="bg-gray-100 my-1 p-1">Subtotal: {{ price_iva|format_currency_cop}}</li>
-      <li class="bg-gray-100 my-1 p-1">Precio total: {{ price_x_quantity|format_currency_cop}}</li>
-      <li class="bg-gray-100 my-1 p-1">Pago: {{ quantity_pay|format_currency_cop}}</li>
-      <li class="bg-gray-100 my-1 p-1">Cambio: {{ money_back|format_currency_cop}}</li>
+      <li class="p-2">Cantidad total: {{ quantity }}</li>
+      <li class="p-2">Iva 19%: {{ iva_calculated|format_currency_cop}}</li>
+      <li class="p-2">Subtotal: {{ price_iva|format_currency_cop}}</li>
+      <li class="p-2">Precio total: {{ price_x_quantity|format_currency_cop}}</li>
     {% endif %}
   </ul>
-</section>
+  </section>
 </div>
-<section class="bg-white grid grid-cols-2 items-center justify-items-center gap-4 p-1 mx-5 mb-10">
-  <form method="post" class="my-20 flex flex-row space-x-1 justify-items-center items-center rounded-2xl">
+<section class="flex flex-row bg-white  items-center mx-5 gap-4 ">
+  <form method="post" class="flex flex-row space-x-1 mx-5 justify-items-center items-center">
     {% csrf_token %}
     {{ formregsitersell }}
     <button id="add" name="add" type="submit"
       class="bg-green-500  text-xm text-white p-2">agregar</button>
   </form>
+  <aside class="bg-gray-200 flex flex-col items-center justify-between border border-gray-300 p-5 text-2xl">
+    <h3 class="text-green-500 font-medium">Pago: {{quantity_pay|format_currency_cop}}</h3>
+    <h3 class="text-red-600 font-medium">Cambio: {{money_back|format_currency_cop}}</h3>
+  </aside>
   <div class="flex flex-col my-5 text-xm text-black font-extralight p-1">
     <form method="post" class="grid grid-cols-2 grid-rows-1 gap-2 item justify-items-center">
       {% csrf_token %}

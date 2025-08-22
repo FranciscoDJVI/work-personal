@@ -4,7 +4,7 @@
 {% block content %}
 <table class="bg-white grid text-black text-xm">
   <thead>
-      <tr class="grid grid-cols-7 grid-rows-1 justify-items-center items-center bg-whitel text-xm text-black">
+      <tr class="grid grid-cols-6 grid-rows-1 justify-items-center items-center bg-whitel text-xm text-black">
           <th class="w-20">Fecha</th>
           <th class="w-20">Nombre</th>
           <th class="w-20">Cantidad</th>
@@ -17,7 +17,7 @@
   <tbody>
       {% for item2 in list_sell_products %}
       <tr
-          class="grid grid-cols-7 grid-rows-1 justify-items-center bg-gray-100 text-black p-2 my-1">
+          class="grid grid-cols-6 grid-rows-1 justify-items-center bg-gray-200 text-black p-2 my-1">
           <td class="w-50">{{ item2.idsell.datesell }}</td>
           <td>{{ item2.idproduct.name }}</td>
           <td>{{ item2.quantity }}</td>
@@ -25,10 +25,7 @@
           <td>{{ item2.quantity|mult:item2.priceunitaty|format_currency_cop }}</td>
           <td><a href="{% url 'delete_sell_item' item2.idsell_product %}" class="text-black hover:text-gray-500">
                   <i class="fa-solid fa-trash-can mx-10"></i></a>
-           <td class="grid grid-cols-3">
-                <input type="number" class="quantity-input" name="quantity" value="{{ item2.quantity }}">
-                <button class='bg-white' id='send-quantity'>actualizar cantidad</button>
-            </td>     
+          </td>
       </tr>
       {% endfor %}
   </tbody>

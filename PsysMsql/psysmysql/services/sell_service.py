@@ -1,3 +1,4 @@
+from datetime import datetime
 import json
 from decimal import Decimal
 from django.db.models import Q, FloatField
@@ -133,20 +134,15 @@ class SellService:
     @staticmethod
     @log_function_call(get_sell_logger())
     def remove_sell_item(item_id):
-        """
-        Elimina un item del carrito de venta
-        """
+        # Elimina un item del carrito de venta
         logger = get_sell_logger()
 
         try:
             with LogOperation(f"Eliminando item {item_id} del carrito", logger):
-                item = get_object_or_404(SellProducts, pkp=item_id)
-                product_name = item.idproduct.name
-                quantity = item.quantity
+                item = get_object_or_404(SellProducts, idsell_product=item_id)
                 item.delete()
-
                 logger.info(
-                    f"Item eliminado del carrito: {product_name} ({quantity} unidades)"
+                    f"Item eliminado del carrito: {item.idproduct} ({item.quantity} unidades)"
                 )
                 return True
 
@@ -169,15 +165,13 @@ class SellService:
 
     @staticmethod
     @log_function_call(get_sell_logger())
-    def calculate_change(total_amount, payment_amount):
-        """
-        Calcula el cambio de una venta
-        """
+    def calculate_change(quantity_pay, total_sell_calculated):
+        # Calcula el cambio de una venta
         logger = get_sell_logger()
 
         try:
-            total = Decimal(str(total_amount))
-            payment = Decimal(str(payment_amount))
+            total = total_sell_calculated
+            payment = quantity_pay
 
             if payment < total:
                 logger.warning(f"Pago insuficiente: total=${total}, pago=${payment}")
@@ -199,31 +193,29 @@ class SellService:
     @staticmethod
     @log_function_call(get_sell_logger())
     def create_sell_register(
-        employee_id, total_sell, type_pay, state_sell, notes, quantity_pay, detail_sell
+        employed_id, total_sell, type_pay, state_sell, notes, quantity_pay, list_items
     ):
-        """
-        Crea un registro de venta completo
-        """
+        # Crea un registro de venta completo
         logger = get_sell_logger()
 
         try:
             with LogOperation(
                 f"Creando registro de venta: total=${total_sell}", logger
             ):
-                sell_register = RegistersellDetail.objects.create(
-                    id_employed=employee_id,
-                    total_sell=Decimal(str(total_sell)),
+                register_sell = RegistersellDetail.objects.create(
+                    id_employed=employed_id,
+                    total_sell=float(str(total_sell)),
                     type_pay=type_pay,
                     state_sell=state_sell,
                     notes=notes,
-                    quantity_pay=Decimal(str(quantity_pay)) if quantity_pay else None,
-                    detail_sell=detail_sell,
+                    quantity_pay=float(str(quantity_pay)),
+                    detail_sell=json.dumps(list_items),
                 )
 
                 logger.info(
-                    f"Venta registrada exitosamente: ID={sell_register.pk}, empleado={employee_id}, total=${total_sell}, tipo_pago={type_pay}"
+                    f"Venta registrada exitosamente: ID={register_sell.pk}, empleado={employed_id}, total=${total_sell}, tipo_pago={type_pay}"
                 )
-                return sell_register
+                return register_sell
 
         except Exception as e:
             logger.error(
@@ -272,30 +264,6 @@ class SellService:
             return context
 
     @staticmethod
-    def validate_sell_data(product_id, quantity):
-        """
-        Valida los datos de una venta antes de procesarla
-        """
-        errors = []
-
-        if not product_id:
-            errors.append("Debe seleccionar un producto")
-
-        if not quantity or quantity <= 0:
-            errors.append("La cantidad debe ser mayor a 0")
-
-        # Validar que el producto existe
-        if product_id:
-            try:
-                product = Products.objects.get(pk=product_id)
-                return product
-                # Aquí podrías validar stock disponible
-            except Products.DoesNotExist:
-                errors.append("El producto seleccionado no existe")
-
-        return errors
-
-    @staticmethod
     @log_function_call(get_sell_logger())
     def clear_sell_cache():
         """
@@ -313,83 +281,16 @@ class SellService:
 
     @staticmethod
     @log_function_call(get_sell_logger())
-    def process_complete_sale(
-        employee_id, payment_amount, payment_type="efectivo", notes="", clear_cart=True
-    ):
-        """
-        Procesa una venta completa desde el carrito hasta el registro final
-        Método principal para completar transacciones de venta
-        """
-        logger = get_sell_logger()
-
-        try:
-            with LogOperation(
-                f"Procesando venta completa: empleado={employee_id}, pago=${payment_amount}",
-                logger,
-            ):
-                # 1. Obtener productos del carrito
-                sell_products = SellProducts.objects.all()
-                if not sell_products.exists():
-                    logger.warning("Intento de procesar venta con carrito vacío")
-                    raise ValidationError("No hay productos en el carrito")
-
-                # 2. Calcular totales
-                totals = SellService.calculate_sell_totals(sell_products)
-                total_amount = totals["subtotal"]
-
-                # 3. Validar pago
-                if payment_amount < total_amount:
-                    logger.error(
-                        f"Pago insuficiente: necesario=${total_amount}, recibido=${payment_amount}"
-                    )
-                    raise ValidationError("Pago insuficiente")
-
-                # 4. Calcular cambio
-                change = SellService.calculate_change(total_amount, payment_amount)
-
-                # 5. Crear registro de venta
-                sell_register = SellService.create_sell_register(
-                    employee_id=employee_id,
-                    total_sell=total_amount,
-                    type_pay=payment_type,
-                    state_sell="completada",
-                    notes=notes,
-                    quantity_pay=payment_amount,
-                    detail_sell=totals["list_items_json"],
-                )
-
-                # 6. Limpiar carrito si se solicita
-                if clear_cart:
-                    sell_products.delete()
-                    SellService.clear_sell_cache()
-                    logger.info("Carrito limpiado después de venta exitosa")
-
-                logger.info(
-                    f"Venta procesada exitosamente: ID={sell_register.pk}, cambio=${change}"
-                )
-
-                return {
-                    "sell_register": sell_register,
-                    "change": change,
-                    "total": total_amount,
-                    "products_sold": totals["quantity"],
-                }
-
-        except Exception as e:
-            logger.error(f"Error procesando venta completa: {str(e)}")
-            raise
-
-    @staticmethod
-    @log_function_call(get_sell_logger())
     def get_sales_statistics(date_from=None, date_to=None):
         """
         Obtiene estadísticas de ventas para un período específico
         """
         logger = get_sell_logger()
 
+        date_now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
             with LogOperation(
-                f"Obteniendo estadísticas de ventas: {date_from} a {date_to}", logger
+                f"Obteniendo estadísticas de ventas: {date_now} a {date_now}", logger
             ):
                 queryset = RegistersellDetail.objects.all()
 
@@ -405,7 +306,7 @@ class SellService:
                     total_revenue=Sum("total_sell", output_field=FloatField()),
                     average_sale=Avg("total_sell", output_field=FloatField()),
                 )
-                # Obtener tipos de pago más comunes
+                # Obtener tipos de pago.
                 payment_types = (
                     queryset.values("type_pay")
                     .annotate(count=Count("type_pay"))
@@ -413,7 +314,7 @@ class SellService:
                 )
 
                 stats["payment_types"] = list(payment_types)
-                stats["period"] = f"{date_from or 'inicio'} - {date_to or 'fin'}"
+                stats["period"] = f"{date_now or 'inicio'} - {date_to or 'fin'}"
 
                 logger.info(
                     f'Estadísticas calculadas: {stats["total_sales"]} ventas, ingresos totales=${stats["total_revenue"]}'
@@ -423,62 +324,4 @@ class SellService:
 
         except Exception as e:
             logger.error(f"Error obteniendo estadísticas de ventas: {str(e)}")
-            raise
-
-    @staticmethod
-    @log_function_call(get_sell_logger())
-    def validate_cart_before_checkout():
-        """
-        Valida el carrito antes del checkout
-        Verifica stock, precios, y otros requisitos de negocio
-        """
-        logger = get_sell_logger()
-
-        try:
-            with LogOperation("Validando carrito antes del checkout", logger):
-                sell_products = SellProducts.objects.select_related("idproduct").all()
-
-                if not sell_products.exists():
-                    return {"valid": False, "errors": ["Carrito vacío"]}
-
-                errors = []
-                warnings = []
-
-                for item in sell_products:
-                    # Validar que el producto aún existe
-                    if not item.idproduct:
-                        errors.append(f"Producto eliminado en el carrito")
-                        continue
-
-                    # Validar precio actualizado
-                    current_price = item.idproduct.price
-                    if abs(float(current_price - item.priceunitaty)) > 0.01:
-                        warnings.append(
-                            f"Precio de {item.idproduct.name} ha cambiado: ${item.priceunitaty} -> ${current_price}"
-                        )
-
-                    # Aquí podrías validar stock si tienes esa funcionalidad
-                    # if item.quantity > item.idproduct.stock:
-                    #     errors.append(f'Stock insuficiente para {item.idproduct.name}')
-
-                result = {
-                    "valid": len(errors) == 0,
-                    "errors": errors,
-                    "warnings": warnings,
-                    "products_count": sell_products.count(),
-                }
-
-                if result["valid"]:
-                    logger.info(
-                        f'Carrito validado exitosamente: {result["products_count"]} productos'
-                    )
-                else:
-                    logger.warning(
-                        f"Carrito inválido: {len(errors)} errores, {len(warnings)} advertencias"
-                    )
-
-                return result
-
-        except Exception as e:
-            logger.error(f"Error validando carrito: {str(e)}")
             raise

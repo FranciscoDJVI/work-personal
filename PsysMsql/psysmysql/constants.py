@@ -53,3 +53,7 @@ CACHE_TIMEOUT_LONG = 60 * 60  # 1 hora
 PRODUCTS_PER_PAGE = 25
 SELLS_PER_PAGE = 20
 STOCK_PER_PAGE = 30
+
+# Facturación
+HEADER = "Factura fisca/Psys"
+INFO_ENTERPRISE = "Psys"

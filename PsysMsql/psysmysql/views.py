@@ -15,6 +15,7 @@ from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
 from .services.product_service import ProductService
 from .services.sell_service import SellService
+from .services.factura_service import create_bill
 from .forms import (
     ProductForm,
     DeleteProductForm,
@@ -364,16 +365,18 @@ class SellProductView(View):
                         "pricexquantity": float(item_total),
                     }
                 )
-                list_items.append(
-                    {
-                        "pay": {"quantity_pay": float(quantity_pay)},
-                        "money": {
-                            "money_back": float(quantity_pay - total_sale_calculated)
-                        },
-                    }
-                )
+            list_items.append(
+                {
+                    "pay": {"quantity_pay": float(quantity_pay)},
+                    "money": {
+                        "money_back": float(quantity_pay - total_sale_calculated)
+                    },
+                }
+            )
 
-            money_back = quantity_pay - total_sale_calculated
+            money_back = SellService.calculate_change(
+                quantity_pay, total_sale_calculated
+            )
 
             request.session["money_back"] = float(money_back)
             request.session["quantity_pay"] = float(quantity_pay)
@@ -381,19 +384,17 @@ class SellProductView(View):
             id_employed = (
                 request.user.username if request.user.is_authenticated else "anonymous"
             )
-            register_sell = RegistersellDetail(
-                id_employed=id_employed,
-                total_sell=total_sale_calculated,
-                type_pay=type_pay,
-                state_sell=state_sell,
-                notes=notes,
-                quantity_pay=quantity_pay,
-                detail_sell=json.dumps(list_items),
-            )
-            register_sell.save()
             try:
-                if register_sell:
-                    messages.success(request, SUCCESS_SELL_CREATED)
+                SellService.create_sell_register(
+                    id_employed,
+                    total_sale_calculated,
+                    type_pay,
+                    state_sell,
+                    notes,
+                    quantity_pay,
+                    list_items,
+                )
+                messages.success(request, SUCCESS_SELL_CREATED)
             except DatabaseError as e:
                 messages.error(
                     request,
@@ -452,12 +453,26 @@ class SellProductView(View):
                         "idsell": item.idsell_id,
                     }
                 )
-            request.session["data_json_sell_product"] = data_sell_products
-
-            data_sell_products = request.session.get("data_json_sell_product", [])
-
-            email_subject = "Confirmación de Venta - Su Compra"
-            email_message = str(data_sell_products)
+                request.session["data_json_sell_product"] = data_sell_products
+                datos_factura = {
+                    "numero": "2025-001",
+                    "cliente": {
+                        "nombre": "Juan Pérez",
+                        "direccion": "Avenida del Sol 456",
+                    },
+                    "items": [
+                        {"cantidad": 2, "descripcion": "Producto A", "precio": 150.00},
+                        {
+                            "cantidad": 1,
+                            "descripcion": "Servicio de Consultoría",
+                            "precio": 500.00,
+                        },
+                        {"cantidad": 3, "descripcion": "Producto B", "precio": 75.50},
+                    ],
+                }
+                data_sell_products = request.session.get("data_json_sell_product", [])
+                email_subject = "Confirmación de Venta - Su Compra"
+                email_message = create_bill("factura_psys.pdf", datos_factura)
 
             for item in all_data:
                 product_id = item["id_product"]
@@ -569,7 +584,7 @@ def delete_sell_item(request, pk):
     else:
         SellService.remove_sell_item(pk)
         return redirect("sell_product")
-    return render(request, "deletesellitem.html", {"item", sell_detail_item})
+    return redirect("sell_product")
 
 
 def list_product_sell(request):
