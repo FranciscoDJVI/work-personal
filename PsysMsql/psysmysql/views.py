@@ -349,29 +349,11 @@ class SellProductView(View):
 
             list_sell_products = SellProducts.objects.all()
 
-            list_items = []
-            total_sale_calculated = 0
+            calculated_totals = SellService.calculate_sell_totals(list_sell_products)
+            total_sale_calculated = calculated_totals.get("price_x_quantity")
 
-            for item in list_sell_products:
-                item_total = item.quantity * item.priceunitaty
-                total_sale_calculated += item_total
-
-                list_items.append(
-                    {
-                        "id_product": item.idproduct.pk,
-                        "name": item.idproduct.name,
-                        "quantity": item.quantity,
-                        "price": float(item.priceunitaty),
-                        "pricexquantity": float(item_total),
-                    }
-                )
-            list_items.append(
-                {
-                    "pay": {"quantity_pay": float(quantity_pay)},
-                    "money": {
-                        "money_back": float(quantity_pay - total_sale_calculated)
-                    },
-                }
+            money_back = SellService.calculate_change(
+                quantity_pay, total_sale_calculated
             )
 
             money_back = SellService.calculate_change(
@@ -392,7 +374,6 @@ class SellProductView(View):
                     state_sell,
                     notes,
                     quantity_pay,
-                    list_items,
                 )
                 messages.success(request, SUCCESS_SELL_CREATED)
             except DatabaseError as e:
@@ -557,23 +538,22 @@ def listallsellregisterview(request):
 
 @login_required()
 # función para mostrar los datos de los registros de ventas.
+@login_required
 def detailregisterview(request, pk):
     register_sell_instance = get_object_or_404(RegistersellDetail, idsell=pk)
 
-    detail_products_list = []
-    # Verificamos que register_sell_instance no este vacio y que tambien sea una instancia o un objecto de python.
-    if register_sell_instance.detail_sell and isinstance(
-        register_sell_instance.detail_sell, str
-    ):
-        try:
-            # Decodificación de los datos de tipo Json.
-            detail_products_list = json.loads(register_sell_instance.detail_sell)
-        except json.JSONDecodeError:
-            print(f"Error: detail_sell para idsell={pk} no es JSON válido.")
+    try:
+        detail_data = json.loads(register_sell_instance.detail_sell)
+    except (json.JSONDecodeError, TypeError):
+        detail_data = []
+
+    list_items = [item for item in detail_data if "id_product" in item]
+    detail_payments = [item for item in detail_data if "pay" in item]
 
     context = {
         "register_sell_instance": register_sell_instance,
-        "detail": detail_products_list,
+        "list_items": list_items,  # Pasa los items de productos
+        "detail_payments": detail_payments,  # Pasa los detalles de pago
     }
     return render(request, "listdetailsellregister.html", context)
 

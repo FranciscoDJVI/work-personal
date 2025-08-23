@@ -17,7 +17,7 @@ import psysmysql.constants as const
 
 # Servicio para operaciones relacionadas con ventas"
 class SellService:
-    iva = Decimal(const.IVA_RATE)  # 19% IVA
+    iva = float(const.IVA_RATE)  # 19% IVA
 
     @staticmethod
     @log_execution_time(get_sell_logger())
@@ -31,45 +31,60 @@ class SellService:
         logger = get_sell_logger()
         items_count = sell_products_queryset.count()
 
-        with LogOperation(f"Calculando totales para {items_count} productos", logger):
-            list_items = []
-            total_quantity = 0
-            subtotal = Decimal("0.00")
-
-            # Optimización: usar select_related para evitar consultas N+1
-            for item in sell_products_queryset.select_related("idproduct"):
-                item_total = Decimal(str(item.quantity)) * item.priceunitaty
-                subtotal += item_total
-                total_quantity += item.quantity
-
-                list_items.append(
-                    {
-                        "id_product": item.idproduct.pk,
-                        "name": item.idproduct.name,
-                        "quantity": item.quantity,
-                        "price": float(item.priceunitaty),
-                        "pricexquantity": float(item_total),
-                    }
-                )
-
-            # Cálculos de IVA
-            iva_amount = subtotal * SellService.iva
-            price_without_iva = subtotal - iva_amount
-
-            logger.info(
-                f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_amount}"
-            )
-
+        if not sell_products_queryset.exists():
             return {
-                "list_items": list_items,
-                "list_items_json": json.dumps(list_items),
-                "quantity": total_quantity,
-                "subtotal": float(subtotal),
-                "iva_calculated": float(iva_amount),
-                "price_iva": float(price_without_iva),
-                "price_x_quantity": float(subtotal),
-                "price_with_iva": float(price_without_iva),
+                "list_items": [],
+                "list_items_json": "[]",
+                "quantity": 0,
+                "subtotal": 0.0,
+                "iva_calculated": 0.0,
+                "price_iva": 0.0,
+                "price_x_quantity": 0.0,
+                "price_with_iva": 0.0,
             }
+        else:
+            with LogOperation(
+                f"Calculando totales para {items_count} productos", logger
+            ):
+                list_items = []
+                total_quantity = 0
+                subtotal = float("0.00")
+
+                # Optimización: usar select_related para evitar consultas N+1
+                for item in sell_products_queryset.select_related("idproduct"):
+                    item_total = int(str(item.quantity)) * float(item.priceunitaty)
+                    subtotal += item_total
+                    total_quantity += item.quantity
+                    # Cálculos de IVA
+                    iva_amount = subtotal * SellService.iva
+                    price_without_iva = subtotal - iva_amount
+
+                    list_items.append(
+                        {
+                            "id_product": item.idproduct.pk,
+                            "name": item.idproduct.name,
+                            "quantity": item.quantity,
+                            "price": float(item.priceunitaty),
+                            "pricexquantity": float(item_total),
+                            "iva_calculated": float(iva_amount),
+                            "price_iva": float(price_without_iva),
+                            "price_with_iva": float(price_without_iva),
+                        }
+                    )
+                    logger.info(
+                        f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_amount}"
+                    )
+
+                    return {
+                        "list_items_json": json.dumps(list_items),
+                        "quantity": item.quantity,
+                        "pricexquantity": float(item_total),
+                        "subtotal": float(subtotal),
+                        "iva_calculated": float(iva_amount),
+                        "price_iva": float(price_without_iva),
+                        "price_x_quantity": float(subtotal),
+                        "price_with_iva": float(price_without_iva),
+                    }
 
     @staticmethod
     @log_function_call(get_sell_logger())
@@ -169,15 +184,14 @@ class SellService:
         # Calcula el cambio de una venta
         logger = get_sell_logger()
 
+        total = total_sell_calculated
+        payment = quantity_pay
         try:
-            total = total_sell_calculated
-            payment = quantity_pay
-
             if payment < total:
                 logger.warning(f"Pago insuficiente: total=${total}, pago=${payment}")
                 raise ValidationError("El pago es insuficiente")
 
-            change = float(payment - total)
+            change = float(payment) - float(total)
             logger.info(
                 f"Cambio calculado: total=${total}, pago=${payment}, cambio=${change}"
             )
@@ -186,22 +200,25 @@ class SellService:
 
         except Exception as e:
             logger.error(
-                f"Error calculando cambio: total={total_amount}, pago={payment_amount}, error={str(e)}"
+                f"Error calculando cambio: total={total}, pago={payment}, error={str(e)}"
             )
             raise
 
     @staticmethod
     @log_function_call(get_sell_logger())
     def create_sell_register(
-        employed_id, total_sell, type_pay, state_sell, notes, quantity_pay, list_items
+        employed_id, total_sell, type_pay, state_sell, notes, quantity_pay
     ):
         # Crea un registro de venta completo
         logger = get_sell_logger()
-
+        list_sell_products = SellProducts.objects.all()
         try:
             with LogOperation(
                 f"Creando registro de venta: total=${total_sell}", logger
             ):
+
+                list_items = SellService.calculate_sell_totals(list_sell_products)
+
                 register_sell = RegistersellDetail.objects.create(
                     id_employed=employed_id,
                     total_sell=float(str(total_sell)),
@@ -209,7 +226,7 @@ class SellService:
                     state_sell=state_sell,
                     notes=notes,
                     quantity_pay=float(str(quantity_pay)),
-                    detail_sell=json.dumps(list_items),
+                    detail_sell=list_items.get("list_items_json"),
                 )
 
                 logger.info(
@@ -219,7 +236,7 @@ class SellService:
 
         except Exception as e:
             logger.error(
-                f"Error creando registro de venta: empleado={employee_id}, total={total_sell}, error={str(e)}"
+                f"Error creando registro de venta: empleado={employed_id}, total={total_sell}, error={e}"
             )
             raise
 
