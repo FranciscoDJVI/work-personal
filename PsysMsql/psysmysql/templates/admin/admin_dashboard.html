@@ -1,10 +1,11 @@
 {% extends "base.html" %}
+{% load static%}
 <title>{% block title%}Main-admin{% endblock %}</title>
  {% block content %}
-<section class="flex flex-col h-screen overflow-auto">
-  <nav class="flex flex-row items-center">
-  <p class="flex-6 mx-10 my-10 text-xl text-black">Bienvenidos a PSYS. Esta es una aplicación para el manejo de inventario y venta de productos.</p>
-    <ul class="flex-1 grid justify-items-center my-10 text-xm text-black p-1">
+<section class="flex flex-col h-screen ">
+  <nav class=" flex flex-row justify-between items-center mx-10 my-5">
+  <img src="{% static 'dist/img/logo.webp' %}" alt="logo" class="contrast-150 h-30 w-30 opacity-90">
+    <ul class="grid justify-items-center  text-xm text-black p-1">
      {% if user.is_authenticated %}
       {% for group in user.groups.all %}
         <li> {{ group }}</li>
@@ -12,7 +13,7 @@
         <li>Hola, {{ user.username }}.</li>
       {% endif %}  
     </ul>
-    <form class="flex-1 grid justify-items-center mx-10 my-10 text-xm text-black k p-1" method="post" action="{% url "login" %}">
+    <form class="text-xm text-black p-1" method="post" action="{% url "login" %}">
       {%  csrf_token %}
       <button type="submit">cerrar sesion</button>
     </form>
