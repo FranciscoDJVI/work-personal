@@ -21,7 +21,7 @@ class SellService:
 
     @staticmethod
     @log_execution_time(get_sell_logger())
-    def calculate_sell_totals(sell_products_queryset):
+    def calculate_sell_totals(sell_products_queryset, quantity_pay):
         """
         Calcula todos los totales de una venta de manera optimizada
 
@@ -41,6 +41,8 @@ class SellService:
                 "price_iva": 0.0,
                 "price_x_quantity": 0.0,
                 "price_with_iva": 0.0,
+                "quantity_pay": 0.0,
+                "money_back": 0.0,
             }
         else:
             with LogOperation(
@@ -52,39 +54,42 @@ class SellService:
 
                 # Optimización: usar select_related para evitar consultas N+1
                 for item in sell_products_queryset.select_related("idproduct"):
+
                     item_total = int(str(item.quantity)) * float(item.priceunitaty)
                     subtotal += item_total
                     total_quantity += item.quantity
+
                     # Cálculos de IVA
                     iva_amount = subtotal * SellService.iva
                     price_without_iva = subtotal - iva_amount
 
-                    list_items.append(
-                        {
-                            "id_product": item.idproduct.pk,
-                            "name": item.idproduct.name,
-                            "quantity": item.quantity,
-                            "price": float(item.priceunitaty),
-                            "pricexquantity": float(item_total),
-                            "iva_calculated": float(iva_amount),
-                            "price_iva": float(price_without_iva),
-                            "price_with_iva": float(price_without_iva),
-                        }
-                    )
-                    logger.info(
-                        f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_amount}"
-                    )
+                    # Cálculos de cambio.
+                    if quantity_pay is None:
+                        pass
+                    else:
+                        money_back = subtotal - float(quantity_pay)
 
-                    return {
-                        "list_items_json": json.dumps(list_items),
-                        "quantity": item.quantity,
-                        "pricexquantity": float(item_total),
-                        "subtotal": float(subtotal),
-                        "iva_calculated": float(iva_amount),
-                        "price_iva": float(price_without_iva),
-                        "price_x_quantity": float(subtotal),
-                        "price_with_iva": float(price_without_iva),
-                    }
+                        list_items.append(
+                            {
+                                "id_product": item.idproduct.pk,
+                                "name": item.idproduct.name,
+                                "quantity": item.quantity,
+                                "price": float(item.priceunitaty),
+                                "pricexquantity": float(item_total),
+                                "iva_calculated": float(iva_amount),
+                                "price_iva": float(price_without_iva),
+                                "price_with_iva": float(price_without_iva),
+                                "quantity_pay": float(str(quantity_pay)),
+                                "money_back": float(str(money_back)),
+                            }
+                        )
+                        logger.info(
+                            f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_amount}"
+                        )
+                return {
+                    "results": list_items,
+                    "list_items_json": json.dumps(list_items),
+                }
 
     @staticmethod
     @log_function_call(get_sell_logger())
@@ -217,7 +222,9 @@ class SellService:
                 f"Creando registro de venta: total=${total_sell}", logger
             ):
 
-                list_items = SellService.calculate_sell_totals(list_sell_products)
+                list_items = SellService.calculate_sell_totals(
+                    list_sell_products, quantity_pay
+                )
 
                 register_sell = RegistersellDetail.objects.create(
                     id_employed=employed_id,
@@ -254,12 +261,12 @@ class SellService:
             list_sell_products = SellProducts.objects.all()
             products_count = list_sell_products.count()
 
-            # Calcular totales
-            totals = SellService.calculate_sell_totals(list_sell_products)
-
             # Obtener información de sesión
             money_back = request.session.pop("money_back", None)
             quantity_pay = request.session.pop("quantity_pay", None)
+            # Calcular totales
+
+            totals = SellService.calculate_sell_totals(list_sell_products, quantity_pay)
 
             # Combinar toda la información
             context = {

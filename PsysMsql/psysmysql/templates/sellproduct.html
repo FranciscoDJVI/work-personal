@@ -39,11 +39,13 @@
     {% include "listsellproducts.html" %}
   </aside>
   <ul class="flex flex-col text-black text-xl font-extalight w-[fit-content] mx-10 border border-gray-300">
-    {% if quantity %}
-      <li class="p-2">Cantidad total: {{ quantity }}</li>
-      <li class="p-2">Iva 19%: {{ iva_calculated|format_currency_cop}}</li>
-      <li class="p-2">Subtotal: {{ price_iva|format_currency_cop}}</li>
-      <li class="p-2">Precio total: {{ price_x_quantity|format_currency_cop}}</li>
+    {% if results %}
+      {% for item in results%}
+      <li class="p-2">Cantidad total: {{ item.quantity }}</li>
+      <li class="p-2">Iva 19%: {{ item.iva_calculated|format_currency_cop}}</li>
+      <li class="p-2">Subtotal: {{ item.price_iva|format_currency_cop}}</li>
+      <li class="p-2">Precio total: {{ item.pricexquantity|format_currency_cop}}</li>
+      {% endfor %}
     {% endif %}
   </ul>
   </section>

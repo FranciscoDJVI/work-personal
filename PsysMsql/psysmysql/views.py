@@ -1,4 +1,5 @@
 import json
+import re
 from django.contrib import messages
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
@@ -348,14 +349,14 @@ class SellProductView(View):
             quantity_pay = formregsitersell.cleaned_data["quantity_pay"]
 
             list_sell_products = SellProducts.objects.all()
-
-            calculated_totals = SellService.calculate_sell_totals(list_sell_products)
-            total_sale_calculated = calculated_totals.get("price_x_quantity")
-
-            money_back = SellService.calculate_change(
-                quantity_pay, total_sale_calculated
+            calculated_totals = SellService.calculate_sell_totals(
+                list_sell_products, quantity_pay
             )
+            total_sale_calculated_result = calculated_totals.get("results", {})
 
+            total_sale_calculated = float(
+                total_sale_calculated_result[0]["pricexquantity"]
+            )
             money_back = SellService.calculate_change(
                 quantity_pay, total_sale_calculated
             )
@@ -536,7 +537,6 @@ def listallsellregisterview(request):
     return render(request, "listallsellregister.html", context)
 
 
-@login_required()
 # función para mostrar los datos de los registros de ventas.
 @login_required
 def detailregisterview(request, pk):
@@ -548,12 +548,10 @@ def detailregisterview(request, pk):
         detail_data = []
 
     list_items = [item for item in detail_data if "id_product" in item]
-    detail_payments = [item for item in detail_data if "pay" in item]
 
     context = {
         "register_sell_instance": register_sell_instance,
         "list_items": list_items,  # Pasa los items de productos
-        "detail_payments": detail_payments,  # Pasa los detalles de pago
     }
     return render(request, "listdetailsellregister.html", context)
 

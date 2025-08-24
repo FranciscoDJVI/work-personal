@@ -29,14 +29,12 @@
     {% endfor %}
     </tbody>
     <tfoot class='bg-white text-black p-4'>
-      {% for item2 in detail_payments %}
-        {% if item2.pay %}
+    {% for item in list_items %}
           <tr class='flex flex-col items-end my-1 text-black font-extralight'>
-            <td>pago: {{ item2.pay.quantity_pay|format_currency_cop }}</td>
-            <td>cambio: {{ item2.money.money_back|format_currency_cop }}</td>
+            <td>pago: {{item.quantity_pay|format_currency_cop }}</td>
+            <td>cambio: {{ item.money_back|format_currency_cop }}</td>
           </tr>
-        {% endif %}
-      {% endfor %}
+    {% endfor %}
     </tfoot>
 </table><a href="{% url 'list_all_sell_register' %}" class="text-black absolute top-10 right-40 mb-10">volver</a>
 {% endblock %}
