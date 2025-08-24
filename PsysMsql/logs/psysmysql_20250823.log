@@ -4022,3 +4022,13 @@ django.core.exceptions.ValidationError: ['El pago es insuficiente']
 2025-08-23 20:39:51,037 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
 2025-08-23 20:39:51,037 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.003s)
 2025-08-23 20:39:51,037 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-23 20:54:27,140 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-23 20:54:27,145 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.002s
+2025-08-23 20:54:27,145 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-23 20:54:27,145 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-23 20:54:27,145 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-23 20:56:10,434 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.get_sales_statistics
+2025-08-23 20:56:10,434 - psysmysql.sells - INFO - Iniciando: Obteniendo estadísticas de ventas: 2025-08-23 20:56:10 a 2025-08-23 20:56:10
+2025-08-23 20:56:10,439 - psysmysql.sells - INFO - Estadísticas calculadas: 3 ventas, ingresos totales=$2540000.0
+2025-08-23 20:56:10,439 - psysmysql.sells - INFO - Completado: Obteniendo estadísticas de ventas: 2025-08-23 20:56:10 a 2025-08-23 20:56:10 (0.005s)
+2025-08-23 20:56:10,439 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.get_sales_statistics
