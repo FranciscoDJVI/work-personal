@@ -3,8 +3,8 @@
 {% block content %}
 <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
   <a href="{% url 'register_product' %}">Registrar productos/</a>
-  <a href="{% url 'delete-product' %}">Eliminar productos/</a>
-  <a href="{% url 'update-product' %}">Actualizar productos/</a>
+  <a href="{% url 'delete-product' %}">Eliminar/</a>
+  <a href="{% url 'update-product' %}">Actualizar/</a>
   <a href="{% url 'stock_products' %}">stock/</a>
   <a href="{% url 'main' %}">home</a>
 </nav>
@@ -22,21 +22,14 @@
       </tr>
     </thead>
     <tbody>
-      {% for product in product %}
-      <tr class="grid grid-cols-3 justify-items-center border border-gray-500 p-2 my-1 text-black">
+      {% for product in all_products %}
+      <tr class="grid grid-cols-3 justify-items-center  bg-white text-xm text-black my-1 border border-gray-300 p-2 font-extralight">
         <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.description }}</td>
+        <td>{{ product.price}}</td>
+        <td>{{ product.description}}</td>
       </tr>
       {% endfor %}
     </tbody>
-      <tfoot>
-      <tr>
-          {% for page in paginator %}
-            <td> {{ page }}</td>
-          {% endfor %}
-      </tr>
-      </tfoot>
   </table>
 </section>
 {% endblock %}

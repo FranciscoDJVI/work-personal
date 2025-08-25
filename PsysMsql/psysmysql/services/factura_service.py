@@ -131,5 +131,6 @@ datos = {
 }
 
 # Generar la factura
-create_bill("factura_ejemplo.pdf", datos)
+
+# create_bill("factura_ejemplo.pdf", datos)
 print("Factura generada como factura_ejemplo.pdf")

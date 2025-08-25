@@ -37,11 +37,6 @@ from .constants import (
     SUCCESS_STOCK_CREATED,
     ERROR_DATABASE_ERROR,
     ERROR_INVALID_FORM,
-    CACHE_KEY_ALL_PRODUCTS,
-    PRODUCTS_PER_PAGE,
-    SELLS_PER_PAGE,
-    CACHE_TIMEOUT_FLASH,
-    PRODUCTS_PER_PAGE,
 )
 from .utils import (
     is_admin,
@@ -67,7 +62,6 @@ def dashboard(request):
 @login_required
 @permission_required("psysmysql.add_products", login_url="error")
 def register_product(request):
-    """Vista refactorizada para registro de productos usando ProductService"""
     if request.method == "POST":
         formregister = ProductForm(request.POST)
         if formregister.is_valid():
@@ -93,11 +87,11 @@ def register_product(request):
 
 
 def view_product(request):
-    for products in ProductService.get_products_paginated(request, PRODUCTS_PER_PAGE):
+    all_products = ProductService.get_all_products_save().get("products")
+    total_products = ProductService.get_all_products_save().get("total")
 
-        context = {"product": products}
-
-        return render(request, "allproducts.html", context)
+    context = {"all_products": all_products, "total_products_save": total_products}
+    return render(request, "allproducts.html", context)
 
 
 @login_required

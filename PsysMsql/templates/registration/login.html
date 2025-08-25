@@ -3,7 +3,7 @@
 {% load static%}
 {% block content %}
 <section class="flex flex-col flex-wrap ">
-  <img src="{% static 'dist/img/logo.webp' %}" alt="" class="h-screen contrast-150 w-350">
+  <img src="{% static 'dist/img/logo.webp' %}" alt="" class="h-screen contrast-150 w-360">
     <aside class="flex flex-col bg-white absolute right-0 h-screen w-100 text-xm">
       <span class="bg-gray-200 my-20 mx-5 border border-gray-200 p-2">Por favor inicie sesion con la credenciales brindadas por el soporte.</span>
         <form method="post" class="flex flex-col mx-5 flex-wrap">
@@ -15,5 +15,4 @@
         <a href="{% url  "app" %}" class=" mx-5  text-balck p-2 bg-gray-200 grid justify-items-center">volver</a>
     </aside>
 </section>
-{% include 'footer.html' %}
 {% endblock %}

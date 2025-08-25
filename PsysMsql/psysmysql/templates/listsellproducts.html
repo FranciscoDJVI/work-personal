@@ -2,32 +2,32 @@
 {% load currency_filters %}
 {% load static %}
 {% block content %}
-<table class="bg-white grid text-black text-xm">
-  <thead>
-      <tr class="grid grid-cols-6 grid-rows-1 justify-items-center items-center bg-whitel text-xm text-black">
-          <th class="w-20">Fecha</th>
-          <th class="w-20">Nombre</th>
-          <th class="w-20">Cantidad</th>
-          <th class="w-20">Precio</th>
-          <th class="w-20">precio/cant.</th>
-          <th class="w-20"></th>
-          <th></th>
-      </tr>
+{% if list_sell_products %}
+<table class="flex flex-row flex-wrap justify-center items-center text-black text-xm mx-5">
+  <thead class="flex flex-wrap">
+    <tr class="grid grid-cols-6  p-2 justify-items-center w-300 border border-gray-400">
+      <th>Fecha</th>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Price</th>
+      <th>Precio/cant.</th>
+      <th></th>
+    </tr>
   </thead>
-  <tbody>
+  <tbody class="flex flex-wrap my-5">
       {% for item2 in list_sell_products %}
-      <tr
-          class="grid grid-cols-6 grid-rows-1 justify-items-center bg-gray-200 text-black p-2 my-1">
-          <td class="w-50">{{ item2.idsell.datesell }}</td>
-          <td>{{ item2.idproduct.name }}</td>
-          <td>{{ item2.quantity }}</td>
-          <td>{{ item2.priceunitaty|format_currency_cop }}</td>
-          <td>{{ item2.quantity|mult:item2.priceunitaty|format_currency_cop }}</td>
-          <td><a href="{% url 'delete_sell_item' item2.idsell_product %}" class="text-black hover:text-gray-500">
-                  <i class="fa-solid fa-trash-can mx-10"></i></a>
+      <tr  class="grid grid-cols-6 p-2 justify-items-center w-300 border border-gray-400">
+          <td >{{ item2.idsell.datesell }}</td>
+          <td >{{ item2.idproduct.name }}</td>
+          <td >{{ item2.quantity }}</td>
+          <td >{{ item2.priceunitaty|format_currency_cop }}</td>
+          <td >{{ item2.quantity|mult:item2.priceunitaty|format_currency_cop }}</td>
+          <td ><a href="{% url 'delete_sell_item' item2.idsell_product %}" class="text-black hover:text-gray-500">
+                  <i class="fa-solid fa-trash-can"></i></a>
           </td>
       </tr>
       {% endfor %}
   </tbody>
 </table>
+{% endif %}
 {% endblock %}

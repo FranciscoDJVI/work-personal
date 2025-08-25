@@ -1,8 +1,3 @@
-"""
-Servicio para manejar la lógica de negocio de productos
-Separa la lógica de las vistas para mejor mantenibilidad
-"""
-
 from django.core.cache import cache
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -17,37 +12,33 @@ from ..logging_config import get_product_logger, log_execution_time, LogOperatio
 
 
 class ProductService:
-    """Servicio para operaciones relacionadas con productos"""
-
     @staticmethod
-    def get_products_paginated(request, per_page=PRODUCTS_PER_PAGE):
-        """
-        Obtiene productos paginados con cache optimizado
-        """
-        cache_key = f"{CACHE_KEY_ALL_PRODUCTS}_paginated"
+    def get_all_products_save():
+
+        cache_key = f"{CACHE_KEY_ALL_PRODUCTS}"
         all_products = cache.get(cache_key)
+        total_products_save = None
 
         if all_products is None:
+
             all_products = Products.objects.all().select_related().order_by("name")
+            total_products_save = all_products.count()
             cache.set(cache_key, all_products, CACHE_TIMEOUT_FLASH)
 
-        paginator = Paginator(all_products, per_page)
-        page = request.GET.get("page", 1)
-
-        page_obj = paginator.page(page)
-        page_obj = paginator.page(1)
-
-        return page_obj, paginator
+        return {
+            "products": all_products,
+            "total": total_products_save,
+        }
 
     @staticmethod
     def search_products_ajax(query, limit=10):
         """
-        Busca productos por AJAX con optimizaciones
+        Buscar productos por medio de AJAX
         """
         if not query or len(query) < 2:
             return []
 
-        # Optimización: usar only() para traer solo campos necesarios
+        # Optimizar: usar only() para traer solo campos necesarios
         products = Products.objects.filter(Q(name__icontains=query)).only(
             "idproducts", "name", "price", "description"
         )[:limit]
@@ -65,9 +56,6 @@ class ProductService:
     @staticmethod
     @log_execution_time(get_product_logger())
     def create_product(name, price, description):
-        """
-        Crea un nuevo producto con validaciones
-        """
         logger = get_product_logger()
 
         with LogOperation(f"Creando producto: {name}", logger):
@@ -93,9 +81,7 @@ class ProductService:
 
     @staticmethod
     def update_product(original_name, new_name, new_price, new_description):
-        """
-        Actualiza un producto existente
-        """
+
         try:
             product = ProductService.get_product_by_name(original_name)
             product.name = new_name
@@ -112,9 +98,6 @@ class ProductService:
 
     @staticmethod
     def delete_product(name: str) -> bool:
-        """
-        Elimina un producto por nombre
-        """
         try:
             # Reutilizacion del metodo de buscar productos por el nombre.
             delete_product = ProductService.get_product_by_name(name)
@@ -156,9 +139,6 @@ class ProductService:
 
     @staticmethod
     def update_or_create_stock(product_id, quantity):
-        """
-        Actualiza o crea el stock de un producto
-        """
         stock, created = Stock.objects.update_or_create(
             id_products_id=product_id, defaults={"quantitystock": quantity}
         )

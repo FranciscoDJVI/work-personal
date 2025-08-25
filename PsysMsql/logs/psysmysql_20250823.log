@@ -4169,3 +4169,112 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 5: 'st
 2025-08-23 21:14:08,282 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
 2025-08-23 21:14:08,282 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.004s)
 2025-08-23 21:14:08,283 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.004s
+2025-08-23 21:16:10,705 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-23 21:16:10,712 - psysmysql.stock - INFO - Resumen de stock generado: 10380 productos
+2025-08-23 21:16:10,712 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.007s)
+2025-08-23 21:16:10,713 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-08-23 21:16:10,713 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-23 21:16:10,716 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-23 21:16:10,716 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-23 21:16:47,931 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-23 21:16:47,937 - psysmysql.stock - INFO - Resumen de stock generado: 10380 productos
+2025-08-23 21:16:47,937 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.007s)
+2025-08-23 21:16:47,937 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-08-23 21:16:47,937 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-23 21:16:47,941 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-23 21:16:47,941 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-23 21:17:30,878 - psysmysql.products - INFO - Iniciando: Creando producto: Cargador
+2025-08-23 21:17:30,889 - psysmysql.products - INFO - Producto creado exitosamente: Cargador (ID: 25)
+2025-08-23 21:17:30,890 - psysmysql.products - DEBUG - Cache de productos limpiado
+2025-08-23 21:17:30,890 - psysmysql.products - INFO - Completado: Creando producto: Cargador (0.012s)
+2025-08-23 21:17:30,890 - psysmysql.products - INFO - psysmysql.services.product_service.create_product ejecutado en 0.013s
+2025-08-23 21:17:37,454 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-23 21:17:37,460 - psysmysql.stock - INFO - Resumen de stock generado: 10380 productos
+2025-08-23 21:17:37,460 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.006s)
+2025-08-23 21:17:37,460 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.006s
+2025-08-23 21:17:37,460 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-23 21:17:37,463 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-23 21:17:37,464 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-23 21:17:45,615 - psysmysql.stock - INFO - Iniciando: Buscando item en stock: 25
+2025-08-23 21:17:45,616 - psysmysql.stock - INFO - Completado: Buscando item en stock: 25 (0.000s)
+2025-08-23 21:17:45,616 - psysmysql.performance - INFO - psysmysql.services.stock_service.search_item_in_stock ejecutado en 0.001s
+2025-08-23 21:17:45,617 - psysmysql.stock - INFO - Iniciando: Actualizando stock producto 25: set 1000
+2025-08-23 21:17:45,640 - psysmysql.stock - INFO - Stock actualizado para producto Cargador: 1000
+2025-08-23 21:17:45,641 - psysmysql.stock - INFO - Completado: Actualizando stock producto 25: set 1000 (0.023s)
+2025-08-23 21:17:45,641 - psysmysql.performance - INFO - psysmysql.services.stock_service.update_stock ejecutado en 0.024s
+2025-08-23 21:17:45,653 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-23 21:17:45,659 - psysmysql.stock - INFO - Resumen de stock generado: 11380 productos
+2025-08-23 21:17:45,659 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.006s)
+2025-08-23 21:17:45,659 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-08-23 21:17:45,659 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-23 21:17:45,662 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-23 21:17:45,662 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-23 21:17:55,740 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-23 21:17:55,743 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.001s
+2025-08-23 21:17:55,743 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-23 21:17:55,743 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.003s)
+2025-08-23 21:17:55,743 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.003s
+2025-08-23 21:18:01,782 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.add_product_to_sell
+2025-08-23 21:18:01,783 - psysmysql.sells - INFO - Iniciando: Agregando producto 19 con cantidad 1
+2025-08-23 21:18:01,794 - psysmysql.sells - INFO - Nuevo producto Mouse Logitech agregado al carrito: 1 unidades
+2025-08-23 21:18:01,794 - psysmysql.sells - INFO - Completado: Agregando producto 19 con cantidad 1 (0.012s)
+2025-08-23 21:18:01,795 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.add_product_to_sell
+2025-08-23 21:18:01,806 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-23 21:18:01,810 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-23 21:18:01,812 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-23 21:18:01,812 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-23 21:18:01,812 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=0
+2025-08-23 21:18:01,812 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-23 21:18:01,813 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-23 21:18:07,057 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-23 21:18:07,059 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 200000.0, IVA: 38000.0
+2025-08-23 21:18:07,059 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-23 21:18:07,059 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-23 21:18:07,059 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.calculate_change
+2025-08-23 21:18:07,059 - psysmysql.sells - INFO - Cambio calculado: total=$200000.0, pago=$200000, cambio=$0.0
+2025-08-23 21:18:07,060 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.calculate_change
+2025-08-23 21:18:07,060 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.create_sell_register
+2025-08-23 21:18:07,060 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$200000.0
+2025-08-23 21:18:07,063 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-23 21:18:07,065 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 200000.0, IVA: 38000.0
+2025-08-23 21:18:07,065 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-23 21:18:07,065 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-23 21:18:07,073 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=472, empleado=francisco, total=$200000.0, tipo_pago=Efectivo
+2025-08-23 21:18:07,073 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$200000.0 (0.013s)
+2025-08-23 21:18:07,074 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.create_sell_register
+2025-08-23 21:18:07,097 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-23 21:18:07,100 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-23 21:18:07,101 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 200000.0, IVA: 38000.0
+2025-08-23 21:18:07,102 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-23 21:18:07,102 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-23 21:18:07,102 - psysmysql.sells - INFO - Resumen de venta preparado: 1 productos, subtotal=0
+2025-08-23 21:18:07,102 - psysmysql.sells - INFO - Cantidad pagada: $200000.0
+2025-08-23 21:18:07,102 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-23 21:18:07,103 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-23 21:18:10,697 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-23 21:18:10,702 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.002s
+2025-08-23 21:18:10,702 - psysmysql.sells - INFO - Resumen de venta preparado: 0 productos, subtotal=0.0
+2025-08-23 21:18:10,702 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-23 21:18:10,702 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-23 21:18:13,887 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-23 21:18:13,893 - psysmysql.stock - INFO - Resumen de stock generado: 11379 productos
+2025-08-23 21:18:13,893 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.007s)
+2025-08-23 21:18:13,894 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-08-23 21:18:13,894 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-23 21:18:13,897 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-23 21:18:13,897 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-08-23 21:18:20,180 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.get_sales_statistics
+2025-08-23 21:18:20,181 - psysmysql.sells - INFO - Iniciando: Obteniendo estadísticas de ventas: 2025-08-23 21:18:20 a 2025-08-23 21:18:20
+2025-08-23 21:18:20,186 - psysmysql.sells - INFO - Estadísticas calculadas: 4 ventas, ingresos totales=$2740000.0
+2025-08-23 21:18:20,186 - psysmysql.sells - INFO - Completado: Obteniendo estadísticas de ventas: 2025-08-23 21:18:20 a 2025-08-23 21:18:20 (0.006s)
+2025-08-23 21:18:20,186 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.get_sales_statistics
+2025-08-23 21:18:25,288 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.get_sales_statistics
+2025-08-23 21:18:25,288 - psysmysql.sells - INFO - Iniciando: Obteniendo estadísticas de ventas: 2025-08-23 21:18:25 a 2025-08-23 21:18:25
+2025-08-23 21:18:25,292 - psysmysql.sells - INFO - Estadísticas calculadas: 4 ventas, ingresos totales=$2740000.0
+2025-08-23 21:18:25,292 - psysmysql.sells - INFO - Completado: Obteniendo estadísticas de ventas: 2025-08-23 21:18:25 a 2025-08-23 21:18:25 (0.004s)
+2025-08-23 21:18:25,292 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.get_sales_statistics
+2025-08-23 21:18:30,980 - psysmysql.sells - INFO - Iniciando psysmysql.services.sell_service.get_sales_statistics
+2025-08-23 21:18:30,981 - psysmysql.sells - INFO - Iniciando: Obteniendo estadísticas de ventas: 2025-08-23 21:18:30 a 2025-08-23 21:18:30
+2025-08-23 21:18:30,985 - psysmysql.sells - INFO - Estadísticas calculadas: 4 ventas, ingresos totales=$2740000.0
+2025-08-23 21:18:30,985 - psysmysql.sells - INFO - Completado: Obteniendo estadísticas de ventas: 2025-08-23 21:18:30 a 2025-08-23 21:18:30 (0.005s)
+2025-08-23 21:18:30,985 - psysmysql.sells - INFO - Completado psysmysql.services.sell_service.get_sales_statistics

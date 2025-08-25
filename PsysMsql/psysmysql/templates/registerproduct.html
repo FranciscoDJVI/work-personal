@@ -2,11 +2,11 @@
 <title>{% block title %}Products{% endblock %}</title>
 {% block content %}
 <section class="h-screen grid grid-cols-1 grid-rows-3 justify-items-center items-center">
-  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xl">
+  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
     <a href="{% url 'list-product' %}">Productos/</a>
-    <a href="{% url 'sell_product' %}">Ventas/</a>
-    <a href="{% url 'delete-product' %}">Eliminar productos/</a>
-    <a href="{% url 'update-product' %}">Actualizar productos/</a>
+    <a href="{% url 'sell_product' %}">Vender/</a>
+    <a href="{% url 'delete-product' %}">Eliminar/</a>
+    <a href="{% url 'update-product' %}">Actualizar/</a>
     <a href="{% url 'stock_products' %}">Stock/</a>
     <a href="{% url 'main' %}">Home</a>
   </nav>

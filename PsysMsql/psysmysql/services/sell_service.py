@@ -86,10 +86,17 @@ class SellService:
                         logger.info(
                             f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_amount}"
                         )
-                return {
-                    "results": list_items,
-                    "list_items_json": json.dumps(list_items),
-                }
+
+                    return {
+                        "results": list_items,
+                        "list_items_json": json.dumps(list_items),
+                        "quantity": item.quantity,
+                        "price": float(item.priceunitaty),
+                        "pricexquantity": float(item_total),
+                        "iva_calculated": float(iva_amount),
+                        "price_iva": float(price_without_iva),
+                        "price_with_iva": float(price_without_iva),
+                    }
 
     @staticmethod
     @log_function_call(get_sell_logger())
