@@ -346,7 +346,9 @@ class SellProductView(View):
             calculated_totals = SellService.calculate_sell_totals(
                 list_sell_products, quantity_pay
             )
-            total_sale_calculated_result = calculated_totals.get("results", {})
+            total_sale_calculated_result = json.loads(
+                calculated_totals.get("totals", {})
+            )
 
             total_sale_calculated = float(
                 total_sale_calculated_result[0]["pricexquantity"]
@@ -578,7 +580,6 @@ def list_product_sell(request):
 @login_required
 @permission_required("psysmysql.add_stock", login_url="error")
 def register_stock(request):
-    """Vista refactorizada para gestión de stock usando StockService"""
     from .services.stock_service import StockService
 
     if request.method == "POST":

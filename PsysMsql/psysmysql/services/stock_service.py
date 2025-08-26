@@ -27,7 +27,7 @@ class StockService:
     @log_execution_time()
     def get_stock_summary():
         """
-        Obtiene resumen completo de stock optimizado
+        Obtener resumen completo de stock optimizado
         """
         logger = get_logger("stock")
 
@@ -70,7 +70,7 @@ class StockService:
     @log_execution_time()
     def update_stock(product_id, quantity, operation="set"):
         """
-        Actualiza el stock de un producto de manera segura
+        Actualizar el stock de un producto de manera segura
 
         Args:
             product_id: ID del producto
@@ -127,7 +127,7 @@ class StockService:
     @staticmethod
     def check_stock_availability(product_id, required_quantity):
         """
-        Verifica si hay stock suficiente para una venta
+        Verificar si hay stock suficiente para una venta
         """
         logger = get_logger("stock")
 
@@ -160,7 +160,7 @@ class StockService:
     @staticmethod
     def get_stock_alerts():
         """
-        Obtiene alertas de stock para dashboard
+        Obtener alertas de stock para dashboard
         """
         logger = get_logger("stock")
 
@@ -205,7 +205,7 @@ class StockService:
     @staticmethod
     def bulk_update_stock(stock_updates):
         """
-        Actualiza múltiples productos en lote de manera eficiente
+        Actualizar múltiples productos en lote de manera eficiente
 
         Args:
             stock_updates: Lista de diccionarios con {product_id, quantity, operation}

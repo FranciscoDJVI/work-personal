@@ -3,9 +3,9 @@
 {% load static %}
 {% block content %}
 {% if list_sell_products %}
-<table class="flex flex-row flex-wrap justify-center items-center text-black text-xm mx-5">
-  <thead class="flex flex-wrap">
-    <tr class="grid grid-cols-6  p-2 justify-items-center w-300 border border-gray-400">
+<table class="text-black text-xm">
+  <thead>
+    <tr class="grid grid-cols-6  p-2 justify-items-center border border-gray-400">
       <th>Fecha</th>
       <th>Nombre</th>
       <th>Cantidad</th>
@@ -14,9 +14,9 @@
       <th></th>
     </tr>
   </thead>
-  <tbody class="flex flex-wrap my-5">
+  <tbody>
       {% for item2 in list_sell_products %}
-      <tr  class="grid grid-cols-6 p-2 justify-items-center w-300 border border-gray-400">
+      <tr  class="grid grid-cols-6 p-2 justify-items-center border border-gray-400">
           <td >{{ item2.idsell.datesell }}</td>
           <td >{{ item2.idproduct.name }}</td>
           <td >{{ item2.quantity }}</td>

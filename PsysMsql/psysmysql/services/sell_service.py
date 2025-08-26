@@ -22,87 +22,52 @@ class SellService:
     @staticmethod
     @log_execution_time(get_sell_logger())
     def calculate_sell_totals(sell_products_queryset, quantity_pay):
-        """
-        Calcula todos los totales de una venta de manera optimizada
-
-        Returns:
-            dict: Diccionario con todos los cálculos
-        """
         logger = get_sell_logger()
         items_count = sell_products_queryset.count()
 
-        if not sell_products_queryset.exists():
-            return {
-                "list_items": [],
-                "list_items_json": "[]",
-                "quantity": 0,
-                "subtotal": 0.0,
-                "iva_calculated": 0.0,
-                "price_iva": 0.0,
-                "price_x_quantity": 0.0,
-                "price_with_iva": 0.0,
-                "quantity_pay": 0.0,
-                "money_back": 0.0,
-            }
-        else:
-            with LogOperation(
-                f"Calculando totales para {items_count} productos", logger
-            ):
-                list_items = []
-                total_quantity = 0
-                subtotal = float("0.00")
+        with LogOperation(f"Calculando totales para {items_count} productos", logger):
+            list_items: list = []
+            total_quantity: int = 0
+            subtotal: float = 0.0
+            iva_total: float = 0.0
+            total: float = 0.0
 
-                # Optimización: usar select_related para evitar consultas N+1
-                for item in sell_products_queryset.select_related("idproduct"):
+        for item in sell_products_queryset.select_related("idproduct"):
+            id_product = item.idproduct.pk
+            name = item.idproduct.name
+            quantity = item.quantity
+            total_quantity += item.quantity
+            price = float(item.priceunitaty)
+            pricexquantity = float(item.priceunitaty * quantity)
+            iva = float(pricexquantity * SellService.iva)
+            iva_total += float(iva)
+            subtotal += float(pricexquantity - iva_total)
+            total += pricexquantity
 
-                    item_total = int(str(item.quantity)) * float(item.priceunitaty)
-                    subtotal += item_total
-                    total_quantity += item.quantity
-
-                    # Cálculos de IVA
-                    iva_amount = subtotal * SellService.iva
-                    price_without_iva = subtotal - iva_amount
-
-                    # Cálculos de cambio.
-                    if quantity_pay is None:
-                        pass
-                    else:
-                        money_back = subtotal - float(quantity_pay)
-
-                        list_items.append(
-                            {
-                                "id_product": item.idproduct.pk,
-                                "name": item.idproduct.name,
-                                "quantity": item.quantity,
-                                "price": float(item.priceunitaty),
-                                "pricexquantity": float(item_total),
-                                "iva_calculated": float(iva_amount),
-                                "price_iva": float(price_without_iva),
-                                "price_with_iva": float(price_without_iva),
-                                "quantity_pay": float(str(quantity_pay)),
-                                "money_back": float(str(money_back)),
-                            }
-                        )
-                        logger.info(
-                            f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_amount}"
-                        )
-
-                    return {
-                        "results": list_items,
-                        "list_items_json": json.dumps(list_items),
-                        "quantity": item.quantity,
-                        "price": float(item.priceunitaty),
-                        "pricexquantity": float(item_total),
-                        "iva_calculated": float(iva_amount),
-                        "price_iva": float(price_without_iva),
-                        "price_with_iva": float(price_without_iva),
-                    }
+            list_items.append(
+                {
+                    "id": id_product,
+                    "name": name,
+                    "quantity": quantity,
+                    "price": price,
+                    "iva": iva,
+                    "pricexquantity": pricexquantity,
+                }
+            )
+        list_items.append({"subtotal": subtotal})
+        list_items.append({"quantity_total": total_quantity})
+        list_items.append({"iva_total": iva_total})
+        list_items.append({"total": total})
+        logger.info(
+            f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_total}"
+        )
+        return list_items
 
     @staticmethod
     @log_function_call(get_sell_logger())
     def add_product_to_sell(product_id, quantity):
         """
-        Agrega un producto al carrito de venta actual
+        Agregar un producto al carrito de venta actual
         """
         logger = get_sell_logger()
 
@@ -113,11 +78,12 @@ class SellService:
                 product = get_object_or_404(Products, pk=product_id)
 
                 # Crear o actualizar el item en SellProducts
-                sell_product, created = Sell.objects.get_or_create(
+                sell_product = Sell(
                     id_product=product,
                     totalsell=quantity,
                 )
-                if not created:
+                sell_product.save()
+                if not sell_product:
                     logger.info(f"Fallo en la creacion del producto {product.name}")
                 else:
                     logger.info(
@@ -277,14 +243,14 @@ class SellService:
 
             # Combinar toda la información
             context = {
-                **totals,
+                "totals": totals,
                 "list_sell_products": list_sell_products,
                 "quantity_pay": quantity_pay,
                 "money_back": money_back,
             }
 
             logger.info(
-                f'Resumen de venta preparado: {products_count} productos, subtotal={totals.get("subtotal", 0)}'
+                f"Resumen de venta: cantidad de productos={products_count} , detalles={context.get("totals")}"
             )
 
             if money_back:

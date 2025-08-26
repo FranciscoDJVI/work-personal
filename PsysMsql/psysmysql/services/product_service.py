@@ -1,11 +1,9 @@
 from django.core.cache import cache
 from django.db.models import Q
-from django.core.paginator import Paginator
 from ..models import Products, Stock
 from ..constants import (
     CACHE_KEY_ALL_PRODUCTS,
     CACHE_TIMEOUT_FLASH,
-    PRODUCTS_PER_PAGE,
 )
 from ..utils import clear_model_cache
 from ..logging_config import get_product_logger, log_execution_time, LogOperation
@@ -112,9 +110,7 @@ class ProductService:
 
     @staticmethod
     def get_product_by_name(name):
-        """
-        Obtiene un producto por nombre
-        """
+
         try:
             return Products.objects.get(name=name)
         except Products.DoesNotExist:
@@ -122,9 +118,6 @@ class ProductService:
 
     @staticmethod
     def get_product_stock_info(product_id):
-        """
-        Obtiene información de stock de un producto
-        """
         try:
             stock = Stock.objects.select_related("id_products").get(
                 id_products_id=product_id
