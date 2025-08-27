@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 
 from ..models import Products, Sell, SellProducts, Stock, Clients, RegistersellDetail
 from ..services.product_service import ProductService
-from ..services.sell_service import SellService
+from ..services.sell_service import RegisterSell
 from .serializers import (
     ProductSerializer,
     ProductListSerializer,

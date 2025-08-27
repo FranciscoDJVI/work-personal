@@ -2,10 +2,11 @@
 {% block title %}Detail-sell{% endblock %}
 {% load currency_filters %}
 {% block content %}
+{% for id in detail_individual_registers %}
 <h2 class="mx-5 my-10 text-black text-xm bg-white w-[fit-content] p-2">
-  Registro de venta número: {{ register_sell_instance.idsell}}
+  Registro de venta número: {{ id.idsell_product}}
 </h2>
-{{register_sell_instance}}
+{% endfor %}
 <hr class="text-black">
 <table class="bg-white grid text-black text-xm mx-10 my-10">
   <thead>
@@ -18,12 +19,12 @@
     </tr>
   </thead>
   <tbody class="bg-white text-gray-300 p-4">
-    {% for item in list_items %}
+    {% for item in detail_individual_registers %}
       <tr class="grid grid-cols-5 grid-rows-1 justify-items-center p-2 my-1 text-black font-extralight">
-        <td>{{ item.id_product }}</td>
+        <td>{{ item.idsell_product }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.quantity }}</td>
-        <td>{{ item.price }}</td>
+        <td>{{ item.priceunitary }}</td>
         <td>{{ item.pricexquantity|format_currency_cop }}</td>
       </tr>
     {% endfor %}

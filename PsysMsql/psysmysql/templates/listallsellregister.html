@@ -23,14 +23,14 @@
     <th >Detalles</th>
     </thead>
     <tbody>
-      {% for item2 in list %}
+      {% for item2 in registers_sell_statistics %}
       <tr class="grid grid-cols-6 justify-items-center items-center bg-gray-100 text-xm text-gray-600 text-extalight my-2 mx-2">
         <td >{{ item2.date }}</td>
         <td>{{ item2.id_employed }}</td>
         <td>{{ item2.total_sell|format_currency_cop }}</td>
         <td>{{ item2.type_pay}}</td>
         <td>{{ item2.state_sell}}</td>
-        <td><a href="{% url 'list_detail_sell_register' item2.idsell %}" class="text-black hover:text-gray-500 p-2">
+       <td><a href="{% url 'list_detail_sell_register' item2.id_register %}" class="text-black hover:text-gray-500 p-2">
             <i class="fa-solid fa-eye"></i></a>
         </td>
       </tr>

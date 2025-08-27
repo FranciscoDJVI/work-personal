@@ -13949,3 +13949,450 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 65: 'e
 2025-08-26 00:14:19,798 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
 2025-08-26 00:14:19,798 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
 2025-08-26 00:14:19,798 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:15:47,543 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:15:47,545 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:15:47,546 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:15:47,547 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:15:47,548 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:15:47,548 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:15:47,548 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:15:47,548 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:15:48,681 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:15:48,685 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:15:48,685 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:15:48,688 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:15:48,689 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.006s
+2025-08-26 00:15:48,689 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:15:48,689 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.008s)
+2025-08-26 00:15:48,689 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-26 00:15:49,038 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:15:49,040 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:15:49,040 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:15:49,042 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:15:49,042 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:15:49,042 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:15:49,042 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:15:49,042 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:18:19,610 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:19,612 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:19,613 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:18:19,614 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:19,615 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:18:19,615 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:19,615 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:18:19,615 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:18:20,182 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:20,187 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:20,188 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.001s)
+2025-08-26 00:18:20,190 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:20,191 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.006s
+2025-08-26 00:18:20,192 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:20,194 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.011s)
+2025-08-26 00:18:20,195 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.013s
+2025-08-26 00:18:20,440 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:20,443 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:20,443 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:18:20,448 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:20,448 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.007s
+2025-08-26 00:18:20,449 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:20,449 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.009s)
+2025-08-26 00:18:20,449 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.009s
+2025-08-26 00:18:20,658 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:20,661 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:20,661 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:18:20,663 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:20,663 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:18:20,663 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:20,663 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:18:20,664 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:18:23,953 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:23,956 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:23,957 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:18:23,959 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:23,960 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:18:23,960 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:23,960 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-26 00:18:23,960 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-26 00:18:25,030 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:25,032 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:25,033 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:18:25,034 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:25,035 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:18:25,035 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:25,035 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:18:25,036 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:18:25,662 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:18:25,667 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:18:25,667 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:18:25,670 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:18:25,671 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.006s
+2025-08-26 00:18:25,672 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:18:25,672 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.010s)
+2025-08-26 00:18:25,672 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.010s
+2025-08-26 00:19:12,062 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:12,066 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:12,066 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:19:12,070 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:12,070 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.006s
+2025-08-26 00:19:12,070 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:12,070 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.008s)
+2025-08-26 00:19:12,071 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-26 00:19:14,254 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:14,256 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:14,257 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.001s)
+2025-08-26 00:19:14,259 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:14,259 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:19:14,259 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:14,259 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:19:14,260 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:19:14,857 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:14,859 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:14,859 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:19:14,861 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:14,861 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:19:14,862 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:14,863 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:19:14,865 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.009s
+2025-08-26 00:19:15,093 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:15,096 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:15,096 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:19:15,099 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:15,099 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-26 00:19:15,100 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:15,100 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-26 00:19:15,100 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-26 00:19:34,431 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:34,433 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:34,433 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:19:34,435 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:34,435 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:19:34,435 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:34,435 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:19:34,436 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:19:35,614 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:35,617 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:35,617 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:19:35,619 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:35,619 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:19:35,620 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:35,620 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:19:35,620 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:19:36,352 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:19:36,354 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:19:36,355 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:19:36,357 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:19:36,357 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:19:36,357 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:19:36,357 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:19:36,357 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:20:05,505 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:20:05,507 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:20:05,508 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:20:05,509 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:20:05,510 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:20:05,510 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:20:05,510 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:20:05,510 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:20:06,805 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:20:06,809 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:20:06,809 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:20:06,811 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:20:06,811 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:20:06,811 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:20:06,812 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-26 00:20:06,812 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-26 00:20:07,573 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:20:07,577 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:20:07,577 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:20:07,580 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:20:07,582 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.007s
+2025-08-26 00:20:07,582 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:20:07,582 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.010s)
+2025-08-26 00:20:07,582 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.010s
+2025-08-26 00:20:45,841 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:20:45,846 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:20:45,848 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-26 00:20:45,852 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:20:45,853 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.009s
+2025-08-26 00:20:45,853 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:20:45,854 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.013s)
+2025-08-26 00:20:45,855 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.014s
+2025-08-26 00:20:47,207 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:20:47,210 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:20:47,211 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:20:47,212 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:20:47,213 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:20:47,213 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:20:47,213 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:20:47,213 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:20:47,346 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 299, in get
+    return render(request, self.template_name, context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 46: 'endif', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-08-26 00:20:48,059 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:20:48,062 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:20:48,063 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:20:48,064 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:20:48,065 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:20:48,065 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:20:48,065 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:20:48,065 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.007s
+2025-08-26 00:20:48,167 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 299, in get
+    return render(request, self.template_name, context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 46: 'endif', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-08-26 00:21:31,721 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:31,724 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:31,724 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:21:31,726 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:31,726 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:21:31,726 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:31,726 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:21:31,726 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:21:32,723 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:32,725 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:32,725 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:21:32,727 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:32,727 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:21:32,728 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:32,728 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:21:32,728 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:21:32,953 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:32,956 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:32,956 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:21:32,958 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:32,958 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.004s
+2025-08-26 00:21:32,959 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:32,959 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.006s)
+2025-08-26 00:21:32,959 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.006s
+2025-08-26 00:21:33,104 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:33,107 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:33,113 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.006s)
+2025-08-26 00:21:33,116 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:33,116 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.011s
+2025-08-26 00:21:33,117 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:33,118 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.014s)
+2025-08-26 00:21:33,118 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.014s
+2025-08-26 00:21:33,295 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:33,298 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:33,298 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.001s)
+2025-08-26 00:21:33,300 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:33,301 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-26 00:21:33,302 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:33,302 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.007s)
+2025-08-26 00:21:33,303 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.008s
+2025-08-26 00:21:33,482 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:33,489 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:33,491 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-26 00:21:33,493 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:33,494 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.006s
+2025-08-26 00:21:33,494 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:33,494 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.012s)
+2025-08-26 00:21:33,494 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.012s
+2025-08-26 00:21:33,641 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:33,644 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:33,646 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.002s)
+2025-08-26 00:21:33,652 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:33,652 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.009s
+2025-08-26 00:21:33,653 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:33,655 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.014s)
+2025-08-26 00:21:33,655 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.014s
+2025-08-26 00:21:34,377 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:34,381 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:34,382 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.001s)
+2025-08-26 00:21:34,387 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:34,387 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.008s
+2025-08-26 00:21:34,387 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:34,387 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.011s)
+2025-08-26 00:21:34,388 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.011s
+2025-08-26 00:21:34,639 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:34,641 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:34,642 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:21:34,643 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:34,643 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.003s
+2025-08-26 00:21:34,644 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:34,644 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.005s)
+2025-08-26 00:21:34,644 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.005s
+2025-08-26 00:21:34,782 - psysmysql.sells - INFO - Iniciando: Obteniendo resumen de venta para template
+2025-08-26 00:21:34,786 - psysmysql.sells - INFO - Iniciando: Calculando totales para 1 productos
+2025-08-26 00:21:34,786 - psysmysql.sells - INFO - Completado: Calculando totales para 1 productos (0.000s)
+2025-08-26 00:21:34,789 - psysmysql.sells - INFO - Totales calculados: 1 productos, subtotal: 810000.0, IVA: 190000.0
+2025-08-26 00:21:34,789 - psysmysql.sells - INFO - psysmysql.services.sell_service.calculate_sell_totals ejecutado en 0.005s
+2025-08-26 00:21:34,792 - psysmysql.sells - INFO - Resumen de venta: cantidad de productos=1 , detalles=[{'id': 14, 'name': 'Monitor IPS', 'quantity': 2, 'price': 500000.0, 'iva': 190000.0, 'pricexquantity': 1000000.0}, {'subtotal': 810000.0}, {'quantity_total': 2}, {'iva_total': 190000.0}, {'total': 1000000.0}]
+2025-08-26 00:21:34,792 - psysmysql.sells - INFO - Completado: Obteniendo resumen de venta para template (0.010s)
+2025-08-26 00:21:34,792 - psysmysql.sells - INFO - psysmysql.services.sell_service.get_sell_summary_for_template ejecutado en 0.010s
+2025-08-26 00:21:56,634 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.

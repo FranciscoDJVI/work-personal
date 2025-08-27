@@ -34,29 +34,28 @@
   </form>
 </section>
 {% if not formsel %}
-  <div class="flex justify-center items-center gap-4 bg-white mx-5 mb-10 p-2">
-  <section class="flex p-2 mb-10  max-h-64 overflow-y-auto">
-    <aside class="h-[fit-content] w-[fit-content] p-2 mb-10 ">
+<div class="flex justify-center items-center gap-4 bg-white mx-5 mb-10 p-2">
+  <section class="flex p-2 mb-10  ">
+    <aside class="h-[fit-content] w-[fit-content] p-2 mb-10 max-h-40 overflow-y-auto">
       {% include "listsellproducts.html" %}
     </aside>
-  </section>
-    <aside class>
-    <ul class="border border-gray-300 text-2xl font-extralight p-2">
-    {%for item in totals%}
-      {%if item.quantity_total %}
-      <li>Cant: {{item.quantity_total}}</li>
-      {% endif %}
-      {%if item.subtotal%}
-        <li>Sub: {{item.subtotal}}</li>
-      {% endif %}
-      {%if item.iva_total %}
-        <li>Iva: {{item.iva_total}}</li>
-      {% endif %}
-      {%if item.total %}
-        <li>Total: {{item.total}}</li>
-      {% endif %}
-    {% endfor %}
-    <ul/>
+    <aside class='w-[fit-content]'>
+      <ul class="border border-gray-300 text-2xl font-extralight p-2">
+      {%for item in totals%}
+        {%if item.quantity_total %}
+          <li>Cantidad: {{item.quantity_total}}</li>
+        {% endif %}
+        {%if item.subtotal %}
+          <li>Subtotal: {{item.subtotal|format_currency_cop}}</li>
+        {% endif %}
+        {%if item.iva_total %}
+          <li>Iva: {{item.iva_total|format_currency_cop}}</li>
+        {% endif %}
+        {%if item.total %}
+          <li>Total: {{item.total|format_currency_cop}}</li>
+        {% endif %}
+      {% endfor %}
+      <ul/>
     </aside>
   </section>
 </div>

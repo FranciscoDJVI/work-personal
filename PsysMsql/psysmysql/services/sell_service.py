@@ -1,6 +1,5 @@
 from datetime import datetime
 import json
-from decimal import Decimal
 from django.db.models import Q, FloatField
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
@@ -16,15 +15,109 @@ import psysmysql.constants as const
 
 
 # Servicio para operaciones relacionadas con ventas"
-class SellService:
+
+
+class RegisterSell:
+
+    @staticmethod
+    def register_sell(id_product, total_sell):
+
+        register_sell = Sell(totalsell=total_sell, id_product=id_product)
+        register_sell.save()
+
+
+class RegisterSellDetails:
+
+    @staticmethod
+    def register_detail(
+        id_employed,
+        total_sell,
+        type_pay,
+        state_sell,
+        notes,
+        detail_sell,
+        quantity_pay,
+    ):
+
+        register_sell_detail = RegistersellDetail(
+            id_employed=id_employed,
+            total_sell=total_sell,
+            type_pay=type_pay,
+            state_sell=state_sell,
+            notes=notes,
+            detail_sell=detail_sell,
+            quantity_pay=quantity_pay,
+        )
+        register_sell_detail.save()
+
+
+class GetStatistic:
+
+    @staticmethod
+    def get_register_sell_statistic():
+        all_register_sells = RegistersellDetail.objects.all()
+        registers: list = []
+
+        for register in all_register_sells:
+            registers.append(
+                {
+                    "id_register": int(register.idsell),
+                    "date": str(register.date),
+                    "id_employed": str(register.id_employed),
+                    "total_sell": float(register.total_sell),
+                    "type_pay": str(register.type_pay),
+                    "state_sell": str(register.state_sell),
+                    "notes": str(register.notes),
+                    "detail_sell": str(register.detail_sell),
+                    "quantity_pay": float(register.quantity_pay),
+                }
+            )
+        return json.dumps(registers)
+
+
+class Search:
+    @staticmethod
+    def filter(model: type, field: str, value):
+        filter_kwargs = {field: value}
+        return model.objects.filter(**filter_kwargs)
+
+
+class GetIndividualtatistic:
+    @staticmethod
+    def get_individual_statistics(pk):
+        return Search.filter(RegistersellDetail, "idsell", pk)
+
+
+class GetSellProductQueryset:
+
+    @staticmethod
+    def get_sell_product_queryset(pk):
+        detail_sell_product_queryset = Search.filter(SellProducts, "idproduct", pk)
+
+        detail_list: list = []
+
+        for detail in detail_sell_product_queryset:
+            detail_list = [
+                {
+                    "idsell_product": detail.idsell_product,
+                    "name": detail.idproduct.name,
+                    "quantity": detail.quantity,
+                    "priceunitary": float(detail.priceunitaty),
+                    "pricexquantity": float(detail.quantity * detail.priceunitaty),
+                }
+            ]
+            return detail_list
+        return detail_list
+
+
+"""class SellService:
     iva = float(const.IVA_RATE)  # 19% IVA
 
     @staticmethod
     @log_execution_time(get_sell_logger())
     def calculate_sell_totals(sell_products_queryset, quantity_pay):
         logger = get_sell_logger()
-        items_count = sell_products_queryset.count()
-
+        items_count = float(sell_products_queryset.count())
         with LogOperation(f"Calculando totales para {items_count} productos", logger):
             list_items: list = []
             total_quantity: int = 0
@@ -44,31 +137,26 @@ class SellService:
             subtotal += float(pricexquantity - iva_total)
             total += pricexquantity
 
-            list_items.append(
-                {
-                    "id": id_product,
-                    "name": name,
-                    "quantity": quantity,
-                    "price": price,
-                    "iva": iva,
-                    "pricexquantity": pricexquantity,
-                }
+            logger.info(
+                f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_total}"
             )
-        list_items.append({"subtotal": subtotal})
-        list_items.append({"quantity_total": total_quantity})
-        list_items.append({"iva_total": iva_total})
-        list_items.append({"total": total})
-        logger.info(
-            f"Totales calculados: {items_count} productos, subtotal: {subtotal}, IVA: {iva_total}"
-        )
-        return list_items
+            return {
+                "id": id_product,
+                "name": name,
+                "quantity": quantity,
+                "price": price,
+                "iva": iva,
+                "pricexquantity": pricexquantity,
+                "quantity_total": total_quantity,
+                "subtotal": subtotal,
+                "iva_total": iva_total,
+                "total": total,
+            }
 
     @staticmethod
     @log_function_call(get_sell_logger())
     def add_product_to_sell(product_id, quantity):
-        """
         Agregar un producto al carrito de venta actual
-        """
         logger = get_sell_logger()
 
         try:
@@ -148,9 +236,7 @@ class SellService:
 
     @staticmethod
     def search_clients_by_email(query):
-        """
         Busca clientes por email con optimizaciones
-        """
         if not query:
             return []
 
@@ -158,27 +244,27 @@ class SellService:
 
     @staticmethod
     @log_function_call(get_sell_logger())
-    def calculate_change(quantity_pay, total_sell_calculated):
+    def calculate_change(quantity_pay, total):
         # Calcula el cambio de una venta
         logger = get_sell_logger()
 
-        total = total_sell_calculated
-        payment = quantity_pay
         try:
-            if payment < total:
-                logger.warning(f"Pago insuficiente: total=${total}, pago=${payment}")
+            if quantity_pay < total:
+                logger.warning(
+                    f"Pago insuficiente: total=${total}, pago=${quantity_pay}"
+                )
                 raise ValidationError("El pago es insuficiente")
 
-            change = float(payment) - float(total)
+            change = float(quantity_pay) - float(total)
             logger.info(
-                f"Cambio calculado: total=${total}, pago=${payment}, cambio=${change}"
+                f"Cambio calculado: total=${total}, pago=${quantity_pay}, cambio=${change}"
             )
 
             return change
 
         except Exception as e:
             logger.error(
-                f"Error calculando cambio: total={total}, pago={payment}, error={str(e)}"
+                f"Error calculando cambio: total={total}, pago={quantity_pay}, error={str(e)}"
             )
             raise
 
@@ -201,12 +287,12 @@ class SellService:
 
                 register_sell = RegistersellDetail.objects.create(
                     id_employed=employed_id,
-                    total_sell=float(str(total_sell)),
+                    total_sell=total_sell,
                     type_pay=type_pay,
                     state_sell=state_sell,
                     notes=notes,
                     quantity_pay=float(str(quantity_pay)),
-                    detail_sell=list_items.get("list_items_json"),
+                    detail_sell=list_items,
                 )
 
                 logger.info(
@@ -223,10 +309,8 @@ class SellService:
     @staticmethod
     @log_execution_time(get_sell_logger())
     def get_sell_summary_for_template(request):
-        """
         Obtiene resumen completo para mostrar en template de venta
         Método principal que unifica toda la lógica del contexto
-        """
         logger = get_sell_logger()
 
         with LogOperation("Obteniendo resumen de venta para template", logger):
@@ -235,37 +319,31 @@ class SellService:
             products_count = list_sell_products.count()
 
             # Obtener información de sesión
-            money_back = request.session.pop("money_back", None)
             quantity_pay = request.session.pop("quantity_pay", None)
-            # Calcular totales
 
             totals = SellService.calculate_sell_totals(list_sell_products, quantity_pay)
-
             # Combinar toda la información
+
+            money_back = quantity_pay - totals
             context = {
                 "totals": totals,
                 "list_sell_products": list_sell_products,
                 "quantity_pay": quantity_pay,
-                "money_back": money_back,
             }
 
             logger.info(
                 f"Resumen de venta: cantidad de productos={products_count} , detalles={context.get("totals")}"
             )
 
-            if money_back:
-                logger.info(f"Cambio devuelto: ${money_back}")
-            if quantity_pay:
-                logger.info(f"Cantidad pagada: ${quantity_pay}")
+            logger.info(f"Cambio devuelto: ${money_back}")
+            logger.info(f"Cantidad pagada: ${quantity_pay}")
 
             return context
 
     @staticmethod
     @log_function_call(get_sell_logger())
     def clear_sell_cache():
-        """
         Limpia el cache relacionado con ventas
-        """
         logger = get_sell_logger()
 
         try:
@@ -279,9 +357,7 @@ class SellService:
     @staticmethod
     @log_function_call(get_sell_logger())
     def get_sales_statistics(date_from=None, date_to=None):
-        """
         Obtiene estadísticas de ventas para un período específico
-        """
         logger = get_sell_logger()
 
         date_now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -321,4 +397,4 @@ class SellService:
 
         except Exception as e:
             logger.error(f"Error obteniendo estadísticas de ventas: {str(e)}")
-            raise
+            raise"""

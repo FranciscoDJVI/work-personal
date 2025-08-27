@@ -11,11 +11,18 @@ from django.utils.decorators import method_decorator
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from kombu.utils import objects
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
 from .services.product_service import ProductService
-from .services.sell_service import SellService
+from .services.sell_service import (
+    RegisterSell,
+    RegisterSellDetails,
+    GetStatistic,
+    GetIndividualtatistic,
+    GetSellProductQueryset,
+)
 from .services.factura_service import create_bill
 from .forms import (
     ProductForm,
@@ -264,7 +271,7 @@ class SellProductView(View):
         Mucho más limpio y mantenible.
         """
         # Usar servicio para obtener todo el contexto de venta
-        sell_context = SellService.get_sell_summary_for_template(request)
+        # sell_context = SellService.get_sell_summary_for_template(request)
 
         # Preparar formularios
         formsell = SellForm()
@@ -283,7 +290,6 @@ class SellProductView(View):
 
         # Combinar todo el contexto
         context = {
-            **sell_context,  # Incluye todos los cálculos del servicio
             "formsell": formsell,
             "sentform": sentform,
             "formregsitersell": formregsitersell,
@@ -321,8 +327,11 @@ class SellProductView(View):
             totalsell = formsell.cleaned_data["totalsell"]
             idproduct = formsell.cleaned_data["id_product"]
 
+            request.session["idproduct"] = idproduct.pk
+
             try:
-                SellService.add_product_to_sell(idproduct.idproducts, totalsell)
+                RegisterSell.register_sell(idproduct, totalsell)
+                messages.success(request, SUCCESS_SELL_CREATED)
             except Exception as e:
                 messages.error(request, f"Error al registrar la venta: {e}")
             return redirect("sell_product")
@@ -342,34 +351,27 @@ class SellProductView(View):
             notes = formregsitersell.cleaned_data["notes"]
             quantity_pay = formregsitersell.cleaned_data["quantity_pay"]
 
-            list_sell_products = SellProducts.objects.all()
-            calculated_totals = SellService.calculate_sell_totals(
-                list_sell_products, quantity_pay
-            )
-            total_sale_calculated_result = json.loads(
-                calculated_totals.get("totals", {})
-            )
-
-            total_sale_calculated = float(
-                total_sale_calculated_result[0]["pricexquantity"]
-            )
-            money_back = SellService.calculate_change(
-                quantity_pay, total_sale_calculated
-            )
-
-            request.session["money_back"] = float(money_back)
-            request.session["quantity_pay"] = float(quantity_pay)
-
             id_employed = (
                 request.user.username if request.user.is_authenticated else "anonymous"
             )
+
+            id_product_save = request.session.get("idproduct")
+
+            details = GetSellProductQueryset.get_sell_product_queryset(id_product_save)
+            print("detail", details)
+
+            quantity = int(details[0]["quantity"])
+            priceunitary = float(details[0]["priceunitary"])
+            total_sell = quantity * priceunitary
+
             try:
-                SellService.create_sell_register(
+                RegisterSellDetails.register_detail(
                     id_employed,
-                    total_sale_calculated,
+                    total_sell,
                     type_pay,
                     state_sell,
                     notes,
+                    details,
                     quantity_pay,
                 )
                 messages.success(request, SUCCESS_SELL_CREATED)
@@ -520,35 +522,26 @@ class SellProductView(View):
 
 @login_required()
 def listallsellregisterview(request):
-    listallregister = RegistersellDetail.objects.all()
-    statistics = SellService.get_sales_statistics()
+    registers = GetStatistic.get_register_sell_statistic()
 
-    # List of the register sell and statistics about all sells.
-    context = {
-        "list": listallregister,
-        "statistics": statistics,
-    }
+    context = {"registers_sell_statistics": json.loads(registers)}
 
-    print(statistics)
     return render(request, "listallsellregister.html", context)
 
 
 # función para mostrar los datos de los registros de ventas.
 @login_required
 def detailregisterview(request, pk):
-    register_sell_instance = get_object_or_404(RegistersellDetail, idsell=pk)
 
-    try:
-        detail_data = json.loads(register_sell_instance.detail_sell)
-    except (json.JSONDecodeError, TypeError):
-        detail_data = []
+    detail_individual_register = GetIndividualtatistic.get_individual_statistics(pk)
 
-    list_items = [item for item in detail_data if "id_product" in item]
+    details_json = detail_individual_register.values("detail_sell").first()[
+        "detail_sell"
+    ]
 
-    context = {
-        "register_sell_instance": register_sell_instance,
-        "list_items": list_items,  # Pasa los items de productos
-    }
+    details = json.loads(details_json.replace("'", '"'))
+
+    context = {"detail_individual_registers": details}
     return render(request, "listdetailsellregister.html", context)
 
 
