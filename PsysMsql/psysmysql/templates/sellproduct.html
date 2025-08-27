@@ -33,7 +33,6 @@
         class="fa-solid fa-plus"></i></button>
   </form>
 </section>
-{% if not formsel %}
 <div class="flex justify-center items-center gap-4 bg-white mx-5 mb-10 p-2">
   <section class="flex p-2 mb-10  ">
     <aside class="h-[fit-content] w-[fit-content] p-2 mb-10 max-h-40 overflow-y-auto">
@@ -41,27 +40,14 @@
     </aside>
     <aside class='w-[fit-content]'>
       <ul class="border border-gray-300 text-2xl font-extralight p-2">
-      {%for item in totals%}
-        {%if item.quantity_total %}
-          <li>Cantidad: {{item.quantity_total}}</li>
-        {% endif %}
-        {%if item.subtotal %}
-          <li>Subtotal: {{item.subtotal|format_currency_cop}}</li>
-        {% endif %}
-        {%if item.iva_total %}
-          <li>Iva: {{item.iva_total|format_currency_cop}}</li>
-        {% endif %}
-        {%if item.total %}
-          <li>Total: {{item.total|format_currency_cop}}</li>
-        {% endif %}
-      {% endfor %}
+        <li>Cantidad: {{ totals.quantity}}</li>
+        <li>Iva: {{ totals.iva}}</li>
+        <li>Subtotal: {{totals.subtotal|format_currency_cop}}</li>
+        <li>Total: {{totals.total_sell|format_currency_cop}}</li>
       <ul/>
     </aside>
   </section>
 </div>
-{% else %}
-    <h1>No has seleccionado productos</h1>
-{% endif %}
 <section class="flex flex-row flex-wrap bg-white justify-center items-center mx-5 mb-5 gap-4 ">
   <form method="post" class="flex flex-row flex-wrap justify-center items-center gap-4 my-5 mx-5">
     {% csrf_token %}

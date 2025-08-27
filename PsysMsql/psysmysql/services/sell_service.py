@@ -3,6 +3,7 @@ import json
 from django.db.models import Q, FloatField
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
+
 from ..models import SellProducts, Products, Clients, RegistersellDetail, Sell
 from django.core.cache import cache
 from ..logging_config import (
@@ -15,6 +16,11 @@ import psysmysql.constants as const
 
 
 # Servicio para operaciones relacionadas con ventas"
+class Search:
+    @staticmethod
+    def filter(model: type, field: str, value):
+        filter_kwargs = {field: value}
+        return model.objects.filter(**filter_kwargs)
 
 
 class RegisterSell:
@@ -75,13 +81,6 @@ class GetStatistic:
         return json.dumps(registers)
 
 
-class Search:
-    @staticmethod
-    def filter(model: type, field: str, value):
-        filter_kwargs = {field: value}
-        return model.objects.filter(**filter_kwargs)
-
-
 class GetIndividualtatistic:
     @staticmethod
     def get_individual_statistics(pk):
@@ -108,6 +107,42 @@ class GetSellProductQueryset:
             ]
             return detail_list
         return detail_list
+
+
+class DeleteSellItem:
+    @staticmethod
+    def delete_sell(pk):
+        item = Search.filter(SellProducts, "idsell_product", pk)
+        item.delete()
+
+
+class Calculated_totals:
+    iva = const.IVA_RATE
+
+    @staticmethod
+    def calculated_totals():
+        quantity: int = 0
+        total_sell: float = 0.0
+        subtotal: float = 0.0
+        iva: float = 0.0
+
+        sell_products = SellProducts.objects.all()
+
+        totals: dict = {}
+        for sell in sell_products:
+            quantity += sell.quantity
+            iva += float(
+                Calculated_totals.iva * float(sell.quantity * sell.priceunitaty)
+            )
+            subtotal += float(sell.priceunitaty * quantity) - iva
+            total_sell += iva + subtotal
+            totals = {
+                "quantity": quantity,
+                "iva": iva,
+                "subtotal": subtotal,
+                "total_sell": total_sell,
+            }
+        return totals
 
 
 """class SellService:

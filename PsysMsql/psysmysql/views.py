@@ -11,7 +11,6 @@ from django.utils.decorators import method_decorator
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-from kombu.utils import objects
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
@@ -22,6 +21,8 @@ from .services.sell_service import (
     GetStatistic,
     GetIndividualtatistic,
     GetSellProductQueryset,
+    DeleteSellItem,
+    Calculated_totals,
 )
 from .services.factura_service import create_bill
 from .forms import (
@@ -288,8 +289,14 @@ class SellProductView(View):
             if search_query:
                 search_results = SellService.search_clients_by_email(search_query)
 
+        list_sell_products = SellProducts.objects.all()
+
+        totals = Calculated_totals.calculated_totals()
+
         # Combinar todo el contexto
         context = {
+            "totals": totals,
+            "list_sell_products": list_sell_products,
             "formsell": formsell,
             "sentform": sentform,
             "formregsitersell": formregsitersell,
@@ -321,7 +328,6 @@ class SellProductView(View):
 
     @staticmethod
     def _handle_sell_form(request):
-        """Lógica para el formulario 'sell'."""
         formsell = SellForm(request.POST)
         if formsell.is_valid():
             totalsell = formsell.cleaned_data["totalsell"]
@@ -331,6 +337,15 @@ class SellProductView(View):
 
             try:
                 RegisterSell.register_sell(idproduct, totalsell)
+
+                list_sell_products = SellProducts.objects.all()
+
+                context = SellProductView.get_context_data(request)
+
+                context["list_sell_products"] = list_sell_products
+                context["totals"] = Calculated_totals.calculated_totals()
+
+                return render(request, "sellproduct.html", context)
                 messages.success(request, SUCCESS_SELL_CREATED)
             except Exception as e:
                 messages.error(request, f"Error al registrar la venta: {e}")
@@ -549,7 +564,7 @@ def delete_sell_item(request, pk):
     if request.method == "POST":
         pass
     else:
-        SellService.remove_sell_item(pk)
+        DeleteSellItem.delete_sell(pk)
         return redirect("sell_product")
     return redirect("sell_product")
 
