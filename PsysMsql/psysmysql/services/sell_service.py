@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime, timezone
+from time import localtime
 import json
 from django.db.models import Q, FloatField
 from django.core.exceptions import ValidationError
@@ -15,12 +16,17 @@ from ..logging_config import (
 import psysmysql.constants as const
 
 
-# Servicio para operaciones relacionadas con ventas"
-class Search:
+class SearchByField:
     @staticmethod
     def filter(model: type, field: str, value):
         filter_kwargs = {field: value}
         return model.objects.filter(**filter_kwargs)
+
+
+class Search:
+    @staticmethod
+    def search(model: type):
+        return model.objects.all()
 
 
 class RegisterSell:
@@ -84,14 +90,16 @@ class GetStatistic:
 class GetIndividualtatistic:
     @staticmethod
     def get_individual_statistics(pk):
-        return Search.filter(RegistersellDetail, "idsell", pk)
+        return SearchByField.filter(RegistersellDetail, "idsell", pk)
 
 
 class GetSellProductQueryset:
 
     @staticmethod
     def get_sell_product_queryset(pk):
-        detail_sell_product_queryset = Search.filter(SellProducts, "idproduct", pk)
+        detail_sell_product_queryset = SearchByField.filter(
+            SellProducts, "idproduct", pk
+        )
 
         detail_list: list = []
 
@@ -112,7 +120,7 @@ class GetSellProductQueryset:
 class DeleteSellItem:
     @staticmethod
     def delete_sell(pk):
-        item = Search.filter(SellProducts, "idsell_product", pk)
+        item = SearchByField.filter(SellProducts, "idsell_product", pk)
         item.delete()
 
 
@@ -126,7 +134,7 @@ class Calculated_totals:
         subtotal: float = 0.0
         iva: float = 0.0
 
-        sell_products = SellProducts.objects.all()
+        sell_products = Search.search(SellProducts)
 
         totals: dict = {}
         for sell in sell_products:

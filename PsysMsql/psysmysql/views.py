@@ -16,6 +16,8 @@ from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
 from .services.product_service import ProductService
 from .services.sell_service import (
+    Search,
+    SearchByField,
     RegisterSell,
     RegisterSellDetails,
     GetStatistic,
@@ -412,66 +414,42 @@ class SellProductView(View):
 
     @staticmethod
     def _handle_sent_form(request):
-        """Lógica para el formulario 'sent'."""
         sentform = SentSellForm(request.POST)
 
         if sentform.is_valid():
 
-            productsell = Sell.objects.all()
+            id_product_save = request.session.get("idproduct")
 
-            data = []
-            for item in productsell:
-                data.append(
-                    {
-                        "id": item.idsell,
-                        "dateSell": timezone.localtime(item.datesell).isoformat(),
-                        "totalsell": item.totalsell,
-                        "id_product": item.id_product_id,
-                    }
-                )
-            request.session["data_json_sell"] = data
-
-            all_data = request.session.get("data_json_sell", [])
+            sell_product = SearchByField.filter(
+                SellProducts, "idproduct", id_product_save
+            )
             client_email_to_send = request.POST.get(
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
 
-            sell_product = SellProducts.objects.all()
-            data_sell_products = []
-            for item in sell_product:
-                data_sell_products.append(
+            email_subject = "Confirmación de Venta - Su Compra"
+            datos_factura = {
+                "numero": "2025-001",
+                "cliente": {
+                    "nombre": "Juan Pérez",
+                    "direccion": "Avenida del Sol 456",
+                },
+                "items": [
+                    {"cantidad": 2, "descripcion": "Producto A", "precio": 150.00},
                     {
-                        "id": item.idsell_product,
-                        "name": str(item.idproduct),
-                        "cantidad": item.quantity,
-                        "precio/unitario": float(item.priceunitaty),
-                        "idsell": item.idsell_id,
-                    }
-                )
-                request.session["data_json_sell_product"] = data_sell_products
-                datos_factura = {
-                    "numero": "2025-001",
-                    "cliente": {
-                        "nombre": "Juan Pérez",
-                        "direccion": "Avenida del Sol 456",
+                        "cantidad": 1,
+                        "descripcion": "Servicio de Consultoría",
+                        "precio": 500.00,
                     },
-                    "items": [
-                        {"cantidad": 2, "descripcion": "Producto A", "precio": 150.00},
-                        {
-                            "cantidad": 1,
-                            "descripcion": "Servicio de Consultoría",
-                            "precio": 500.00,
-                        },
-                        {"cantidad": 3, "descripcion": "Producto B", "precio": 75.50},
-                    ],
-                }
-                data_sell_products = request.session.get("data_json_sell_product", [])
-                email_subject = "Confirmación de Venta - Su Compra"
-                email_message = create_bill("factura_psys.pdf", datos_factura)
+                    {"cantidad": 3, "descripcion": "Producto B", "precio": 75.50},
+                ],
+            }
+            email_message = create_bill("factura_psys.pdf", datos_factura)
 
-            for item in all_data:
-                product_id = item["id_product"]
-                quantity = item["totalsell"]
+            for item in sell_product:
+                product_id = item.idproduct_id
+                quantity = item.quantity
+                print(product_id, quantity)
                 if not product_id or quantity is None:
                     messages.error(
                         request,
@@ -492,8 +470,9 @@ class SellProductView(View):
                     else:
                         product_stock.quantitystock -= quantity
                         product_stock.save()
-                        SellProducts.objects.all().delete()
-                        Sell.objects.all().delete()
+                        Search.search(SellProducts).delete()
+                        Search.search(Sell).delete()
+
                 except Stock.DoesNotExist:
                     messages.error(
                         request,
@@ -509,22 +488,22 @@ class SellProductView(View):
                         request,
                         f"Ocurrió un error inesperado para el producto ID {product_id}: {e}",
                     )
-            messages.success(request, "Proceso de envío de ventas completado.")
-            if client_email_to_send:
-                send_sell_confirmation_email.delay(
-                    client_email_to_send, email_subject, email_message
-                )
-                messages.info(
-                    request,
-                    f"Se inició el envío de correo de confirmación a {client_email_to_send}.",
-                )
-            else:
-                messages.warning(
-                    request,
-                    "No se proporcionó un correo de cliente para enviar la confirmación.",
-                )
+                messages.success(request, "Proceso de envío de ventas completado.")
+                if client_email_to_send:
+                    send_sell_confirmation_email.delay(
+                        client_email_to_send, email_subject, email_message
+                    )
+                    messages.info(
+                        request,
+                        f"Se inició el envío de correo de confirmación a {client_email_to_send}.",
+                    )
+                else:
+                    messages.warning(
+                        request,
+                        "No se proporcionó un correo de cliente para enviar la confirmación.",
+                    )
 
-            return redirect("sell_product")
+                return redirect("sell_product")
         else:
             for field, errors in sentform.errors.items():
                 for error in errors:
