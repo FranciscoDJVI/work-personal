@@ -372,23 +372,35 @@ class SellProductView(View):
                 request.user.username if request.user.is_authenticated else "anonymous"
             )
 
-            id_product_save = request.session.get("idproduct")
-
-            details = GetSellProductQueryset.get_sell_product_queryset(id_product_save)
-            print("detail", details)
-
-            quantity = int(details[0]["quantity"])
-            priceunitary = float(details[0]["priceunitary"])
-            total_sell = quantity * priceunitary
-
             try:
+                details = Search.search(SellProducts)
+                print("detail", details)
+                totals = Calculated_totals.calculated_totals()
+                detail_items: list = []
+                for item in details:
+                    detail_items.append(
+                        {
+                            "id": int(item.idsell_product),
+                            "name": str(item.idproduct.name),
+                            "price": float(item.priceunitaty),
+                            "quantity": int(item.quantity),
+                            "pricexquantity": int(item.quantity)
+                            * float(item.priceunitaty),
+                        }
+                    )
+                detail_items.append(
+                    {
+                        "totals": totals,
+                    }
+                )
+
                 RegisterSellDetails.register_detail(
                     id_employed,
-                    total_sell,
+                    totals.get("total_sell"),
                     type_pay,
                     state_sell,
                     notes,
-                    details,
+                    detail_items,
                     quantity_pay,
                 )
                 messages.success(request, SUCCESS_SELL_CREATED)
@@ -517,8 +529,16 @@ class SellProductView(View):
 @login_required()
 def listallsellregisterview(request):
     registers = GetStatistic.get_register_sell_statistic()
+    statistics = GetStatistic.quantity_total_sells()
+    type_payments = GetStatistic.quantity_and_types_payment()
+    total_money_sell = GetStatistic.total_money_sell()
 
-    context = {"registers_sell_statistics": json.loads(registers)}
+    context = {
+        "registers_sell_statistics": json.loads(registers),
+        "totals_sell": json.loads(statistics),
+        "totals_type_payment": json.loads(type_payments),
+        "total_money_sell": json.loads(total_money_sell),
+    }
 
     return render(request, "listallsellregister.html", context)
 
@@ -532,10 +552,13 @@ def detailregisterview(request, pk):
     details_json = detail_individual_register.values("detail_sell").first()[
         "detail_sell"
     ]
-
+    idsell_json = detail_individual_register.values("idsell")
     details = json.loads(details_json.replace("'", '"'))
 
-    context = {"detail_individual_registers": details}
+    context = {
+        "detail_individual_registers": details,
+        "idsell": idsell_json.values("idsell").first()["idsell"],
+    }
     return render(request, "listdetailsellregister.html", context)
 
 

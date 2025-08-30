@@ -39,26 +39,24 @@
 </table>
 <table class="bg-white mx-40 my-30  text-black text-xm justify-items-center">
   <thead>
-  <tr class="grid grid-cols-3 justify-items-center items-center bg-gray-300 text-xm text-black">
+  <tr class="grid grid-cols-2 justify-items-center items-center bg-gray-300 text-xm text-black">
     <th>Ventas totales</th>
     <th>Total ingresos</th>
-    <th>Promedio de ventas</th>
     </thead>
     <tbody>
-      <tr class="grid grid-cols-3 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-gray-600 font-medium">
-        <td >{{ statistics.total_sales}}</td>
-        <td >{{ statistics.total_revenue|format_currency_cop}}</td>
-        <td >{{ statistics.average_sale|format_currency_cop}}</td>
+      <tr class="grid grid-cols-2 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-gray-600 font-medium">
+        <td >{{ totals_sell}}</td>
+        <td >{{ total_money_sell|format_currency_cop}}</td>
       </tr>
     </tbody>
     <tfoot class="flex flex-col gap-2">
-      {% for item in statistics.payment_types%}
-        <tr class="flex flex-col justify-between bg-gray-100 text-xm text-gray-600 text-medium my-2 mx-2">
-          <td>Metodo de pago: {{ item.type_pay }}</td>
-          <td>Cant: {{ item.count }}</td>
-        </tr>
-      {% endfor %}
-    </tfoot>
+        {% for item in totals_type_payment %}
+          <tr class="flex flex-col justify-between bg-gray-100 text-xm text-gray-600 text-medium my-2 mx-2">
+            <td>Metodo de pago: {{ item.type_pay }}</td>
+            <td>Cant: {{ item.count }}</td>
+          </tr>
+        {% endfor %}
+        </tfoot>
 </table>
 </div>
 {% endblock %}

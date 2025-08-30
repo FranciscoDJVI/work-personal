@@ -1,8 +1,10 @@
 from datetime import datetime, timezone
+from itertools import starmap
 from time import localtime
 import json
-from django.db.models import Q, FloatField
+from django.db.models import Q, FloatField, Count, Sum
 from django.core.exceptions import ValidationError
+from django.db.models.sql.query import count
 from django.shortcuts import get_object_or_404
 
 from ..models import SellProducts, Products, Clients, RegistersellDetail, Sell
@@ -32,15 +34,37 @@ class Search:
 class RegisterSell:
 
     @staticmethod
+    @log_execution_time(get_sell_logger())
     def register_sell(id_product, total_sell):
+        logger = get_sell_logger()
 
-        register_sell = Sell(totalsell=total_sell, id_product=id_product)
-        register_sell.save()
+        try:
+            with LogOperation(
+                f"Agregando producto {id_product} con cantidad {total_sell}", logger
+            ):
+                product = get_object_or_404(Products, pk=id_product.idproducts)
+
+                register_sell = Sell(totalsell=total_sell, id_product=id_product)
+                register_sell.save()
+                if not register_sell.idsell:
+                    logger.info(f"Fallo en la creacion del producto {product.name}")
+                else:
+                    logger.info(
+                        f"Nuevo producto {product.name} agregado al carrito: {total_sell} unidades"
+                    )
+        except Products.DoesNotExist:
+            logger.error(
+                f"Intento de agregar producto inexistente: ID {id_product.idproducts}"
+            )
+            raise ValidationError("Producto no encontrado")
+        except Exception as e:
+            logger.error(f"Error agregando producto {id_product.idproducts}: {str(e)}")
 
 
 class RegisterSellDetails:
 
     @staticmethod
+    @log_execution_time(get_sell_logger())
     def register_detail(
         id_employed,
         total_sell,
@@ -50,17 +74,30 @@ class RegisterSellDetails:
         detail_sell,
         quantity_pay,
     ):
+        logger = get_sell_logger()
+        try:
+            with LogOperation(
+                f"Creando registro de venta: total=${total_sell}", logger
+            ):
 
-        register_sell_detail = RegistersellDetail(
-            id_employed=id_employed,
-            total_sell=total_sell,
-            type_pay=type_pay,
-            state_sell=state_sell,
-            notes=notes,
-            detail_sell=detail_sell,
-            quantity_pay=quantity_pay,
-        )
-        register_sell_detail.save()
+                register_sell_detail = RegistersellDetail(
+                    id_employed=id_employed,
+                    total_sell=total_sell,
+                    type_pay=type_pay,
+                    state_sell=state_sell,
+                    notes=notes,
+                    detail_sell=detail_sell,
+                    quantity_pay=quantity_pay,
+                )
+                register_sell_detail.save()
+            logger.info(
+                f"Venta registrada exitosamente: ID={detail_sell}, empleado={id_employed}, total=${total_sell}, tipo_pago={type_pay}"
+            )
+        except Exception as e:
+            logger.error(
+                f"Error creando registro de venta: empleado={id_employed}, total={total_sell}, error={e}"
+            )
+            raise
 
 
 class GetStatistic:
@@ -69,7 +106,6 @@ class GetStatistic:
     def get_register_sell_statistic():
         all_register_sells = RegistersellDetail.objects.all()
         registers: list = []
-
         for register in all_register_sells:
             registers.append(
                 {
@@ -81,10 +117,43 @@ class GetStatistic:
                     "state_sell": str(register.state_sell),
                     "notes": str(register.notes),
                     "detail_sell": str(register.detail_sell),
-                    "quantity_pay": float(register.quantity_pay),
                 }
             )
+        print(registers)
         return json.dumps(registers)
+
+    @staticmethod
+    def quantity_total_sells():
+        all_register_sells_count = RegistersellDetail.objects.all().count()
+        return json.dumps(all_register_sells_count)
+
+    @staticmethod
+    def quantity_and_types_payment():
+        all_type_payment = RegistersellDetail.objects.values("type_pay").annotate(
+            count=Count("type_pay")
+        )
+        type_payments: list = []
+
+        for item in all_type_payment:
+            type_payments.append(
+                {
+                    "type_pay": str(item.get("type_pay")),
+                    "count": int(item.get("count")),
+                }
+            )
+        return json.dumps(type_payments)
+
+    @staticmethod
+    def total_money_sell():
+        total_money: dict = {}
+        total_money_sells = RegistersellDetail.objects.aggregate(
+            total_sum=Sum("total_sell")
+        )
+        if not total_money_sells.get("total"):
+            total_money = {}
+        else:
+            total_money = {"total": float(total_money_sells.get("total_sum"))}
+        return json.dumps(total_money)
 
 
 class GetIndividualtatistic:
@@ -113,7 +182,6 @@ class GetSellProductQueryset:
                     "pricexquantity": float(detail.quantity * detail.priceunitaty),
                 }
             ]
-            return detail_list
         return detail_list
 
 
@@ -125,31 +193,28 @@ class DeleteSellItem:
 
 
 class Calculated_totals:
-    iva = const.IVA_RATE
+    iva_rate = const.IVA_RATE  # Ejemplo: 19% de IVA
 
     @staticmethod
     def calculated_totals():
-        quantity: int = 0
-        total_sell: float = 0.0
-        subtotal: float = 0.0
-        iva: float = 0.0
+        total_quantity = 0
+        subtotal = 0.0
 
         sell_products = Search.search(SellProducts)
 
-        totals: dict = {}
-        for sell in sell_products:
-            quantity += sell.quantity
-            iva += float(
-                Calculated_totals.iva * float(sell.quantity * sell.priceunitaty)
-            )
-            subtotal += float(sell.priceunitaty * quantity) - iva
-            total_sell += iva + subtotal
-            totals = {
-                "quantity": quantity,
-                "iva": iva,
-                "subtotal": subtotal,
-                "total_sell": total_sell,
-            }
+        for product in sell_products:
+            total_quantity += product.quantity
+            subtotal += product.quantity * float(product.priceunitaty)
+
+        iva_amount = subtotal * Calculated_totals.iva_rate
+        total_sell = subtotal
+
+        totals = {
+            "quantity": total_quantity,
+            "subtotal": subtotal - iva_amount,
+            "iva": iva_amount,
+            "total_sell": total_sell,
+        }
         return totals
 
 
