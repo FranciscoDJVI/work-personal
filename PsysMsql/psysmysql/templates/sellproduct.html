@@ -48,6 +48,7 @@
     </aside>
   </section>
 </div>
+{{change}}
 <section class="flex flex-row flex-wrap bg-white justify-center items-center mx-5 mb-5 gap-4 ">
   <form method="post" class="flex flex-row flex-wrap justify-center items-center gap-4 my-5 mx-5">
     {% csrf_token %}
@@ -55,8 +56,8 @@
     <button id="add" name="add" type="submit"
       class="bg-green-500  text-xm text-white p-2 font-extrabold">Agregar</button>
     <aside class="bg-gray-200 flex flex-col flex-wrap my-5 mx-5 items-center justify-between border border-gray-300 p-5 text-2xl">
-        <h3 class="text-green-500 font-medium">Pago: {{quantity_pay|format_currency_cop}}</h3>
-        <h3 class="text-red-600 font-medium">Cambio: {{money_back|format_currency_cop}}</h3>
+        <h3 class="text-green-500 font-medium">Pago: {{change.quantity_pay|format_currency_cop}}</h3>
+        <h3 class="text-red-600 font-medium">Cambio: {{change.change|format_currency_cop}}</h3>
       </aside>
   </form>
     <div class="flex flex-col flex-wrap  my-5 text-xm text-black font-extralight p-1 ">

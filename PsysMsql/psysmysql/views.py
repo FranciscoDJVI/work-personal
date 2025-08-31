@@ -3,6 +3,7 @@ import re
 from django.contrib import messages
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
+from django.db.models.lookups import GreaterThan
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required, permission_required
@@ -17,7 +18,6 @@ from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Cli
 from .services.product_service import ProductService
 from .services.sell_service import (
     Search,
-    SearchByField,
     RegisterSell,
     RegisterSellDetails,
     GetStatistic,
@@ -229,7 +229,7 @@ class Update(View):
             )
             if original_name:
                 try:
-                    productsearch = Products.objects.get(name=original_name)
+                    productsearch = Search.get(Products, "name", original_name)
                 except Products.DoesNotExist:
                     productsearch = None
         formupdate = ProductForm()
@@ -269,19 +269,12 @@ class SellProductView(View):
 
     @staticmethod
     def get_context_data(request):
-        """
-        Método refactorizado usando SellService para preparar contexto.
-        Mucho más limpio y mantenible.
-        """
-        # Usar servicio para obtener todo el contexto de venta
-        # sell_context = SellService.get_sell_summary_for_template(request)
-
         # Preparar formularios
         formsell = SellForm()
         sentform = SentSellForm()
         formregsitersell = RegisterSellDetailForm()
 
-        # Búsqueda de clientes usando servicio
+        # Buscar  clientes
         formsearch = SearchEmailForm(request.GET or None)
         search_results = []
         search_query = None
@@ -292,9 +285,8 @@ class SellProductView(View):
                 search_results = SellService.search_clients_by_email(search_query)
 
         list_sell_products = SellProducts.objects.all()
-
         totals = Calculated_totals.calculated_totals()
-
+        change = request.session.pop("change", None)
         # Combinar todo el contexto
         context = {
             "totals": totals,
@@ -305,6 +297,7 @@ class SellProductView(View):
             "formsearch": formsearch,
             "search_query": search_query,
             "search_results": search_results,
+            "change": change,
         }
         return context
 
@@ -340,15 +333,15 @@ class SellProductView(View):
             try:
                 RegisterSell.register_sell(idproduct, totalsell)
 
-                list_sell_products = SellProducts.objects.all()
+                list_sell_products = Search.search_default(SellProducts)
 
                 context = SellProductView.get_context_data(request)
 
                 context["list_sell_products"] = list_sell_products
                 context["totals"] = Calculated_totals.calculated_totals()
 
-                return render(request, "sellproduct.html", context)
                 messages.success(request, SUCCESS_SELL_CREATED)
+                return render(request, "sellproduct.html", context)
             except Exception as e:
                 messages.error(request, f"Error al registrar la venta: {e}")
             return redirect("sell_product")
@@ -373,8 +366,7 @@ class SellProductView(View):
             )
 
             try:
-                details = Search.search(SellProducts)
-                print("detail", details)
+                details = Search.search_default(SellProducts)
                 totals = Calculated_totals.calculated_totals()
                 detail_items: list = []
                 for item in details:
@@ -403,6 +395,11 @@ class SellProductView(View):
                     detail_items,
                     quantity_pay,
                 )
+                quantity_pay_save = float(quantity_pay)
+                request.session["quantity_pay"] = quantity_pay_save
+                change = GetStatistic.get_change_statistics(quantity_pay_save)
+                request.session["change"] = change
+
                 messages.success(request, SUCCESS_SELL_CREATED)
             except DatabaseError as e:
                 messages.error(
@@ -432,9 +429,7 @@ class SellProductView(View):
 
             id_product_save = request.session.get("idproduct")
 
-            sell_product = SearchByField.filter(
-                SellProducts, "idproduct", id_product_save
-            )
+            sell_product = Search.filter(SellProducts, "idproduct", id_product_save)
             client_email_to_send = request.POST.get(
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
@@ -461,7 +456,6 @@ class SellProductView(View):
             for item in sell_product:
                 product_id = item.idproduct_id
                 quantity = item.quantity
-                print(product_id, quantity)
                 if not product_id or quantity is None:
                     messages.error(
                         request,
@@ -469,7 +463,7 @@ class SellProductView(View):
                     )
                     return redirect("sell_product")
                 try:
-                    product_stock = Stock.objects.get(id_products=product_id)
+                    product_stock = Search.get(Stock, "id_products", product_id)
                     if product_stock.quantitystock == 0:
                         messages.error(
                             request, f"El stock del producto ID {product_id} es cero."
@@ -482,8 +476,8 @@ class SellProductView(View):
                     else:
                         product_stock.quantitystock -= quantity
                         product_stock.save()
-                        Search.search(SellProducts).delete()
-                        Search.search(Sell).delete()
+                        Search.search_default(SellProducts).delete()
+                        Search.search_default(Sell).delete()
 
                 except Stock.DoesNotExist:
                     messages.error(

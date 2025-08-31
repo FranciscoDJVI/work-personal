@@ -3,7 +3,7 @@ from itertools import starmap
 from time import localtime
 import json
 from django.db.models import Q, FloatField, Count, Sum
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from django.db.models.sql.query import count
 from django.shortcuts import get_object_or_404
 
@@ -17,18 +17,7 @@ from ..logging_config import (
 )
 import psysmysql.constants as const
 
-
-class SearchByField:
-    @staticmethod
-    def filter(model: type, field: str, value):
-        filter_kwargs = {field: value}
-        return model.objects.filter(**filter_kwargs)
-
-
-class Search:
-    @staticmethod
-    def search(model: type):
-        return model.objects.all()
+from ..services.search_orm import Search
 
 
 class RegisterSell:
@@ -52,7 +41,7 @@ class RegisterSell:
                     logger.info(
                         f"Nuevo producto {product.name} agregado al carrito: {total_sell} unidades"
                     )
-        except Products.DoesNotExist:
+        except ObjectDoesNotExist:
             logger.error(
                 f"Intento de agregar producto inexistente: ID {id_product.idproducts}"
             )
@@ -104,7 +93,7 @@ class GetStatistic:
 
     @staticmethod
     def get_register_sell_statistic():
-        all_register_sells = RegistersellDetail.objects.all()
+        all_register_sells = Search.search_default(RegistersellDetail)
         registers: list = []
         for register in all_register_sells:
             registers.append(
@@ -119,17 +108,36 @@ class GetStatistic:
                     "detail_sell": str(register.detail_sell),
                 }
             )
-        print(registers)
         return json.dumps(registers)
 
     @staticmethod
+    def get_change_statistics(quantity_pay: float):
+
+        total_sell = GetStatistic.get_register_sell_statistic()
+        total_sell_dict = json.loads(total_sell)
+        print(total_sell_dict[0]["total_sell"])
+        change_dict: dict = {}
+        try:
+            if not quantity_pay:
+                change_dict = {}
+                return change_dict
+            elif quantity_pay < total_sell_dict[0]["total_sell"]:
+                raise ValidationError("El pago es insuficiente")
+            else:
+                change = float(quantity_pay) - total_sell_dict[0]["total_sell"]
+                change_dict = {"quantity_pay": float(quantity_pay), "change": change}
+                return change_dict
+        except Exception as e:
+            raise ValidationError(f"Error calculando cambio: {str(e)}")
+
+    @staticmethod
     def quantity_total_sells():
-        all_register_sells_count = RegistersellDetail.objects.all().count()
+        all_register_sells_count = Search.search_default(RegistersellDetail).count()
         return json.dumps(all_register_sells_count)
 
     @staticmethod
     def quantity_and_types_payment():
-        all_type_payment = RegistersellDetail.objects.values("type_pay").annotate(
+        all_type_payment = Search.values(RegistersellDetail, "type_pay").annotate(
             count=Count("type_pay")
         )
         type_payments: list = []
@@ -159,16 +167,14 @@ class GetStatistic:
 class GetIndividualtatistic:
     @staticmethod
     def get_individual_statistics(pk):
-        return SearchByField.filter(RegistersellDetail, "idsell", pk)
+        return Search.filter(RegistersellDetail, "idsell", pk)
 
 
 class GetSellProductQueryset:
 
     @staticmethod
     def get_sell_product_queryset(pk):
-        detail_sell_product_queryset = SearchByField.filter(
-            SellProducts, "idproduct", pk
-        )
+        detail_sell_product_queryset = Search.filter(SellProducts, "idproduct", pk)
 
         detail_list: list = []
 
@@ -188,7 +194,7 @@ class GetSellProductQueryset:
 class DeleteSellItem:
     @staticmethod
     def delete_sell(pk):
-        item = SearchByField.filter(SellProducts, "idsell_product", pk)
+        item = Search.filter(SellProducts, "idsell_product", pk)
         item.delete()
 
 
@@ -200,7 +206,7 @@ class Calculated_totals:
         total_quantity = 0
         subtotal = 0.0
 
-        sell_products = Search.search(SellProducts)
+        sell_products = Search.search_default(SellProducts)
 
         for product in sell_products:
             total_quantity += product.quantity

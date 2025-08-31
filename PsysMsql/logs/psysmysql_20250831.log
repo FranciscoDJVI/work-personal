@@ -1,0 +1,806 @@
+2025-08-31 01:01:04,639 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:02:47,476 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:04:03,413 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:05:29,498 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:06:26,389 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:08:04,099 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:09:09,583 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:09:31,613 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:10:36,501 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:11:10,996 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:11:30,037 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:11:55,054 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:23:52,800 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:24:44,708 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:25:15,886 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:27:47,387 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:29:29,291 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:29:40,648 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:31:46,028 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:32:41,681 - psysmysql.sells - INFO - Iniciando: Agregando producto Teclado con cantidad 1
+2025-08-31 01:32:41,694 - psysmysql.sells - INFO - Nuevo producto Teclado agregado al carrito: 1 unidades
+2025-08-31 01:32:41,696 - psysmysql.sells - INFO - Completado: Agregando producto Teclado con cantidad 1 (0.014s)
+2025-08-31 01:32:41,696 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.015s
+2025-08-31 01:33:46,465 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:34:01,398 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-31 01:34:11,712 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$340000.0
+2025-08-31 01:34:11,721 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$340000.0 (0.009s)
+2025-08-31 01:34:11,721 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 614, 'name': 'Teclado', 'price': 340000.0, 'quantity': 1, 'pricexquantity': 340000.0}, {'totals': {'quantity': 1, 'subtotal': 275400.0, 'iva': 64600.0, 'total_sell': 340000.0}}], empleado=isabella, total=$340000.0, tipo_pago=transferencia
+2025-08-31 01:34:11,722 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.009s
+2025-08-31 01:39:06,025 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:39:41,966 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:43:18,867 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:43:46,232 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:43:58,395 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:44:11,648 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:45:22,958 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 01:46:02,078 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 01:47:53,994 - psysmysql.sells - INFO - Iniciando: Agregando producto Bateria con cantidad 1
+2025-08-31 01:47:54,011 - psysmysql.sells - INFO - Nuevo producto Bateria agregado al carrito: 1 unidades
+2025-08-31 01:47:54,011 - psysmysql.sells - INFO - Completado: Agregando producto Bateria con cantidad 1 (0.017s)
+2025-08-31 01:47:54,011 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.017s
+2025-08-31 01:47:58,086 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 01:47:58,096 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.010s)
+2025-08-31 01:47:58,096 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 01:47:58,097 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 01:48:54,996 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 01:48:55,012 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.016s)
+2025-08-31 01:48:55,012 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 01:48:55,012 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.016s
+2025-08-31 02:00:01,580 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:00:25,972 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:02:47,220 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:03:17,890 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:03:21,058 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:03:23,971 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:03:41,955 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:03:41,966 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.012s)
+2025-08-31 02:03:41,967 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:03:41,967 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.012s
+2025-08-31 02:04:36,207 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:05:05,726 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:05:13,443 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:05:13,452 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.009s)
+2025-08-31 02:05:13,452 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:05:13,452 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.009s
+2025-08-31 02:06:17,901 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:06:26,058 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:06:26,067 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.009s)
+2025-08-31 02:06:26,068 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:06:26,068 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.010s
+2025-08-31 02:07:14,589 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:07:21,406 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:07:21,414 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.008s)
+2025-08-31 02:07:21,414 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:07:21,414 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.008s
+2025-08-31 02:08:15,266 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:08:24,809 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:08:24,826 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.017s)
+2025-08-31 02:08:24,826 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:08:24,827 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.018s
+2025-08-31 02:08:57,894 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:09:03,822 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:09:03,837 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.016s)
+2025-08-31 02:09:03,838 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:09:03,838 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.016s
+2025-08-31 02:11:17,338 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:11:42,834 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:13:28,624 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:14:22,523 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 122, in get_change_statistics
+    raise ValidationError("La cantidasd a pagare no puede ser, str o None")
+django.core.exceptions.ValidationError: ['La cantidasd a pagare no puede ser, str o None']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 306, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 287, in get_context_data
+    change = GetStatistic.get_change_statistics(quantity_pay=0)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 130, in get_change_statistics
+    raise ValidationError(f"Error calculando cambio: {str(e)}")
+django.core.exceptions.ValidationError: ["Error calculando cambio: ['La cantidasd a pagare no puede ser, str o None']"]
+2025-08-31 02:15:17,323 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:16:56,853 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:16:58,716 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 308, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    quantity_pay=request.session.get["quantity_pay"]
+                 ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: 'method' object is not subscriptable
+2025-08-31 02:17:55,490 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:17:58,466 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 287, in get_context_data
+    quantity_pay = request.session.get["quantity_pay"]
+                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: 'method' object is not subscriptable
+2025-08-31 02:18:30,255 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:18:42,928 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:18:44,802 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 122, in get_change_statistics
+    raise ValidationError("La cantidasd a pagare no puede ser, str o None")
+django.core.exceptions.ValidationError: ['La cantidasd a pagare no puede ser, str o None']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    change = GetStatistic.get_change_statistics(quantity_pay)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 130, in get_change_statistics
+    raise ValidationError(f"Error calculando cambio: {str(e)}")
+django.core.exceptions.ValidationError: ["Error calculando cambio: ['La cantidasd a pagare no puede ser, str o None']"]
+2025-08-31 02:19:12,164 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:19:14,566 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    change = GetStatistic.get_change_statistics(float(quantity_pay))
+                                                ~~~~~^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+2025-08-31 02:20:22,111 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:21:34,428 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    change = GetStatistic.get_change_statistics(float(quantity_pay))
+                                                ~~~~~^^^^^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+2025-08-31 02:21:56,094 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:21:58,094 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 122, in get_change_statistics
+    raise ValidationError("La cantidasd a pagare no puede ser, str o None")
+django.core.exceptions.ValidationError: ['La cantidasd a pagare no puede ser, str o None']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    change = GetStatistic.get_change_statistics(quantity_pay)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 130, in get_change_statistics
+    raise ValidationError(f"Error calculando cambio: {str(e)}")
+django.core.exceptions.ValidationError: ["Error calculando cambio: ['La cantidasd a pagare no puede ser, str o None']"]
+2025-08-31 02:23:36,596 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:25:01,190 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:26:35,940 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:27:58,224 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:28:11,775 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:28:43,639 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:28:59,453 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 287, in get_context_data
+    quantity_pay_save = -request.session.get("quantity_pay")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for unary -: 'NoneType'
+2025-08-31 02:29:26,171 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:29:28,806 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 122, in get_change_statistics
+    raise ValidationError("La cantidasd a pagare no puede ser, str o None")
+django.core.exceptions.ValidationError: ['La cantidasd a pagare no puede ser, str o None']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    change = GetStatistic.get_change_statistics(quantity_pay_save)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 130, in get_change_statistics
+    raise ValidationError(f"Error calculando cambio: {str(e)}")
+django.core.exceptions.ValidationError: ["Error calculando cambio: ['La cantidasd a pagare no puede ser, str o None']"]
+2025-08-31 02:29:39,950 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 122, in get_change_statistics
+    raise ValidationError("La cantidasd a pagare no puede ser, str o None")
+django.core.exceptions.ValidationError: ['La cantidasd a pagare no puede ser, str o None']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 288, in get_context_data
+    change = GetStatistic.get_change_statistics(quantity_pay_save)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py", line 130, in get_change_statistics
+    raise ValidationError(f"Error calculando cambio: {str(e)}")
+django.core.exceptions.ValidationError: ["Error calculando cambio: ['La cantidasd a pagare no puede ser, str o None']"]
+2025-08-31 02:30:09,424 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:30:52,347 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 02:30:59,573 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:30:59,581 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.008s)
+2025-08-31 02:30:59,581 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:30:59,581 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.008s
+2025-08-31 02:32:22,675 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:32:22,687 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.012s)
+2025-08-31 02:32:22,687 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:32:22,689 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.014s
+2025-08-31 02:32:47,666 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:32:47,684 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.018s)
+2025-08-31 02:32:47,685 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:32:47,685 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.019s
+2025-08-31 02:33:07,037 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:33:09,205 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 287, in get_context_data
+    quantity_pay_save = -request.session.get("quantity_pay")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for unary -: 'NoneType'
+2025-08-31 02:33:10,918 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 307, in get
+    context = self.get_context_data(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 287, in get_context_data
+    quantity_pay_save = -request.session.get("quantity_pay")
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: bad operand type for unary -: 'NoneType'
+2025-08-31 02:33:24,914 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:33:31,540 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:33:31,548 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.008s)
+2025-08-31 02:33:31,549 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:33:31,549 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.009s
+2025-08-31 02:35:38,329 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:35:45,024 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 304, in get
+    """Maneja las solicitudes GET (cuando se carga la página inicialmente)."""
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 290, in get_context_data
+    context = {
+    
+NameError: name 'change' is not defined. Did you mean: 'range'?
+2025-08-31 02:35:45,806 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:36:35,958 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:38:44,403 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:39:46,516 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:40:24,388 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:40:26,991 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-31 02:40:30,691 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:40:30,700 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.009s)
+2025-08-31 02:40:30,700 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:40:30,700 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.009s
+2025-08-31 02:47:28,650 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:47:34,439 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-31 02:47:38,071 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:47:38,081 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.010s)
+2025-08-31 02:47:38,081 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:47:38,081 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 02:47:38,189 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 123, in save
+    obj = self.create_model_instance(data)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 102, in create_model_instance
+    session_data=self.encode(data),
+                 ~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py", line 124, in encode
+    return signing.dumps(
+           ~~~~~~~~~~~~~^
+        session_dict,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        compress=True,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 150, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, serializer=serializer, compress=compress
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 225, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 125, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Decimal is not JSON serializable
+2025-08-31 02:48:08,821 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:48:32,853 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:49:20,230 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:49:20,243 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.012s)
+2025-08-31 02:49:20,243 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:49:20,243 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.013s
+2025-08-31 02:49:20,377 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 123, in save
+    obj = self.create_model_instance(data)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 102, in create_model_instance
+    session_data=self.encode(data),
+                 ~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py", line 124, in encode
+    return signing.dumps(
+           ~~~~~~~~~~~~~^
+        session_dict,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        compress=True,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 150, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, serializer=serializer, compress=compress
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 225, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 125, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Decimal is not JSON serializable
+2025-08-31 02:49:24,563 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:49:24,577 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.014s)
+2025-08-31 02:49:24,577 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:49:24,577 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.014s
+2025-08-31 02:49:24,651 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 123, in save
+    obj = self.create_model_instance(data)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 102, in create_model_instance
+    session_data=self.encode(data),
+                 ~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py", line 124, in encode
+    return signing.dumps(
+           ~~~~~~~~~~~~~^
+        session_dict,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        compress=True,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 150, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, serializer=serializer, compress=compress
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 225, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 125, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Decimal is not JSON serializable
+2025-08-31 02:51:48,359 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:51:48,372 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.013s)
+2025-08-31 02:51:48,372 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:51:48,373 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.013s
+2025-08-31 02:51:48,435 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 123, in save
+    obj = self.create_model_instance(data)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 102, in create_model_instance
+    session_data=self.encode(data),
+                 ~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py", line 124, in encode
+    return signing.dumps(
+           ~~~~~~~~~~~~~^
+        session_dict,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        compress=True,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 150, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, serializer=serializer, compress=compress
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 225, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 125, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Decimal is not JSON serializable
+2025-08-31 02:51:51,387 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:51:51,401 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.014s)
+2025-08-31 02:51:51,401 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:51:51,402 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.015s
+2025-08-31 02:51:51,458 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/middleware.py", line 59, in process_response
+    request.session.save()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 123, in save
+    obj = self.create_model_instance(data)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/db.py", line 102, in create_model_instance
+    session_data=self.encode(data),
+                 ~~~~~~~~~~~^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/sessions/backends/base.py", line 124, in encode
+    return signing.dumps(
+           ~~~~~~~~~~~~~^
+        session_dict,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        compress=True,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 150, in dumps
+    return TimestampSigner(key=key, salt=salt).sign_object(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        obj, serializer=serializer, compress=compress
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 225, in sign_object
+    data = serializer().dumps(obj)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/signing.py", line 125, in dumps
+    return json.dumps(obj, separators=(",", ":")).encode("latin-1")
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/usr/lib64/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib64/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib64/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Decimal is not JSON serializable
+2025-08-31 02:52:57,456 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:53:00,470 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:53:00,483 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.013s)
+2025-08-31 02:53:00,483 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:53:00,484 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.014s
+2025-08-31 02:53:06,761 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:53:06,779 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.017s)
+2025-08-31 02:53:06,779 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:53:06,779 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.018s
+2025-08-31 02:54:19,181 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:54:57,058 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:58:29,978 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:59:14,922 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-08-31 02:59:18,066 - django.request - WARNING - Not Found: /favicon.ico
+2025-08-31 02:59:22,593 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:59:22,605 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.012s)
+2025-08-31 02:59:22,606 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:59:22,606 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.013s
+2025-08-31 02:59:51,555 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 02:59:51,564 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.009s)
+2025-08-31 02:59:51,565 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 615, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 02:59:51,565 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.010s
+2025-08-31 03:01:43,275 - psysmysql.sells - INFO - Iniciando: Agregando producto Bateria con cantidad 2
+2025-08-31 03:01:43,291 - psysmysql.sells - INFO - Nuevo producto Bateria agregado al carrito: 2 unidades
+2025-08-31 03:01:43,291 - psysmysql.sells - INFO - Completado: Agregando producto Bateria con cantidad 2 (0.016s)
+2025-08-31 03:01:43,291 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.017s
+2025-08-31 03:01:49,198 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:01:49,209 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.010s)
+2025-08-31 03:01:49,209 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:01:49,209 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 03:03:14,886 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 03:03:24,021 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:03:24,034 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.013s)
+2025-08-31 03:03:24,035 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:03:24,035 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.015s
+2025-08-31 03:03:36,867 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:03:36,878 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.011s)
+2025-08-31 03:03:36,879 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:03:36,879 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.012s
+2025-08-31 03:04:01,122 - psysmysql.sells - INFO - Iniciando: Agregando producto Monitor 4k con cantidad 1
+2025-08-31 03:04:01,135 - psysmysql.sells - INFO - Nuevo producto Monitor 4k agregado al carrito: 1 unidades
+2025-08-31 03:04:01,135 - psysmysql.sells - INFO - Completado: Agregando producto Monitor 4k con cantidad 1 (0.014s)
+2025-08-31 03:04:01,135 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.014s
+2025-08-31 03:04:07,236 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$1080000.0
+2025-08-31 03:04:07,247 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$1080000.0 (0.011s)
+2025-08-31 03:04:07,247 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'id': 617, 'name': 'Monitor 4k', 'price': 1000000.0, 'quantity': 1, 'pricexquantity': 1000000.0}, {'totals': {'quantity': 3, 'subtotal': 874800.0, 'iva': 205200.0, 'total_sell': 1080000.0}}], empleado=francisco, total=$1080000.0, tipo_pago=Efectivo
+2025-08-31 03:04:07,247 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.012s
+2025-08-31 03:05:29,004 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 03:05:37,533 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$1080000.0
+2025-08-31 03:05:37,558 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$1080000.0 (0.024s)
+2025-08-31 03:05:37,558 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'id': 617, 'name': 'Monitor 4k', 'price': 1000000.0, 'quantity': 1, 'pricexquantity': 1000000.0}, {'totals': {'quantity': 3, 'subtotal': 874800.0, 'iva': 205200.0, 'total_sell': 1080000.0}}], empleado=francisco, total=$1080000.0, tipo_pago=Efectivo
+2025-08-31 03:05:37,559 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.025s
+2025-08-31 03:05:52,782 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-08-31 03:05:58,662 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$1080000.0
+2025-08-31 03:05:58,675 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$1080000.0 (0.013s)
+2025-08-31 03:05:58,676 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'id': 617, 'name': 'Monitor 4k', 'price': 1000000.0, 'quantity': 1, 'pricexquantity': 1000000.0}, {'totals': {'quantity': 3, 'subtotal': 874800.0, 'iva': 205200.0, 'total_sell': 1080000.0}}], empleado=francisco, total=$1080000.0, tipo_pago=Efectivo
+2025-08-31 03:05:58,676 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.014s
+2025-08-31 03:06:23,508 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:06:23,518 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.010s)
+2025-08-31 03:06:23,518 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:06:23,518 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 03:06:38,602 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:06:38,612 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.010s)
+2025-08-31 03:06:38,612 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:06:38,612 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 03:06:47,573 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:06:47,583 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.011s)
+2025-08-31 03:06:47,584 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:06:47,584 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 03:07:07,410 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 03:07:07,423 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.012s)
+2025-08-31 03:07:07,424 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 03:07:07,424 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.014s
