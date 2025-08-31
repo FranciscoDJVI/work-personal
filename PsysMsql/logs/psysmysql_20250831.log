@@ -804,3 +804,42 @@ TypeError: Object of type Decimal is not JSON serializable
 2025-08-31 03:07:07,423 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.012s)
 2025-08-31 03:07:07,424 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
 2025-08-31 03:07:07,424 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.014s
+2025-08-31 03:08:43,444 - psysmysql.sells - INFO - Iniciando: Agregando producto Teclado mecánico con cantidad 5
+2025-08-31 03:08:43,458 - psysmysql.sells - INFO - Nuevo producto Teclado mecánico agregado al carrito: 5 unidades
+2025-08-31 03:08:43,459 - psysmysql.sells - INFO - Completado: Agregando producto Teclado mecánico con cantidad 5 (0.015s)
+2025-08-31 03:08:43,460 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.015s
+2025-08-31 03:08:49,077 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$2880000.0
+2025-08-31 03:08:49,084 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$2880000.0 (0.007s)
+2025-08-31 03:08:49,085 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'id': 618, 'name': 'Teclado mecánico', 'price': 560000.0, 'quantity': 5, 'pricexquantity': 2800000.0}, {'totals': {'quantity': 7, 'subtotal': 2332800.0, 'iva': 547200.0, 'total_sell': 2880000.0}}], empleado=francisco, total=$2880000.0, tipo_pago=Efectivo
+2025-08-31 03:08:49,085 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.008s
+2025-08-31 03:10:40,609 - psysmysql.sells - INFO - Iniciando: Agregando producto Teclado mecánico con cantidad 2
+2025-08-31 03:10:40,624 - psysmysql.sells - INFO - Nuevo producto Teclado mecánico agregado al carrito: 2 unidades
+2025-08-31 03:10:40,624 - psysmysql.sells - INFO - Completado: Agregando producto Teclado mecánico con cantidad 2 (0.015s)
+2025-08-31 03:10:40,624 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.015s
+2025-08-31 03:10:46,541 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$4000000.0
+2025-08-31 03:10:46,550 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$4000000.0 (0.009s)
+2025-08-31 03:10:46,551 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 616, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'id': 618, 'name': 'Teclado mecánico', 'price': 560000.0, 'quantity': 5, 'pricexquantity': 2800000.0}, {'id': 619, 'name': 'Teclado mecánico', 'price': 560000.0, 'quantity': 2, 'pricexquantity': 1120000.0}, {'totals': {'quantity': 9, 'subtotal': 3240000.0, 'iva': 760000.0, 'total_sell': 4000000.0}}], empleado=francisco, total=$4000000.0, tipo_pago=Efectivo
+2025-08-31 03:10:46,551 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.009s
+2025-08-31 04:01:49,551 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-08-31 04:01:49,559 - psysmysql.stock - INFO - Resumen de stock generado: 11949 productos
+2025-08-31 04:01:49,559 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-08-31 04:01:49,559 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-08-31 04:01:49,559 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-08-31 04:01:49,563 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-08-31 04:01:49,563 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-08-31 04:02:29,773 - psysmysql.sells - INFO - Iniciando: Agregando producto Bateria con cantidad 1
+2025-08-31 04:02:29,786 - psysmysql.sells - INFO - Nuevo producto Bateria agregado al carrito: 1 unidades
+2025-08-31 04:02:29,787 - psysmysql.sells - INFO - Completado: Agregando producto Bateria con cantidad 1 (0.013s)
+2025-08-31 04:02:29,787 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.014s
+2025-08-31 04:02:34,327 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-08-31 04:02:34,337 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (0.010s)
+2025-08-31 04:02:34,337 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 620, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-08-31 04:02:34,338 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.011s
+2025-08-31 04:02:55,558 - psysmysql.sells - INFO - Iniciando: Agregando producto Bateria con cantidad 2
+2025-08-31 04:02:55,573 - psysmysql.sells - INFO - Nuevo producto Bateria agregado al carrito: 2 unidades
+2025-08-31 04:02:55,573 - psysmysql.sells - INFO - Completado: Agregando producto Bateria con cantidad 2 (0.016s)
+2025-08-31 04:02:55,574 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.016s
+2025-08-31 04:03:00,248 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$80000.0
+2025-08-31 04:03:00,260 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$80000.0 (0.012s)
+2025-08-31 04:03:00,261 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 621, 'name': 'Bateria', 'price': 40000.0, 'quantity': 2, 'pricexquantity': 80000.0}, {'totals': {'quantity': 2, 'subtotal': 64800.0, 'iva': 15200.0, 'total_sell': 80000.0}}], empleado=francisco, total=$80000.0, tipo_pago=Efectivo
+2025-08-31 04:03:00,261 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.013s
