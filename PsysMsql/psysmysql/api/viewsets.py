@@ -16,7 +16,7 @@ from django.db import transaction
 from datetime import datetime, timedelta
 
 from ..models import Products, Sell, SellProducts, Stock, Clients, RegistersellDetail
-from ..services.product_service import ProductService
+from ..services.product_service import CreateProduct
 from ..services.sell_service import RegisterSell
 from .serializers import (
     ProductSerializer,
@@ -103,7 +103,7 @@ class ProductViewSet(viewsets.ModelViewSet):
             price = serializer.validated_data["price"]
             description = serializer.validated_data.get("description", "")
 
-            product = ProductService.create_product(name, price, description)
+            product = CreateProduct.create_product(name, price, description)
             serializer.instance = product
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)

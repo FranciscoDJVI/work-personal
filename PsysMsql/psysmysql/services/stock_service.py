@@ -1,8 +1,3 @@
-"""
-Servicio para manejar la lógica de negocio de stock/inventario
-Optimiza consultas y centraliza validaciones
-"""
-
 from django.db.models import Q, F, Sum
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404

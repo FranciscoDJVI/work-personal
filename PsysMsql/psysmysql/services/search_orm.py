@@ -1,5 +1,8 @@
 """Service for search in database using ORM"""
 
+from django.db.models import Q
+from ..models import Clients
+
 
 class Search:
     @staticmethod
@@ -19,3 +22,10 @@ class Search:
     @staticmethod
     def values(model: type, value: str):
         return model.objects.values(value)
+
+    @staticmethod
+    def search_clients_by_email(query):
+        if not query:
+            return []
+
+        return Clients.objects.filter(Q(email__icontains=query)).distinct()

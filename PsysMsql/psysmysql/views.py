@@ -1,11 +1,9 @@
 import json
-import re
 from django.contrib import messages
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
-from django.db.models.lookups import GreaterThan
-from django.shortcuts import render, redirect, get_object_or_404
-from django.utils import timezone
+from django.db.models import ObjectDoesNotExist
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, permission_required
 from django.views import View
 from django.utils.decorators import method_decorator
@@ -15,7 +13,13 @@ from django.contrib.auth.models import User
 
 from .tasks import send_sell_confirmation_email
 from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
-from .services.product_service import ProductService
+from .services.product_service import (
+    CreateProduct,
+    GetAllProducts,
+    SearchByAjax,
+    UpdateProducts,
+    DeleteProducts,
+)
 from .services.sell_service import (
     Search,
     RegisterSell,
@@ -80,7 +84,7 @@ def register_product(request):
             description = formregister.cleaned_data["description"]
 
             try:
-                ProductService.create_product(name, price, description)
+                CreateProduct.create_product(name, price, description)
                 messages.success(request, SUCCESS_PRODUCT_SAVED)
 
             except ValueError as e:
@@ -97,8 +101,8 @@ def register_product(request):
 
 
 def view_product(request):
-    all_products = ProductService.get_all_products_save().get("products")
-    total_products = ProductService.get_all_products_save().get("total")
+    all_products = GetAllProducts.get_all_products().get("products")
+    total_products = GetAllProducts.get_all_products().get("total")
 
     context = {"all_products": all_products, "total_products_save": total_products}
     return render(request, "allproducts.html", context)
@@ -112,7 +116,7 @@ def delete_product(request):
         if form.is_valid():
             name = form.cleaned_data["name"]
 
-            ProductService.delete_product(name)
+            DeleteProducts.delete_product(name)
             messages.success(request, SUCCESS_PRODUCT_DELETED)
 
             return redirect("delete-product")
@@ -175,7 +179,7 @@ class Update(View):
 
         if formsearch.is_valid():
             namesearch = formsearch.cleaned_data["name"]
-            product_found = ProductService.get_product_by_name(namesearch)
+            product_found = Search.get(Products, "name", namesearch)
 
             if product_found:
                 productsearch = product_found
@@ -219,7 +223,7 @@ class Update(View):
 
             original_name = request.session.get("original_name")
 
-            ProductService.update_product(
+            UpdateProducts.update_product(
                 original_name, new_name, new_price, new_description
             )
         else:
@@ -230,7 +234,7 @@ class Update(View):
             if original_name:
                 try:
                     productsearch = Search.get(Products, "name", original_name)
-                except Products.DoesNotExist:
+                except ObjectDoesNotExist:
                     productsearch = None
         formupdate = ProductForm()
         context = self.get_context_data(
@@ -244,12 +248,12 @@ class Update(View):
 
 @login_required
 def search_products_ajax(request):
-    """Vista AJAX refactorizada usando ProductService"""
+    # Vista AJAX para buscar productos
     if request.method == "GET":
         query = request.GET.get("q", "").strip()
         try:
             # Usar servicio para búsqueda optimizada
-            results = ProductService.search_products_ajax(query, limit=10)
+            results = SearchByAjax.search_products_ajax(query, limit=10)
             return JsonResponse({"results": results})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
@@ -282,8 +286,7 @@ class SellProductView(View):
         if formsearch.is_valid():
             search_query = formsearch.cleaned_data["query"]
             if search_query:
-                search_results = SellService.search_clients_by_email(search_query)
-
+                search_results = Search.search_clients_by_email(search_query)
         list_sell_products = SellProducts.objects.all()
         totals = Calculated_totals.calculated_totals()
         change = request.session.pop("change", None)
@@ -479,7 +482,7 @@ class SellProductView(View):
                         Search.search_default(SellProducts).delete()
                         Search.search_default(Sell).delete()
 
-                except Stock.DoesNotExist:
+                except ObjectDoesNotExist:
                     messages.error(
                         request,
                         f"Producto ID {product_id} no encontrado en stock.",
