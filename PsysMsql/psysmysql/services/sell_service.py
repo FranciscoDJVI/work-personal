@@ -156,7 +156,7 @@ class GetStatistic:
         total_money_sells = RegistersellDetail.objects.aggregate(
             total_sum=Sum("total_sell")
         )
-        if not total_money_sells.get("total"):
+        if not total_money_sells:
             total_money = {}
         else:
             total_money = {"total": float(total_money_sells.get("total_sum"))}

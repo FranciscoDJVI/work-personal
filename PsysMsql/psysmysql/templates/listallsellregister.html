@@ -14,22 +14,24 @@
 </nav>
 <table class="bg-white mx-10 my-30  text-black text-xm">
   <thead>
-  <tr class="grid grid-cols-6 bg-gray-300 text-xm text-black p-2">
+  <tr class="grid grid-cols-7 bg-gray-300 text-xm text-black p-2">
     <th >Fecha de venta</th>
     <th >Empleado</th>
     <th >Total</th>
     <th >Tipo/pago</th>
     <th >Estado/Venta</th>
+    <th >Notas</th>
     <th >Detalles</th>
     </thead>
     <tbody>
       {% for item2 in registers_sell_statistics %}
-      <tr class="grid grid-cols-6 justify-items-center items-center bg-gray-100 text-xm text-gray-600 text-extalight my-2 mx-2">
+      <tr class="grid grid-cols-7 justify-items-center items-center bg-gray-100 text-xm text-gray-600 text-extalight my-2 mx-2">
         <td >{{ item2.date }}</td>
         <td>{{ item2.id_employed }}</td>
         <td>{{ item2.total_sell|format_currency_cop }}</td>
         <td>{{ item2.type_pay}}</td>
         <td>{{ item2.state_sell}}</td>
+        <td>{{ item2.notes}}</td>
        <td><a href="{% url 'list_detail_sell_register' item2.id_register %}" class="text-black hover:text-gray-500 p-2">
             <i class="fa-solid fa-eye"></i></a>
         </td>
@@ -46,7 +48,7 @@
     <tbody>
       <tr class="grid grid-cols-2 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-gray-600 font-medium">
         <td >{{ totals_sell}}</td>
-        <td >{{ total_money_sell|format_currency_cop}}</td>
+        <td >{{ total_money_sell.total|format_currency_cop}}</td>
       </tr>
     </tbody>
     <tfoot class="flex flex-col gap-2">
