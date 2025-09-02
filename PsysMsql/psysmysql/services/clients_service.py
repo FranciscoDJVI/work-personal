@@ -1,3 +1,4 @@
+import json
 from ..models import Clients
 from ..logging_config import get_clients_logger, log_execution_time, LogOperation
 from ..services.search_orm import Search
@@ -48,11 +49,21 @@ class GertAllClients:
         logger = get_clients_logger()
         with LogOperation("Obteniendo todos los clientes", logger):
 
-            all_clients = (
-                Search.search_default(Clients).select_related().order_by("name")
-            )
-        logger.info(f"Total de clientes obtenidos: {all_clients.count()}")
-        return {
-            "clients": all_clients,
-            "total": all_clients.count(),
-        }
+            all_clients = Search.search_default(Clients).order_by("name")
+            total_clients = Search.search_default(Clients).count()
+            logger.info(f"Total de clientes obtenidos: {total_clients}")
+
+            all_clients_dict: dict = {}
+
+            for cliente_detail in all_clients:
+                all_clients_dict[cliente_detail.id] = {
+                    "name": cliente_detail.name,
+                    "email": cliente_detail.email,
+                    "direction": cliente_detail.direction,
+                    "telephone": cliente_detail.telephone,
+                    "nit": cliente_detail.nit,
+                    "country": cliente_detail.country,
+                    "departament": cliente_detail.departament,
+                    "city": cliente_detail.city,
+                }
+        return all_clients

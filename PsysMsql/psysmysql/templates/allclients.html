@@ -1,0 +1,36 @@
+{% extends "base.html" %} 
+{% block content %}
+<div class="mx-5 my-10 flex bg-white p-4">
+<table class="table table-striped">
+    <thead class="border border-gray-300 w-[fit-content]">
+        <tr class="grid grid-cols-9 p-2 items-center justify-items-start">
+            <th scope="col" >ID</th>
+            <th scope="col" >Nombre</th>
+            <th scope="col" class="mr-5" >Email</th>
+            <th scope="col" >Telefono</th>
+            <th scope="col" >Direccion</th>
+            <th scope="col" >Nit</th>
+            <th scope="col" >Pais</th>
+            <th scope="col" >Departamento</th>
+            <th scope="col" >Ciudad</th>
+        </tr>
+    </thead>
+    <tbody class='border border-gray-300'>
+        {% for client in all_clients %}
+        <tr class="grid grid-cols-9 items-center my-1 p-2 justify-items-start border border-gray-300 font-light">
+            <th>{{ client.id }}</th>
+            <td >{{ client.name }}</td>
+            <td class="mr-10">{{client.email }}</td>
+            <td >{{ client.telephone }}</td>
+            <td >{{ client.direction }}</td>
+            <td >{{ client.nit }}</td>
+            <td >{{ client.country }}</td>
+            <td >{{ client.departament }}</td>
+            <td >{{ client.city }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+
+</div>
+{% endblock%}

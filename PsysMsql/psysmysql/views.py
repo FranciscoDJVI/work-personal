@@ -726,3 +726,9 @@ def register_clients(request):
     else:
         formclients = ClientsForm()
         return render(request, "registerclients.html", {"formclients": formclients})
+
+
+def view_clients(request):
+    all_client_registers = GertAllClients.get_all_clients()
+    context = {"all_clients": all_client_registers}
+    return render(request, "allclients.html", context)

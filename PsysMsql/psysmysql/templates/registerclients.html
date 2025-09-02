@@ -6,8 +6,9 @@
     <form method="post" class="flex flex-col flex-wrap gap-2 items-center ">
         {%csrf_token%}
         {{ formclients }}
-        <button class="bg-gray-200 text-black p-2 mb-5" type="submit">register</button>
+        <button class="bg-gray-200 text-black p-2 mb-5" type="submit">Registrar</button>
     </form>
 </section>
+<a href={% url 'all_clients' %} class="bg-green-500 p-2 text-white">Clientes</a>
 </div>
 {% endblock%}

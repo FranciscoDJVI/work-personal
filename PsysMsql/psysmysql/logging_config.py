@@ -155,7 +155,7 @@ def log_execution_time(logger=None):
             start_time = time.time()
             try:
                 result = func(*args, **kwargs)
-                execution_time = start_time - time.time()
+                execution_time = time.time() - start_time
                 func_logger.info(f"{func_name} ejecutado en {execution_time:.3f}s")
                 return result
             except Exception as e:
