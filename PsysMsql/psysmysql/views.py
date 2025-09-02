@@ -30,6 +30,14 @@ from .services.sell_service import (
     DeleteSellItem,
     Calculated_totals,
 )
+
+from .services.stock_service import (
+    SearchItemInStock,
+    CreateStock,
+    GetStcokSummaty,
+    GetStockAlerts,
+)
+from .services.clients_service import RegisterClients, GertAllClients
 from .services.factura_service import create_bill
 from .forms import (
     ProductForm,
@@ -587,7 +595,6 @@ def list_product_sell(request):
 @login_required
 @permission_required("psysmysql.add_stock", login_url="error")
 def register_stock(request):
-    from .services.stock_service import StockService
 
     if request.method == "POST":
         stockform = StockForm(request.POST)
@@ -596,17 +603,17 @@ def register_stock(request):
             quantitystock = stockform.cleaned_data["quantitystock"]
 
             try:
-                stock_item = StockService.search_item_in_stock(id_product_instance.pk)
+                stock_item = SearchItemInStock.search_item(id_product_instance.pk)
                 # Usar servicio para actualización de stock
                 if stock_item:
-                    stock_item = StockService.update_stock(
+                    stock_item = CreateStock.create_or_update_stock(
                         id_product_instance.pk,
                         quantitystock,
                         "add",  # Agregar al stock existente
                     )
                     messages.success(request, SUCCESS_STOCK_UPDATED)
                 else:
-                    stock_item = StockService.update_stock(
+                    stock_item = CreateStock.create_or_update_stock(
                         id_product_instance.pk,
                         quantitystock,
                     )
@@ -628,8 +635,8 @@ def register_stock(request):
 
         # Usar servicio para obtener resumen de stock
         try:
-            stock_summary = StockService.get_stock_summary()
-            stock_alerts = StockService.get_stock_alerts()
+            stock_summary = GetStcokSummaty.get_stock_summary()
+            stock_alerts = GetStockAlerts.get_stock_alerts()
             register_list_stock = (
                 Stock.objects.select_related("id_products")
                 .all()
@@ -703,19 +710,16 @@ def register_clients(request):
             departament = formclients.cleaned_data["departament"]
             city = formclients.cleaned_data["city"]
 
-            new_client = Clients(
-                name=name,
-                email=email,
-                direction=direction,
-                nit=nit,
-                telephone=telephone,
-                country=country,
-                departament=departament,
-                city=city,
+            RegisterClients.register_client(
+                name,
+                email,
+                direction,
+                telephone,
+                nit,
+                country,
+                departament,
+                city,
             )
-
-            new_client.save()
-
             return redirect("register_client")
         else:
             return redirect("register_client")

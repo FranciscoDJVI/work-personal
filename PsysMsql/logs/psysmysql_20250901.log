@@ -270,3 +270,159 @@ NameError: name 'Products' is not defined
 2025-09-01 18:22:03,548 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
 2025-09-01 18:22:03,551 - psysmysql.stock - INFO - Alertas generadas: 0
 2025-09-01 18:22:03,552 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-09-01 18:25:03,558 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:29:12,405 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:29:12,413 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:29:12,414 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-09-01 18:29:12,414 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-01 18:29:12,414 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-01 18:29:12,417 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-01 18:29:12,418 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-09-01 18:29:53,045 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:38:11,509 - django.request - ERROR - Internal Server Error: /stock-products/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 590, in register_stock
+    from .services.stock_service import StockService
+ImportError: cannot import name 'StockService' from 'psysmysql.services.stock_service' (/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py)
+2025-09-01 18:38:12,823 - django.request - ERROR - Internal Server Error: /stock-products/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 590, in register_stock
+    from .services.stock_service import StockService
+ImportError: cannot import name 'StockService' from 'psysmysql.services.stock_service' (/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py)
+2025-09-01 18:39:52,460 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:40:17,019 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 18:41:21,138 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:41:27,061 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 18:42:10,537 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 18:42:32,553 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 18:43:45,632 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:44:15,842 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 18:44:38,341 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 18:44:40,055 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:44:40,064 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:44:40,065 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.010s)
+2025-09-01 18:44:40,065 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.011s
+2025-09-01 18:44:40,674 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:44:40,681 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:44:40,682 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-09-01 18:44:40,682 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-09-01 18:44:40,867 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:44:40,873 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:44:40,873 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.006s)
+2025-09-01 18:44:40,873 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.006s
+2025-09-01 18:44:41,032 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:44:41,038 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:44:41,039 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.006s)
+2025-09-01 18:44:41,039 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.006s
+2025-09-01 18:44:43,549 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:44:43,556 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:44:43,556 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.006s)
+2025-09-01 18:44:43,556 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-01 18:44:44,118 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:44:44,125 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:44:44,126 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-09-01 18:44:44,126 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-09-01 18:46:29,923 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:47:56,548 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:47:58,272 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:47:58,280 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:47:58,280 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.008s)
+2025-09-01 18:47:58,280 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-09-01 18:47:58,281 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-01 18:47:58,285 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-01 18:47:58,286 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.005s)
+2025-09-01 18:47:58,484 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:47:58,497 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:47:58,498 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.014s)
+2025-09-01 18:47:58,498 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.014s
+2025-09-01 18:47:58,498 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-01 18:47:58,505 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-01 18:47:58,505 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.007s)
+2025-09-01 18:47:58,652 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 18:47:58,660 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 18:47:58,660 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.009s)
+2025-09-01 18:47:58,661 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-01 18:47:58,661 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-01 18:47:58,667 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-01 18:47:58,667 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.006s)
+2025-09-01 18:49:32,096 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:49:42,952 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-01 18:52:58,860 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 19:09:11,190 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 19:09:11,202 - psysmysql.stock - INFO - Resumen de stock generado: 11943 productos
+2025-09-01 19:09:11,203 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.013s)
+2025-09-01 19:09:11,203 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.013s
+2025-09-01 19:09:11,203 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-01 19:09:11,207 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-01 19:09:11,207 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.004s)
+2025-09-01 19:09:11,795 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-01 19:09:23,348 - psysmysql.stock - INFO - Iniciando: Buscando item en stock: 19
+2025-09-01 19:09:23,348 - psysmysql.stock - INFO - Completado: Buscando item en stock: 19 (0.001s)
+2025-09-01 19:09:23,348 - psysmysql.performance - INFO - psysmysql.services.stock_service.search_item ejecutado en 0.001s
+2025-09-01 19:09:23,350 - psysmysql.stock - INFO - Iniciando: Actualizando stock producto 19: add 16
+2025-09-01 19:09:23,365 - psysmysql.stock - INFO - Stock actualizado para producto Mouse Logitech: 100
+2025-09-01 19:09:23,365 - psysmysql.stock - INFO - Completado: Actualizando stock producto 19: add 16 (0.016s)
+2025-09-01 19:09:23,366 - psysmysql.performance - INFO - psysmysql.services.stock_service.create_or_update_stock ejecutado en 0.016s
+2025-09-01 19:09:23,379 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-01 19:09:23,386 - psysmysql.stock - INFO - Resumen de stock generado: 11959 productos
+2025-09-01 19:09:23,386 - psysmysql.stock - INFO - Completado: Generando resumen de stock (0.007s)
+2025-09-01 19:09:23,386 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-01 19:09:23,386 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-01 19:09:23,389 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-01 19:09:23,390 - psysmysql.stock - INFO - Completado: Generando alertas de stock (0.003s)
+2025-09-01 19:11:08,955 - django.request - WARNING - Not Found: /stock-products/accounts/login
+2025-09-01 19:12:41,290 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-01 19:22:17,031 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 19:28:13,457 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 19:29:02,273 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-01 19:33:29,086 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 19:34:56,529 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 19:37:15,815 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 19:37:37,607 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:40:35,740 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:40:53,036 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:43:12,896 - psysmysql.sells - INFO - Iniciando: Agregando producto Teclado con cantidad 1
+2025-09-01 19:43:12,907 - psysmysql.sells - INFO - Nuevo producto Teclado agregado al carrito: 1 unidades
+2025-09-01 19:43:12,907 - psysmysql.sells - INFO - Completado: Agregando producto Teclado con cantidad 1 (0.011s)
+2025-09-01 19:43:12,907 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.011s
+2025-09-01 19:45:18,214 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:45:23,294 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:46:10,087 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:48:24,626 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:49:09,011 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 19:49:51,541 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:49:59,750 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:50:11,147 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:50:17,159 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 19:55:20,075 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 19:55:31,909 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-09-01 19:58:46,150 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 20:02:04,011 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 20:02:22,709 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 20:06:02,991 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 20:08:24,257 - psysmysql.clientes - INFO - Iniciando: Creando cliente: Kevin Ordonez
+2025-09-01 20:08:24,259 - psysmysql.clientes - INFO - Completado: Creando cliente: Kevin Ordonez (-0.002s)
+2025-09-01 20:08:24,280 - psysmysql.clientes - INFO - Cliente creado exitosamente: Kevin Ordonez
+2025-09-01 20:08:24,281 - psysmysql.clientes - INFO - psysmysql.services.clients_service.register_client ejecutado en 0.024s
+2025-09-01 20:09:20,046 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 20:09:29,507 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/logging_config.py changed, reloading.
+2025-09-01 20:09:33,457 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-09-01 20:10:14,052 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 20:11:04,783 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-01 20:11:39,179 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
