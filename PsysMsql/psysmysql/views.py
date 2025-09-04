@@ -1,3 +1,4 @@
+import datetime
 import json
 from django.contrib import messages
 from django.db import DatabaseError
@@ -38,7 +39,7 @@ from .services.stock_service import (
     GetStockAlerts,
 )
 from .services.clients_service import RegisterClients, GertAllClients
-from .services.factura_service import create_bill
+from .services.factura_service import GetDataClientForBill, create_bill
 from .forms import (
     ProductForm,
     DeleteProductForm,
@@ -295,7 +296,7 @@ class SellProductView(View):
             search_query = formsearch.cleaned_data["query"]
             if search_query:
                 search_results = Search.search_clients_by_email(search_query)
-        list_sell_products = SellProducts.objects.all()
+        list_sell_products = Search.search_default(SellProducts)
         totals = Calculated_totals.calculated_totals()
         change = request.session.pop("change", None)
         # Combinar todo el contexto
@@ -437,29 +438,33 @@ class SellProductView(View):
         sentform = SentSellForm(request.POST)
 
         if sentform.is_valid():
-
             id_product_save = request.session.get("idproduct")
 
             sell_product = Search.filter(SellProducts, "idproduct", id_product_save)
+            quantity_email = Search.filter(
+                SellProducts, "idproduct", id_product_save
+            ).values("quantity")
+            price_email = Search.filter(
+                SellProducts, "idproduct", id_product_save
+            ).values("priceunitaty")
+
             client_email_to_send = request.POST.get(
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
 
             email_subject = "Confirmación de Venta - Su Compra"
+            client = GetDataClientForBill.get_data_client(client_email_to_send)
             datos_factura = {
-                "numero": "2025-001",
+                "numero": "2025",
                 "cliente": {
-                    "nombre": "Juan Pérez",
-                    "direccion": "Avenida del Sol 456",
+                    "nombre": client[0]["name"],
+                    "direccion": client[0]["direction"],
                 },
                 "items": [
-                    {"cantidad": 2, "descripcion": "Producto A", "precio": 150.00},
                     {
-                        "cantidad": 1,
-                        "descripcion": "Servicio de Consultoría",
-                        "precio": 500.00,
+                        "cantidad": quantity_email[0]["quantity"],
+                        "precio": price_email[0]["priceunitaty"],
                     },
-                    {"cantidad": 3, "descripcion": "Producto B", "precio": 75.50},
                 ],
             }
             email_message = create_bill("factura_psys.pdf", datos_factura)
@@ -551,7 +556,6 @@ def listallsellregisterview(request):
 # función para mostrar los datos de los registros de ventas.
 @login_required
 def detailregisterview(request, pk):
-
     detail_individual_register = GetIndividualtatistic.get_individual_statistics(pk)
 
     details_json = detail_individual_register.values("detail_sell").first()[
@@ -595,7 +599,6 @@ def list_product_sell(request):
 @login_required
 @permission_required("psysmysql.add_stock", login_url="error")
 def register_stock(request):
-
     if request.method == "POST":
         stockform = StockForm(request.POST)
         if stockform.is_valid():

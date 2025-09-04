@@ -4,6 +4,24 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, 
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm
 from datetime import date
+from ..models import Clients
+from ..services.search_orm import Search
+from ..constants import IVA_RATE
+
+
+class GetDataClientForBill:
+    @staticmethod
+    def get_data_client(email: str):
+        client_list: list = []
+        client = Search.filter(Clients, "email", email)
+        for client_info in client:
+            client_list.append(
+                {
+                    "name": client_info.name,
+                    "direction": client_info.direction,
+                }
+            )
+        return client_list
 
 
 def create_bill(nombre_archivo, datos_factura):
@@ -69,15 +87,14 @@ def create_bill(nombre_archivo, datos_factura):
         datos_tabla.append(
             [
                 item["cantidad"],
-                item["descripcion"],
                 f"{item['precio']:.2f}",
                 f"{total_item:.2f}",
             ]
         )
 
     # Calcular IVA y total
-    iva = subtotal * 0.16  # Ejemplo con 16% de IVA
-    total_final = subtotal + iva
+    iva = float(subtotal) * float(IVA_RATE)  # Ejemplo con 16% de IVA
+    total_final = float(subtotal) + iva
 
     datos_tabla.append(["", "", "Subtotal:", f"{subtotal:.2f}"])
     datos_tabla.append(["", "", "IVA (16%):", f"{iva:.2f}"])
