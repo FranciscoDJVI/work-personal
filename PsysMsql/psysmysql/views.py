@@ -1,4 +1,5 @@
 import datetime
+from io import BytesIO
 import json
 from django.contrib import messages
 from django.db import DatabaseError
@@ -39,7 +40,10 @@ from .services.stock_service import (
     GetStockAlerts,
 )
 from .services.clients_service import RegisterClients, GertAllClients
-from .services.factura_service import GetDataClientForBill, create_bill
+from .services.factura_service import (
+    GetDataClientForBill,
+    create_bill_in_memory,
+)
 from .forms import (
     ProductForm,
     DeleteProductForm,
@@ -52,20 +56,12 @@ from .forms import (
     RegisterSellDetailForm,
     ClientsForm,
 )
-from .constants import (
-    SUCCESS_PRODUCT_SAVED,
-    SUCCESS_PRODUCT_DELETED,
-    SUCCESS_SELL_CREATED,
-    SUCCESS_STOCK_UPDATED,
-    SUCCESS_STOCK_CREATED,
-    ERROR_DATABASE_ERROR,
-    ERROR_INVALID_FORM,
-)
 from .utils import (
     is_admin,
     is_seller,
     paginate_queryset,
 )
+from psysmysql import constants
 
 
 def app(request):
@@ -94,12 +90,12 @@ def register_product(request):
 
             try:
                 CreateProduct.create_product(name, price, description)
-                messages.success(request, SUCCESS_PRODUCT_SAVED)
+                messages.success(request, constants.SUCCESS_PRODUCT_SAVED)
 
             except ValueError as e:
                 messages.info(request, str(e))
             except DatabaseError as e:
-                messages.error(request, f"{ERROR_DATABASE_ERROR}: {e}")
+                messages.error(request, f"{constants.ERROR_DATABASE_ERROR}: {e}")
             except Exception as e:
                 messages.error(request, f"Error inesperado: {e}")
 
@@ -126,7 +122,7 @@ def delete_product(request):
             name = form.cleaned_data["name"]
 
             DeleteProducts.delete_product(name)
-            messages.success(request, SUCCESS_PRODUCT_DELETED)
+            messages.success(request, constants.SUCCESS_PRODUCT_DELETED)
 
             return redirect("delete-product")
         else:
@@ -352,7 +348,7 @@ class SellProductView(View):
                 context["list_sell_products"] = list_sell_products
                 context["totals"] = Calculated_totals.calculated_totals()
 
-                messages.success(request, SUCCESS_SELL_CREATED)
+                messages.success(request, constants.SUCCESS_SELL_CREATED)
                 return render(request, "sellproduct.html", context)
             except Exception as e:
                 messages.error(request, f"Error al registrar la venta: {e}")
@@ -412,7 +408,7 @@ class SellProductView(View):
                 change = GetStatistic.get_change_statistics(quantity_pay_save)
                 request.session["change"] = change
 
-                messages.success(request, SUCCESS_SELL_CREATED)
+                messages.success(request, constants.SUCCESS_SELL_CREATED)
             except DatabaseError as e:
                 messages.error(
                     request,
@@ -452,7 +448,8 @@ class SellProductView(View):
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
 
-            email_subject = "Confirmación de Venta - Su Compra"
+            email_subject = constants.SUBJET_MESSAGE
+            email_body = constants.BODY_EMAIL
             client = GetDataClientForBill.get_data_client(client_email_to_send)
             datos_factura = {
                 "numero": "2025",
@@ -467,7 +464,8 @@ class SellProductView(View):
                     },
                 ],
             }
-            email_message = create_bill("factura_psys.pdf", datos_factura)
+            pdf_buffer = create_bill_in_memory(datos_factura)
+            email_message = pdf_buffer.getvalue()
 
             for item in sell_product:
                 product_id = item.idproduct_id
@@ -513,7 +511,7 @@ class SellProductView(View):
                 messages.success(request, "Proceso de envío de ventas completado.")
                 if client_email_to_send:
                     send_sell_confirmation_email.delay(
-                        client_email_to_send, email_subject, email_message
+                        client_email_to_send, email_subject, email_body, email_message
                     )
                     messages.info(
                         request,
@@ -614,23 +612,23 @@ def register_stock(request):
                         quantitystock,
                         "add",  # Agregar al stock existente
                     )
-                    messages.success(request, SUCCESS_STOCK_UPDATED)
+                    messages.success(request, constants.SUCCESS_STOCK_UPDATED)
                 else:
                     stock_item = CreateStock.create_or_update_stock(
                         id_product_instance.pk,
                         quantitystock,
                     )
-                    messages.success(request, SUCCESS_STOCK_CREATED)
+                    messages.success(request, constants.SUCCESS_STOCK_CREATED)
                 return redirect("stock_products")
 
             except ValidationError as e:
                 messages.error(request, str(e))
             except DatabaseError as e:
-                messages.error(request, f"{ERROR_DATABASE_ERROR}: {e}")
+                messages.error(request, f"{constants.ERROR_DATABASE_ERROR}: {e}")
             except Exception as e:
                 messages.error(request, f"Error inesperado: {e}")
         else:
-            messages.error(request, ERROR_INVALID_FORM)
+            messages.error(request, constants.ERROR_INVALID_FORM)
 
         return redirect("stock_products")
     else:
@@ -660,7 +658,7 @@ def register_stock(request):
 
 
 def list_stock(request):
-    obj_list_stock = Stock.objects.filter("name")
+    obj_list_stock = Search.filter(Stock, "name", "name")
     return render(request, "liststock.html", {"list_stock": obj_list_stock})
 
 

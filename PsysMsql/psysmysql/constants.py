@@ -1,5 +1,3 @@
-# Constantes del proyecto para evitar strings hardcodeados
-
 # Grupos de usuarios
 ADMIN_GROUP = "Administrador"
 SELLER_GROUP = "Vendedor"
@@ -25,6 +23,12 @@ SUCCESS_STOCK_UPDATED = "Stock actualizado"
 SUCCESS_STOCK_CREATED = "Nuevo stock creado"
 SUCCESS_USER_ASSIGNED = "Usuario asignado a grupo con éxito"
 SUCCESS_SELL_CREATED = "Venta registrada con éxito"
+
+# Email messajes
+CONFIMATION_SEND_EMAIL = "Envio de correo exitoso"
+SUBJET_MESSAGE = "Confirmación de su compra"
+BODY_EMAIL = "Gracias por su compra. Abjuntmos su factura en formato pdf."
+
 
 # Mensajes de error
 ERROR_PRODUCT_EXISTS = "El producto ya existe"

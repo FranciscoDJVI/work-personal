@@ -7,6 +7,7 @@ from datetime import date
 from ..models import Clients
 from ..services.search_orm import Search
 from ..constants import IVA_RATE
+from io import BytesIO
 
 
 class GetDataClientForBill:
@@ -24,10 +25,17 @@ class GetDataClientForBill:
         return client_list
 
 
-def create_bill(nombre_archivo, datos_factura):
-    # Crear un documento PDF
+def create_bill_in_memory(datos_factura):
+    """
+    Genera una factura en formato PDF y la retorna como un objeto BytesIO.
+    """
+
+    # 1. Crea un buffer en memoria en lugar de un archivo
+    buffer = BytesIO()
+
+    # 2. Crea el documento PDF usando el buffer
     doc = SimpleDocTemplate(
-        nombre_archivo,
+        buffer,
         pagesize=A4,
         rightMargin=2 * cm,
         leftMargin=2 * cm,
@@ -38,8 +46,6 @@ def create_bill(nombre_archivo, datos_factura):
     story = []
 
     # --- Encabezado de la factura ---
-
-    # Estilo para el encabezado (negrita y centrado)
     estilo_encabezado = ParagraphStyle(
         "Encabezado",
         parent=estilos["Normal"],
@@ -47,11 +53,9 @@ def create_bill(nombre_archivo, datos_factura):
         fontSize=18,
         alignment=1,
     )
-    # Título de la factura
     story.append(Paragraph("FACTURA", estilo_encabezado))
     story.append(Spacer(1, 0.5 * cm))
 
-    # Información de la empresa
     estilo_info = ParagraphStyle("Info", parent=estilos["Normal"], fontSize=10)
     story.append(Paragraph("<b>Nombre de la Empresa:</b> Mi Empresa S.A.", estilo_info))
     story.append(Paragraph("<b>Dirección:</b> Calle Ficticia 123", estilo_info))
@@ -64,7 +68,6 @@ def create_bill(nombre_archivo, datos_factura):
     )
     story.append(Spacer(1, 0.5 * cm))
 
-    # Información del cliente
     story.append(Paragraph("<b>Cliente:</b>", estilo_info))
     story.append(
         Paragraph(f"<b>Nombre:</b> {datos_factura['cliente']['nombre']}", estilo_info)
@@ -77,8 +80,6 @@ def create_bill(nombre_archivo, datos_factura):
     story.append(Spacer(1, 1 * cm))
 
     # --- Tabla de productos ---
-
-    # Datos de la tabla
     datos_tabla = [["Cantidad", "Descripción", "Precio Unitario", "Total"]]
     subtotal = 0
     for item in datos_factura["items"]:
@@ -92,15 +93,13 @@ def create_bill(nombre_archivo, datos_factura):
             ]
         )
 
-    # Calcular IVA y total
-    iva = float(subtotal) * float(IVA_RATE)  # Ejemplo con 16% de IVA
+    iva = float(subtotal) * float(IVA_RATE)
     total_final = float(subtotal) + iva
 
     datos_tabla.append(["", "", "Subtotal:", f"{subtotal:.2f}"])
     datos_tabla.append(["", "", "IVA (16%):", f"{iva:.2f}"])
     datos_tabla.append(["", "", "Total:", f"{total_final:.2f}"])
 
-    # Crear la tabla y aplicar estilos
     tabla = Table(datos_tabla, colWidths=[2.5 * cm, 9 * cm, 3.5 * cm, 3.5 * cm])
     tabla.setStyle(
         TableStyle(
@@ -110,18 +109,8 @@ def create_bill(nombre_archivo, datos_factura):
                 ("BOX", (0, 0), (-1, -1), 1, colors.black),
                 ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
                 ("ALIGN", (0, 0), (-1, -1), "CENTER"),
-                (
-                    "ALIGN",
-                    (2, 1),
-                    (-1, -1),
-                    "RIGHT",
-                ),  # Alinear a la derecha las columnas de precios y totales
-                (
-                    "BACKGROUND",
-                    (2, -3),
-                    (-1, -1),
-                    colors.lightgrey,
-                ),  # Fondo para los totales
+                ("ALIGN", (2, 1), (-1, -1), "RIGHT"),
+                ("BACKGROUND", (2, -3), (-1, -1), colors.lightgrey),
                 ("FONTNAME", (2, -3), (-1, -1), "Helvetica-Bold"),
             ]
         )
@@ -129,25 +118,15 @@ def create_bill(nombre_archivo, datos_factura):
     story.append(tabla)
     story.append(Spacer(1, 1 * cm))
 
-    # Pie de página o notas adicionales
     story.append(Paragraph("¡Gracias por su compra!", estilos["Normal"]))
 
-    # Construir el documento
+    # 3. Construye el documento en el buffer en memoria
     doc.build(story)
 
+    # 4. Regresa al inicio del buffer y retorna el objeto
+    buffer.seek(0)
+    return buffer
 
-# Datos de ejemplo para la factura
-datos = {
-    "numero": "2025-001",
-    "cliente": {"nombre": "Juan Pérez", "direccion": "Avenida del Sol 456"},
-    "items": [
-        {"cantidad": 2, "descripcion": "Producto A", "precio": 150.00},
-        {"cantidad": 1, "descripcion": "Servicio de Consultoría", "precio": 500.00},
-        {"cantidad": 3, "descripcion": "Producto B", "precio": 75.50},
-    ],
-}
-
-# Generar la factura
 
 # create_bill("factura_ejemplo.pdf", datos)
 print("Factura generada como factura_ejemplo.pdf")
