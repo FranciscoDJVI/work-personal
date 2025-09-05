@@ -436,14 +436,21 @@ class SellProductView(View):
         if sentform.is_valid():
             id_product_save = request.session.get("idproduct")
 
-            sell_product = Search.filter(SellProducts, "idproduct", id_product_save)
-            quantity_email = Search.filter(
+            sell_product_imdividual = Search.filter(
                 SellProducts, "idproduct", id_product_save
-            ).values("quantity")
-            price_email = Search.filter(
-                SellProducts, "idproduct", id_product_save
-            ).values("priceunitaty")
+            )
 
+            # sell_product_info = sell_product.first()
+            # name_product = sell_product_info.idproduct.name
+
+            # quantity_email = Search.filter(
+            # SellProducts, "idproduct", id_product_save
+            # ).values("quantity")
+            # price_email = Search.filter(
+            # SellProducts, "idproduct", id_product_save
+            # ).values("priceunitaty")
+
+            sell_products = Search.search_default(SellProducts)
             client_email_to_send = request.POST.get(
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
@@ -451,23 +458,31 @@ class SellProductView(View):
             email_subject = constants.SUBJET_MESSAGE
             email_body = constants.BODY_EMAIL
             client = GetDataClientForBill.get_data_client(client_email_to_send)
+
+            items_factura = []
+
+            for sell_product_info in sell_products:
+                sell_product_instance = sell_product_info.idproduct
+                items_factura.append(
+                    {
+                        "cantidad": sell_product_info.quantity,
+                        "nombre": sell_product_instance.name,
+                        "precio": sell_product_info.priceunitaty,
+                    }
+                )
+
             datos_factura = {
-                "numero": "2025",
+                "numero": client[0]["number_bill"],
                 "cliente": {
                     "nombre": client[0]["name"],
                     "direccion": client[0]["direction"],
                 },
-                "items": [
-                    {
-                        "cantidad": quantity_email[0]["quantity"],
-                        "precio": price_email[0]["priceunitaty"],
-                    },
-                ],
+                "items": items_factura,
             }
             pdf_buffer = create_bill_in_memory(datos_factura)
             email_message = pdf_buffer.getvalue()
 
-            for item in sell_product:
+            for item in sell_product_imdividual:
                 product_id = item.idproduct_id
                 quantity = item.quantity
                 if not product_id or quantity is None:

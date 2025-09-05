@@ -13,6 +13,7 @@ from io import BytesIO
 class GetDataClientForBill:
     @staticmethod
     def get_data_client(email: str):
+        number_bill: int = while
         client_list: list = []
         client = Search.filter(Clients, "email", email)
         for client_info in client:
@@ -20,6 +21,7 @@ class GetDataClientForBill:
                 {
                     "name": client_info.name,
                     "direction": client_info.direction,
+                    "number_bill": number_bill + 1,
                 }
             )
         return client_list
@@ -57,9 +59,13 @@ def create_bill_in_memory(datos_factura):
     story.append(Spacer(1, 0.5 * cm))
 
     estilo_info = ParagraphStyle("Info", parent=estilos["Normal"], fontSize=10)
-    story.append(Paragraph("<b>Nombre de la Empresa:</b> Mi Empresa S.A.", estilo_info))
-    story.append(Paragraph("<b>Dirección:</b> Calle Ficticia 123", estilo_info))
-    story.append(Paragraph("<b>Ciudad:</b> Ciudad del Sol", estilo_info))
+    story.append(
+        Paragraph("<b>Nombre de la Empresa:</b> Tecnologias S.A.", estilo_info)
+    )
+    story.append(
+        Paragraph("<b>Dirección:</b> Calle 5a, av 38, Cali, Valle", estilo_info)
+    )
+    story.append(Paragraph("<b>Ciudad:</b> Cali", estilo_info))
     story.append(
         Paragraph(f"<b>Fecha:</b> {date.today().strftime('%d/%m/%Y')}", estilo_info)
     )
@@ -80,7 +86,7 @@ def create_bill_in_memory(datos_factura):
     story.append(Spacer(1, 1 * cm))
 
     # --- Tabla de productos ---
-    datos_tabla = [["Cantidad", "Descripción", "Precio Unitario", "Total"]]
+    datos_tabla = [["Cantida", "productos", "precio unitario", "Total"]]
     subtotal = 0
     for item in datos_factura["items"]:
         total_item = item["cantidad"] * item["precio"]
@@ -88,16 +94,18 @@ def create_bill_in_memory(datos_factura):
         datos_tabla.append(
             [
                 item["cantidad"],
+                item["nombre"],
                 f"{item['precio']:.2f}",
                 f"{total_item:.2f}",
             ]
         )
 
     iva = float(subtotal) * float(IVA_RATE)
-    total_final = float(subtotal) + iva
+    price_whitout_iva = float(subtotal) - iva
+    total_final = price_whitout_iva + iva
 
     datos_tabla.append(["", "", "Subtotal:", f"{subtotal:.2f}"])
-    datos_tabla.append(["", "", "IVA (16%):", f"{iva:.2f}"])
+    datos_tabla.append(["", "", "IVA (19%):", f"{iva:.2f}"])
     datos_tabla.append(["", "", "Total:", f"{total_final:.2f}"])
 
     tabla = Table(datos_tabla, colWidths=[2.5 * cm, 9 * cm, 3.5 * cm, 3.5 * cm])
@@ -126,7 +134,3 @@ def create_bill_in_memory(datos_factura):
     # 4. Regresa al inicio del buffer y retorna el objeto
     buffer.seek(0)
     return buffer
-
-
-# create_bill("factura_ejemplo.pdf", datos)
-print("Factura generada como factura_ejemplo.pdf")
