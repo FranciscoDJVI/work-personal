@@ -8,12 +8,14 @@ from ..models import Clients
 from ..services.search_orm import Search
 from ..constants import IVA_RATE
 from io import BytesIO
+import datetime
 
 
 class GetDataClientForBill:
     @staticmethod
     def get_data_client(email: str):
-        number_bill: int = while
+        date_now = datetime.datetime.now()
+        number_bill = date_now.strftime("%Y-%m-%d %H:%M:%S")
         client_list: list = []
         client = Search.filter(Clients, "email", email)
         for client_info in client:
@@ -21,7 +23,7 @@ class GetDataClientForBill:
                 {
                     "name": client_info.name,
                     "direction": client_info.direction,
-                    "number_bill": number_bill + 1,
+                    "number_bill": number_bill,
                 }
             )
         return client_list
