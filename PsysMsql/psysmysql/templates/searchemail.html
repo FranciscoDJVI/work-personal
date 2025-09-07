@@ -6,7 +6,7 @@
 
     <div class="search-form">
         <form action="" method="GET">
-            {{ formsearch.query }}
+            {{formsearch.query}}
             <button type="submit">Buscar</button>
         </form>
     </div>
@@ -22,12 +22,12 @@
             <p><strong>Nombre:</strong> {{ client.name }}</p>
             {% endif %}
             {% if client.telephone %}
-            <p><strong>Teléfono:</strong> {{ client.telephone }}</p>
+            <p><strong>Teléfono:</strong> {{client.telephone}}</p>
             {% endif %}
         </div>
-        {% endfor %}
+        {% end for %}
         {% else %}
-        <p class="no-results">No se encontraron clientes con el correo "{{ query }}". Intenta con otra búsqueda.</p>
+        <p class="no-results">No se encontraron clientes con el correo "{{query}}". Intenta con otra búsqueda.</p>
         {% endif %}
         {% else %}
         <p class="info-text">Ingresa un correo electrónico (o parte de él) en la barra de búsqueda para encontrar
@@ -35,4 +35,4 @@
         {% endif %}
     </div>
     </div>
-    {% endblock %}
+    {% end block %}

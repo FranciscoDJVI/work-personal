@@ -22,9 +22,9 @@ class IsAdminOrReadOnly(permissions.BasePermission):
         
         # Write permissions are only allowed to admin users
         return (
-            request.user and 
-            request.user.is_authenticated and 
-            (request.user.is_staff or self.is_admin_user(request.user))
+                request.user and request.user.is_authenticated and (
+                request.user.is_staff or self.is_admin_user(request.user)
+                )
         )
     @staticmethod
     def is_admin_user(self, user):

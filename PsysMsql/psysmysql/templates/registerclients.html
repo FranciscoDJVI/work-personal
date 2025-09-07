@@ -1,14 +1,14 @@
 {% extends "base.html" %}
-{% block title%}Register-clients{% endblock%}
+{% block title%}Register-clients{% end block%}
 {% block content %}
-<div class="grid items-center justify-items-center">
-  <section class="bg-white my-10 mx-20 w-[fit-content]">
-    <form method="post" class="flex flex-col flex-wrap gap-2 items-center ">
-        {%csrf_token%}
-        {{ formclients }}
-        <button class="bg-gray-200 text-black p-2 mb-5" type="submit">Registrar</button>
-    </form>
-</section>
-<a href={% url 'all_clients' %} class="bg-green-500 p-2 text-white">Clientes</a>
-</div>
-{% endblock%}
+    <div class="grid items-center justify-items-center">
+      <section class="bg-white my-10 mx-20 w-[fit-content]">
+            <form method="post" class="flex flex-col flex-wrap gap-2 items-center ">
+                {%csrf_token%}
+                {{ formclients }}
+                <button class="bg-gray-200 text-black p-2 mb-5" type="submit">Registrar</button>
+            </form>
+        </section>
+        <a href={% url 'all_clients'%} class="bg-green-500 p-2 text-white">Clientes</a>
+    </div>
+{% end block%}

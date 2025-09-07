@@ -30,7 +30,7 @@
   <div id="messages" class="bg-sky-900 text-3xl text-gray-400 absolute bottom-10 right-10 rounded-4xl italic p-10">
     <ul class="messages">
       {% for message in messages %}
-      <span class="{{ message.tag}}">{{message}}</span>
+      <li class="{{ message.tag}}">{{message}}</li>
       {% endfor %}
     </ul>
   </div>

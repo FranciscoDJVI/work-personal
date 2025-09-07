@@ -1,4 +1,3 @@
-import json
 from ..models import Clients
 from ..logging_config import get_clients_logger, log_execution_time, LogOperation
 from ..services.search_orm import Search

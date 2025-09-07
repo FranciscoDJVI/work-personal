@@ -7,12 +7,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, permission_required
 from django.views import View
 from django.utils.decorators import method_decorator
-from django.core.cache import cache
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 
 from .tasks import send_sell_confirmation_email
-from .models import Products, Sell, SellProducts, Stock, RegistersellDetail, Clients
+from .models import Products, Sell, SellProducts, Stock
 from .services.product_service import (
     CreateProduct,
     GetAllProducts,
@@ -26,9 +25,8 @@ from .services.sell_service import (
     RegisterSellDetails,
     GetStatistic,
     GetIndividualtatistic,
-    GetSellProductQueryset,
     DeleteSellItem,
-    Calculated_totals,
+    CalculatedTotals,
 )
 
 from .services.stock_service import (
@@ -124,7 +122,7 @@ def delete_product(request):
 
             return redirect("delete-product")
         else:
-            for field, errors in sentform.errors.items():
+            for field, errors in form.errors.items():
                 for error in errors:
                     messages.error(
                         request,
@@ -147,7 +145,7 @@ class Update(View):
     template_name = "updateproduct.html"
 
     @staticmethod
-    def get_context_data(request, formsearch=None, formupdate=None, productsearch=None):
+    def get_context_data(formsearch=None, formupdate=None, productsearch=None):
         if formsearch is None:
             formsearch = SearchProduct()
         if formupdate is None:
@@ -160,7 +158,7 @@ class Update(View):
         }
 
     def get(self, request, *args, **kwargs):
-        context = self.get_context_data(request)
+        context = self.get_context_data()
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
@@ -173,12 +171,13 @@ class Update(View):
                 request,
                 "Acción POST no reconocida. Asegúrate de que el botón tenga un atributo 'name'.",
             )
-            context = self.get_context_data(request)
+            context = self.get_context_data()
             return render(request, self.template_name, context)
 
     def _handle_search_product(self, request):
         formsearch = SearchProduct(request.POST)
         formupdate = ProductForm()
+        productsearch = None
 
         if formsearch.is_valid():
             namesearch = formsearch.cleaned_data["name"]
@@ -198,12 +197,7 @@ class Update(View):
                 request,
                 "Por favor, corrige los errores en el formulario de búsqueda.",
             )
-        context = self.get_context_data(
-            request,
-            formsearch=formsearch,
-            formupdate=formupdate,
-            productsearch=productsearch,
-        )
+        context = self.get_context_data(formsearch=formsearch, formupdate=formupdate, productsearch=productsearch)
 
         return render(request, "updateproduct.html", context)
 
@@ -213,7 +207,7 @@ class Update(View):
 
         if not original_name:
             messages.error(request, "No hay producto con ese nombre")
-            context = self.get_context_data(request)
+            context = self.get_context_data()
             return render(request, self.template_name, context)
 
         formupdate = ProductForm(request.POST)
@@ -240,12 +234,7 @@ class Update(View):
                 except ObjectDoesNotExist:
                     productsearch = None
         formupdate = ProductForm()
-        context = self.get_context_data(
-            request,
-            formsearch=formsearch,
-            formupdate=formupdate,
-            productsearch=productsearch,
-        )
+        context = self.get_context_data(formsearch=formsearch, formupdate=formupdate, productsearch=productsearch)
         return render(request, "updateproduct.html", context)
 
 
@@ -291,7 +280,7 @@ class SellProductView(View):
             if search_query:
                 search_results = Search.search_clients_by_email(search_query)
         list_sell_products = Search.search_default(SellProducts)
-        totals = Calculated_totals.calculated_totals()
+        totals = CalculatedTotals.calculated_totals()
         change = request.session.pop("change", None)
         # Combinar todo el contexto
         context = {
@@ -344,7 +333,7 @@ class SellProductView(View):
                 context = SellProductView.get_context_data(request)
 
                 context["list_sell_products"] = list_sell_products
-                context["totals"] = Calculated_totals.calculated_totals()
+                context["totals"] = CalculatedTotals.calculated_totals()
 
                 messages.success(request, constants.SUCCESS_SELL_CREATED)
                 return render(request, "sellproduct.html", context)
@@ -373,7 +362,7 @@ class SellProductView(View):
 
             try:
                 details = Search.search_default(SellProducts)
-                totals = Calculated_totals.calculated_totals()
+                totals = CalculatedTotals.calculated_totals()
                 detail_items: list = []
                 for item in details:
                     detail_items.append(
@@ -603,7 +592,7 @@ def list_product_sell(request):
     ).all()
 
     # Paginar si hay muchos registros
-    page_obj, paginator = paginate_queryset(list_sell_products, request, SELLS_PER_PAGE)
+    page_obj, paginator = paginate_queryset(list_sell_products, request, constants.SELLS_PER_PAGE)
 
     context = {
         "list_sell_products": page_obj,

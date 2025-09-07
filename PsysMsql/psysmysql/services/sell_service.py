@@ -3,13 +3,11 @@ import json
 from django.db.models import Count, Sum
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from django.shortcuts import get_object_or_404
-
-from ..models import SellProducts, Products, Clients, RegistersellDetail, Sell
+from psysmysql import  models
 from django.core.cache import cache
 from ..logging_config import (
     get_sell_logger,
     log_execution_time,
-    log_function_call,
     LogOperation,
 )
 import psysmysql.constants as const
@@ -28,9 +26,9 @@ class RegisterSell:
             with LogOperation(
                 f"Agregando producto {id_product} con cantidad {total_sell}", logger
             ):
-                product = get_object_or_404(Products, pk=id_product.idproducts)
+                product = get_object_or_404(models.Products, pk=id_product.idproducts)
 
-                register_sell = Sell(totalsell=total_sell, id_product=id_product)
+                register_sell = models.Sell(totalsell=total_sell, id_product=id_product)
                 register_sell.save()
                 if not register_sell.idsell:
                     logger.info(f"Fallo en la creacion del producto {product.name}")
@@ -66,7 +64,7 @@ class RegisterSellDetails:
                 f"Creando registro de venta: total=${total_sell}", logger
             ):
 
-                register_sell_detail = RegistersellDetail(
+                register_sell_detail = models.RegistersellDetail(
                     id_employed=id_employed,
                     total_sell=total_sell,
                     type_pay=type_pay,
@@ -90,7 +88,7 @@ class GetStatistic:
 
     @staticmethod
     def get_register_sell_statistic():
-        all_register_sells = Search.search_default(RegistersellDetail)
+        all_register_sells = Search.search_default(models.RegistersellDetail)
         registers: list = []
         for register in all_register_sells:
             registers.append(
@@ -131,12 +129,12 @@ class GetStatistic:
 
     @staticmethod
     def quantity_total_sells():
-        all_register_sells_count = Search.search_default(RegistersellDetail).count()
+        all_register_sells_count = Search.search_default(models.RegistersellDetail).count()
         return json.dumps(all_register_sells_count)
 
     @staticmethod
     def quantity_and_types_payment():
-        all_type_payment = Search.values(RegistersellDetail, "type_pay").annotate(
+        all_type_payment = Search.values(models.RegistersellDetail, "type_pay").annotate(
             count=Count("type_pay")
         )
         type_payments: list = []
@@ -153,7 +151,7 @@ class GetStatistic:
     @staticmethod
     def total_money_sell():
         total_money: dict = {}
-        total_money_sells = RegistersellDetail.objects.aggregate(
+        total_money_sells = models.RegistersellDetail.objects.aggregate(
             total_sum=Sum("total_sell")
         )
         if not total_money_sells:
@@ -166,14 +164,14 @@ class GetStatistic:
 class GetIndividualtatistic:
     @staticmethod
     def get_individual_statistics(pk):
-        return Search.filter(RegistersellDetail, "idsell", pk)
+        return Search.filter(models.RegistersellDetail, "idsell", pk)
 
 
 class GetSellProductQueryset:
 
     @staticmethod
     def get_sell_product_queryset(pk):
-        detail_sell_product_queryset = Search.filter(SellProducts, "idproduct", pk)
+        detail_sell_product_queryset = Search.filter(models.SellProducts, "idproduct", pk)
 
         detail_list: list = []
 
@@ -193,11 +191,11 @@ class GetSellProductQueryset:
 class DeleteSellItem:
     @staticmethod
     def delete_sell(pk):
-        item = Search.filter(SellProducts, "idsell_product", pk)
+        item = Search.filter(models.SellProducts, "idsell_product", pk)
         item.delete()
 
 
-class Calculated_totals:
+class CalculatedTotals:
     iva_rate = const.IVA_RATE  # Ejemplo: 19% de IVA
 
     @staticmethod
@@ -205,13 +203,13 @@ class Calculated_totals:
         total_quantity = 0
         subtotal = 0.0
 
-        sell_products = Search.search_default(SellProducts)
+        sell_products = Search.search_default(models.SellProducts)
 
         for product in sell_products:
             total_quantity += product.quantity
             subtotal += product.quantity * float(product.priceunitaty)
 
-        iva_amount = subtotal * Calculated_totals.iva_rate
+        iva_amount = subtotal * CalculatedTotals.iva_rate
         total_sell = subtotal
 
         totals = {

@@ -9,7 +9,7 @@
   <a href="{% url 'delete-product' %}">Eliminar/</a>
   <a href="{% url 'update-product' %}">Actualizar/</a>
   <a href="{% url 'stock_products' %}">stock/</a>
-  <a href="{% url 'main' %}">home<a/>
+  <a href="{% url 'main' %}">home</a>
 </nav>
 <section class="flex flex-col flex-wrap items-center">
   <form id="sell-form" class="flex flex-row items-center my-15" method="post">
@@ -38,14 +38,14 @@
     <aside class="h-[fit-content] w-[fit-content] p-2 mb-10 max-h-40 overflow-y-auto">
       {% include "listsellproducts.html" %}
     </aside>
-    <aside class='w-[fit-content]'>
-      <ul class="border border-gray-300 text-2xl font-extralight p-2">
-        <li>Cantidad: {{ totals.quantity}}</li>
-        <li>Iva: {{ totals.iva}}</li>
-        <li>Subtotal: {{totals.subtotal|format_currency_cop}}</li>
-        <li>Total: {{totals.total_sell|format_currency_cop}}</li>
-      <ul/>
-    </aside>
+      <aside class='w-[fit-content]'>
+          <ul class="border border-gray-300 text-2xl font-extralight p-2">
+              <li>Cantidad: {{ totals.quantity}}</li>
+              <li>Iva: {{ totals.iva}}</li>
+              <li>Subtotal: {{totals.subtotal|format_currency_cop}}</li>
+              <li>Total: {{totals.total_sell|format_currency_cop}}</li>
+          </ul>
+      </aside>
   </section>
 </div>
 <section class="flex flex-row flex-wrap bg-white justify-center items-center mx-5 mb-5 gap-4 ">
@@ -91,8 +91,8 @@
           <p>Correo <span class="client-email-copy font-extrabold" data-email="{{ client.email }}"
               style="cursor: pointer; text-decoration: underline; color: black;">{{ client.email }}</span></p>
           {% if client.name %}<p>Nombre: {{ client.name }}</p>{% endif %}
-          {% if client.telephone %}<p>Teléfono: {{ client.telephone }}</p>{% endif %}
-          {% if client.direction %}<p>Dirección: {{ client.direction }}</p>{% endif %}
+          {% if client.telephone %}<p>Teléfono: {{client.telephone}}</p>{% endif %}
+          {% if client.direction %}<p>Dirección: {{client.direction}}</p>{% endif %}
           {% if client.nit %}<p>Nit: {{ client.nit }}</p>{% endif %}
           {% if client.country %}<p>País: {{ client.country }}</p>{% endif %}
           {% if client.departament %}<p>Departamento: {{ client.departament }}</p>{% endif %}
@@ -100,7 +100,7 @@
         </div>
         {% endfor %}
         {% else %}
-        <p class="no-results">No se encontraron clientes con el correo "{{ search_query }}".</p>
+        <p class="no-results">No se encontraron clientes con el correo "{{search_query}}".</p>
         {% endif %}
         {% else %}
         <p class="no-results">Usa la barra de búsqueda para encontrar clientes por correo electrónico.</p>
@@ -113,7 +113,7 @@
 <div id="messages" class="bg-green-500 text-xm text-white absolute bottom-25 right-10 rounded-2xl  p-5">
   <ul class="messages">
     {% for message in messages %}
-    <span class="{{ message.tag}}">{{message}}</span>
+    <li class="{{ message.tag}}">{{message}}</li>
     {% endfor %}
   </ul>
 </div>

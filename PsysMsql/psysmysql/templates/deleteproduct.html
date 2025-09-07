@@ -1,30 +1,30 @@
 {% extends "base.html" %}
 <title>{% block title %}delete{% endblock %}</title>
 {% block content %}
-<section class="h-screen flex flex-col justify-items-center items-center my-30 ">
-  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
-    <a href="{% url 'list-product' %}">Productos/</a>
-    <a href="{% url 'register_product' %}">Registrar productos/</a>
-    <a href="{% url 'sell_product' %}">Vender/</a>
-    <a href="{% url 'update-product' %}">Actualizar/</a>
-    <a href="{% url 'stock_products' %}">Stock/</a>
-    <a href="{% url 'main' %}">Home</a>
-  </nav>
-  <span class="text-black text-xm">Eliminar productos</span>
-  <form
-    class="flex flex-row space-x-1 justify-items-center items-center text-black text-xm  bg-white p-2 bg-center"
-    method="post">
-    {% csrf_token %} {{ form }}
-    <button class="bg-green-500 text-white p-2 " type="submit">Eliminar</button>
-  </form>
-  {% if messages %}
-  <div id="messages" class="messages-info">
-    <ul class="messages">
-      {% for message in messages %}
-      <span class="{{ message.tag}}">{{message}}</span>
-      {% endfor %}
-    </ul>
-    {% endif %}
-</section>
+    <section class="h-screen flex flex-col justify-items-center items-center my-30 ">
+      <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
+        <a href="{% url 'list-product' %}">Productos/</a>
+        <a href="{% url 'register_product' %}">Registrar productos/</a>
+        <a href="{% url 'sell_product' %}">Vender/</a>
+        <a href="{% url 'update-product' %}">Actualizar/</a>
+        <a href="{% url 'stock_products' %}">Stock/</a>
+        <a href="{% url 'main' %}">Home</a>
+      </nav>
+      <span class="text-black text-xm">Eliminar productos</span>
+      <form
+        class="flex flex-row space-x-1 justify-items-center items-center text-black text-xm  bg-white p-2 bg-center"
+        method="post">
+        {% csrf_token %} {{ form }}
+        <button class="bg-green-500 text-white p-2 " type="submit">Eliminar</button>
+      </form>
+      {% if messages %}
+      <div id="messages" class="messages-info">
+        <ul class="messages">
+          {% for message in messages %}
+          <li class="{{ message.tag}}">{{message}}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
 {% include "footer.html" %}
 {% endblock %}

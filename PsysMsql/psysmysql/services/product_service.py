@@ -1,5 +1,5 @@
 from django.core.cache import cache
-from ..models import Products
+from psysmysql.models import Products
 from django.db.models import Q, ObjectDoesNotExist
 from ..constants import (
     CACHE_KEY_ALL_PRODUCTS,

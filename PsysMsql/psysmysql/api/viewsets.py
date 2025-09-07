@@ -16,8 +16,8 @@ from django.db import transaction
 from datetime import datetime, timedelta
 
 from ..models import Products, Sell, SellProducts, Stock, Clients, RegistersellDetail
-from ..services.product_service import CreateProduct
-from ..services.sell_service import RegisterSell
+from ..services.product_service import CreateProduct, UpdateProducts, DeleteProducts
+from ..services.sell_service import  RegisterSell
 from .serializers import (
     ProductSerializer,
     ProductListSerializer,
@@ -111,7 +111,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         """Update product using ProductService"""
         try:
-            ProductService.update_product(
+            UpdateProducts.update_product(
                 serializer.instance, **serializer.validated_data
             )
         except ValueError as e:
@@ -120,7 +120,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     def perform_destroy(self, instance):
         """Delete product using ProductService"""
         try:
-            ProductService.delete_product(instance)
+            DeleteProducts.delete_product(instance)
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -138,7 +138,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         for product in self.get_queryset():
             try:
                 stock = Stock.objects.get(name=product)
-                if stock.quantity <= threshold:
+                if stock.quantitystock <= threshold:
                     low_stock_products.append(product)
             except Stock.DoesNotExist:
                 low_stock_products.append(product)  # No stock record = low stock
@@ -153,7 +153,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         for product in self.get_queryset():
             try:
                 stock = Stock.objects.get(name=product)
-                if stock.quantity == 0:
+                if stock.quantitystock == 0:
                     out_of_stock_products.append(product)
             except Stock.DoesNotExist:
                 out_of_stock_products.append(product)
@@ -170,7 +170,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         try:
             stock = Stock.objects.get(name=product)
             data = {
-                "current_stock": stock.quantity,
+                "current_stock": stock.quantitystock,
                 "min_stock": stock.min_stock,
                 "max_stock": stock.max_stock,
                 # Add movement history when StockMovement model is implemented
@@ -380,7 +380,7 @@ class SellViewSet(viewsets.ModelViewSet):
             payment_method = serializer.validated_data["payment_method"]
             products_data = serializer.validated_data["products"]
 
-            sell = SellService.create_sale(
+            sell = RegisterSell.register_sell(
                 client_id=client_id,
                 user=request.user,
                 payment_method=payment_method,
@@ -464,7 +464,7 @@ class SellViewSet(viewsets.ModelViewSet):
         for product in Products.objects.all()[:10]:  # Limit for performance
             try:
                 stock = Stock.objects.get(name=product)
-                if stock.quantity <= 10:  # Configurable threshold
+                if stock.quantitystock <= 10:  # Configurable threshold
                     low_stock_products.append(product)
             except Stock.DoesNotExist:
                 low_stock_products.append(product)
@@ -559,7 +559,8 @@ class RegisterSellDetailViewset(viewsets.ModelViewSet):
     ordering_fields = ["date", "total_sell", "id_employed"]
     ordering = ["-date"]
 
-    def get_list_detail(self):
+    @staticmethod
+    def get_list_detail():
         """Get list of register sell details"""
         try:
             list_detail = RegistersellDetail.objects.all().order_by("-date")

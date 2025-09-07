@@ -1,7 +1,7 @@
 """Service for search in database using ORM"""
 
 from django.db.models import Q
-from ..models import Clients
+from psysmysql.models import Clients
 
 
 class Search:

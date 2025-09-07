@@ -6,7 +6,7 @@ in API endpoints using django-filter.
 """
 
 import django_filters
-from django.db.models import Q
+from django.db.models import Q,F
 from datetime import datetime, timedelta
 from ..models import Products, Sell, Stock, Clients, RegistersellDetail
 from ..forms import RegisterSellDetailForm

@@ -2,7 +2,6 @@
 from celery import shared_task
 from django.core.mail import EmailMessage
 from django.conf import settings
-from io import BytesIO
 
 
 @shared_task
@@ -17,7 +16,7 @@ def send_sell_confirmation_email(recipient_email, subject, body, pdf_data):
         pdf_data (bytes): Contenido del PDF como una cadena de bytes.
     """
     try:
-        # Crea un objeto EmailMessage
+        # Crear objeto EmailMessage
         email = EmailMessage(
             subject=subject,
             body=body,
@@ -25,12 +24,12 @@ def send_sell_confirmation_email(recipient_email, subject, body, pdf_data):
             to=[recipient_email],
         )
 
-        # Adjunta el PDF.
+        # Adjuntar  PDF.
         # El primer argumento es el nombre del archivo, el segundo es el contenido en bytes,
         # y el tercero es el tipo MIME del archivo.
         email.attach("factura.pdf", pdf_data, "application/pdf")
 
-        # Envía el correo usando el método .send() de la clase EmailMessage
+        # Envíar correo usando el método .send() de la clase EmailMessage
         email.send(fail_silently=False)
         print(f"Correo de confirmación enviado exitosamente a {recipient_email}")
         return "Email sent successfully"

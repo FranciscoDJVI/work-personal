@@ -14,7 +14,9 @@
     {% if messages %}
     <ul class="messages">
       {% for message in messages %}
-      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {% if message.tags %}
+            <li  class="{{ message.tags }}" >
+          {% endif %}
         {{ message }}
       </li>
       {% endfor %}
@@ -22,7 +24,7 @@
     {% endif %}
     <form class="text-black text-xm grid justify-items-center" method="post">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form.as_P}}
       <button class="bg-gray-200 text-black  w-50 my-5" type="submit"
         class="btn btn-primary">Asignar</button>
     </form>

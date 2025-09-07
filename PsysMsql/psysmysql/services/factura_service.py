@@ -4,7 +4,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, 
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm
 from datetime import date
-from ..models import Clients
+from psysmysql.models import Clients
 from ..services.search_orm import Search
 from ..constants import IVA_RATE
 from io import BytesIO
