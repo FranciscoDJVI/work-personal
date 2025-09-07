@@ -1,5 +1,3 @@
-import datetime
-from io import BytesIO
 import json
 from django.contrib import messages
 from django.db import DatabaseError
@@ -184,17 +182,17 @@ class Update(View):
 
         if formsearch.is_valid():
             namesearch = formsearch.cleaned_data["name"]
-            product_found = Search.get(Products, "name", namesearch)
-
-            if product_found:
+            productsearch = None
+            try:
+                product_found = Search.get(Products, "name", namesearch)
                 productsearch = product_found
                 request.session["original_name"] = namesearch
 
-                # ¡LA CLAVE ESTÁ AQUÍ! Inicializa formupdate con la instancia del producto encontrado
+                # Inicializar formupdate con la instancia del producto encontrado
                 formupdate = ProductForm(instance=productsearch)
-            else:
-                messages.error(request, "No se encontraron productos con ese nombre.")
-                productsearch = None
+
+            except ObjectDoesNotExist:
+                messages.error(request, "El producto no existe.")
         else:
             messages.error(
                 request,
@@ -434,30 +432,26 @@ class SellProductView(View):
         sentform = SentSellForm(request.POST)
 
         if sentform.is_valid():
+            # id of product sell
             id_product_save = request.session.get("idproduct")
 
-            sell_product_imdividual = Search.filter(
+            # queryset of product_sell in the sell
+            sell_product_individual = Search.filter(
                 SellProducts, "idproduct", id_product_save
             )
 
-            # sell_product_info = sell_product.first()
-            # name_product = sell_product_info.idproduct.name
-
-            # quantity_email = Search.filter(
-            # SellProducts, "idproduct", id_product_save
-            # ).values("quantity")
-            # price_email = Search.filter(
-            # SellProducts, "idproduct", id_product_save
-            # ).values("priceunitaty")
-
+            # queryset of the list of the sellProducts registered.
             sell_products = Search.search_default(SellProducts)
             client_email_to_send = request.POST.get(
                 "client_email_selected"
             )  # Obtén el correo del campo oculto
 
+            ### EMAIL INFORMATION ###
             email_subject = constants.SUBJET_MESSAGE
             email_body = constants.BODY_EMAIL
-            client = GetDataClientForBill.get_data_client(client_email_to_send)
+            client_info_to_bill = GetDataClientForBill.get_data_client(
+                client_email_to_send
+            )
 
             items_factura = []
 
@@ -465,24 +459,33 @@ class SellProductView(View):
                 sell_product_instance = sell_product_info.idproduct
                 items_factura.append(
                     {
-                        "cantidad": sell_product_info.quantity,
-                        "nombre": sell_product_instance.name,
-                        "precio": sell_product_info.priceunitaty,
+                        "quantity": sell_product_info.quantity,
+                        "name": sell_product_instance.name,
+                        "price": sell_product_info.priceunitaty,
                     }
                 )
-
-            datos_factura = {
-                "numero": client[0]["number_bill"],
-                "cliente": {
-                    "nombre": client[0]["name"],
-                    "direccion": client[0]["direction"],
-                },
-                "items": items_factura,
-            }
+            if not client_info_to_bill:
+                datos_factura = {
+                    "number": "",
+                    "client": {
+                        "name": "",
+                        "direction": "",
+                    },
+                    "items": "",
+                }
+            else:
+                datos_factura = {
+                    "number": client_info_to_bill[0]["number_bill"],
+                    "client": {
+                        "name": client_info_to_bill[0]["name"],
+                        "direction": client_info_to_bill[0]["direction"],
+                    },
+                    "items": items_factura,
+                }
             pdf_buffer = create_bill_in_memory(datos_factura)
             email_message = pdf_buffer.getvalue()
 
-            for item in sell_product_imdividual:
+            for item in sell_product_individual:
                 product_id = item.idproduct_id
                 quantity = item.quantity
                 if not product_id or quantity is None:
@@ -524,7 +527,12 @@ class SellProductView(View):
                         f"Ocurrió un error inesperado para el producto ID {product_id}: {e}",
                     )
                 messages.success(request, "Proceso de envío de ventas completado.")
-                if client_email_to_send:
+                if not client_email_to_send:
+                    messages.warning(
+                        request,
+                        "No se proporcionó un correo de cliente para enviar la confirmación.",
+                    )
+                else:
                     send_sell_confirmation_email.delay(
                         client_email_to_send, email_subject, email_body, email_message
                     )
@@ -532,13 +540,9 @@ class SellProductView(View):
                         request,
                         f"Se inició el envío de correo de confirmación a {client_email_to_send}.",
                     )
-                else:
-                    messages.warning(
-                        request,
-                        "No se proporcionó un correo de cliente para enviar la confirmación.",
-                    )
 
                 return redirect("sell_product")
+
         else:
             for field, errors in sentform.errors.items():
                 for error in errors:
@@ -566,7 +570,7 @@ def listallsellregisterview(request):
     return render(request, "listallsellregister.html", context)
 
 
-# función para mostrar los datos de los registros de ventas.
+# all sell registers.
 @login_required
 def detailregisterview(request, pk):
     detail_individual_register = GetIndividualtatistic.get_individual_statistics(pk)

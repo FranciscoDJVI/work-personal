@@ -72,17 +72,17 @@ def create_bill_in_memory(datos_factura):
         Paragraph(f"<b>Fecha:</b> {date.today().strftime('%d/%m/%Y')}", estilo_info)
     )
     story.append(
-        Paragraph(f"<b>Factura Nº:</b> {datos_factura['numero']}", estilo_info)
+        Paragraph(f"<b>Factura Nº:</b> {datos_factura['number']}", estilo_info)
     )
     story.append(Spacer(1, 0.5 * cm))
 
     story.append(Paragraph("<b>Cliente:</b>", estilo_info))
     story.append(
-        Paragraph(f"<b>Nombre:</b> {datos_factura['cliente']['nombre']}", estilo_info)
+        Paragraph(f"<b>Nombre:</b> {datos_factura['client']['name']}", estilo_info)
     )
     story.append(
         Paragraph(
-            f"<b>Dirección:</b> {datos_factura['cliente']['direccion']}", estilo_info
+            f"<b>Dirección:</b> {datos_factura['client']['direction']}", estilo_info
         )
     )
     story.append(Spacer(1, 1 * cm))
@@ -91,13 +91,13 @@ def create_bill_in_memory(datos_factura):
     datos_tabla = [["Cantida", "productos", "precio unitario", "Total"]]
     subtotal = 0
     for item in datos_factura["items"]:
-        total_item = item["cantidad"] * item["precio"]
+        total_item = item["quantity"] * item["price"]
         subtotal += total_item
         datos_tabla.append(
             [
-                item["cantidad"],
-                item["nombre"],
-                f"{item['precio']:.2f}",
+                item["quantity"],
+                item["name"],
+                f"{item['price']:.2f}",
                 f"{total_item:.2f}",
             ]
         )
