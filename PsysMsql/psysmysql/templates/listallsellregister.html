@@ -3,27 +3,28 @@
 {% load currency_filters %}
 {% block content %}
 <div class="flex flex-col flex-wrap justify-center gap-2">
-  <nav class="mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
-  <a href="{% url 'list-product' %}">Productos/</a>
-  <a href="{% url 'register_product' %}">Registrar productos/</a>
-  <a href="{% url 'sell_product' %}">Vender/</a>
-  <a href="{% url 'delete-product' %}">Eliminar/</a>
-  <a href="{% url 'update-product' %}">Actualizar/</a>
-  <a href="{% url 'stock_products' %}">Stock/</a>
-  <a href="{% url 'main' %}">Home</a>
-</nav>
-<table class="bg-white mx-10 my-30  text-black text-xm">
-  <thead>
-  <tr class="grid grid-cols-7 bg-gray-300 text-xm text-black p-2">
-    <th >Fecha de venta</th>
-    <th >Empleado</th>
-    <th >Total</th>
-    <th >Tipo/pago</th>
-    <th >Estado/Venta</th>
-    <th >Notas</th>
-    <th >Detalles</th>
-    </thead>
-    <tbody>
+  <nav class="flex flex-row flex-wrap mx-10 my-10 text-black p-3 absolute top-0 right-30 text-xm">
+    <a href="{% url 'list-product' %}">Productos/</a>
+    <a href="{% url 'register_product' %}">Registrar productos/</a>
+    <a href="{% url 'sell_product' %}">Vender/</a>
+    <a href="{% url 'delete-product' %}">Eliminar/</a>
+    <a href="{% url 'update-product' %}">Actualizar/</a>
+    <a href="{% url 'stock_products' %}">Stock/</a>
+    <a href="{% url 'main' %}">Home</a>
+    </nav>
+<table class="flex flex-col flex-wrap bg-white mx-10 my-30  text-black text-xm">
+  <thead class="flex flex-col flex-wrap">
+    <tr class="grid grid-cols-7 bg-gray-300 text-xm text-black p-2">
+      <th >Fecha de venta</th>
+      <th >Empleado</th>
+      <th >Total</th>
+      <th >Tipo/pago</th>
+      <th >Estado/Venta</th>
+      <th >Notas</th>
+      <th >Detalles</th>
+    <tr/>
+  </thead>
+    <tbody class="flex flex-col flex-wrap mx-3">
       {% for item2 in registers_sell_statistics %}
       <tr class="grid grid-cols-7 justify-items-center items-center bg-gray-100 text-xm text-gray-600 text-extralight my-2 mx-2">
         <td >{{ item2.date }}</td>
