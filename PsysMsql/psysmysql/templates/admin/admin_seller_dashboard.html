@@ -2,8 +2,8 @@
 {% load static%}
 <title>{% block title%}Dashboard-seller{% endblock %}</title>
 {% block content %}
-<section class="flex flex-col h-screen">
-  <nav class=" flex flex-row justify-between items-center mx-10 my-5">
+<section class="flex flex-col flex-wrap h-screen">
+  <nav class=" flex flex-row justify-between items-center flex-wrap mx-10 my-5">
     <img src="{% static 'dist/img/logo.webp' %}" alt="logo" class="contrast-150 h-30 w-30 opacity-90">
       <ul class="grid justify-items-center  text-xm text-black p-2 text-shadow-2xs text-shadow-white font-extralight">
         {% if user.is_authenticated %}
