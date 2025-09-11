@@ -1,28 +1,31 @@
 {% extends "base.html" %}
+{% load static%}
 <title>{% block title%}Dashboard-seller{% endblock %}</title>
 {% block content %}
-<section class="flex">
-  <p class="flex-6 mx-10 my-10 text-xl text-black">Bienvenidos a PSYS. Esta es una aplicación para el manejo de inventario y venta de productos.</p>
-  <ul class="flex-1 grid justify-items-center my-10 text-xm text-black p-2">
-    {% if user.is_authenticated %}
-      {% for group in user.groups.all %}
-          <li> {{ group }}</li>
-        {% endfor %}
-        <li>Hola, {{ user.username }}.</li>
-    {% endif %}
-  </ul>
-  <form class="flex-1 grid justify-items-center mx-10 my-10 text-xm text-black" method="post" action="{% url "login" %}">
+<section class="flex flex-col h-screen">
+  <nav class=" flex flex-row justify-between items-center mx-10 my-5">
+    <img src="{% static 'dist/img/logo.webp' %}" alt="logo" class="contrast-150 h-30 w-30 opacity-90">
+      <ul class="grid justify-items-center  text-xm text-black p-1">
+        {% if user.is_authenticated %}
+          {% for group in user.groups.all %}
+            <li> {{ group }}</li>
+              {% endfor %}
+            <li>Hola, {{ user.username }}.</li>
+        {% endif %}
+      </ul>
+    <form class="text-xm text-black p-1" method="post" action="{% url "login" %}">
       {%  csrf_token %}
       <button type="submit">cerrar sesion</button>
-  </form>
- </section> 
-<section class="flex gap-2 flex-wrap justify-center">
-    <section class="w-[fit-content] bg-white mt-10 p-3 text-black">
-      <span class="font-extrabold p-4 rounded-2xl"><a class="rounded-4xl p-2 text-lg font-extralight" href={% url 'sell_product' %}>Ventas  <i class="fa-solid fa-cart-plus tex text-green-500"></i></a></span>
-    </section>
-     <section class="w-[fit-content] bg-white mt-10 p-3 text-black">
-      <span class="font-extrabold   p-4 rounded-2xl "><a class="rounded-4xl p-2 text-lg font-extralight" href={% url 'list_all_sell_register'%}>Registro de ventas <i class="fa-solid fa-eye text-purple-500"></i></a></span>
-    </section>
+    </form>
+  </nav>
+  <section class="flex gap-2 flex-wrap justify-center">
+      <section class="w-[fit-content] bg-white mt-10 p-3 text-black">
+        <span class="font-extrabold p-4 rounded-2xl"><a class="rounded-4xl p-2 text-lg font-extralight" href={% url 'sell_product' %}>Ventas  <i class="fa-solid fa-cart-plus tex text-green-500"></i></a></span>
+      </section>
+      <section class="w-[fit-content] bg-white mt-10 p-3 text-black">
+        <span class="font-extrabold   p-4 rounded-2xl "><a class="rounded-4xl p-2 text-lg font-extralight" href={% url 'list_all_sell_register'%}>Registro de ventas <i class="fa-solid fa-eye text-purple-500"></i></a></span>
+      </section>
+  </section>
 </section>
 {% include 'footer.html'%}
 {% endblock %}
