@@ -3,7 +3,7 @@
 {% load static %}
 <title>{% block title %}Sell-product{% endblock %}</title>
 {% block content %}
-<nav class="mx-10 my-5 text-black p-3 absolute top-0 right-30 text-xm">
+<nav class="flex flex-row flex-wrap items-end my-3 p-3 absolute top-0 right-30 text-xm">
   <a href="{% url 'list-product' %}">Productos/</a>
   <a href="{% url 'list_all_sell_register' %}">Registros de venta/</a>
   <a href="{% url 'register_product' %}">Registrar productos/</a>
@@ -12,7 +12,7 @@
   <a href="{% url 'stock_products' %}">stock/</a>
   <a href="{% url 'main' %}">home</a>
 </nav>
-<section class="flex flex-col flex-wrap items-center">
+<section class="flex flex-col flex-wrap items-center my-3">
   <form id="sell-form" class="flex flex-row items-center my-15" method="post">
     {% csrf_token %}
     
@@ -61,7 +61,7 @@
       </aside>
   </form>
     <div class="flex flex-col flex-wrap  my-5 text-xm text-black font-extralight p-1 ">
-    <form method="post" class="flex">
+    <form method="post" class="flex mx-3">
       {% csrf_token %}
       {{ sentform }}
       <div class="form-group">
@@ -72,9 +72,9 @@
       <button id="sent" name="sent" type="submit"
         class="bg-green-500 p-2 text-xm text-white mb-10 font-extrabold">Enviar</button>
     </form>
-    <div class="section">
-      <h2>Búsqueda de Clientes(Correo)</h2>
-      <form action="" method="GET" class="search-form-inline">
+    <div class="section mx-3">
+      <form action="" method="GET" class="search-form-inline flex flex-col flex-wrap items-center gap-4">
+        <h2>Búsqueda de Clientes(Correo)</h2>
         <div class="form-group">
           <label for="{{ formsearch.query.id_for_label }}">Correo:</label>
           {{ formsearch.query }}
