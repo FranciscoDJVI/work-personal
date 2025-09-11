@@ -17,13 +17,13 @@
       {% csrf_token %}
       {{ form }}
       <button type="submit" name="search"
-        class="bg-green-500 text-white p-2">Buscar</button>
+        class="bg-green-500 text-white p-2 font-extrabold">Buscar</button>
     </form>
     <form method="post"
       class="flex flex-row space-x-2 items-center my-30  p-4 text-xm mx-4">
       {% csrf_token %}
       {{ formupdate }}
-      <button type="submit" name="update" class="bg-green-500 text-white p-2">Actualizar</button>
+      <button type="submit" name="update" class="bg-green-500 text-white p-2 font-extrabold">Actualizar</button>
     </form>
   </section>
   {% if messages %}
