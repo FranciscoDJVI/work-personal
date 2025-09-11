@@ -197,7 +197,9 @@ class Update(View):
                 request,
                 "Por favor, corrige los errores en el formulario de búsqueda.",
             )
-        context = self.get_context_data(formsearch=formsearch, formupdate=formupdate, productsearch=productsearch)
+        context = self.get_context_data(
+            formsearch=formsearch, formupdate=formupdate, productsearch=productsearch
+        )
 
         return render(request, "updateproduct.html", context)
 
@@ -234,7 +236,9 @@ class Update(View):
                 except ObjectDoesNotExist:
                     productsearch = None
         formupdate = ProductForm()
-        context = self.get_context_data(formsearch=formsearch, formupdate=formupdate, productsearch=productsearch)
+        context = self.get_context_data(
+            formsearch=formsearch, formupdate=formupdate, productsearch=productsearch
+        )
         return render(request, "updateproduct.html", context)
 
 
@@ -348,7 +352,6 @@ class SellProductView(View):
 
     @staticmethod
     def _handle_add_form(request):
-        """Lógica para el formulario 'add'."""
         formregsitersell = RegisterSellDetailForm(request.POST)
         if formregsitersell.is_valid():
             type_pay = formregsitersell.cleaned_data["type_pay"]
@@ -592,7 +595,9 @@ def list_product_sell(request):
     ).all()
 
     # Paginar si hay muchos registros
-    page_obj, paginator = paginate_queryset(list_sell_products, request, constants.SELLS_PER_PAGE)
+    page_obj, paginator = paginate_queryset(
+        list_sell_products, request, constants.SELLS_PER_PAGE
+    )
 
     context = {
         "list_sell_products": page_obj,

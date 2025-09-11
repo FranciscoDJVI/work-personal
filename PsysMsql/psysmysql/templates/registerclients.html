@@ -1,7 +1,16 @@
 {% extends "base.html" %}
-{% block title%}Register-clients{% end block%}
+{% block title%}Register-clients{% endblock%}
 {% block content %}
-    <div class="grid items-center justify-items-center">
+    <nav class="mx-10 my-5 text-black p-3 absolute top-0 right-30 text-xm">
+      <a href="{% url 'list-product' %}">Productos/</a>
+      <a href="{% url 'list_all_sell_register' %}">Registros de venta/</a>
+      <a href="{% url 'register_product' %}">Registrar productos/</a>
+      <a href="{% url 'delete-product' %}">Eliminar/</a>
+      <a href="{% url 'update-product' %}">Actualizar/</a>
+      <a href="{% url 'stock_products' %}">stock/</a>
+      <a href="{% url 'main' %}">home</a>
+    </nav>
+    <div class="grid items-center justify-items-center my-20">
       <section class="bg-white my-10 mx-20 w-[fit-content]">
             <form method="post" class="flex flex-col flex-wrap gap-2 items-center ">
                 {%csrf_token%}
@@ -11,4 +20,4 @@
         </section>
         <a href={% url 'all_clients'%} class="bg-green-500 p-2 text-white">Clientes</a>
     </div>
-{% end block%}
+{% endblock%}
