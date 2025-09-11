@@ -9,14 +9,14 @@
     <a href="{% url 'update-product' %}">Actualizar/</a>
     <a href="{% url 'main' %}">Home</a>
   </nav>
-<div class="flex flex-col items-center my-20">
+<div class="flex flex-col items-center my-10">
   <section class="my-40 flex items-center flex-col gap-10 bg-white w-[fit-content] p-10">
   <section class="flex flex-row items-center justify-center gap-10">
     <form method="post"
       class=" text-cyan-950 text-xl flex flex-row items-center">
       {% csrf_token %}
       {{ form }}
-      <button type="submit" class="bg-green-500  text-white text-xm p-2 w-30">Registrar</button>
+      <button type="submit" class="bg-green-500  text-white text-xm p-2 w-30 font-extrabold">Registrar</button>
     </form>
     {% if messages %}
     <div id="messages" class="bg-gray-300 text-2xl text-cyan-950 absolute bottom-10 right-10 rounded-4xl italic p-5">
