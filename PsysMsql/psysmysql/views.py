@@ -137,7 +137,7 @@ def delete_product(request):
 @method_decorator(
     [
         login_required(login_url="login"),
-        permission_required("psysmysql.change_product", login_url="login"),
+        permission_required("psysmysql.change_product", login_url="error"),
     ],
     name="dispatch",
 )
