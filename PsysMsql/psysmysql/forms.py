@@ -143,7 +143,7 @@ class SentSellForm(forms.Form):
 class AssginUserToGroupForm(forms.Form):
     user = forms.ModelChoiceField(
         queryset=User.objects.all().order_by("username"),
-        label="seleccionar usuario",
+        label="Seleccionar usuario",
         widget=forms.Select(attrs={"class": "border border-gray-400 text-xm p-2 m-4"}),
     )
 

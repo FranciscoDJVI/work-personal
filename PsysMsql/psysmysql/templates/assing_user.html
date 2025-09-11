@@ -22,16 +22,16 @@
         {% endfor %}
       </ul>
       {% endif %}
-      <form class="text-black text-xm " method="post">
+      <form class=" flex flex-col items-center text-black text-xm " method="post">
         {% csrf_token %}
-        {{ form.as_P}}
-        <button class="bg-gray-200 text-black  w-50 my-5" type="submit"
+        {{ form}}
+        <button class="bg-green-500 text-white font-extrabold w-30 my-5 p-2" type="submit"
           class="btn btn-primary">Asignar</button>
       </form>
       <hr/>
       <section class="">
         <h2 class="text-xm text-black grid justify-items-center items-center">Usuarios y sus Grupos Actuales</h2>
-        <table class="mx-10 my-10  text-xm font-medium h-[fit-content] w-100 border border-gray-300 ">
+        <table class="flex flex-col flex-wrap mx-10 my-10  text-xm font-medium h-[fit-content] w-100  border border-gray-300" >
           <thead>
             <tr class="grid grid-cols-2 my-2 text-xm text-black font-extralight">
               <th class="">Usuario</th>
@@ -40,7 +40,7 @@
           </thead>
           <tbody class="p-4">
             {% for user_obj in users_with_groups %}
-            <tr class="grid grid-cols-2 justify-items-center my-2 text-xm text-black">
+            <tr class="grid grid-cols-2 justify-items-center my-2 text-black">
                 {% if user_obj.username == "francisco" %}
                 <td></td>
                 {% else %}
