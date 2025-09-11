@@ -40,19 +40,19 @@
       {% endfor %}
     </tbody>
 </table>
-<table class="bg-white mx-40 my-30  text-black text-xm justify-items-center">
-  <thead>
+<table class="flex flex-col flex-wrap bg-white mx-40 my-30  text-black text-xm justify-items-center">
+  <thead class="flex flex-col flex-wrap">
   <tr class="grid grid-cols-2 justify-items-center items-center bg-gray-300 text-xm text-black">
     <th>Ventas totales</th>
     <th>Total ingresos</th>
     </thead>
-    <tbody>
+    <tbody class='flex flex-col flex-wrap'>
       <tr class="grid grid-cols-2 grid-rows-1 justify-items-center p-2 my-2 mx-2 bg-gray-100 text-gray-600 font-medium">
         <td >{{ totals_sell}}</td>
         <td >{{ total_money_sell.total|format_currency_cop}}</td>
       </tr>
     </tbody>
-    <tfoot class="flex flex-col gap-2">
+    <tfoot class="flex flex-col gap-2 flex-wrap">
         {% for item in totals_type_payment %}
           <tr class="flex flex-col justify-between bg-gray-100 text-xm text-gray-600 text-medium my-2 mx-2">
             <td>Metodo de pago: {{ item.type_pay }}</td>
