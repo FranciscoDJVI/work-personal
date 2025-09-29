@@ -1,0 +1,5 @@
+2025-09-08 17:13:35,272 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 17:16:27,038 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 17:16:27,085 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-08 17:20:49,330 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-08 17:20:49,679 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.

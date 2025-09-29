@@ -1,0 +1,608 @@
+2025-09-11 15:37:15,836 - django.request - ERROR - Internal Server Error: /register-clients/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 742, in register_clients
+    return render(request, "registerclients.html", {"formclients": formclients})
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-11 15:37:46,207 - django.request - ERROR - Internal Server Error: /register-clients/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 742, in register_clients
+    return render(request, "registerclients.html", {"formclients": formclients})
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-11 15:37:46,882 - django.request - ERROR - Internal Server Error: /register-clients/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 742, in register_clients
+    return render(request, "registerclients.html", {"formclients": formclients})
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-11 15:40:16,532 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:40:16,542 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:40:16,548 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.016s)
+2025-09-11 15:40:16,548 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.016s
+2025-09-11 15:42:04,121 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:42:04,124 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:42:04,126 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:42:04,126 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.005s
+2025-09-11 15:46:56,899 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:46:56,904 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:46:56,907 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.008s)
+2025-09-11 15:46:56,907 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.008s
+2025-09-11 15:47:11,386 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:47:11,389 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:47:11,392 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:47:11,392 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:47:13,319 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:47:13,322 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:47:13,324 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:47:13,325 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.005s
+2025-09-11 15:47:50,652 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:47:50,656 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:47:50,659 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.008s)
+2025-09-11 15:47:50,660 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.008s
+2025-09-11 15:47:52,656 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:47:52,660 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:47:52,663 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:47:52,663 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:50:53,399 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:50:53,403 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:50:53,405 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:50:53,405 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:51:28,400 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:51:28,404 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:51:28,407 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:51:28,408 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.008s
+2025-09-11 15:52:08,727 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:52:08,732 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:52:08,734 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:52:08,734 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:52:08,846 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:52:11,010 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:52:11,016 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:52:11,020 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.010s)
+2025-09-11 15:52:11,020 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.010s
+2025-09-11 15:52:52,331 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:52:52,334 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:52:52,337 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:52:52,337 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:52:53,715 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:52:53,718 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:52:53,722 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:52:53,722 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:53:24,819 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:53:24,822 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:53:24,824 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:53:24,825 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:53:26,099 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:53:26,101 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:53:26,104 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:53:26,104 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:54:38,337 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:54:38,340 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:54:38,343 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:54:38,343 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:54:38,461 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:55:29,345 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:55:29,349 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:55:29,352 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:55:29,352 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:55:29,458 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:55:31,341 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:55:31,344 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:55:31,347 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:55:31,348 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:55:34,046 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:55:34,049 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:55:34,052 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:55:34,053 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:55:44,251 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:55:44,254 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:55:44,257 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:55:44,257 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:55:44,358 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:55:46,039 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:55:46,043 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:55:46,045 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:55:46,045 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:56:26,721 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:56:26,724 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:56:26,726 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:56:26,726 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.005s
+2025-09-11 15:56:26,853 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:56:29,024 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:56:29,027 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:56:29,029 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:56:29,029 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:56:40,764 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:56:40,767 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:56:40,769 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:56:40,769 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.005s
+2025-09-11 15:56:40,877 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:56:42,523 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:56:42,527 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:56:42,529 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:56:42,529 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:56:50,587 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:56:50,590 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:56:50,593 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:56:50,593 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:56:51,676 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:56:51,679 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:56:51,682 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:56:51,682 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:57:17,905 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:17,908 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:17,910 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.004s)
+2025-09-11 15:57:17,910 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.005s
+2025-09-11 15:57:18,036 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:57:19,447 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:19,450 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:19,453 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:57:19,455 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.008s
+2025-09-11 15:57:27,909 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:27,912 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:27,915 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:57:27,916 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:57:28,904 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:28,907 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:28,909 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.005s)
+2025-09-11 15:57:28,910 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:57:29,007 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:57:40,388 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:40,393 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:40,396 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.008s)
+2025-09-11 15:57:40,396 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.008s
+2025-09-11 15:57:41,391 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:41,397 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:41,401 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.010s)
+2025-09-11 15:57:41,402 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.011s
+2025-09-11 15:57:41,514 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:57:42,992 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:57:42,996 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:57:42,998 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.006s)
+2025-09-11 15:57:42,998 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.006s
+2025-09-11 15:59:01,846 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:59:01,850 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:59:01,853 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.008s)
+2025-09-11 15:59:01,854 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.009s
+2025-09-11 15:59:04,082 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:59:04,087 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:59:04,089 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:59:04,090 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.007s
+2025-09-11 15:59:04,183 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:59:06,428 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-11 15:59:06,431 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-11 15:59:06,435 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-11 15:59:06,436 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.009s
+2025-09-11 15:59:11,055 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 15:59:11,089 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 15:59:11,090 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.034s)
+2025-09-11 15:59:11,090 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.034s
+2025-09-11 15:59:11,090 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 15:59:11,093 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 15:59:11,093 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 15:59:12,775 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 15:59:51,371 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:00:00,365 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:02:09,628 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:02:09,636 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:02:09,636 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.008s)
+2025-09-11 16:02:09,636 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-09-11 16:02:09,636 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:02:09,639 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:02:09,639 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 16:02:09,752 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:02:38,055 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:02:38,063 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:02:38,064 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.009s)
+2025-09-11 16:02:38,064 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-11 16:02:38,065 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:02:38,068 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:02:38,069 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-11 16:02:39,185 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:02:39,200 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:02:39,201 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.015s)
+2025-09-11 16:02:39,201 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.016s
+2025-09-11 16:02:39,201 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:02:39,207 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:02:39,209 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.007s)
+2025-09-11 16:02:39,369 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:02:56,661 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:02:56,667 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:02:56,667 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.006s)
+2025-09-11 16:02:56,667 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.006s
+2025-09-11 16:02:56,667 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:02:56,670 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:02:56,670 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 16:02:57,730 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:02:57,737 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:02:57,737 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.007s)
+2025-09-11 16:02:57,737 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-11 16:02:57,737 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:02:57,740 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:02:57,740 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 16:02:57,852 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:03:04,034 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:03:04,040 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:03:04,040 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.007s)
+2025-09-11 16:03:04,041 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-11 16:03:04,041 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:03:04,045 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:03:04,045 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-11 16:03:05,060 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:03:05,067 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:03:05,067 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.007s)
+2025-09-11 16:03:05,067 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-11 16:03:05,067 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:03:05,070 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:03:05,071 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 16:06:03,386 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:06:03,393 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:06:03,393 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.007s)
+2025-09-11 16:06:03,394 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-11 16:06:03,394 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:06:03,397 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:06:03,397 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 16:06:03,527 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:06:39,585 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:09:06,251 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:09:44,391 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:10:02,467 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:10:59,127 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:11:00,481 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:13:52,115 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 16:13:52,122 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 16:13:52,122 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.006s)
+2025-09-11 16:13:52,122 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-11 16:13:52,122 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 16:13:52,125 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 16:13:52,125 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-11 16:16:59,089 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-11 16:17:09,541 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return _redirect_to_login(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 24, in _redirect_to_login
+    resolved_login_url = resolve_url(login_url or settings.LOGIN_URL)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'Error' not found. 'Error' is not a valid view function or pattern name.
+2025-09-11 16:17:16,292 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-11 16:26:05,861 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 73, in dashboard
+    return render(request, "admin/admin_seller_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-11 16:26:07,422 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 73, in dashboard
+    return render(request, "admin/admin_seller_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-11 16:40:10,346 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:40:14,065 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:40:45,920 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:41:02,904 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:42:06,696 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:42:14,049 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:42:28,624 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 16:43:38,914 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 17:15:52,999 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-11 17:15:53,011 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-11 17:15:53,011 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.011s)
+2025-09-11 17:15:53,011 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.012s
+2025-09-11 17:15:53,011 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-11 17:15:53,015 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-11 17:15:53,015 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-11 17:22:26,274 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-11 17:55:00,330 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/forms.py changed, reloading.

@@ -1,5 +1,6 @@
 import json
 from django.contrib import messages
+from django.contrib.auth.views import never_cache
 from django.db import DatabaseError
 from django.core.exceptions import ValidationError
 from django.db.models import ObjectDoesNotExist

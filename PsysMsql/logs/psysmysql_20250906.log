@@ -1,0 +1,2183 @@
+2025-09-06 19:49:53,561 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-06 19:50:35,604 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-06 19:51:54,018 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-06 19:52:00,298 - psysmysql.sells - INFO - Iniciando: Agregando producto Monitor 4k con cantidad 2
+2025-09-06 19:52:00,314 - psysmysql.sells - INFO - Nuevo producto Monitor 4k agregado al carrito: 2 unidades
+2025-09-06 19:52:00,314 - psysmysql.sells - INFO - Completado: Agregando producto Monitor 4k con cantidad 2 (-0.016s)
+2025-09-06 19:52:00,314 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.016s
+2025-09-06 19:52:14,206 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$2000000.0
+2025-09-06 19:52:14,218 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$2000000.0 (-0.012s)
+2025-09-06 19:52:14,218 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 667, 'name': 'Monitor 4k', 'price': 1000000.0, 'quantity': 2, 'pricexquantity': 2000000.0}, {'totals': {'quantity': 2, 'subtotal': 1620000.0, 'iva': 380000.0, 'total_sell': 2000000.0}}], empleado=francisco, total=$2000000.0, tipo_pago=tarjeta debito
+2025-09-06 19:52:14,218 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.013s
+2025-09-06 19:52:16,815 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 475, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 19:52:28,321 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 475, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 19:54:28,554 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 19:57:01,322 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 19:57:04,111 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 19:57:38,895 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-06 19:57:44,582 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:00:25,951 - psysmysql.sells - INFO - Iniciando: Agregando producto Bateria con cantidad 1
+2025-09-06 20:00:25,962 - psysmysql.sells - INFO - Nuevo producto Bateria agregado al carrito: 1 unidades
+2025-09-06 20:00:25,962 - psysmysql.sells - INFO - Completado: Agregando producto Bateria con cantidad 1 (-0.011s)
+2025-09-06 20:00:25,962 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.011s
+2025-09-06 20:00:40,687 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$40000.0
+2025-09-06 20:00:40,696 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$40000.0 (-0.009s)
+2025-09-06 20:00:40,696 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 668, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 1, 'subtotal': 32400.0, 'iva': 7600.0, 'total_sell': 40000.0}}], empleado=francisco, total=$40000.0, tipo_pago=Efectivo
+2025-09-06 20:00:40,697 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.010s
+2025-09-06 20:00:45,579 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:01:46,887 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:01:48,755 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:02:41,573 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:02:44,263 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:04:33,479 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:04:35,914 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:04:38,009 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:05:19,030 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:05:24,862 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:05:27,552 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:06:00,461 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:06:03,409 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:06:08,536 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 465, in _handle_sent_form
+    "numero": client[0]["number_bill"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:07:03,949 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:07:06,276 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 474, in _handle_sent_form
+    pdf_buffer = create_bill_in_memory(datos_factura)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py", line 75, in create_bill_in_memory
+    Paragraph(f"<b>Factura Nº:</b> {datos_factura['numero']}", estilo_info)
+                                    ~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'numero'
+2025-09-06 20:07:54,434 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:07:59,786 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:08:01,505 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 475, in _handle_sent_form
+    pdf_buffer = create_bill_in_memory(datos_factura)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py", line 75, in create_bill_in_memory
+    Paragraph(f"<b>Factura Nº:</b> {datos_factura['numero']}", estilo_info)
+                                    ~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'numero'
+2025-09-06 20:08:03,517 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 475, in _handle_sent_form
+    pdf_buffer = create_bill_in_memory(datos_factura)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py", line 75, in create_bill_in_memory
+    Paragraph(f"<b>Factura Nº:</b> {datos_factura['numero']}", estilo_info)
+                                    ~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'numero'
+2025-09-06 20:08:08,486 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 475, in _handle_sent_form
+    pdf_buffer = create_bill_in_memory(datos_factura)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py", line 75, in create_bill_in_memory
+    Paragraph(f"<b>Factura Nº:</b> {datos_factura['numero']}", estilo_info)
+                                    ~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'numero'
+2025-09-06 20:09:41,114 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:09:43,846 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 467, in _handle_sent_form
+    "nombre": client[0]["name"],
+              ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:09:57,750 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:10:00,949 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 468, in _handle_sent_form
+    "direccion": client[0]["direction"],
+                 ~~~~~~^^^
+IndexError: list index out of range
+2025-09-06 20:10:05,812 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:10:19,071 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:10:54,363 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:11:03,991 - psysmysql.sells - INFO - Iniciando: Agregando producto Monitor 4k con cantidad 1
+2025-09-06 20:11:04,000 - psysmysql.sells - INFO - Nuevo producto Monitor 4k agregado al carrito: 1 unidades
+2025-09-06 20:11:04,000 - psysmysql.sells - INFO - Completado: Agregando producto Monitor 4k con cantidad 1 (-0.009s)
+2025-09-06 20:11:04,000 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.009s
+2025-09-06 20:11:11,120 - psysmysql.sells - INFO - Iniciando: Agregando producto Bateria con cantidad 1
+2025-09-06 20:11:11,133 - psysmysql.sells - INFO - Nuevo producto Bateria agregado al carrito: 1 unidades
+2025-09-06 20:11:11,133 - psysmysql.sells - INFO - Completado: Agregando producto Bateria con cantidad 1 (-0.013s)
+2025-09-06 20:11:11,133 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.013s
+2025-09-06 20:11:27,662 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$1040000.0
+2025-09-06 20:11:27,670 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$1040000.0 (-0.009s)
+2025-09-06 20:11:27,671 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 669, 'name': 'Monitor 4k', 'price': 1000000.0, 'quantity': 1, 'pricexquantity': 1000000.0}, {'id': 670, 'name': 'Bateria', 'price': 40000.0, 'quantity': 1, 'pricexquantity': 40000.0}, {'totals': {'quantity': 2, 'subtotal': 842400.0, 'iva': 197600.0, 'total_sell': 1040000.0}}], empleado=francisco, total=$1040000.0, tipo_pago=Efectivo
+2025-09-06 20:11:27,671 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.009s
+2025-09-06 20:14:10,040 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:17:27,626 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:18:20,567 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:18:25,723 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:20:18,093 - psysmysql.sells - INFO - Iniciando: Agregando producto Mouse con cantidad 1
+2025-09-06 20:20:18,107 - psysmysql.sells - INFO - Nuevo producto Mouse agregado al carrito: 1 unidades
+2025-09-06 20:20:18,107 - psysmysql.sells - INFO - Completado: Agregando producto Mouse con cantidad 1 (-0.014s)
+2025-09-06 20:20:18,108 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.014s
+2025-09-06 20:20:27,766 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$90000.0
+2025-09-06 20:20:27,777 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$90000.0 (-0.011s)
+2025-09-06 20:20:27,778 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 671, 'name': 'Mouse', 'price': 90000.0, 'quantity': 1, 'pricexquantity': 90000.0}, {'totals': {'quantity': 1, 'subtotal': 72900.0, 'iva': 17100.0, 'total_sell': 90000.0}}], empleado=francisco, total=$90000.0, tipo_pago=Efectivo
+2025-09-06 20:20:27,778 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.012s
+2025-09-06 20:20:31,216 - django.request - ERROR - Internal Server Error: /sell-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 323, in post
+    return self._handle_sent_form(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 487, in _handle_sent_form
+    pdf_buffer = create_bill_in_memory(datos_factura)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py", line 75, in create_bill_in_memory
+    Paragraph(f"<b>Factura Nº:</b> {datos_factura['numero']}", estilo_info)
+                                    ~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'numero'
+2025-09-06 20:22:06,681 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py changed, reloading.
+2025-09-06 20:24:06,743 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:26:19,176 - psysmysql.clientes - INFO - Iniciando: Obteniendo todos los clientes
+2025-09-06 20:26:19,180 - psysmysql.clientes - INFO - Total de clientes obtenidos: 6
+2025-09-06 20:26:19,183 - psysmysql.clientes - INFO - Completado: Obteniendo todos los clientes (-0.007s)
+2025-09-06 20:26:19,184 - psysmysql.clientes - INFO - psysmysql.services.clients_service.get_all_clients ejecutado en 0.008s
+2025-09-06 20:28:35,529 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:29:33,034 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:30:35,133 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:32:14,600 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:32:21,743 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:34:00,443 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:34:03,089 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:34:08,463 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:36:16,542 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:36:18,220 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:36:49,449 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:39:07,474 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:39:10,250 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:39:23,176 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:40:19,470 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 20:49:27,633 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:54:36,736 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:54:54,547 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:54:59,747 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:55:08,045 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:55:24,784 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:55:29,802 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:55:32,560 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 20:58:09,037 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 20:58:16,302 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 185, in _handle_search_product
+    product_found = Search.get(Products, "name", namesearch)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py", line 20, in get
+    return model.objects.get(**filter_kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/db/models/query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+psysmysql.models.Products.DoesNotExist: Products matching query does not exist.
+2025-09-06 21:00:01,325 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:00:04,526 - django.request - ERROR - Internal Server Error: /update-product/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 168, in post
+    return self._handle_search_product(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 205, in _handle_search_product
+    productsearch=productsearch,
+                  ^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'productsearch' where it is not associated with a value
+2025-09-06 21:00:40,052 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:01:54,947 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:02:07,190 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:02:45,289 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:05:37,078 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:15:20,900 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:24:26,762 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/constants.py changed, reloading.
+2025-09-06 21:25:16,170 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 21:27:50,265 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/tasks.py changed, reloading.
+2025-09-06 21:28:38,387 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/tasks.py changed, reloading.
+2025-09-06 21:55:20,858 - psysmysql.products - INFO - Iniciando: Creando producto: Rack
+2025-09-06 21:55:20,891 - psysmysql.products - INFO - Producto creado exitosamente: Rack (ID: 29)
+2025-09-06 21:55:20,892 - psysmysql.products - DEBUG - Cache de productos limpiado
+2025-09-06 21:55:20,892 - psysmysql.products - INFO - Completado: Creando producto: Rack (-0.034s)
+2025-09-06 21:55:20,892 - psysmysql.products - INFO - psysmysql.services.product_service.create_product ejecutado en 0.034s
+2025-09-06 22:18:40,312 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 73, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:21:11,141 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:21:50,703 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-09-06 22:22:01,509 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-09-06 22:22:50,397 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:23:05,895 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:23:30,628 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/constants.py changed, reloading.
+2025-09-06 22:25:35,339 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:26:35,302 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:26:56,577 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:27:03,063 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:27:11,684 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:28:25,605 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:29:25,819 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/viewsets.py changed, reloading.
+2025-09-06 22:30:24,388 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/clients_service.py changed, reloading.
+2025-09-06 22:30:37,150 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-09-06 22:30:49,662 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/stock_service.py changed, reloading.
+2025-09-06 22:31:04,015 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/tasks.py changed, reloading.
+2025-09-06 22:31:14,582 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:31:23,499 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:32:05,583 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:33:26,681 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 72, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'end', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-09-06 22:33:28,113 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 72, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'end', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-09-06 22:37:52,936 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:38:05,743 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 22:39:34,981 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 22:40:35,368 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/filters.py changed, reloading.
+2025-09-06 22:42:04,404 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 72, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'end', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-09-06 22:47:09,599 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 72, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'end', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-09-06 22:47:45,657 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 72, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'end', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-09-06 22:47:54,295 - django.request - ERROR - Internal Server Error: /main/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 72, in dashboard
+    return render(request, "admin/admin_dashboard.html")
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 12: 'end', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+2025-09-06 22:48:26,307 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-06 22:48:26,334 - psysmysql.stock - INFO - Resumen de stock generado: 11916 productos
+2025-09-06 22:48:26,334 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.027s)
+2025-09-06 22:48:26,335 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.027s
+2025-09-06 22:48:26,335 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-06 22:48:26,338 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-06 22:48:26,338 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-06 22:48:26,417 - django.request - ERROR - Internal Server Error: /stock-products/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 676, in register_stock
+    return render(request, "stock.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 48: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:48:37,843 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-06 22:48:37,849 - psysmysql.stock - INFO - Resumen de stock generado: 11916 productos
+2025-09-06 22:48:37,849 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.006s)
+2025-09-06 22:48:37,850 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.006s
+2025-09-06 22:48:37,850 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-06 22:48:37,854 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-06 22:48:37,854 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.005s)
+2025-09-06 22:48:42,615 - django.request - ERROR - Internal Server Error: /list-all-sell-register/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 570, in listallsellregisterview
+    return render(request, "listallsellregister.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:48:51,088 - django.request - ERROR - Internal Server Error: /list-all-sell-register/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 570, in listallsellregisterview
+    return render(request, "listallsellregister.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:48:57,113 - django.request - ERROR - Internal Server Error: /list-all-sell-register/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 570, in listallsellregisterview
+    return render(request, "listallsellregister.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:49:06,261 - django.request - ERROR - Internal Server Error: /list-all-sell-register/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 570, in listallsellregisterview
+    return render(request, "listallsellregister.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:49:14,029 - django.request - ERROR - Internal Server Error: /list-all-sell-register/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 570, in listallsellregisterview
+    return render(request, "listallsellregister.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:49:15,171 - django.request - ERROR - Internal Server Error: /list-all-sell-register/
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'end'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/contrib/auth/decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py", line 570, in listallsellregisterview
+    return render(request, "listallsellregister.html", context)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Francisco-dev/work/Python/Django/WORK/venv/lib64/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 2: 'end', expected 'endblock'. Did you forget to register or load this tag?
+2025-09-06 22:51:16,685 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/permissions.py changed, reloading.
+2025-09-06 22:51:50,567 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/api/permissions.py changed, reloading.
+2025-09-06 22:57:57,479 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/factura_service.py changed, reloading.
+2025-09-06 22:59:35,340 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/product_service.py changed, reloading.
+2025-09-06 23:00:24,251 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:01:21,314 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:02:28,898 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:02:32,887 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:03:17,479 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:05:33,013 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:06:57,862 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/search_orm.py changed, reloading.
+2025-09-06 23:10:08,130 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-09-06 23:12:08,556 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/services/sell_service.py changed, reloading.
+2025-09-06 23:15:05,586 - psysmysql.sells - INFO - Iniciando: Agregando producto Teclado con cantidad 1
+2025-09-06 23:15:05,600 - psysmysql.sells - INFO - Nuevo producto Teclado agregado al carrito: 1 unidades
+2025-09-06 23:15:05,600 - psysmysql.sells - INFO - Completado: Agregando producto Teclado con cantidad 1 (-0.014s)
+2025-09-06 23:15:05,600 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_sell ejecutado en 0.014s
+2025-09-06 23:15:11,170 - psysmysql.sells - INFO - Iniciando: Creando registro de venta: total=$340000.0
+2025-09-06 23:15:11,184 - psysmysql.sells - INFO - Completado: Creando registro de venta: total=$340000.0 (-0.014s)
+2025-09-06 23:15:11,184 - psysmysql.sells - INFO - Venta registrada exitosamente: ID=[{'id': 672, 'name': 'Teclado', 'price': 340000.0, 'quantity': 1, 'pricexquantity': 340000.0}, {'totals': {'quantity': 1, 'subtotal': 275400.0, 'iva': 64600.0, 'total_sell': 340000.0}}], empleado=francisco, total=$340000.0, tipo_pago=Efectivo
+2025-09-06 23:15:11,184 - psysmysql.sells - INFO - psysmysql.services.sell_service.register_detail ejecutado en 0.015s
+2025-09-06 23:15:55,765 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-06 23:16:51,643 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.

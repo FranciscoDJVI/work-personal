@@ -1,0 +1,159 @@
+2025-09-29 17:38:56,335 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-29 17:39:06,021 - django.utils.autoreload - INFO - /home/Francisco-dev/work/Python/Django/WORK/PsysMsql/psysmysql/views.py changed, reloading.
+2025-09-29 17:48:24,079 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 17:48:24,086 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 17:48:24,087 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.008s)
+2025-09-29 17:48:24,087 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-09-29 17:48:24,087 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 17:48:24,091 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 17:48:24,091 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-29 17:49:10,333 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 17:49:10,341 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 17:49:10,341 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.008s)
+2025-09-29 17:49:10,342 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-29 17:49:10,342 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 17:49:10,346 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 17:49:10,346 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-29 17:49:15,207 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 17:49:15,213 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 17:49:15,213 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.007s)
+2025-09-29 17:49:15,214 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.007s
+2025-09-29 17:49:15,214 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 17:49:15,220 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 17:49:15,220 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.006s)
+2025-09-29 17:49:23,498 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 17:49:23,507 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 17:49:23,508 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.009s)
+2025-09-29 17:49:23,508 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.010s
+2025-09-29 17:49:23,508 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 17:49:23,511 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 17:49:23,511 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-29 17:50:19,203 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:53:21,251 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:53:46,889 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:53:55,596 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 17:53:55,603 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 17:53:55,604 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.008s)
+2025-09-29 17:53:55,604 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-29 17:53:55,605 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 17:53:55,608 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 17:53:55,608 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-29 17:55:51,222 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:56:07,302 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:57:06,229 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:06,251 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:06,272 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:57:07,444 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:07,454 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:07,471 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:57:08,588 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:08,599 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:11,584 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:11,592 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:11,613 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:57:14,572 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:14,587 - django.request - WARNING - Not Found: /api/ventas/
+2025-09-29 17:57:39,099 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:57:39,116 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:57:39,169 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:57:42,615 - django.request - WARNING - Not Found: /main/sell-product/
+2025-09-29 17:57:43,508 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:57:43,513 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:57:49,770 - django.request - WARNING - Not Found: /register-product/sell-product/
+2025-09-29 17:57:51,426 - django.request - WARNING - Not Found: /main/sell-product/
+2025-09-29 17:57:52,419 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:57:52,435 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:58:09,170 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:58:09,171 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:58:14,926 - django.request - WARNING - Not Found: /accounts/login/sell-product/
+2025-09-29 17:58:14,967 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:58:18,386 - django.request - WARNING - Not Found: /accounts/login/sell-product/
+2025-09-29 17:58:26,151 - django.request - WARNING - Not Found: /accounts/login/sell-product/
+2025-09-29 17:58:26,194 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:58:34,869 - django.request - WARNING - Not Found: /main/sell-product/
+2025-09-29 17:58:34,906 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:58:37,197 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:58:37,206 - django.request - WARNING - Not Found: /sell-product/sell-product/
+2025-09-29 17:59:02,253 - django.request - WARNING - Not Found: /main/app/
+2025-09-29 17:59:02,277 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:59:05,815 - django.request - WARNING - Not Found: /accounts/login/app/
+2025-09-29 17:59:07,339 - django.request - WARNING - Not Found: /app/
+2025-09-29 17:59:08,385 - django.request - WARNING - Not Found: /accounts/login/app/
+2025-09-29 17:59:08,462 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 17:59:10,744 - django.request - WARNING - Not Found: /app/
+2025-09-29 17:59:11,622 - django.request - WARNING - Not Found: /accounts/login/app/
+2025-09-29 17:59:19,283 - django.request - WARNING - Not Found: /main/app/
+2025-09-29 17:59:21,345 - django.request - WARNING - Not Found: /sell-product/app/
+2025-09-29 17:59:21,351 - django.request - WARNING - Not Found: /sell-product/app/
+2025-09-29 17:59:59,862 - django.request - WARNING - Not Found: /sell-product/app/
+2025-09-29 17:59:59,890 - django.request - WARNING - Not Found: /sell-product/app/
+2025-09-29 17:59:59,952 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 18:00:03,119 - django.request - WARNING - Not Found: /accounts/login/app/
+2025-09-29 18:00:20,809 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 18:04:31,714 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:04:31,722 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:04:31,722 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.008s)
+2025-09-29 18:04:31,722 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.008s
+2025-09-29 18:04:31,722 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:04:31,726 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:04:31,726 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-29 18:07:29,875 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 18:10:00,135 - django.request - WARNING - Not Found: /ruta/buscar-productos/
+2025-09-29 18:10:00,158 - django.request - WARNING - Not Found: /ruta/buscar-productos/
+2025-09-29 18:10:18,949 - django.request - WARNING - Not Found: /sell-products/
+2025-09-29 18:10:18,969 - django.request - WARNING - Not Found: /sell-products/
+2025-09-29 18:10:22,110 - django.request - WARNING - Not Found: /sell-products/
+2025-09-29 18:10:22,121 - django.request - WARNING - Not Found: /sell-products/
+2025-09-29 18:10:41,477 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:10:41,485 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:10:41,486 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.009s)
+2025-09-29 18:10:41,488 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.010s
+2025-09-29 18:10:41,488 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:10:41,491 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:10:41,491 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-29 18:11:37,959 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:11:37,973 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:11:37,975 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.017s)
+2025-09-29 18:11:37,977 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.018s
+2025-09-29 18:11:37,978 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:11:37,984 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:11:37,985 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.007s)
+2025-09-29 18:11:40,910 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:11:40,921 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:11:40,921 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.011s)
+2025-09-29 18:11:40,921 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.011s
+2025-09-29 18:11:40,923 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:11:40,928 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:11:40,928 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.006s)
+2025-09-29 18:14:49,543 - django.request - WARNING - Not Found: /sell-products
+2025-09-29 18:14:51,841 - django.request - WARNING - Not Found: /sell-products
+2025-09-29 18:14:51,856 - django.request - WARNING - Not Found: /sell-products
+2025-09-29 18:15:22,122 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:15:22,131 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:15:22,131 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.009s)
+2025-09-29 18:15:22,131 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-29 18:15:22,132 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:15:22,135 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:15:22,137 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.005s)
+2025-09-29 18:15:24,154 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:15:24,163 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:15:24,163 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.009s)
+2025-09-29 18:15:24,163 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-29 18:15:24,163 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:15:24,167 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:15:24,167 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.003s)
+2025-09-29 18:15:42,404 - psysmysql.stock - INFO - Iniciando: Generando resumen de stock
+2025-09-29 18:15:42,412 - psysmysql.stock - INFO - Resumen de stock generado: 11915 productos
+2025-09-29 18:15:42,412 - psysmysql.stock - INFO - Completado: Generando resumen de stock (-0.009s)
+2025-09-29 18:15:42,412 - psysmysql.performance - INFO - psysmysql.services.stock_service.get_stock_summary ejecutado en 0.009s
+2025-09-29 18:15:42,413 - psysmysql.stock - INFO - Iniciando: Generando alertas de stock
+2025-09-29 18:15:42,416 - psysmysql.stock - INFO - Alertas generadas: 0
+2025-09-29 18:15:42,416 - psysmysql.stock - INFO - Completado: Generando alertas de stock (-0.004s)
+2025-09-29 18:16:23,884 - django.request - WARNING - Not Found: /http://localhost:8000/
+2025-09-29 18:16:34,696 - django.request - WARNING - Not Found: /http://localhost:8000/
+2025-09-29 18:16:36,892 - django.request - WARNING - Not Found: /http://localhost:8000/
+2025-09-29 18:16:36,924 - django.request - WARNING - Not Found: /http://localhost:8000/
+2025-09-29 18:17:16,263 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 18:17:17,720 - django.request - WARNING - Not Found: /http://localhost:8000/
+2025-09-29 18:22:29,114 - django.request - WARNING - Not Found: /favicon.ico
+2025-09-29 18:22:48,258 - django.request - WARNING - Not Found: /favicon.ico
