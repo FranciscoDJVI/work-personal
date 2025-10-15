@@ -168,15 +168,13 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "America/Bogota"  # O la zona horaria de tu proyecto
 CELERY_TASK_TRACK_STARTED = True  # Opcional: Para saber cuando una tarea ha comenzado
 
-# Configuración de Correo Electrónico (ajusta según tu proveedor)
+# Configuración de Correo Electrónico
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"  # Ejemplo para Gmail
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "vanegasfrancisco415@gmail.com"  # Tu correo
-EMAIL_HOST_PASSWORD = (
-    "wzri cnjk gapz kxiw"  # Tu contraseña de aplicación (no la de la cuenta)
-)
+EMAIL_HOST_PASSWORD = "wzri cnjk gapz kxiw"
 DEFAULT_FROM_EMAIL = "vanegasfrancisco415@gmail.com"
 SERVER_EMAIL = "vanegasfrancisco415@gmail.com"
 
